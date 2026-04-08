@@ -1,0 +1,17 @@
+using GymErp.Domain.Subscriptions.Features.Enrollments.Domain;
+
+namespace GymErp.Domain.Subscriptions.Features.Enrollments.Domain.States;
+
+public static class EnrollmentStateFactory
+{
+    public static IEnrollmentState CreateState(EState state)
+    {
+        return state switch
+        {
+            EState.Active => new ActiveState(),
+            EState.Suspended => new SuspendedState(),
+            EState.Canceled => new CanceledState(),
+            _ => throw new ArgumentException($"Estado inválido: {state}")
+        };
+    }
+}

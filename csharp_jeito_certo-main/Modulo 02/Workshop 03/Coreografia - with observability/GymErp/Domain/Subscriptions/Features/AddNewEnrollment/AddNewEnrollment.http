@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:5035
+
+### POST /api/enrollments - AddNewEnrollment
+POST {{baseUrl}}/api/enrollments
+Content-Type: application/json
+
+{
+  "name": "João Silva",
+  "email": "joao@example.com",
+  "phone": "11999990000",
+  "document": "12345678900",
+  "birthDate": "1990-05-15",
+  "gender": "M",
+  "address": "Rua Exemplo, 100"
+}

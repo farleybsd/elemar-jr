@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:5035
+
+### POST /api/payments/one-off - ProcessCharging
+POST {{baseUrl}}/api/payments/one-off
+Content-Type: application/json
+

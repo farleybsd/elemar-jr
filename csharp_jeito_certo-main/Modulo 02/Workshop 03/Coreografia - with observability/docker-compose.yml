@@ -1,0 +1,133 @@
+name: coreografia-with-observability
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: gymerp-postgres
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: gym_erp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: gymerp-zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: gymerp-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+  kafka-init:
+    image: confluentinc/cp-kafka:latest
+    container_name: gymerp-kafka-init
+    depends_on:
+      - kafka
+    # Garante que os tópicos existam antes do app começar a consumir.
+    command:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        echo "Waiting for Kafka to be ready..."
+        i=0
+        while [ $$i -lt 30 ]; do
+          if kafka-topics --bootstrap-server kafka:9092 --list > /dev/null 2>&1; then
+            break
+          fi
+          i=$((i+1))
+          sleep 2
+        done
+
+        kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic enrollment-events --partitions 1 --replication-factor 1
+        kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic charging-processed-events --partitions 1 --replication-factor 1
+        kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic cancel-enrollment-commands --partitions 1 --replication-factor 1
+
+  aspire-dashboard:
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:latest
+    container_name: gymerp-aspire-dashboard
+    ports:
+      - "18888:18888"
+      - "4317:18889"
+
+  gymerp:
+    build:
+      context: ./GymErp
+      dockerfile: Dockerfile
+    container_name: gymerp
+    volumes:
+      - ../../../.cursor:/.cursor
+    depends_on:
+      postgres:
+        condition: service_started
+      kafka:
+        condition: service_started
+      kafka-init:
+        condition: service_completed_successfully
+      aspire-dashboard:
+        condition: service_started
+    ports:
+      - "5035:5035"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5035
+
+      Serilog__MinimumLevel__Default: "Debug"
+
+      OpenTelemetry__Type: otlp
+      OpenTelemetry__Endpoint: http://aspire-dashboard:18889
+
+      BasePath: ""
+
+      DatabaseConnection__Host: postgres
+      DatabaseConnection__Port: 5432
+      DatabaseConnection__User: postgres
+      DatabaseConnection__Password: postgres
+      DatabaseConnection__DatabaseName: gym_erp
+      DatabaseConnection__DisableSsl: "true"
+      DatabaseConnection__Pooling: "true"
+      DatabaseConnection__MaxPoolSize: 10
+      DatabaseConnection__MinPoolSize: 0
+      DatabaseConnection__Timeout: 15
+      DatabaseConnection__ConnectionIdleLifetime: 300
+      DatabaseConnection__Multiplexing: "false"
+
+      Kafka__Connection__BootstrapServers: kafka:9092
+      Kafka__Connection__SecurityProtocol: Plaintext
+      Kafka__Connection__SaslMechanism: Plain
+      Kafka__Connection__SaslUsername: ""
+      Kafka__Connection__SaslPassword: ""
+      Kafka__Connection__EnableSslCertificateVerification: "false"
+      Kafka__Connection__ClientId: GymErp
+
+      DEBUG_LOG_PATH: /.cursor/debug-f52434.log
+
+volumes:
+  postgres-data:
+
