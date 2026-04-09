@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using OrderReport;
 using System.Buffers;
 using System.Globalization;
 using System.Text;
@@ -8,7 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
-var fileName = "sales_report_small.csv";
+//curl.exe "https://localhost:7059/sum-by-category-v1?category=Electronics"
+//await FileGenerator.GenerateFakeData();
+//var fileName = "sales_report_small.csv";
+var fileName = "sales_report_big.csv";
+
 
 Console.WriteLine($"Using data file: {fileName}");
 
