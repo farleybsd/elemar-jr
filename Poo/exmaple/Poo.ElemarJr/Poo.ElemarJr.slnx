@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="Composicao/Composicao.csproj" Id="71d346e0-abeb-4470-a45c-1e746096558c" />
+  <Project Path="ENCAPSULAMENTO/ENCAPSULAMENTO.csproj" />
+  <Project Path="EXCEPTIONS/EXCEPTIONS.csproj" Id="390c758b-c118-44ea-a45d-00d40051bde6" />
+  <Project Path="Generics/Generics.csproj" Id="80aef5c0-0f5b-4712-bf10-d7245c87db33" />
+  <Project Path="Heranca/Heranca.csproj" Id="8715644b-918c-4cc4-aa3b-9ed601bfe940" />
+  <Project Path="POLIMORFISMO/POLIMORFISMO.csproj" Id="ff8bb3ab-2c21-4eff-b928-edabac382093" />
+  <Project Path="ResultPattern/ResultPattern.csproj" Id="f1935bcf-6034-49a4-998b-e8a5b52864ed" />
+</Solution>
