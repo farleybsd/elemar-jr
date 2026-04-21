@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solid/">
+    <Project Path="OCP/OCP.csproj" Id="e7f2db8d-7df6-4763-9069-a38b2fb46471" />
+  </Folder>
   <Project Path="Composicao/Composicao.csproj" Id="71d346e0-abeb-4470-a45c-1e746096558c" />
   <Project Path="ENCAPSULAMENTO/ENCAPSULAMENTO.csproj" />
   <Project Path="EXCEPTIONS/EXCEPTIONS.csproj" Id="390c758b-c118-44ea-a45d-00d40051bde6" />

@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\ocp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|solutionrelative:ocp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\ocp\\servicos\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|solutionrelative:ocp\\servicos\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Program.cs",
+              "RelativeDocumentMoniker": "OCP\\Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Program.cs",
+              "RelativeToolTip": "OCP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T13:44:22.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Servicos\\PaymentService.cs",
+              "RelativeDocumentMoniker": "OCP\\Servicos\\PaymentService.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Servicos\\PaymentService.cs*",
+              "RelativeToolTip": "OCP\\Servicos\\PaymentService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T13:37:27.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

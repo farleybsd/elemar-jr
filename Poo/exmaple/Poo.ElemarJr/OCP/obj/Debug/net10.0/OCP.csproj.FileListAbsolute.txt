@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\bin\Debug\net10.0\OCP.exe
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\bin\Debug\net10.0\OCP.deps.json
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\bin\Debug\net10.0\OCP.runtimeconfig.json
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\bin\Debug\net10.0\OCP.dll
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\bin\Debug\net10.0\OCP.pdb
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.AssemblyInfo.cs
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.sourcelink.json
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.dll
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\refint\OCP.dll
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.pdb
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\OCP.genruntimeconfig.cache
+C:\Git\elemar-jr\Poo\exmaple\Poo.ElemarJr\OCP\obj\Debug\net10.0\ref\OCP.dll
