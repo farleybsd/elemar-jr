@@ -1,0 +1,63 @@
+00:05:23.559,00:05:26.559
+Natan Barros: No nosso serviço fazemos isso
+
+00:05:56.784,00:05:59.784
+Natan Barros: Calculamos a quantidade de pods sem prejudicar os workers
+
+00:08:25.579,00:08:28.579
+wallace silva: liberar no final
+
+00:08:45.559,00:08:48.559
+wallace silva: Dispose
+
+00:18:47.119,00:18:50.119
+Natan Barros: Principalmente em consultas que exigem paralelismo
+
+00:35:31.650,00:35:34.650
+Natan Barros: Tem que olhar o plano de execução
+
+00:45:50.841,00:45:53.841
+Natan Barros: No entity ocorre também
+
+00:46:03.492,00:46:06.492
+Natan Barros: Eu sofri muito nos dois casos kk
+
+00:46:56.470,00:46:59.470
+Natan Barros: A explicação que dão nos foruns é que o input texto o receptor não sabe o que pode ser, então ele coloca dessa forma para ser "dinamico"
+
+00:47:20.361,00:47:23.361
+Natan Barros: O que acho ruim, poderia ter pelo menos um warning ^^
+
+02:01:36.277,02:01:39.277
+Natan Barros: Eu uso para Outbox
+
+02:24:31.687,02:24:34.687
+Natan Barros: Get()
+
+02:25:44.629,02:25:47.629
+Natan Barros: Muito verdade, para muitos casos pioram bastante o plano de execução
+
+02:27:39.973,02:27:42.973
+Natan Barros: kkkkkkkk
+
+02:28:06.009,02:28:09.009
+Natan Barros: Praticamente dobra a tabela
+
+02:29:08.860,02:29:11.860
+Natan Barros: Ja vi casos de specifications má feitas, ai acabou que ficou no "confia", até a escala gerar incidente
+
+02:30:52.343,02:30:55.343
+Natan Barros: Muito bom ^^
+
+02:31:17.901,02:31:20.901
+Natan Barros: Mal de todo dev
+
+02:35:11.669,02:35:14.669
+Gustavo Ferraz Fontes: Vou precisar sair. Obrigado Francisco, boa noite a todos.
+
+02:35:18.959,02:35:21.959
+Natan Barros: Passei por um problema recente de consultas dentro de Foreach, a refact foi utilizar in (parametros do foreach), reduzimos milhares de chamadas no banco. (vira e mexe aparece algo assim)
+
+02:41:15.219,02:41:18.219
+Natan Barros: Gostei muito, irei precisar sair. Boa noite!
+
