@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/SolutionItems/" />
+  <Folder Name="/src/">
+    <Project Path="PicPayManager/PicPayManager.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>

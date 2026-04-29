@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>584fc12e-9ff4-4f7e-b29b-c4e5dd5ff983</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Asp.Versioning.Mvc" Version="10.0.0" />
+	<PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="10.0.0" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.7" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Crosscutting\Auth\" />
+    <Folder Include="Crosscutting\Healthchecks\" />
+    <Folder Include="Crosscutting\HostedServices\" />
+    <Folder Include="Crosscutting\Messaging\" />
+    <Folder Include="Crosscutting\Middlewares\" />
+    <Folder Include="Transference\" />
+  </ItemGroup>
+
+</Project>

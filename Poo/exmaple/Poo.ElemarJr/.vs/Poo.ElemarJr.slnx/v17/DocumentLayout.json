@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\composicao\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|solutionrelative:composicao\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\composicao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|solutionrelative:composicao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cpf.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Cpf.cs",
+              "RelativeDocumentMoniker": "Composicao\\Cpf.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Cpf.cs",
+              "RelativeToolTip": "Composicao\\Cpf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T17:31:46.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Student.cs",
+              "RelativeDocumentMoniker": "Composicao\\Student.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Student.cs",
+              "RelativeToolTip": "Composicao\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T17:05:11.272Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

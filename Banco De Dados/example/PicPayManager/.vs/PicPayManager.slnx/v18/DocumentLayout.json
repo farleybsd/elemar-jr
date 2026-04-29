@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\extensions\\sqlserverservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\extensions\\sqlserverservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\useraccounts\\endpoints\\createbankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\useraccounts\\endpoints\\createbankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SqlServerServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
+              "RelativeToolTip": "PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T15:53:57.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateBankAccount.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
+              "RelativeToolTip": "PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAwEIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T15:25:16.11Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
