@@ -21,6 +21,9 @@ public static class SqlServerServiceCollectionExtensions
                 maxRetryDelay: TimeSpan.FromSeconds(1),  // Tempo máximo de espera entre as tentativas de retry
                 errorNumbersToAdd: Enumerable.Empty<int>());   // Lista de erros SQL adicionais que devem ser tratados como transitórios (vazio = usa padrão do EF)
             });
+            // Enable just em dev
+            options.EnableDetailedErrors();
+            options.EnableSensitiveDataLogging();
         });
         return services;
     }
