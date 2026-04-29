@@ -27,7 +27,6 @@
     <Folder Include="Crosscutting\HostedServices\" />
     <Folder Include="Crosscutting\Messaging\" />
     <Folder Include="Crosscutting\Middlewares\" />
-    <Folder Include="Transference\" />
   </ItemGroup>
 
 </Project>

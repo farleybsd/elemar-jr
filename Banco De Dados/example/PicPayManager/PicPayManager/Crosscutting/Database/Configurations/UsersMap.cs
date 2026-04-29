@@ -58,10 +58,16 @@ public class UsersMap : IEntityTypeConfiguration<User>
                .HasConversion(new EnumToStringConverter<UserType>())
                .HasColumnType("varchar(30)")
                .IsRequired();
+        // 1:n
+        builder
+              .HasMany(u => u.Transactions)
+              .WithOne()
+              .HasForeignKey("UserId")
+              .OnDelete(DeleteBehavior.Cascade)
+              .IsRequired();
 
-       
-
-
-
+        builder
+            .Navigation(u => u.Transactions)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }

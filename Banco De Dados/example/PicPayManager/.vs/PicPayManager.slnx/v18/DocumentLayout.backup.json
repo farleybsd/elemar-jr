@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\extensions\\sqlserverservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\extensions\\sqlserverservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\useraccounts\\endpoints\\createbankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\useraccounts\\endpoints\\createbankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Program.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Program.cs",
@@ -39,20 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SqlServerServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
-              "RelativeToolTip": "PicPayManager\\Crosscutting\\Extensions\\SqlServerServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T15:53:57.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CreateBankAccount.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
               "RelativeDocumentMoniker": "PicPayManager\\UserAccounts\\Endpoints\\CreateBankAccount.cs",
