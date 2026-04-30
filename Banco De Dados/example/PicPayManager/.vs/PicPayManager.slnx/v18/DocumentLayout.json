@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\users\\userrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\userrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\users\\interfaces\\iuserrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\interfaces\\iuserrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\transference\\endpoints\\createtransactionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\transference\\endpoints\\createtransactionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRepositoryWrite.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryWrite.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryWrite.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryWrite.cs",
+              "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryWrite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:58:00.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IUserRepositoryWrite.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\Interfaces\\IUserRepositoryWrite.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Users\\Interfaces\\IUserRepositoryWrite.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\Interfaces\\IUserRepositoryWrite.cs",
+              "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Users\\Interfaces\\IUserRepositoryWrite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:57:57.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepositoryRead.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
+              "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:54:08.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Transactions.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Transactions.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Transference\\Transactions.cs",
@@ -34,12 +85,11 @@
               "RelativeToolTip": "PicPayManager\\Transference\\Transactions.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwAsAAACXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T14:27:21.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T14:27:21.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "UsersMap.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
@@ -47,12 +97,11 @@
               "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAkwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:41:50.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-30T15:41:50.499Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CreateTransactionUser.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",

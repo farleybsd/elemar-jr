@@ -18,7 +18,9 @@ public class UserRepositoryRead : IUserRepositoryRead
     public async Task<IReadOnlyList<User>> GetAllAsync(CancellationToken cancellationToken)
     {
         return await _context.Users
-        .AsNoTracking()
-        .ToListAsync(cancellationToken);
+                             .TagWith("Buscar Todos Os Usuarios!")
+                             .TagWithCallSite()
+                             .AsNoTracking()
+                             .ToListAsync(cancellationToken);
     }
 }
