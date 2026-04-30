@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PicPayManager.Crosscutting.Database;
+using PicPayManager.Crosscutting.Database.Transaction;
 using PicPayManager.Crosscutting.Database.Users;
 using PicPayManager.Crosscutting.Database.Users.Interfaces;
 
@@ -32,6 +33,7 @@ public static class SqlServerServiceCollectionExtensions
     {
         services.AddScoped<IUserRepositoryRead, UserRepositoryRead>();
         services.AddScoped<IUserRepositoryWrite, UserRepositoryWrite>();
+        services.AddScoped<ITransactionRepositoryWrite, TransactionRepositoryWrite>();
         return services;
     }
 }

@@ -3,21 +3,22 @@ using PicPayManager.UserAccounts;
 
 namespace PicPayManager.Transference;
 
-public class Transaction
+public class Transactions
 {
-    private Transaction() { }
+    private Transactions() { }
     
         
     
-    public Transaction(TransactionOrigin transactionOrigin, TransactionDestination transactionDestination, FormasPagamento tipoPagamento, TransferBalance transferBalance)
+    public Transactions(TransactionOrigin transactionOrigin, TransactionDestination transactionDestination, TransferBalance transferBalance, int userId)
     {
         TransactionOrigin = transactionOrigin;
         TransactionDestination = transactionDestination;
-        TipoPagamento = tipoPagamento;
         TransferBalance = transferBalance;
+        UserId = userId;
     }
 
-    public int Id { get; set; }
+    public int Id { get;  }
+    public int UserId { get; }
     public TransactionOrigin TransactionOrigin { get; }
     public TransactionDestination TransactionDestination { get; set; }
     public FormasPagamento TipoPagamento { get; init; } = FormasPagamento.Pix;

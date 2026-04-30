@@ -9,9 +9,9 @@ using PicPayManager.UserAccounts;
 
 namespace PicPayManager.Crosscutting.Database.Configurations;
 
-public class TransactionMap : IEntityTypeConfiguration<Transaction>
+public class TransactionMap : IEntityTypeConfiguration<Transactions>
 {
-    public void Configure(EntityTypeBuilder<Transaction> builder)
+    public void Configure(EntityTypeBuilder<Transactions> builder)
     {
         builder.ToTable("Transactions");
         builder.HasKey(t => t.Id);

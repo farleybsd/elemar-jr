@@ -7,7 +7,7 @@ namespace PicPayManager.UserAccounts;
 
 public class User
 {
-    private readonly List<Transaction> _transactions = new();
+    private readonly List<Transactions> _transactions = new();
 
     private User() { }
     public User(Name name, Cpf cpf, Email email, WalletBalance walletBalance)
@@ -24,7 +24,7 @@ public class User
     public Email Email { get; }
     public WalletBalance WalletBalance { get; }
     public UserType UserType { get; init; } = UserType.Commonuser;
-    public IReadOnlyCollection<Transaction> Transactions => _transactions;
+    public IReadOnlyCollection<Transactions> Transactions => _transactions;
     public bool HasBalance => WalletBalance.Amount > 0;
     public void Debit(decimal amount) => WalletBalance.Debit(amount);
 
