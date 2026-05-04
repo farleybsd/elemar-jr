@@ -24,17 +24,15 @@ public class UsersMap : IEntityTypeConfiguration<User>
             ;
         });
 
-        builder.Property(s => s.Cpf)
-               .HasConversion(
-                   cpf => cpf.ToString(),
-                   value => Cpf.Parse(value))
-               .IsRequired()
-               .HasColumnType("char(11)")
-               .HasColumnName("Cpf");
+        builder.ComplexProperty(u => u.Cpf, cpfBuilder =>
+        {
+            cpfBuilder.Property(c => c._value)
+                .IsRequired()
+                .HasColumnType("char(11)")
+                .HasColumnName("Cpf");
+        });
 
-        builder.HasIndex(s => s.Cpf)
-               .IsUnique()
-               .HasDatabaseName("IX_Users_Cpf");
+        
 
 
         builder.ComplexProperty(s => s.Email, _emailbuilder =>
@@ -62,7 +60,7 @@ public class UsersMap : IEntityTypeConfiguration<User>
         builder
               .HasMany(u => u.Transactions)
               .WithOne()
-              .HasForeignKey("UserId")
+              .HasForeignKey(t => t.UserId)
               .OnDelete(DeleteBehavior.Cascade)
               .IsRequired();
 

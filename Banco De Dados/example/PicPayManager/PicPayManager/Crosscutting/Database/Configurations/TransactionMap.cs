@@ -44,5 +44,9 @@ public class TransactionMap : IEntityTypeConfiguration<Transactions>
                           .HasColumnName("TransferBalance")
                           .HasDefaultValue(0m);
         });
+
+        builder.Property(t => t.UserId)
+                .IsRequired()
+                .HasColumnName("UserId");
     }
 }

@@ -7,12 +7,8 @@
       "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\transference\\endpoints\\createtransactionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\transference\\endpoints\\createtransactionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\transference\\transactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\transference\\transactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\useraccounts\\endpoints\\searchallusertransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\useraccounts\\endpoints\\searchallusertransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\configurations\\usersmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -36,46 +32,35 @@
               "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
               "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAtwCMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:54:08.937Z",
+              "WhenOpened": "2026-05-04T15:14:48.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchAllUserTransactions.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
+              "RelativeDocumentMoniker": "PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
+              "RelativeToolTip": "PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIA3wBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T15:08:34.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Transactions.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Transactions.cs",
-              "RelativeDocumentMoniker": "PicPayManager\\Transference\\Transactions.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Transactions.cs",
-              "RelativeToolTip": "PicPayManager\\Transference\\Transactions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAsAAACXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T14:27:21.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "UsersMap.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
               "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Configurations\\UsersMap.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAkwEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwCIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T15:41:50.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateTransactionUser.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",
-              "RelativeDocumentMoniker": "PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",
-              "RelativeToolTip": "PicPayManager\\Transference\\Endpoints\\CreateTransactionUser.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAADwv0QAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T14:02:24.326Z",
+              "WhenOpened": "2026-05-04T15:04:44.523Z",
               "EditorCaption": ""
             }
           ]
