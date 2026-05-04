@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PicPayManager.Crosscutting.Commom;
 using PicPayManager.Crosscutting.Database.Users.Interfaces;
 using PicPayManager.Crosscutting.Interfaces;
 
@@ -24,9 +25,32 @@ public class SearchAllUserTransactions : IEndpoint
     {
         logger.LogDebug("Getting all user transactions");
 
-        var transactionUsers = await repository.GetTransactionUserByIdAsync(request.id, request.skip, request.take, cancellationToken);
+        if (request.id <= 0)
+        {
+            logger.LogWarning("Invalid user id: {UserId}", request.id);
 
-        return Results.Ok(transactionUsers);
+            return TypedResults.BadRequest(new
+            {
+                error = "Id do usuário inválido."
+            });
+        }
+
+
+        var transactionUsers = await repository.GetTransactionUserByIdAsync(
+           request.id,
+           request.skip,
+           request.take,
+           cancellationToken);
+
+         if (!transactionUsers.Value.Any())
+        {
+            return TypedResults.NotFound(new
+            {
+                error = "Não foi encontrada transação para esse usuário."
+            });
+        }
+
+        return TypedResults.Ok(transactionUsers);
     }
 }
 

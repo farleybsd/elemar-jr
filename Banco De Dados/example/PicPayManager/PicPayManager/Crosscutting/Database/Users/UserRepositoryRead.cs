@@ -30,6 +30,9 @@ public class UserRepositoryRead : IUserRepositoryRead
     {
         var transactionUsers = await _context
            .Users
+           .TagWith("Buscando Transacoes do Usuario!")
+           .TagWithCallSite()
+           .AsNoTrackingWithIdentityResolution()
            .Include(ac => ac.Transactions)
            .Skip(skip)
            .Take(take)
