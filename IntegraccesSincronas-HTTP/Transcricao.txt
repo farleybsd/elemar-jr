@@ -1,0 +1,959 @@
+00:00:00
+ 
+Fabio Diniz: Bom, pessoal, boa noite. Vamos começar que a maioria do pessoal já entrou aí. 5 minutos acho que é o suficiente. Eu já. Ah, cadê? Vamos só tirar aqui Bom, pessoal, boa noite a todos. Eu sou o Fábio. Vou conduzir aqui hoje para com vocês aqui o nosso encontro. Acho que é a primeira aula, né, que eu tenho aqui com vocês nessa turma. Hoje a gente vai tratar um pouco sobre eh integrações síncronas, tá? A gente vai ver algunsas formas aqui de fazer integrações síncronas. Eh, me pediram pra gente deixar as dúvidas mais pro final, tá? A gente vai passando aqui, vamos deixando as dúvidas pro final, mas se eventualmente alguma dúvida mais eh profunda surgir aí, fica à vontade de de levantar a mão aí, a gente pode trazer aqui, beleza? Bom, então a gente vai começar um pouco aqui com os fundamentos base, né, sobre eh integrações síncronas. Eh, primeira coisa que eu queria tratar com vocês, pessoal, é a gente falar aqui um pouco sobre processos síncronos, né? Então, trouxe aqui um exemplo bem bem simples aí. Quem já fez aí, já comprou algum imóvel, já vendeu algum imóvel, já deve ter passado para esse para esse pequeno processo aqui, tá?
+ 
+ 
+00:03:52
+ 
+Fabio Diniz: Então, a gente tem aqui alguns atores, né, eh, envolvidos no processo, são um comprador, o banco, o vendedor e o cartório de imóveis, tá? Então o comprador ele solicita um financiamento pro banco, certo? E o banco ele tem um período ali que ele fica hã que ele tem para poder analisar se ã esse comprador ele tem crédito ou não para poder fazer o o financiamento. Dado eh que o banco retorna, né, nesse caso aqui o com aprovação, né, ele aprova o financiamento, é realizada a operação, tá? E aí o realiza o pagamento do vendedor, ou seja, é preciso que essa etapa de análise de crédito seja eh finalizada para que o restante ocorra, certo? E a partir desse momento também que a operação ocorre, eh eh o comprador faz o o a solicitação do registro da transmissão daquele bem, né, na na no cartório de imóveis, certo? E aí ele também tem um período ali que esse cartório de imóveis fica, que ele tem para poder fazer o registro de fato e retornar pro comprador, confirmando que ele é o novo proprietário daquele eh imóvel, certo? Então isso é um processo síncrono, bem simples. Então a gente tem que aguardar, né, uma etapa anterior ser concluída para que a gente eh possa seguir, tá?
+ 
+ 
+00:05:15
+ 
+Fabio Diniz: Os exemplos práticos aí mais simples que a gente tem, né? Então, um exemplo clássico, né, de de pramento de pagamento, né? Então, quando a gente faz uma compra eh online, a gente só libera, né, só faz o despacho do pedido após que a transação de fato for confirmada. Então, eh, é um processo síncrono, né? Eu preciso aguardar que aquela, aquela transação seja confirmada, que ou seja, que eu recebi o valor do da venda para eu poder fazer o despacho. Outro exemplo é a autenticação de usuários, né? Então, quando eu só concedo o acesso quando eu valido que as credenciais são válidas e que realmente aquele usuário tem acesso a determinada área, determinado eh sistema. Bom, eh sistema de reserva de passagem aérea, mesma coisa, né? A gente tem que aguardar ali, ver se realmente tem aquele aquele acento que foi escolhido para ir depois, sim confirmar a reserva e marcar uma consulta, né? Ou seja, preciso que eu valide se na agenda tem a disponibilidade mesmo de um de um de um horário para poder fazer um agendamento e marcar aquela consulta. Então são todos esses são processos síncronos, tá? E aqui eu queria trazer para vocês também uma uma um conceito de de threads, tá?
+ 
+ 
+00:06:28
+ 
+Fabio Diniz: A gente vai falar um pouco aqui de threads e de núcleo, eh, de núcleos e de threads, que isso impacta eh diretamente, tá? Como a gente pensa eh sistemas, tá? vocês vão eh notar aqui ao longo do do da aula que vários eh várias formas, né, existe um motivo do porquê eh determinadas eh formas de se programar, não só em C#ARP, tá? Mas em outras linguagens também, elas elas são da maneira que são. As implementações mudam um pouco, tá? Mas o no o conceito são do é do jeito que é por conta de da forma como o hardware funciona, de como um computador de fato funciona. Ou seja, não é muito uma escolha da linguagem em si. Vocês vão perceber que várias eh várias implementações que tem no do C#ARP, de novo, em outras linguagens, muito se dá por conta de como o hardware de fato funciona, tá? Então aqui a gente tem duas duas telas, tá? Essas duas aqui só foram prints, esse esse mais claro aqui da esquerda, eh, de um computador antigo que eu tinha, tá? E aqui, se vocês repararem, tá? Ele tem eh um eh são quatro núcleos, ou seja, é um quad core, certo? e ele tem quatro processadores lógicos, ou seja, pro eh sistema operacional, ele ele consegue enxergar quatro quatro eh formas de de eh quatro núcleas para ele poder trabalhar, né?
+ 
+ 
+00:07:55
+ 
+Fabio Diniz: Ele tem uma carga de trabalho, tá? E aqui vocês veem que eles têm várias threads, ou seja, existem muitas trads rodando ao mesmo tempo nesses quatro núcleos, beleza? Então isso aqui são trads que o próprio sistema operacional cede, que rodam em cima de cada um desses núcleos. Já nesse segundo caso aqui, né, ness que é a máquina que eu tenho atualmente, ele tem seis núcleos, ou seja, fisicamente existem seis núcleos, seis corps, mas ele tem 12 processadores lógicos, tá? O que que isso quer dizer? Que a cada processador ele tem eh duas threads, tá? Ou seja, a nível de hardware, o hardware toma conta disso. Pro pro pro pro pro sistema operacional, é como se fossem eh 12 processadores, mas na prática são seis, tá? Fisicamente são seis. Então isso é uma abstração que o hardware hardware dá para o sistema operacional poder trabalhar, tá? Então eh isso aqui é o é o hyper threading, né, que a Intel trouxe tem bastante tempo já, né? E no caso do dos AMDs são é esse SMT. Beleza? Então, ou seja, a essa essa quando a gente trabalha a gente fala quando a gente começar a falar aqui um pouco de threads aqui dentro do C#ARP, tá relacionado com as threads aqui do do sistema operacional, beleza?
+ 
+ 
+00:09:11
+ 
+Fabio Diniz: Então, existem vários modelos, tá? Vou passar alguns aqui só para vocês entenderem que isso existe, tá? E na prática o qual que o DNET trabalha. Então, a gente tem as threads de núcleo, tá? que são as trads que normalmente o o normalmente não são as trads que o sistema operacional trabalha. Então o sistema opera o um software quando ele sobe, né, ele cria um processo dentro do do sistema operacional. O sistema operacional sede threads, tá? Que são linhas de execução para aquele software trabalhar. Então é o sistema operacional que toma o controle disso tudo, tá? Então a gente solicita para ele através de APIs ali do sistema operacional, né? É, no Linux é de um jeito, no no Windows é de outra, mas na prática você o os softwares recebem essas threads para eles poderem fazer a execução. Então o kernel ele tem um controle aqui, tá? Ele faz o controle. O kernel, no caso o sistema operacional, né? Ele tem uma tabela de processo, ou seja, são todos os processos que estão rodando naquele naquele sistema e uma tabela de threads, tá? Então são recursos. Isso aqui é algo também que eu vou enfatizar bastante aqui com vocês, que é a questão de recursos.
+ 
+ 
+00:10:19
+ 
+Fabio Diniz: Todo recurso, todo o recurso numa máquina, ele é escasso, ele é limitado. Então nós temos que fazer bom uso desses recursos pra gente poder eh extrair o máximo do nosso hardware, certo? Então um processo, tá? Ele pode pera aí que tem mais gente entrando aqui. Eh, então as trads de núcleo, tá? Elas são gerenciadas pelo próprio sistema operacional, beleza? Tá? Ele é o responsável pelo agendamento, ou seja, ele que vai, ele que controla quando que vai executar. Existe um processo de um um escalonador de processo, tá? Para quem conhece um pouco mais profundamente, que ele vai girando, né? Ele usa um sistema de round robbing que eles chamam, que ele vai girando e cada processo na máquina vai ganhando um tempo de CPU ali. Isso varia de cada sistema operacional de CPU, tá? Mas normalmente, se eu não me engano, é 50 anosundos, algo assim. Eh, e ele vai ganhando, cada um vai ganhando um um espaço de tempo para ele executar. Então, isso tudo é feito pelo sistema operacional. é ele que controla, ele que vai escalonando, ele que vai rotacionando ali os o os processos que eh ganham o CPU para serem executados, tá?
+ 
+ 
+00:11:33
+ 
+Fabio Diniz: Qual que é o o desafio nesse caso? A troca de contexto, tá? Ela ela é mais custosa. E quando tem um processo rodando dentro do dentro do processador, existem várias eh vamos colocar assim, variáveis, tá? Chama registradores, né? no caso do mais interno do no hardware, existem vários dados que estão ali dentro para poderem ser executados, serem processados, tá? Isso gera um contexto, ou seja, toda vez que um processo, uma tradux paraa CPU para ela poder trabalhar, certo? E aí ele executa o que tem que executar dentro daquele time frame, ou seja, tem um um um espaço de tempo ali para ser executado. Terminou esse espaço de tempo, ele perde, sai da CPU e um outro processo com uma outra, pode ser o mesmo processo, mas uma outra tradu. Se vocês eh observarem, deixa eu voltar aqui a imagem aqui, vocês vão ver que tem cash, tá? Para quem já estudou aqui um pouquinho também, tá? Esses cashes aqui, o cash L1, L2, L, agora eu não lembro. É, não vou lembrar porque é pelo tamanho. O L1 ele é o mais próximo possível do núcleo do processador, por isso que ele é o menor de todos.
+ 
+ 
+00:12:43
+ 
+Fabio Diniz: Ou seja, ele ele, se eu não me engano, não tenho certeza, ele roda no mesmo clock, esse mesmo clock aqui do processador. Então ele é a memória mais rápido que tá. processador tem acesso direto a ela. O L2 ela tá um pouco mais distante, o L3 ela tá mais distante ainda. São são três níveis de memória dentro do próprio processador. Então elas são usadas para armazenarem esse contexto, tá? Então, quando um um uma traduí de novo é o hardware que toma conta disso junto com com o sistema operacional, dependendo de como isso é feito, tem uma heística, o sistema entende ali o o que esse cara vai voltar logo, ele mantém certas coisas nesses níveis de memória para que ela voltar paraa CPU, essa troca de contexto ter um custo menor, tá pessoal? Apesar essas memórias, essa aqui ela é extremamente mais rápida do que a memória do sistema mesmo, a memória RAM. Todas elas são mais rápidas, tá? Só que elas são muito pequenas, né? 8 M hoje em dia é muito pequeno. Então o sistema ele usa essas memórias para poder fazer eh otimização nessas trocas de contexto, tá? Por que que eu tô dizendo isso? Porque existe um custo, tá?
+ 
+ 
+00:13:52
+ 
+Fabio Diniz: a gente fazer o uso de de threads. Então, essa aqui são as threads de de núcleo, como elas são as threads que são controladas pelo próprio sistema operacional, né? Então, a gente tem uma confiança maior nessas threads também, no gerenciamento e no nos recursos. E essa questão aqui de comunicação, a gente vai ver também mais paraa frente, que é como se eu tenho várias threads rodando, às vezes elas estão rodando eh uma carga de trabalho que foi desmembrada, certo? Ou seja, eu quebrei pedaços menores para poder ganhar performance. Em algum momento elas têm que eh sincronizar, elas têm que se unir de alguma forma, tá? Ou tem que se comunicar, dependendo dos dados. Então, isso tudo tem que ser controlado pra gente não ter problemas de acesso à memória, não ter problema de eh pegar dados que tá em algumas algumas questões. E aqui a gente tem também as threads de usuário, tá? Elas são um pouco diferente, tá? Então elas são gerenciadas a nível de usuário por uma biblioteca ou alguma implementação proprietária, ou seja, ela ela acontece dentro do próprio processo, tá? No final das contas vai rodar no tradu, tá? Sempre no de núcleo, ou seja, um processo sempre vai rodar numa tradal, tá?
+ 
+ 
+00:15:09
+ 
+Fabio Diniz: Essa eh esse agendamento e e o é controlado pelo próprio processo de usuário, tá? A troca de contexto, ela tende a ser mais simples, porque ela é feita internamente dentro do do software, tá? Elas são mais flexíveis e mais leves, porém, né, a gente pode ter essa questão de a gente tem que a gente tem que fazer o mau controle dos recursos em sincronização. E tem as híbridas, tá? que é um formato um pouco parecido com com a de usuário. Então você vai ter o próprio software também, ele vai ter alguma um conjunto de de threads aqui em tendas, vai ter uma biblioteca também gerenciando e ela vai ela mapeia, ela ela sabe fazer o mapeamento para as trads de núcleo para poder serem executados, tá? Então elas são iniciadas a nível de usuário e mapeadas a nível de de núcleo. Ela ela tem eficiência então combinada ali do do nível de usuário robusta de núcleo, combina a flexibilidade da da TR de usuário com a robustez de núcleo, tá? Isso aqui de novo é só para vocês saberem que existe. No final das contas o Dnet ele ele ele usa, tá? Ele trabalha com a trad de núcleo. É isso aqui que ele trabalha, tá?
+ 
+ 
+00:16:17
+ 
+Fabio Diniz: Quando você utilizar uma tradnet, você tá utilizando uma trad de núcleo, ou seja, ela foi cedida pelo SEO, ela foi criada pelo sistema operacional, beleza? E como que o dnet de novo? Eh, vamos voltar aqui, recursos, tá? Recursos são escassos. Então, um uma das grandes eh vantagens que o C#ARP tem, que o a a o Dnet em si, né, o o toda a estrutura que a Microsoft criou, é que ela sempre tá muito ela tá sempre sendo otimizada. Ela tá sempre buscando maneiras de fazer o maior, o melhor uso possível dos recursos da máquina, do hardware, que são escassos, tá? Então, como a gente viu ali,
+Marcelo Henrique: M.
+Fabio Diniz: existe um um pequeno tem um custo, tem um overhead de você fazer tanto a criação de uma nova trado, quanto de fazer trocas eh entre contextos, ou seja, tirar uma trad de execução e colocar outra, tá? Sabendo disso, o Dnet ele tem esse conceito de thread pool. que é o quê? É um piscina, né? Então, uma piscina de threads, ou seja, ele vai ele vai guardando as threads que ele vai obtendo do do sistema operacional, tá? E ele vai fazendo eh os gerenciamentos delas, ele não gerencia qual tradu, ele não tem esse controle, tá?
+ 
+ 
+00:17:32
+ 
+Fabio Diniz: Isso é feito pelo sistema operacional. Tem um operacional que define lá no escalonador de processos dele qual tradu. O que o DNET faz é gerenciar as trads que ele recebeu para ele saber se ele aloca ela para uma atividade ou não, se ele, enfim, a gente vai ver aqui mais para frente. Então, essas trads elas elas podem ser reutilizadas para as várias tarefas, eh, evitando esse overhead de criação de threads, tá? Quando a gente fala overhead aqui, pessoal, eh, o tempo de criação é milésimos de segundos. é muito rápido. Só que isso para um para para CPU que trabalha na casa dos nanosegundos, isso é uma eternidade. Então, se a gente tem um processo que cria muito trades o tempo inteiro, isso no final das contas gera no todo, né, gera um um overhead gigante. Então, quando você utiliza eh as trads no DNET, né, ele faz um pequeno gerenciamento ali pra gente, né, que entra lá com garba de collector, né, que vocês viram lá a aulas com Bruno, né, que ele tratou com vocês. É, e ela tem então esse gerenciamento para evitar de ficar pedindo trades o tempo todo pro sistema operacional, até porque as trads, eu não sei o limite, tá?
+ 
+ 
+00:18:41
+ 
+Fabio Diniz: Nunca pesquisei, mas com certeza deve ter um limite de quantos trads o próprio sistema operacional pode ter, tá? Porque de novo é um recurso escasso. Então, as trades inativas elas são disponíveis, são mantidas disponíveis para novas tarefas, tá? De novo para melhor reutilização dos recursos, tá? E um detalhe importantíssimo, eh, a gente sempre pensar em cooperação e não competição. E a gente vai ver muito isso que, eh, quando a gente tá falando de paralelismo, concorrência, a gente tem que tomar muito cuidado. Tem um conceito que chama eh a palavra, quando tem concorrência demais, tem um tem zonas de risco que eh tem que ser tratadas na concorrência, principalmente em questão de sincronização, condições de corrida, lembrei. é, podem gerar condições de corrida, ou seja, várias várias e trades tentando obter acesso a um determinado recurso, tá? Esse recurso recurso pode ser tanto CPU quanto memória, quanto acesso a disco, acesso a qualquer tipo de armazenamento, né? acesso à rede, eh acesso à impressora. Então, assim, eh tem vários processos rodando em concorrência, podem gerar, eh, condições de corrida, tá? Então, o sistema operacional, ele já lida bem com isso, tá?
+ 
+ 
+00:20:00
+ 
+Fabio Diniz: Ele sabe lidar bem com isso. E aí o DNET também junto com RadPool, ele tenta eh nos auxiliar nisso. E a gente vai falar aqui agora um pouco, tá, sobre chamadas síncronas e assíncronas, que é diferente de um processo síncrono e assíncrono, tá? Então, a chamada síncrona é uma operação onde o controle é devolvido ao chamador somente após a conclusão da operação, certo? Uma chamada assíncrona é uma operação onde o controle é devolvido imediatamente ao chamador, permitindo que ele continue a execução enquanto a operação ocorre eh em paralelo, tá? Então aqui a gente tem alguns exemplos. Então, por exemplo, esse processo do work, tá? Ele é um, ele é um um método muito simples, né? Deixa eu pegar o ponteiro aqui. Ele é um método extremamente simples, né? Simplesmente não recebe nenhum parâmetro, retorna um void, certo? Então ele tem um test. Run do e aqui ele tem um, para quem não conhece, tá? Esse aqui é um chama anonymous function, né? Ou seja, uma função anônima que eu crio ela aqui internamente do do run. Deixa eu só aceitar que chegou mais gente aqui.
+ 
+ 
+00:21:11
+ 
+Fabio Diniz: Pera. Então, pessoal, toda vez no DNET, tá, que a gente fizer um tesk. Run, todas as vezes, ele vai solicitar o tradol trad, beleza? Ele vai falar: "Treadpol, preciso de executar uma coisa aqui, eh, preciso de uma de uma thread." Que que vai acontecer? Se tiver thread disponível no tradol, ele entrega essa trad, associa ela a tesc e vai fazer a execução. Se não tiver uma trad disponível, seja assim todas as que estão ali estão sendo utilizadas, ele vai pedir ao ao sistema operacional, né? Sistema operacional preciso de mais uma trad. Essa que eu tenho aqui não tá dando conta. Sistema operacional vai criar essa trad, vai atribuir ao processo, né, do do software a nível de de sistema operacional. E aí ele tem disponível mais uma trad e ele passa essa trad para uma tesquec o pelo dnet, tá? Toda vez que ele faz a criação de uma trad, tá? Eu não sei se mudou nas versões mais novas agora, mas eh acho que o Bruno deve ter tratado isso com vocês também. Toda vez que ele pede uma trad nova, ele mantém se ela ela entra em inatividade, ela permanece no p de trads. Ela não é devolvida e não é destruída eh sozinha, né?
+ 
+ 
+00:22:25
+ 
+Fabio Diniz: Você pode pedir às vezes para destruir um trad, mas o o próprio trade pool não faz isso. Então esse aqui é um exemplo de chamada assíncrona. Por quê? Assim que você chama esse tesk.r run que ele solicita, tenho aqui o o software tá tá executando, certo? Quando ele chega ali naquele ponto, fala test. Run, ele vai simplesmente fazer isso que que eu expliquei. Ele vai puxar uma thread que tá disponível no thread pool. Se não tiver disponível, vai pedir um pro SO, vai atribuir, associar essa thread para dentro dessa tesc. E esse é a única coisa que o run faz. Ele pega uma trad, associa aquela tesque e devolve. Ou seja, o controle, né? A quando chamou isso daqui imediatamente que ele executou o run, que é fazer esse processo, ele retorna para cá, tá? Ele não tá preocupado se isso aqui vai ser executado ou não, beleza? Ou seja, eu não tô falando do work, tô falando do run. Ele aqui foi executado. Trabalho dele era pega uma trad, associa essa tesque com esse trabalho aqui, essa função no caso que eu passei. E aí isso aqui vai ser executado.
+ 
+ 
+00:23:34
+ 
+Fabio Diniz: Ele não tem controle quando isso é executado, porque não é o o DNET que define quem que vai ganhar tempo de CPU. Beleza? Então, assim que o esse método fez isso, ele retorna para cá, para esse chamador aqui de quem quem tava executando aqui chamou processe. Como não tem nada, como não tem uma variável recebendo, ele segue, ok? Então isso é uma chamada assíncrona. Aqui embaixo é a mesma coisa, tá? As pessoas costumam confundir demais por causa do a, né? A palavra não ajuda muito, mas é o mesmo processo. Aqui tá acontecendo a mesma coisa. Test. run, ele simplesmente fazer essa esse esse processo de me dá mais uma tradu associar aqui na nessa tesc para isso daqui ser executado com a diferença que assim que isso retornou para cá, quem chamou, né, quem fez essa chamada, falou: "Olha, eu quero aguardar". Então, o que que ele vai entender? Ele vai entender que quer aguardar o que tá sendo executado aqui dentro. Enquanto isso daqui não terminar, não finalizar, tá? Quem já mexeu com tesque ali, já deu uma olhada internamente das tasks, tem lá eh task running, running to completion, completed, por exemplo, tá?
+ 
+ 
+00:24:46
+ 
+Fabio Diniz: O completed é o terminou. Então, enquanto não der, ele tá falando que ele que ele vai ficar aguardando. Aí, qual que é o ponto aqui? Que que vocês têm que entender aqui que é importante? Eu tô executando o software, cheguei ali naquele momento, tem uma traduta, uma tradutr run, ele vai lá no no trad, vai receber uma trada, né? Nesse caso aqui de cima, assim que retornou, ou seja, essa trad aqui tá lá dentro da tesquec, retornou para essa aqui que tava chamando, ela vai seguir a vida dela, porque milésimos de segundos, n segundos ali, atribui uma trada, para essa tesque e retorna. Ela não tem nada, não atribuíse a nenhuma variável, não tem mais nenhum outro processamento para fazer, ela segue. Nesse outro caso, quando tem um weight, pode ser que esse do work ele leve zer 05 segundos ou 5 minutos, eu não sei. Só que o chamador, ou seja, essa tradou esse teste contrado falando: "Eu quero aguardar". São duas trades diferentes. Tem e prestem atenção nesse ponto. Tem uma tradut. Run. Olha, quero fazer uma nova execução.
+ 
+ 
+00:25:57
+ 
+Fabio Diniz: Vai subir uma nova tesque com uma nova thread ali dentro. Beleza? Essa trad aqui que chegou aqui, que pediu execução, ela decidiu aguardar. Como isso aqui pode demorar 10 segundos, 5 minutos, essa thread vai ficar presa ali. Ou seja, é recurso que eu não tô utilizando. A TR tá exatele, naquele ponto. Que que o Dnet faz quando eu coloco o weight? Ele fala: "Ah, não, então beleza. Você quer aguardar isso aqui, terminar a execução? Então essa trad aqui que tá associada a sua execução principal, vamos dizer assim, não não é isso, tá? Mas só para vocês entenderem o conceito, essa trad aqui eu não vou deixar ela aqui parada aguardando isso daqui. Eu vou colocar ela no trado, eh eh sem utilização, beleza? Quando isso daqui terminar, eu retorno para esse ponto aqui que você tava e associo ela de volta. Pode ser que ele não associe a mesma trad, tá? Para quem já viu aí também, né? Afinidade de trads, esse tipo de coisa. tem a ver com isso, tá? Sincronização de contexto. A gente vai ver um pouco disso mais para frente.
+ 
+ 
+00:26:59
+ 
+Fabio Diniz: Eh, então, para ele não deixar essa thread parada no weight, ele disponibiliza ela no tradol e tá executando, tá várias trades lá executando, ganhando CPU, perdendo CPU e tal. Pode ser que essa tradizou, ela vá atender um outro processo dentro do software, uma outra tesque, uma outra um outro processo, uma outra tarefa. Então ele tá fazendo um reaproveitamento da da da thread, ou seja, tá fazendo um bom uso do do sistema. E aí a partir do momento que o do work termina, ou seja, ele vai dar um return, né? Vai ter um um test complet, ah beleza, terminou. Pô, esse cara aqui, ele falou comigo que queria aguardar, eu tenho que voltar com ele nesse ponto para ele receber o retorno desse do work, né? No caso ali não tá pondo uma variável, né? Mas ele ele diz que ele quer aguardar o retorno. Aí ele vai voltar com um contexto naquele ponto. Pode ser que ele traga ou não a mesma thread aqui para se para para para executar e aí ele segue a vida dele. Beleza? O daqui de baixo a mesma, é o mesmo caso daqui do de cima, tá? É o mesmo caso. Por quê?
+ 
+ 
+00:28:08
+ 
+Fabio Diniz: Por convenção no DNET. Métodos que terminam com a assinatura Eync. Eu entendo que ele retorna um que ele é um método assíncrono que retorna uma tesque, tá? Por convenção, tá? Por convenção. Pode ser que a pessoa programa o errado lá dentro, não seja, mas por convenção eu trato que sim. Então ele é assíncrono porque assim que eu chamar ele, ele vai me retornar uma tesque aqui. E eu decidi que não quero aguardar, não tenho aweight, eu sigo, tá? De baixo também assíncrono, tá? Porque ele tem uma weight aqui de novo também tem um sync. Então por convenção, eu também sei que isso aqui é um método que é aitable, né? A gente chama que é aable, tá? Qual que é o o as questões que vocês têm que ficar de olho aqui nesses casos, tá? Void, muito cuidado com void, tá? Quando é quando é algo assíncrono, porque isso aqui não tem nenhuma variável segurando o retorno disso. Então, se estourar exceção, se por qualquer motivo, eu não tenho, a partir do momento que eu instanciei, segui aqui minha vida, mesmo que eu deu o weight aqui, tá?
+ 
+ 
+00:29:11
+ 
+Fabio Diniz: Como eu não tô colocando isso numa variável, eu não sei o que que tá acontecendo lá dentro, tá? está rodando em paralelo. Se eu, independente de como eu fiz, se eu não capturar exceção direito, enfim, eu posso ter vários problemas, tá? Então isso aqui é o que a gente chama de fire and forget, a gente não, né? É o que chamam de fire and forget, tá? Isso tem uso. Se vocês eh, quem já mexeu com loging, né? Normalmente quando você faz um, pega lá num trycat e joga num log, né? ser log, enfim, qualquer tipo de log. Normalmente ele é um um assíncrono eh void, ou seja, ele não retorna nada, ele não ele não você simplesmente chama, adiciona uma carga lá de trabalho que é gravar aquele log, né? Ou seja, na verdade, você tá só avisando, né, se ele vai gravar, se ele vai despachar numa fila, enfim, eh, depende da configuração. Eh, então ele ele ele simplesmente é um fire forget, eu passo para eles, vai ser executado lá paralelamente, eu não tenho controle sobre isso, tá? Então, ou seja, tem uso disso, tá?
+ 
+ 
+00:30:08
+ 
+Fabio Diniz: Só que são usos bem bem eh pontuais, bem específicos. Então, tem que tomar cuidado com esse retornos de void, tá? Quando tá usando a a sincronismo. Beleza? Aqui são os mesmos casos com a diferença que agora eu tô retornando uma tesque, certo? Ou seja, quando eu retorno uma tesque, quem tá chamando esses métodos, ele vai receber essa tesque de volta. E aí ele decide o que que ele vai fazer, se ele quer aguardar, se ele quer não aguardar, enfim. Tá? Então esse primeiro caso aqui é o que a gente chama de offload de de fazer um offload de carga. Ou seja, aqui eu tenho a mesma coisa do do daquele primeiro caso, né? Então esse método aqui chamou o test. Run. Test. Run. Ele vai lá tá aqui executando. Chegou no test. Run. Opa, vou subir uma nova tesk. Então, ô, ô, Thread Pool, me dá uma nova thread aí que eu tenho que executar essa tarefa aqui. Assim que ele associar a tarefa, o o run retorna, tá? E aqui, como tem o o return, né? Então, essa tesque aqui é devolvida para quem chamou esse método.
+ 
+ 
+00:31:16
+ 
+Fabio Diniz: Esse trabalho aqui eu não sei quando que ele quando ele inicia a test. Run, ele já inicia o trabalho, tá? Ele já ele já ele já é running por padrão. Só que eu não sei quando que ele vai tomar a CPU, porque quem toma conta de quem vai tomar tempo de CPU para ser executado de fato é o SO. Beleza? Então aqui a mesma coisa também do outro com a diferença que eu falei que eu tô que eu quero fazer o weight. Então essa tradutora que eu chamo aqui o test. Run, ele fala: "Não, eu quero aguardar isso aqui e terminar. você aguardar essa carga de trabalho que eu tô te dando aqui. Eu vou aguardar e terminar. Que que o trader? Ah, tá. Você quer aguardar? Eu não sei quanto tempo que isso aqui vai demorar. Vou pegar essa trad aqui sua, vou disponibilizar ela no trad. Terminou? Ele, opa, terminou. Tem que voltar com contexto aqui nesse ponto dos do do software para esse cara eh continuar. Então ele vai atribuir uma trad aqui que novamente pode ser a mesma ou não, tá? E aí ele ele segue, tá?
+ 
+ 
+00:32:14
+ 
+Fabio Diniz: Aqui, pessoal, para quem não conhece também, né? Hoje em dia não é tão comum aumente falar disso, né? Mas tem o contador de programa, né? Para quem é mais velho igual eu, já deve ter passado por isso. Antigamente ainda existe, tá? Então, ou seja, o contador de programa, ele mostra exatamente onde a execução tá, naquela linha de execução. Então, para essa tradução linear que vai empilhando, por isso que tem a stack, né? A pilha é isso, porque ele vai empilhando a execução, depois ele vai desempilhando, então ele sabe onde que ele tem que voltar, tá? Eh, aqui a mesma coisa também do outro, só que de novo, né, que trabalha por convenção, eu sei que retornam um uma tesque, né, porque é a, então eu consigo retornar uma tesquisa com a diferença que eu tô falando para eu tô dizendo, ó, é para guardar, então vai ter o S5 que é o weight aqui. Beleza? Então, essas são as diferenças que a gente tem. Agora a gente vai ver como que a gente trabalha com isso, tá? Nesse ponto específico aqui, pessoal, vocês têm alguma dúvida? Porque eu sei que esse aqui é um é um que chamam mais, normalmente gera mais eh debates, então a gente faz falar sobre isso lá mais na frente pode não fazer sentido.
+ 
+ 
+00:33:21
+ 
+Fabio Diniz: Alguém tem alguma dúvida, alguma questão? Ficou claro? Diga aí,
+Felipe Neves: Opa, Fábio, só para confirmar, eh, então,
+Fabio Diniz: Felipe.
+Felipe Neves: toda vez que a gente trabalha com algum processo síncrono, independente se tem a weight ou não, igual você comentou ali, automaticamente vai ser criada uma outra thread, né? Não vamos utilizar aquela mesma principal que a gente vem executando a
+Fabio Diniz: Nunca é a mesma,
+Felipe Neves: rotina.
+Fabio Diniz: tá? E você falou processo síncrono, toma cuidado. Por isso que eu coloquei chamada, tá? processo síncrono não é a mesma coisa com a chamada síncrona. São coisas diferentes. Eu posso ter um processo que ele é síncrono o processo, ou seja, o o a execução daquilo que eu tô fazendo no geral, mas a chamada em si pode ser uma chamada assíncrona,
+Felipe Neves: Certo.
+Fabio Diniz: porque um processo, vamos supor, vamos supor que eu tenho o sistema ali de passagem aérea, beleza? Pode ser que eu chama sincronamente o sistema que verifica se tem assento disponível ou não, mas o processo em ser síncrono. Não tem como eu dizer pro pro passageiro lá que tem disponível ou não enquanto isso aqui não me retornar.
+ 
+ 
+00:34:24
+ 
+Fabio Diniz: Concorda? O processo de negócio,
+Felipe Neves: Sim.
+Fabio Diniz: ele pode ser síncrono e ter eh chamadas assíncronas dentro do software. São coisas distintas. Toma cuidado com isso, tá? Que isso pode pode gerar confusão também. Só que sempre que eu dou um tesk. do run sempre, sempre, sempre ele vai chamar, ele vai pedir uma outra trad, não é a trad que tá executando, tá? Eu não sei quanto tempo você tem de Dnet. Antigamente, antes de chegar o o Netcore,
+Felipe Neves: S
+Fabio Diniz: no Framework, que que era o problema que tinha no system. Web, as aplicações web, tá, pessoal? Eh, de novo, não sei quem que tá aqui, quem é mais novo, quem é mais velho. As aplicações web antigamente do DNET, elas rodavam sempre em cima do IS, né, que é o Internet Information Service. Beleza? Ele tinha uma dependência de um de um de um de um namespace, que era um código, né, no final das contas, system. Web. Esse system. Web ele funcionava de uma forma que era o seguinte, ele era um servidor web, né?
+ 
+ 
+00:35:20
+ 
+Fabio Diniz: Então ele tinha uma tradut, né? Mas na porta 80, o único trabalho dele era esse. Ele fica escutando, ele pegava, chegava uma requisição, ele jogava para uma outra trad. Era a única coisa que ele fazia era isso. Recebe, joga para uma trad, recebe, joga para uma trad. Recebe, joga para uma trad, recebe, joga para uma trad. Ou seja, quem tá escutando não pode ser a mesma trad que tá executando, porque senão não consigo escutar o próximo. Concorda? Eu sou um servidor web, tem várias pessoas acessando o meu site. Se a mesma trado ali, tô escutando na porta, escutar, na verdade, eu tô assim, eu tô aguardando uma conexão. Se eu sou mesmo que se quem é a trad que tá guardando, é a trad que tá executando, como é que eu vou escutar o próximo? Então, se eu conseguiria atender um cliente, um cliente por vez, não é assim que funciona. Beleza? Mas qual que era o problema além no system? essa trad que ele associava a uma a sessão, né, uma sessão web, né?
+ 
+ 
+00:36:17
+ 
+Fabio Diniz: Toda vez que eu faço uma conexão no servidor, eu criei uma sessão, mas a cada conexão, né? Ou seja, cada podia ir lá pedir a página A, B, C e D, tá tudo dentro da mesma sessão, certo? Mas cada um é uma chamada web diferente. A trade atribuí era a mesma tradisição. Então, o que que acontecia? Eh, podia podia acontecer de alguma variável, alguma coisa, não tá mais disponível. Aí tem os detalhe, se vocês quiserem pesquisar, né, o system.Wweb, o problema era esse, que na hora que ele voltava de uma execução, alguns dados não estavam disponíveis, que era o problema de de sincronização de contexto, tá? Que o DNETC ajudou a resolver isso. Por quê? Porque ele eliminou a dependência do sistema web, não tem essa dependência no no DNETCE, a partir do DNETCE, beleza? Ficou claro, ô Felipe,
+Felipe Neves: Sim. Eh, mestrado é uma chamada.
+Fabio Diniz: como é que é?
+Felipe Neves: É só confirmar porque nos dois primeiros exemplos ali nós temos o teste outro, mas embaixo não. Mas assim,
+Fabio Diniz: aqui ou aqui nessa página ou
+Felipe Neves: oi na outra.
+Fabio Diniz: nessa
+ 
+ 
+00:37:34
+ 
+Felipe Neves: Ã, é aí mesmo, porque não tenho test. Aí nesse caso, para os quatro exemplos a gente tá falando de criar outra thread ou só para os dois primeiros? Só para confirmar
+Fabio Diniz: é porque de novo aqui dentro, nesse caso aqui, ó, isso aqui é por convenção,
+Felipe Neves: mesmo.
+Fabio Diniz: tá? Por convenção, quando tem um A5, eu entendo que ele é um ele é uma table assim, ó. Então ele retorna uma tesqu. Se ele retorna uma tesque, ele tá criando uma tesque. Se ele tá criando uma tesque, ele tá pedindo uma uma trad nova,
+Felipe Neves: Mas no terceiro ele não tá pedindo ativar de novo.
+Fabio Diniz: entendeu?
+Felipe Neves: Então, né? Ele tá na principal ainda.
+Fabio Diniz: Aqui não,
+Felipe Neves: É.
+Fabio Diniz: não. Aqui não. Só te dei o exemplo o seguinte. Quando tem assinatura e aqui no final, por convenção, eu entendo que ele é um ele é um que que esse método do work ele é nesse formato aqui, ó. Ele aqui, tá? Esquece esse aqui de baixo. Ele retorna uma tesque. Esse cara aqui retorna um tesque, entendeu?
+ 
+ 
+00:38:27
+ 
+Felipe Neves: Aham.
+Fabio Diniz: Ele retorna uma tesque por convenção de novo. Por convenção, que isso aqui é o nome, né? Eu dou o nome de um método do jeito que eu quiser,
+Felipe Neves: Mas se eu chamar ele,
+Fabio Diniz: tá?
+Felipe Neves: se eu chamar um cara, né, que retorna uma testa igual esse terceiro caso aí, sem passar o a weight,
+Fabio Diniz: Não,
+Felipe Neves: é,
+Fabio Diniz: o W tem nada a ver com isso. É o retorno desse método.
+Felipe Neves: tá?
+Fabio Diniz: O eu só tô dizendo se eu se eu pego essa tesquec aqui e mando ela guardar ou
+Felipe Neves: Então,
+Fabio Diniz: não.
+Felipe Neves: passando a ou não, se é um cara que retorna uma tesa, automaticamente vai pedir uma trad, né?
+Fabio Diniz: Vai. Em algum momento ele criou uma outra trad porque ele tá te dando uma tesqu. Uma tesque tem uma trad associada a ele sempre.
+Felipe Neves: Tá
+Fabio Diniz: Não tem como executar o trabalho aqui, porque para você criar uma tesque,
+Felipe Neves: beleza.
+Fabio Diniz: ela tem que usar o run. O o que o run faz é isso. Me dá uma tradí que eu vou executar uma carga aqui de trabalho,
+Felipe Neves: Uhum. E aí qualquer método que retorna uma tesque,
+ 
+ 
+00:39:20
+ 
+Fabio Diniz: entendeu?
+Felipe Neves: eu posso entender que então ele vai pedir uma pro
+Fabio Diniz: Vai,
+Felipe Neves: Fechou?
+Fabio Diniz: ele vai trabalhar em cima de outra trad.
+Felipe Neves: Valeu,
+Fabio Diniz: Mais alguém, pessoal? Tá? Então vamos seguir aqui. Aí aqui tem um detalhe importantíssimo. Vocês estão vendo que eu tô falando o tempo todo, ah, eu associo uma tradesc. Eu associo uma tradesc. Eu associo uma trad, tá? Tesquec a mesma coisa que trad, tá? Tesquec é bem mais novo, tá? Tesquec foi não sabe a data, novo assim, né? 10, 15 anos, sei lá. Mas é é mais novo no DNET em si, né? Que DNET tem mais de 20. Então, eh, quando eu dou um tesque delay, eu tô falando para essa tesque aqui, tá? Que eu posso parar ela, ou seja, a trada, eu posso falar, ó, aguarda x tempo, aguarda 10 segundos. Que que o Dnet vai entender? Pô, se você quer deixar essa tesque tá em delay, ou seja, você quer gerar um atraso nela de 10 segundos, um atraso de processamento, né, de execução, se você quer fazer isso durante 10 segundos, a a trad, eu não vou deixar ela parada porque senão eu tô fazendo mau uso do recurso.
+ 
+ 
+00:40:41
+ 
+Fabio Diniz: Vou pegar essa tradizar ela no no pool. A partir do momento que deu os 10 segundos que você me pediu, eu vou pegar uma uma trad, vou associar a sua tesque para ela voltar a executar. Beleza? Aqui quando eu falo tradu dormir. Se ela tá dentro de uma tesque ou não, outra história. Qual que é o perigo disso aqui? Se eu não tiver uma outra traduta, essa trad aqui voltar, ela nunca volta. Ela por si só, ela não volta. Ela nunca vai tomar CPU, manda ela ir dormir. Quem executa numa no na CPU sempre uma trad, nunca uma tesc. Beleza? Então muita atenção com isso, tá? Muita, muita atenção. Isso aqui parece besteira. Eu não vou lembrar de casos aqui agora, mas eu já vi casos que que deram problema por conta disso, tá? A pessoa mandou dormir, eh, mandou a trad e dormir aí simplesmente para, tá? Então, você tem um servidor web, por exemplo, tem lá uma uma request sendo executada e num ponto da request você manda a trad dela e dormir, acabou, não volta. A não ser que uma outra tradna ela, faça ela acordar.
+ 
+ 
+00:41:54
+ 
+Fabio Diniz: Beleza? Aí agora a gente vai falar um pouco de CPU bound e a e a IO Bound, tá? Então, CPU bound são operações que tão que é que são limitadas pelo processador, ou seja, elas demandam muito processamento, né, do processador, tá? Então, cálculos matemáticos complexos, complexos, compressão e descompressão de dados, renderização de gráficos, ou seja, eu demando de CPU. É, vale o mesmo para ser para GPU, tá? Eh, e a Eobound são eh, né, operações então que eu dependo de entrada e saída de dados, rede, armazenamento, enfim, eh, qualquer coisa nesse nesse sentido. Então, aqui eu vou ter, né, um exemplo de CPU bound, ou seja, aquele caso lá que a gente viu, né, então tem um processo aqui, CPU bound work, eu chamo um test. run para rodar isso aqui na CBU, ou seja, a trad minha ali, ela não, ela pode ser liberada para executar outras coisas, enquanto esse trabalho tá sendo executado ali em em paralelo, tá? Aqui com a diferença que eu retorno, tá? Ou seja, eu criei aqui com o run, criei uma tesquec nova, foi atribuído uma um um uma thread para essa tesc, passei que o trabalho a ser feito esse aqui, essa função e retornei essa tesque para cá.
+ 
+ 
+00:43:14
+ 
+Fabio Diniz: Ou seja, quem chamou esse esse processo do work vai decidir se quer fazer a weight ou não em cima dessa dessa tesqu. Ele tem o domínio, ele que recebeu a tesk. Eu simplesmente instanciei aqui o tesque e retornei aqui. Não, eu falei: "Olha, aguarde esse trabalho que eu tô instanciando". Beleza? Aguarde ele terminar. Eu falei aqui explicitamente, aguarde ele terminar para depois eu seguir. Beleza? Então, esses dois fazem eh offload de de para uma trad no no trad, tá? Então, tem vários casos. Fale aí, Farle.
+Farley Souza: Ô, Fábio, boa noite. Tudo joia?
+Fabio Diniz: Boa noite.
+Farley Souza: Só eh,
+Fabio Diniz: Tudo certo?
+Farley Souza: professor, só peguei a ideia. Se eu então, quando eu crio uma rotina que eu tô vou retornar uma tesque, então automaticamente eu tô jogando essa carga de trabalho com processador, porque esse cara vai lá, vai dar um tesque room, vai subir uma traduit, se eu quero aguardar ou não quero aguardar. E se o meu método ele não retornar uma tesque, esse trabalho só fica em memória?
+ 
+ 
+00:44:24
+ 
+Fabio Diniz: Se o seu método não retornar Não
+Farley Souza: Vamos pôr assim,
+Fabio Diniz: entendi.
+Farley Souza: em vez de tá ali tesque process, ele tivesse um vod ou um intjeto
+Fabio Diniz: Um void é on fire forget. É igual eu mostrei aquela hora.
+Farley Souza: complexo.
+Fabio Diniz: Se eu não retorno nada, ele vai colocar aquilo num processo em paralelo, certo? E voltando à aula do Bruno, né? Você tem stack, tem o HIP. Beleza?
+Farley Souza: Aham.
+Fabio Diniz: Eu não tenho uma uma eu não tenho um apontamento na HIP para aquele cara que eu criei na na Steck. Desculpa.
+Farley Souza: Entendi. Então vamos pôr,
+Fabio Diniz: O
+Farley Souza: se eu tivesse colocando ali um buan,
+Fabio Diniz: quê?
+Farley Souza: esse cara ele não tá, ele não iria pro processador, ele estaria só em memória.
+Fabio Diniz: Não, não vai executar no processador,
+Farley Souza: Na hip,
+Fabio Diniz: cara. Vai executar sempre aqui.
+Farley Souza: mesmo se ele não tiver dentro de uma tesque
+Fabio Diniz: Ele pegou.
+Farley Souza: ponto1,
+Fabio Diniz: Não, eu não entendi essa pergunta aqui. Não tem como eu não tá num run,
+Farley Souza: tipo,
+ 
+ 
+00:45:13
+ 
+Fabio Diniz: tá vendo, ó?
+Farley Souza: não,
+Fabio Diniz: Não tem como,
+Farley Souza: isso que eu tô falando.
+Fabio Diniz: não tem
+Farley Souza: Imagina que não tem o tesque e eu não retorno no tesque pontuan,
+Fabio Diniz: como.
+Farley Souza: que seja o método assim, verificar qualquer coisa e no final desse méd vai retornar um
+Fabio Diniz: Mas não tá,
+Farley Souza: boleano isso que eu quero saber.
+Fabio Diniz: mas aí onde que em que horas que eu fiz o testor run?
+Farley Souza: Se eu não colocar o tesque dentro do meu método, eu não tô
+Fabio Diniz: Mas como é que você vai? Mas é obrignet vai nem deixar você compilar,
+Farley Souza: jog,
+Fabio Diniz: né? Porque se aqui ele tem retorna tesque uma tesque aqui para retornar. Como é que ele vai como é que ele vai fazer?
+Farley Souza: mas eu tô falando sem os tesques. Ou eu eu acho que eu não tô sabendo explicar.
+Fabio Diniz: Não, então você tá falando do void lá,
+Felipe Neves: Что?
+Fabio Diniz: ó.
+Farley Souza: É,
+Fabio Diniz: Você tá falando desse aqui,
+Farley Souza: ou se fosse um vod ou se fosse um buha ou se fosse um int.
+Fabio Diniz: não? Sim, mas aí se for um void, você pode fazer o que você quiser.
+ 
+ 
+00:45:56
+ 
+Fabio Diniz: Se você não fizer um tesque, não vai ter tesque. Se for um void aqui, você não precisa, você faz do jeito que você quiser, né? Aí não faz sentido o que você tá me dizendo,
+Felipe Neves: Ô,
+Fabio Diniz: tá?
+Felipe Neves: Farley,
+Farley Souza: Acho que eu não consegui perguntar.
+Felipe Neves: eh, eu acho que eu entendi seu ponto, mas aí você me confirma, tá? você tá comentando sobre uma outra rotina que chama uma
+Farley Souza: Oi,
+Felipe Neves: rotina que faz uma chamada eh de um método assíncrono, né? Mas ele não ele não passa um um a, ele não não faz nada com aquele retorno. Seria isso?
+Fabio Diniz: Se não tem retorno é F forget, vai entrar nesse caso aqui.
+Felipe Neves: Isso é pelo que eu entendi, é isso.
+Farley Souza: Isso,
+Felipe Neves: Ele só chama,
+Fabio Diniz: só chama ele.
+Felipe Neves: mas ele não vai usar nada.
+Farley Souza: isso.
+Fabio Diniz: Ele vai, assim que ele subir o ponto run, ele vai, ele vai retornar. Porque, lembrando, ó, uma chamada assíncrona é uma chamada que retorna o controle pro chamador imediatamente. Ele não tá preocupado porque tá rodando lá dentro,
+Farley Souza: Entendi.
+Fabio Diniz: entendeu?
+ 
+ 
+00:47:01
+ 
+Fabio Diniz: Eu chamei, ele ele subiu a tes que se eu não mandei aguardar, cara, ele vai,
+Farley Souza: Угуm.
+Fabio Diniz: ele vai embora. Quem já mexeu aqui com JavaScript já deve ter, é mais fácil você ver isso, porque no JavaScript você não coloca ali promise, né? Aí ele pula na hora. Ali vai ser a mesma coisa. Se eu não coloco um a weight, ele pula na hora. E se eu tenho aquilo dentro de um loop, alguma coisa, você vai ver um monte de coisa, parece que tá pulando. Do nada tem você tem break points parado em outras partes do software. Uma hora o break point tá numa num lugar, outra hora ele tá em outro. Por quê? Você mandou um monte de coisa rodar em paralelo, ele não tem uma sequência mais. Ele tá executando tudo em paralelo. Na hora que ganha CPU, você tem um break point ali, chama, ele para. Diz aí, Vanderley.
+Vanderlei Henrique: Volta, volta naquele exemplo lá onde tem os dois métvor.
+Fabio Diniz: Esse
+Vanderlei Henrique: Não, lá mais paraa
+Fabio Diniz: aqui
+Vanderlei Henrique: frente. Aí, nesse segundo aí,
+Fabio Diniz: esse
+Vanderlei Henrique: eu não teria um overhead desnecessário, porque eu estaria forçando uma weight no m do CP bound.
+ 
+ 
+00:48:08
+ 
+Fabio Diniz: não, não. Sim, que eu tô só tô dando de exemplo, né? Algo bem simples, né? Eu só tô dizendo que você pode, você pode fazer uma uma carga do CPU e você retornar a tesque. Aí o que acontece? Quem chamou esse método aqui vai receber uma tesque se ele quer fazer a weight ou não. Ou seja, eu passei eu passei o a a responsabilidade de decidir isso pro chamador. Aqui eu tô dizendo que eu tô mandando aguardar, ou seja, o chamador mesmo ele recebendo uma tesque lá, ele não consegue dizer que isso aqui não vai ser executado antes, entendeu?
+Vanderlei Henrique: Entendi. Mas, mas seria considerado uma uma prática, né?
+Fabio Diniz: Depende, cara, depende de do que que você tá do que que você tá processando. Não sei.
+Vanderlei Henrique: É um processo CPU bound do do CPU bound
+Fabio Diniz: Sim, mas vamos supor que é um processo síncrono. Eu tenho que esperar aquele cálculo ser feito.
+Vanderlei Henrique: por
+Fabio Diniz: Processo não é chamada, tá? O processo depende de uma conta lá. Se eu não esperar que ela terminar sem o número calculado, eu não, eu não consigo seguir,
+ 
+ 
+00:49:08
+ 
+Vanderlei Henrique: e porque porque até onde eu lembro de ter estudado é o uso de assincronia
+Fabio Diniz: entendeu?
+Vanderlei Henrique: ismo, né? O A5 o A sempre em processos iobound. Nesse caso eu não tenho Iobound. Isso que eu queria entender se faz faria sentido.
+Fabio Diniz: Ah, esse aqui é CPU bound,
+Vanderlei Henrique: Sim,
+Fabio Diniz: né?
+Vanderlei Henrique: mas eu tô usando a weight ass no segundo exemplo,
+Fabio Diniz: Sim. Não,
+Vanderlei Henrique: né?
+Fabio Diniz: a gente vai ver a IO mais para frente, mas que eu tô de CPO bound.
+Vanderlei Henrique: Ah, tá.
+Fabio Diniz: Ascronismo não tá ligado com a IO bound não, cara. Eu posso ter a sincronismo sem a bound. São são duas coisas diferentes. Por isso que eu falei aqui, ó, que a gente vai começar, a gente vai ver os dois casos,
+Vanderlei Henrique: Ah, entendi.
+Fabio Diniz: beleza?
+Vanderlei Henrique: Beleza.
+Fabio Diniz: A gente tem a gente tem CPU bound e temos a bound,
+Vanderlei Henrique: Ah,
+Fabio Diniz: beleza?
+Vanderlei Henrique: beleza.
+Fabio Diniz: Isso aqui que é importante, tá, pessoal? Eh, por isso que eu gosto, eu sou, eu sou meio chato com alguns termos, porque eu sei que, porque eu também era assim,
+ 
+ 
+00:49:59
+ 
+Vanderlei Henrique: Porque eu sei que eu também.
+Fabio Diniz: tem alguém que tá com o microfone aberto, se puder fechar aí, que tá, eu tava voltando retorno aqui para mim. Eh, se a gente não entende esses pequenos detalhes, a gente acaba se confundindo como que a coisa funciona, tá? Então, é muito importante. Tesque não é trad, por isso que eu fui enfático isso aqui várias vezes, não é a mesma coisa. Uma tradque para executar aquela tarefa. Beleza? Esse é o primeiro ponto. Segundo ponto, eu não tô preso, tá? Uma tesque, uma uma thread, o que seja, eu não tô preso a sincronismo ou sincronismo. Sou eu que defino o que eu quero fazer. Independente se eu tô usando teste que eu ou não tô, eu que tô programando, eu que tô dizendo o que que eu quero fazer, tá? Uma terceira coisa, não, eu não tenho obrigatoriedade em usar CPU bound ou IO bound com ascronismo ou sincronismo. Não tem essa obrigação. De novo, é como que eu programo. Depende da minha. Inclusive, nós vamos ver, nós vamos ver aqui eh métodos que eh de CPU, de IO, que a gente vai ver que tem a parte que é assíncrona e não assíncrona, né?
+ 
+ 
+00:51:07
+ 
+Fabio Diniz: Síncrona no caso, né? Então não tem essa essa essa obrigatoriedade, tá? Ah, vou fazer um IO, tem que ser assíncrono não mesmo, porque tá, agora vou a nível de hardware de novo. Tudo na máquina roda de maneira assíncrona. Tudo, tudo, tudo, tudo, tudo, tudo. Você pede as coisas pra máquina, ela vai pedir pro hardware, aí em algum momento o hardware vai deixar algo pronto, aí vai ter, por isso que tem um negócio chama interrupção dentro de hardware. Aí ele vai gerar uma interrupção, o SO vai capturar essa interrupção, vai entender que X coisa que ele pediu tá pronto e ele vai lá pegar. Mas enfim, isso aí já é mais já é mais fora, mas só para vocês entenderem, tá? O hardware por natureza ele é assíncrono, tá? Então aqui são são exemplos de CP bound, tá? Então aqui agora um di bound, o o é é Vanderley que perguntou, né? Eh, então eu vou ter um read file, por exemplo, tá? Aí eu vou utilizar aqui um um new stream reader, né? Passando o PEF, tá? E aí eu vou fazendo a leitura aqui.
+ 
+ 
+00:52:11
+ 
+Fabio Diniz: Não preocupe, tá? Nesse read to end. A gente vai ver isso aqui mais paraa frente, tá? Então faço um read aqui. Eu falo, eu quero aguardar porque não faz sentido eu seguir, né, sem ter lido o conteúdo inteiro, ou seja, se eu ter feito a leitura, a leitura que eu pedi. Ele é assíncrono, mas eu estou aguardando. Qual que é a diferença? Na hora que chegou ali a trad ali e mandou aguardar, a tradu que pediu para fazer a leitura é diferente da traditura. Aí, enquanto aqui tá fazendo a leitura, ele pode ler 1 KB ou 10.000 MB, 10 GB. Obviamente ler 1 KB é muito mais rápido que ler 10 GB. Então, enquanto ele tá lá lendo, eu tô falando assim: "Olha, essa traduis do conteúdo. Não faz sentido eu seguir sem eu ter o conteúdo que eu quero ler do arquivo. Que que o o o DNET vai fazer? vai pegar essa trad aqui e vai disponibilizar no no pool, enquanto essa aqui tá lá lendo, ela tá lendo, ela tá fazendo a leitura lá do ali, vamos supor que é disco, né?
+ 
+ 
+00:53:13
+ 
+Fabio Diniz: É stream, né? Não sei se é disco, se não é, tem file pf ali, né? Então não deve ser disco. Eh, armazenamento, né? Não pode nem falar disco hoje em dia, porque a gente também não sabe se é disco. Então, a diferença é só essa, mas é assíncrono, tá? É assíncrono. Eu estou aguardando porque eu não vou seguir, né? Como é que eu vou dar o o return aqui desse content se eu não aguardei e fazer leitura? Não tem jeito. Não tem jeito. E é assíncrono. Isso aqui é assíncrono. Tem um tem um aqui, ó. Beleza? E aqui o process file, ou seja, eu quero fazer um processamento de do arquivo de maneira assíncron, né? Eu faço aqui a mesma coisa, né? Faço uma weight aqui, só que esse aqui, esse eu tô chamando esse cara aqui, né? Aí ele mesmo tá aguardando e eu tô falando que eu quero aguardar ele terminar. Então vamos supor que isso aqui tivesse um loop, não sei quê. Enquanto isso aqui tudo não terminar, esse cara aqui não vai retornar.
+ 
+ 
+00:54:14
+ 
+Fabio Diniz: Beleza? Esse cara aqui não vai retornar. Ou seja, a tradicar guardando, ó. Não, ela pediu para guardar, né? Então ela vai pro tradnet vai entender. Ah, você quer ficar aguardando enquanto isso aqui não finalizar, tá? que aqui retornou também uma tesque. Aí vocês vão vendo por padrão, ó, convenção. Se terminou com a Sync, eu entendo que retorna uma tesque, beleza? É assim que ele terminar, ele vai ver o conteúdo e vai, ó, file completed. Beleza? Então, essa aqui é uma operação de IO, bem que simples. E aqui uma que une as duas coisas, né? Ou seja, vou fazer a leitura de um arquivo e vou processar os dados que eu tô lendo desse arquivo eh em conjunto, tá? Então vou ter aquele read file que a gente utilizou ali, né? Ou seja, ele faz a leitura. Assim que ele lê eu tenho o conteúdo. Aí eu vou pegar esse processamento e vou jogar no aqui. Eu tô fazendo um um CPU bound, ó. Tô fazendo um process aqui dentro que tá recebendo esse conteúdo.
+ 
+ 
+00:55:15
+ 
+Fabio Diniz: Beleza? Ou seja, aqui, ó, pediu uma nova thread, tá executando em paralelo, só que eu mandei aguardar. Então a tradução falou: "Ó, quero aguardar. Enquanto eu não tiver o retorno desse processamento, tá OK? Eu não posso seguir. Então tradou aqui, vai disponibilizar ela no pool, enquanto outra thread do Tesk run tá executando isso daqui. Beleza? Então a gente faz uma leitura assíncrona do do arquivo, tá? Isso aqui um detalhe muito importante, tá, pessoal? Não sei se vocês pescaram, eh, nem sempre a sincronismo é melhor, tá? Nem sempre a gente fala muito da performance, não sei quê, então síncrono, tal, não é bem assim. Se você, por exemplo, tem um sistema totalmente assíno, que ele faz muito acesso a disco, a armazenamento ou a rede, vamos supor, se eu tô fazendo muito assincronismo, ou seja, eu tô subindo muita gente em paralelo, cara, eu tô pesando aquele recurso, ou seja, é mais gente acessando o o eu tô possibilitando potencialmente, né, ter mais acesso ao à unidade de armazenamento, mais acesso à unidade de de rede, beleza?
+ 
+ 
+00:56:28
+ 
+Fabio Diniz: Quando eu faço às vezes uma chamada síncrona, dependendo de como é que eu faço, né? Assíncroniz também, né? Dá para eu controlar isso, mas eh no síncrono eu eu tenho mais controle, ou seja, tem menos chamadas sendo sendo eh eh ocorrendo ao mesmo tempo. Então assim, lembrando, todo recurso na máquina ele é escasso. Todo, todo, todo. Não tem nenhum que não é nenhum. Todos são escassos. Então tem que usar ele da melhor forma possível, tá? Aqui a gente vai ver agora um detalhezinho. Isso aqui também eh tem pegadinha, tá? Então aqui, igual a gente viu, né? Eu tenho eu tenho dois que chegou mais gente aqui. Alguém caiu aí eu tenho aqui, ô pessoal, só para como foi a primeira aula nossa. Eh, vocês estão fazendo intervalo eh às 8, como que tá sendo aí com com os outros instrutores?
+Anderson Perim: Acho que é perto das 8,
+Fabio Diniz: Ninguém.
+Farley Souza: É,
+Anderson Perim: né, gente?
+Farley Souza: é, tem vezes que é o oito e pouquinho.
+Anderson Perim: É,
+Farley Souza: Tem algo acho que não tem
+ 
+ 
+00:57:33
+ 
+Anderson Perim: a hora que você achar melhor aí,
+Fabio Diniz: Ah,
+Anderson Perim: Fão, fica à vontade também.
+Fabio Diniz: não. Tranquilo.
+Farley Souza: C8.
+Anderson Perim: Não,
+Fabio Diniz: Ó, vamos avançar mais um pouco aqui. A gente para aí uns 5 minutinhos, beleza?
+Farley Souza: Beleza.
+Anderson Perim: beleza.
+Fabio Diniz: Aí aqui, pessoal, o seguinte, ó. Nesse esse primeiro caso aqui, tá? Eu tenho uma tesque faz uma leitura desse arquivo file 1 e tenho uma tesque que faz um arquivo file 2. Aqui é a mesma coisa. Faço a leitura no arquivo file um aqui do arquivo file 2. Qual que é a grande diferença aqui? Nesse primeiro caso, oight tá aqui. Nesse segundo caso, o está aqui. Prestem bem atenção nisso. Quem de novo, quem quem tá acostumado já com JavaScript já deve ter pego isso com mais com mais detalhe, né? Mas no DNET não é tão claro como eu coloquei o aqui, isso aqui vai rodar de maneira assíncrona. Beleza? Só que somente quando esse cara aqui finalizar que eu vou para cá, que eu vou pro tesque porque eu dei um aate aqui, ou seja, tava executando, eu mandei fazer a leitura ali de novo, read file, então eu entendo que tem uma tesque, vai ter uma leitura com a outra thread.
+ 
+ 
+00:58:45
+ 
+Fabio Diniz: Essa trad aqui não sabe quanto tempo demora para isso aqui ser executado. Que que o trad? Você falou que é um weight, então vou pegar sua trad, vou disponibilizar ela no pool enquanto que isso aqui tá sendo lido. Aí de novo o arquivo ali, o file um pode ter 5 K byt ou pode ter 5 GB, 5 t que vai demorar muito mais tempo. Então isso lá vai ficar lá lendo, vai lendo, vai lendo, vai lendo. Terminou o Dnet. Opa, terminou. Vou chamar o cara de volta aqui porque ele falou que queria guardar o que ele me pediu, tá pronto. Vou voltar com ele aqui com a trad dele para ele seguir. Aí que ele vai falar: "Ah, beleza, terminei. Agora eu vou paraa tesk. Agora vou fazer a mesma coisa no file do beleza? Fala aí, Ola.
+wallace silva: É, só tirar uma dúvida, eh, ele, o, no caso C#ARP ali, na segundo caso, ele vai, ele faz igual o JavaScript, dá o pral e aguarda os dois ao mesmo tempo.
+Fabio Diniz: Elas vão chegar ali.
+wallace silva: Yeah.
+Fabio Diniz: É isso que eu quero mostrar pro pessoal.
+ 
+ 
+00:59:41
+ 
+Fabio Diniz: A gente vai chegar ali. Fala aí,
+Felipe Neves: Eh, Fábio, dado que, bom, você contou várias vezes,
+Fabio Diniz: Felipe.
+Felipe Neves: no caso do do exemplo um aqui, eh, ele vai processar, né, eh, de forma assíncrona, mas depois ele vai voltar ali pro tesque na linha que chamou de fato. Mas assim, pode até parecer uma pergunta besta, mas é porque eu realmente não tenho essa essa clareza,
+Fabio Diniz: S.
+Felipe Neves: tá? Qual seria eh a vantagem, o impacto de fazer uma chamada assíncrona, sendo que o nosso processo ele vai esperar ela ser concluída para ele continuar?
+Fabio Diniz: Não. Então aí você vai entender aqui agora no segundo exemplo.
+Felipe Neves: Eu entendo.
+Fabio Diniz: É a diferença desses dois aqui.
+Felipe Neves: Ah,
+Fabio Diniz: Beleza? Nesse segundo, nesse primeiro caso,
+Felipe Neves: beleza.
+Fabio Diniz: como eu coloquei o weight, a leitura desse segundo arquivo só vai ocorrer quando essa daqui terminar. Aqui, como eu dei, eu dei o read file,
+Felipe Neves: Sim.
+Fabio Diniz: não dei o, ele automaticamente, lembra, chamadas assíncronas, o retorno é imediato ao chamador. Ou seja, ele estanciou aqui o test lá dentro. De qualquer forma, ele retornou para mim.
+ 
+ 
+01:00:45
+ 
+Fabio Diniz: Assim que ele retornou para mim, para mim é a minha trad, né? Eu tenho aqui minha tradutando.
+Felipe Neves: M.
+Fabio Diniz: Eu vandei, faz tesque um. Ele vai chamar uma trad aqui e vai deixar rodando. Assim que ele instanciar essa tesque um ali, ele retorna para mim. E aí, então, essa aqui tá rodando lá em paralelo, ó. Tá acontecendo e já retornou para mim. Aí, que que eu fiz? Opa, vou iniciar agora tesque dois. Aí vai pedir uma outra tesque, uma outra tradutar essa leitura. Então, vou ter duas leituras ocorrendo de de eh maneira paralela. E eu não sei, tá? Eu não consigo aqui nesse formato. A gente vai ver o se falou do do allí a gente vai ver em seguida. A única coisa que eu sei é o seguinte. Eh, pedi para ler, na mesma hora retornou para cá, na mesma hora eu passei pra segunda tesque, mandei ler a segunda, na mesma hora eu caí aqui, aí eu mandei dar o oit. Então, tá lendo esses dois caras em paralelo. Eu não sei qual que vai terminar primeiro, que eu não sei o tamanho dos arquivos.
+ 
+ 
+01:01:37
+ 
+Fabio Diniz: Eu nem sei se eles estão na mesma aqui, porque tá só o o nome do arquivo, né? Mas eles poderiam estar em unidades de armazenamento diferentes, beleza? Tamanhos diferentes mesmo, tamanhos iguais. Eu não sei como é que vai ser a leitura, né? no hardware, como é que vai se comportar. Tem toda uma maneira lá de fazer leitura. Então, não sei quando que cada um vai terminar, só que aqui eu mandei dar um wait. Então, tô falando, enquanto a tesque um não me retornar pronta, eu não sigo. Mas ó, que elas estão lendo em paralelo aqui, não, ó, que eu mandei ler. Enquanto que não terminar por causa do a eu não vou para debaixo aqui, não. Aqui mandei ler, já me retornou. Não sei se tá lendo ou não ainda. Não sei se já ganhou o CPU para começar a fazer a leitura. E aí eu já falei, ó, começa essa daqui também. Ele vai começar essa daqui. Aí aqui embaixo falei: "Ó, agora aguarda a primeira. Pode ser que a primeira termine primeiro e aí eu já pego o resultado. Pode ser que a segunda termine primeiro.
+ 
+ 
+01:02:29
+ 
+Fabio Diniz: Só que como eu mandei aguardar a primeira primeiro,
+Felipe Neves: Ja.
+Fabio Diniz: enquanto eu não fizer a leitura da primeira, eu não consigo ir para fazer o segundo da segunda. Nesse caso aqui específico, tá? A gente vai ver outras formas ali na frente. Oi, Karin.
+Karine Trevisan: Boa noite. Só uma nos dois métodos em termos de performance,
+Fabio Diniz: Boa noite.
+Karine Trevisan: qual seria melhor?
+Fabio Diniz: Você diz desse e
+Karine Trevisan: Isso mesmo a gente não tendo uma ideia,
+Fabio Diniz: desse é
+Karine Trevisan: por exemplo, de tamanho de arquivos, né?
+Fabio Diniz: aqui. Então aqui é são só exemplos, tá pessoal? Porque pode ser, tá? Não é o caso aqui, mas pode ser que eu dependa da leitura do primeiro arquivo para fazer alguma coisa no segundo. Pode ser, não é esse caso. Então faz sentido eu fazer a leitura dessa forma. Quando eu não dependo, eu posso fazer dessa forma, ou seja, eu não preciso dar o a weight já aqui de cara, que aí eu tenho um ganho, que eu vou fazer a leitura realmente em paralelo com o, eh, sabendo que se eu tô fazendo as duas leituras em paralelo na mesma unidade, eu tô pesando aquela unidade.
+ 
+ 
+01:03:26
+ 
+Fabio Diniz: Concorda? Vamos supor que a leitura, o o truput da unidade seja 1 m/ segs. Se eu tô lendo dois arquivos de 1 GB, não importa se eles estão em paralelo, a unidade vai entregar 1 mega. Se é 500k de um lado, 500 do outro, 200 de um, 800 do outro, não importa. Ela vai ler 1 me por por segundo, que é o que ela consegue ler. Beleza? Só que no software eu fiz a leitura em paralelo, tá? De novo aqui são só exemplos para você mais para frente a gente vai ver esses mais complexos. Mas aqui é só para vocês entenderem que se eu colocar o weight a weight aqui, obrigatoriamente estou aguardando esse primeiro e aqui não. Aqui eu tô instanciando as leituras de fato em paralelo. Veja, não tô falando em asincronismo, eu tô falando em paralelismo, certo? Esse é outro conceito que é importante vocês diferenciarem. Nem tudo que é paralelo é assíncrono e nem tudo que é assíncrono é paralelo. Aqui tá assíncrono e não tá paralelo. Eu tô esperando o primeiro terminar para começar o segundo.
+ 
+ 
+01:04:27
+ 
+Fabio Diniz: Beleza? Aqui tá assíncrono e paralelo. Porque eu iniciei esse aqui logo em seguida iniciei esse aqui. Pode ser, tá? Que dependendo do de novo, tá? Porque o o eu instanciei esse, vou pro próximo. Isso é CPU, né, gente? Lembra disso? Tô indo lá na CPU e fala: "Faz tal coisa". Pode ser que eu perdi CPU, né? Ou seja, eu mandei executar isso aqui, perdi CPU, ou seja, o SO me tirou da CPU. Beleza? E esse cara aqui tá numa outra trad, ele tá lá, às vezes ele ganhou o CPU e tá lendo. Assim que ele chegou aqui embaixo, que ele me devolveu para eu seguir, esse cara aqui da dessa trad aqui já terminou de ler. Aí na hora que chegar aqui no na verdade já tá pronto. Isso pode acontecer. Só que eu não tenho essa garantia porque não é determinístico. Eu não sei quando quem que vai ganhar CPU, quanto tempo, nada disso é determinístico. Então ponto aqui é só vocês entenderem isso. Se eu usar o a aqui, eu só vou pra segunda quando essa daqui terminar.
+ 
+ 
+01:05:22
+ 
+Fabio Diniz: Aqui não. Aqui eu instancio, já recebo o controle aqui de volta, vou pra segunda e aqui eu mando aguardar. Aí aqui sim. Aqui eu tô dizendo, ó, só vou paraa segunda e segundo resultado aqui quando esse primeiro aqui eu terminar a leitura dele. Ou seja, o o de fato teve o retorno aqui, eu eu mandei ler ele. Beleza? Aí agora nós vamos ver formas mais elaboradas disso, tá? Então aqui, por exemplo, ó, nesse primeiro caso, eu tô fazendo a leitura de um arquivo um, tô fazendo a leitura de um arquivo dois e tô lendo rede, né? Que lógico, né, um exemplo simples, né, mas tô fazendo alguma leitura em algum API, alguma coisa. Ou seja, são são ioss diferentes. Vamos supor ali que os arquivos estão na mesma unidade de de armazenamento, só que a rede com certeza é outro é outro dispositivo, certo? Então ali eu ganho em paralelismo de fato, porque eu não tô eu não tô fazendo, eu eu no meu software eu tô fazendo concorrência nos dois arquivos, né? Porque é a mesma unidade, mas no caso do terceira chamada ali não. Então eu eu consigo fazer isso de forma paralela e efetiva, tá?
+ 
+ 
+01:06:32
+ 
+Fabio Diniz: Aí eu uso esse when all tesques que eu coloquei aqui finalizarem, aí nela eu dou um a weight, porque eu tô instanciando uma tesque, tá? que tá guardando cada uma dessas tesques aqui. Então aqui é bloqueante, ó. Ó aqui, aqui ele para, não é bloqueante, que bloqueante é diferente. Aqui ele para. Então, ou seja, eu só vou seguir para cá quando isso daqui finalizar, ou seja, quando eu tiver o when, all, ou seja, todos, todos, todos, todos iss aqui tem que terminar. Não importa a ordem, tá? Apesar de eu ter chamado aqui na ordem 1 2 3, pode ser que o três termine primeiro, depois o um, depois o dois, pode ser que seja primeiro o dois, depois o três, depois o um, enfim, não importa a ordem, tá? Ele vai aguardar todos esses caras terminar para aí eu vir para cá. Beleza? Aí aqui eu dou a weight de novo. Por quê? Porque por padrão, né? Quando eu tenho a aqui, ó, eu dou a weight para quê? Para pegar o resultado. Não tô dizendo que eu quero aguardar, porque eu sei que já terminou, porque aqui já me garantiu que terminou, tá?
+ 
+ 
+01:07:28
+ 
+Fabio Diniz: Eu já sei que terminou. É só por padrão, né? Padronização dnet. Quando eu coloco a weight, eu digo que eu quero resultado. Só que se o resultado não tá pronto, ele vai aguardar. Como aqui o resultado já tá pronto, porque eu já garanti isso aqui aqui em cima, ele já me dá o resultado. Beleza? Aqui é a mesma coisa com a diferença que tem esse esse caso aqui que eu posso usar esse results aqui. Vai guardar todos também da mesma forma, da mesmíssima forma com a diferença que eu tô atribuindo uma variável. E aí eu posso, em vez de eu usar o weight aqui, tá? para fazer a leitura de cada um, eu posso pegar pelo pelo índice na no arrei, que aí é na ordem que eu coloquei. Então, se eu coloquei a tesque um aqui, eh, zero based, né? Então, no índice zero é a um, no índice dois é, no índice um é a dois, no índice dois é a três. Beleza? Fala aí,
+Felipe Neves: Eh, Fábio, só para confirmar referente,
+Fabio Diniz: Felipe.
+Felipe Neves: acho que tanto faz, tanto o exemplo do lado esquerdo e direito, eh, a tesque ela não vai ser iniciada só quando bater no tesk.
+ 
+ 
+01:08:30
+ 
+Felipe Neves: Por exemplo, quando chegar na linha do VAR Tesque 2,
+Fabio Diniz: Não,
+Felipe Neves: a Tesque 1 já tá rodando,
+Fabio Diniz: não. Assim que entrou test.run,
+Felipe Neves: né?
+Fabio Diniz: ele atribuiu uma trad. Eu só não tenho garantia que ele tá rodando de fato porque eu não sei quando que ele vai ganhar a CPU para fazer a execução de fato.
+Felipe Neves: Aham.
+Fabio Diniz: Mas ele já entra, ele entra em modo running.
+Felipe Neves: Mas
+Fabio Diniz: Ele, ele começa em modo running, ou seja, executando.
+Felipe Neves: tá. O enal não quer dizer que ele vai trigar a pesca,
+Fabio Diniz: Se ele
+Felipe Neves: só quer dizer que ele vai esperar o que já foi iniciado outra
+Fabio Diniz: Não, isso eu vou isso aqui eu não tô aguardando iniciar,
+Felipe Neves: hora.
+Fabio Diniz: eu estou aguardando finalizar aqui a finalização quando
+Felipe Neves: Tá bom. Valeu,
+Fabio Diniz: todos finalizarem, porque aqui eu tenho uma weight, ó. Então, quando todas elas final aqui, eu tô aguardando a finalização e não inicialização. Inicializar eu já inicializei aqui, ó. Beleza?
+Felipe Neves: Show. Show. Obrigado, hein,
+Fabio Diniz: Valeu. Então, test o en é isso.
+ 
+ 
+01:09:22
+ 
+Fabio Diniz: Eu aguardo todas finalizarem, tá? Aí agora eu tenho when, que é um pouquinho diferente, ou seja, eu quero é quando, né? When, quando, qualquer uma, ou seja, qualquer uma das tesques finalizar. Então, eu posso ter uma uma lista de tesques que eu faço uma leitura de um arquivo, leitura de um arquivo, leitura de um arquivo. Instanciei todos eles aqui já na junto do da lista. Não sei quando que cada um vai finalizar, não sei o tamanho de cada um. Ou seja, não quero ter esse essa esse controle, ou seja, não quero fazer isso aqui, ó, né? Eu não quero ficar dando, né? Se eu tivesse uma weight de cada um, né? Eu não quero fazer isso. Eu quero que ele faça para mim. Beleza? Então ele vai, ele vai, eu vou ter uma tesque, vou fazer um while, né? Fazer um laço, vou ver se ainda tem tesque para cada uma delas. Aí sim, aqui eu dou uma weight. Don N o n, ou seja, qualquer uma delas que finalizar, qualquer uma, em qualquer ordem, não me importa. Primeira delas que finalizar, ele vai pegar ela, vai atribuir aqui como finish, ou seja, a tesque finalizou, vou remover ela da da lista porque ela finalizou e vou processá-la.
+ 
+ 
+01:10:32
+ 
+Fabio Diniz: Beleza? Aí vou fazer o laço. Vai voltar ele. Opa, ainda tem tesque para executando. Tem. Então vai dar uma weight de novo. Entre ele fazer essa leitura toda aqui e girar, pode ser que a próxima tesque já finalizou ou não. Então na hora que ele dá o aate aqui, se já tiver uma finalizada, na mesma hora já retorna aqui ou não? Ah, não terminou. Então ele vai ficar aguardando aqui o ait. Aí vai. Terminou joga para cá, remove da lista, faz o processamento e volta. e assim por diante. Beleza? Ou seja, quando qualquer uma delas finalizar, eu não sei a ordem, isso é muito importante. E esse é o ponto. Eu não quero saber a ordem, não quero me preocupar com isso. Eu só quero processar. Qualquer uma que chegar, eu processo na ordem que vem. Beleza? Aqui agora a gente vai falar o wait all, ou seja, aqui eu tenho o lá eu tinha when all, ou seja, quando todas. Aqui eu vou aguardar todas, tá? Qual que é o grande diferencial aqui?
+ 
+ 
+01:11:29
+ 
+Fabio Diniz: É quando eu não tenho, tá? Por qualquer motivo eu não consigo fazer um um ANYC a não consigo usar tesquec, tá? Tem, dependendo de como tá o seu fluxo ali no programa, eu não consigo fazer. Eu obrigatoriamente tem que usar um um aqui, tá? Void, tá? Mas poderia retornar qualquer outra coisa menos tesque, tá? Só que eu quero chamar de maneira aqui processo síncrono usando eh chamadas assíncronas processo chamada é diferente. Beleza? Aqui ele vai rodar em paralelo, beleza? Só que como eu não consigo usar o A5 é o weight, eu uso tesc. Ó, qual que é a diferença? Esse aqui é bloqueante. Bloqueante. Qual que é a diferença de bloqueante? A trad que chegou ali instanciou cada uma delas naquela chegar no TCK ou ela vai parar ali, ela não vai pro modo inativo pro dentro do PL, ela tá parada ali aguardando aquilo acontecer. Essa é a diferença. Beleza? Então aí depois ele vai fazer o o a leitura do resultado de cada uma delas, tá? Então muita atenção com isso. Beleza?
+ 
+ 
+01:12:36
+ 
+Fabio Diniz: Isso aqui, ó, bloqueia, bloqueia. É, é diferente de eu dar um aweight, tá? Oweight eu falo com com dnet.net, tem algo acontecendo aqui. Quando terminar você me avisa, ele: "Ah, beleza, então essa trad aqui eu posso disponibilizar no pool bloqueante é bloqueia. Ó, eu quero guardar isso aqui. Vai ficar bloqueado essa trad aqui. Enquanto se todas essas outras aqui não terminarem, ela tá parada aqui. Ou seja, esse recurso aqui tá travado. Essa tradic no no pool. Beleza? Então essa é a diferença. E aqui é a mesma coisa do weight N, tá? Da mesma forma que a gente tem um weight e o NN que é A5, né? Que usa o A5 a weight. Esse aqui não tem jeito de usar a weight. Então faça as leituras de forma assíncrona. Beleza? Só que aí aqui no o HN aqui é bloqueante também, ó. Quando ele chega nesse ponto aqui que ele fala para esperar qualquer uma, ele a trad para mesmo. F a trad ali parada aguardando. Enquanto não tiver uma das testes prontas para retornar para ela, para ela seguir, ela tá ali parada ali.
+ 
+ 
+01:13:44
+ 
+Fabio Diniz: Beleza? Então, de novo, bloqueia a trad. Isso é como se fosse um trade. Tá, não é? É como se fosse um trad, que é diferença de um de um tesk eh delay, tá? Ou seja, que a trada tá parada, tá? Não pode nem ser removida pro pool para ser disponibilizado para fazer outra coisa. Beleza, pessoal? Até aqui estamos tranquilo. Mais alguma dúvida? Vamos pro intervalo, então.
+Farley Souza: Beleza.
+Fabio Diniz: Beleza. Então, 5 minutinhos aí a gente volta.
+Anderson Perim: Bora lá.
+Fabio Diniz: Então, 2021, beleza? Vamos lá, pessoal. Estamos todos aí. Simbora. Bom, agora a gente vai tratar sobre eh integrações via http, certo? Bem, aqui a gente tem um um exemplo eh simples, né, de como eh fazer uma chamada externa, por exemplo, um API, algum outro sistema, utilizando o HTTP client, tá? Então, a gente faz uma um uma instância, né, a gente cria uma instância do HTTP client, que é uma classe nativa do do DNET, né? Hoje em dia quase ninguém mais usa as anteriores, né?
+ 
+ 
+01:19:40
+ 
+Fabio Diniz: Antigamente tinha web client, tinha uma algumas outras que é o sucessor, né, do client. Então, dado que a gente tem um client, né, a gente pode usar os métodos ali, né, post, get, put, enfim, né? Então, a gente faz um get ali, por exemplo. Beleza? Aí aqui eu uso a ou seja de que eu quero guardar, então a trader faço aqui um get, tá? pulou. Ah, removeram os slides aqui, mas enfim. Aí aqui embaixo, né, dado que eu tenho o responso, certo? Aí eu vou fazer o o dea pegar do lado de cá. Quando eu tenho response aqui, eu dou um um um read as string, né? E5. Para quê? Para eu ler, né? O conteúdo desse desse response. Aí nisso eu vou ter um um texto puro, né? em Jon, no caso. E aqui eu faço a desceralização e converto para esse space flight new dto aqui. Ou seja, é o jeito mais simples possível que tem de você fazer uma uma chamada eh HTTP, tá? Alguns problemas que tem nisso, tá?
+ 
+ 
+01:20:52
+ 
+Fabio Diniz: Uso indevidos de HTTP client pode gerar exaustão de recursos, especialmente sockets, tá? Eh, embora a classe implemente, né, o disposable, eh, não deve ser usada com using, tá? Isso não vai liberar os sockets. E a gente vai ver aqui o porquê, tá? Os sockets de conexão TCP não são liberados imediatamente. Esse problema é conhecido como socket starvation, OK? Então aqui, ó, mesmo utilizando o usinging, certo? mesmo. Fazendo isso daqui, você vai gerar starvation, né, que é fome, né? Ou vocês, você vai acabar com sockets dependendo de como você usa, porque eles não são liberados imediatamente. Isso aqui não é um não é um problema do Dnet, tá? Isso aqui é uma questão de hardware. Não sei o quanto que vocês dominam de rede, tá? Mas como é que funciona? Um socket é quando você faz uma conexão, né? e end ele libera aquela porta lá para você na na máquina para você fazer uma conexão eh seja de saída ou de entrada ou vice-versa. Então você tem o número máximo de portas que é 2 elevado a 16, né? Vai dar 65.000 uns quebrados, né?
+ 
+ 
+01:22:07
+ 
+Fabio Diniz: Que são a que é a quantidade de portas que a gente tem eh de comunicação socket. Só qual que é a questão? O TCP ele não, ele é ele é uma uma conexão persistente. Então quando quando vocês eh se vocês fizerem uma uma cham não vou lembrar o comando aqui de cabeça. Quer ver? Ver aqui acho que é net stat alguma coisa. Net stat. Isso, ó. Se vocês olharem aqui, isso aqui é tudo que tá de conexão aqui na minha máquina. Então, ó lá, stab, step, time, time, weight. Tá vendo, ó? time weight, close weight, ou seja, são conexões que já for que já terminaram, tá? Nessa porta aqui, por exemplo, time weight, ó, 58991, time weight 59844, ou seja, não tá utilizando mais. Só que por conta do do como o TCP é implementado, essa porta ela não é liberada na hora. Por quê? Se vocês pensarem em rede, né, você você envia os pacotes, você não sabe quando esses pacotes chegam lá do outro lado e aí quando eles recebem, eles mandam um pacote de volta. Então, se você não der um tempo para garantir que todos os pacotes que foram foram de fato, e aí quem recebeu às vezes falou assim: "Ah, toma aí de volta agora a resposta dos pacotes que você me pediu".
+ 
+ 
+01:23:33
+ 
+Fabio Diniz: E retornou. Se eu já uso essa porta logo em seguida, quem tá usando ela logo em seguida pode receber pacotes que não são deles, que não são dele. Então isso é uma isso, essa não vou dizer que é uma restrição, né? É como foi implementado o TCPIP, beleza? Então isso não é liberado automaticamente. Então se eu tenho um uso intensivo de HTTP client, tô ali chamando várias conexões, várias, várias, várias. Eu tô chamando várias portas, uma porta atrás da outra rapidamente, né? Pode parecer 65.000, 1000 é muitas, mas você vê, ó, tô aqui com vocês na aula, tô fazendo nada e na minha máquina tá com essa tante de coisa aqui aberto. Então, quando você tá navegando ali, cara, muita porta, muita, muita porta que tá sendo aberta e fechada, tá? Então isso, isso consome. Ah, é raro isso acontecer, não é? Eh, teve um sistema que eu já trabalhei, que a gente tinha eh um servidor na na época na Mandic, tá? Ela tinha nuvem, mas não era tão nuvem assim igual hoje em dia, né? Foi uns 15 anos atrás. E e aí nossa aplicação parou, nossa aplicação parou de responder.
+ 
+ 
+01:24:42
+ 
+Fabio Diniz: Aí a gente olhava no painel, olhava todos os os dados, né, de monitoramento. CPU, eh, baixíssimo uso, disco, baixíssimo uso, tanto de de IO, de truto, quanto de armazenamento, eh, tudo certo. Tudo que a gente poderia, memória, tudo que poderia olhar tava correto e caiu. Aí beleza, aí reiniciava, subia tudo de novo, matava a instância, sobe de novo. Aí subia e era uma aplicação pesada, rodava ainda em comnet frame, com istava, passava, sei lá, 20, 30 minutos, caía. E ficou nisso, cara. Dois, três dias a gente não descobri de jeito nenhum o que que era. E aí um dia um do dos caras que trabalhavam na Mandic ligou pra gente, falou: "Cara, eu olhei aqui mais aprofundo, mais profundamente, eh, a placa de rede de vocês tá topada." É, a gente o quê? Hã? A gente nem sabia que que tinha jeito de fazer isso. Aí falou: "É a placa de rede. É que que foi o detalhe? A máquina a gente olhando o o monitoramento tava tudo OK. A gente usava RDP, né, para fazer conexão remota e acessar a máquina, né, e fazer a eh uma máquina máquina Windows, eh acessava ela, né?
+ 
+ 
+01:25:59
+ 
+Fabio Diniz: Então via mesmo a tela do Windows e nem o RDP aceitava, nenhum tipo de conexão porque não tinha porta. Todas as portas, tanto para entrada quanto paraa saída, tinha acabado. A gente não conseguia fazer conexão de entrada nem de saída. E aí o mais estranho, quem já tava conectado, quem tava já utilizando, desde que não precisasse de uma nova porta, ou seja, o cara acessou lá o site lá do sistema e tá lá fazendo as coisas dele, para ele era tá funcionando lindo, não tinha nenhum problema. Aí outras pessoas começavam a utilizar, não não ficava rodando, rodando e nunca eu dava. Aí, passou uns dois, três dias, o cara ligou pra gente e falou: "Ó, fiz uma análise aqui mais profunda e descobri que eh a placa de rede de vocês tá tá topada". A gente, como assim? Aí ele explicou, falou: "Ó, não tem não tem eh não tem mais não é não é possível mais fazer conexões". E não, a gente não monitor monitorava isso de novo. Memória, disco, processamento, tudo, tudo OK. Tudo tudo tudo OK. Foi isso aqui que tava dando problema, porque a gente não usava o HTTP cliente da maneira correta.
+ 
+ 
+01:26:58
+ 
+Fabio Diniz: Ele ficava subindo um monte, era era uma máquina que tinha um sistema que era multitenant, então tinha muitos usuários, ficava abrindo um monte de porta, comia 65.000 portas da máquina, ela parava de responder. Beleza? Então, de novo, é uma restrição. Restrião não é palavra, não tô achando uma palavra melhor, tá? Mas é é uma condição que vem do hardware, da forma que o hardware é montado. Fala aí, Balas.
+wallace silva: Eh, existe alguma forma de liberar isso rápido? Porque eu também no meu sistema aqui,
+Fabio Diniz: Não,
+wallace silva: por exemplo, eh, são centena de de consultas HTTP por segundo. Então,
+Fabio Diniz: não,
+wallace silva: não existe uma forma de liberar isso rápido?
+Fabio Diniz: não. Por conta disso que eu te falei, você não sabe quando que os pacotes foram, quando que eles vão voltar.
+wallace silva: Não, eu sei quando quando recebe.
+Fabio Diniz: Não sabe, não sabe. Não tem como saber. Não tem como saber. Não tem como. É por isso que é assim, entendeu? você você manda uma uma uma comunicação, você não sabe com quando que o outro lado vai receber, não sabe quanto tempo que ele vai demorar para processar para ele retornar para você com a resposta.
+ 
+ 
+01:27:57
+ 
+Fabio Diniz: Aí o que acontece? Se você subir essa porta para uma outra coisa, ela vai est recebendo pacotes, ou seja, informação de uma outra coisa. Aí vai chegar dato completamente errado. Vamos supor que você tá fazendo a leitura de um de um API lá X, aí para no meio, aí você passou a porta para outra. do nada tá vendo, vamos supor, nesse sistema meu que é multenant, eu tô vendo os dados de um de um de um usuário X, de repente começa a chegar dado do usuário Y. Você entende? Porque é a nível de rede, cara, não é a nível de aplicação. Ou seja, os pacotes HTTP, os pacotes eh TCP lá no nível de rede, né, leão, cada um tem cinco, seis camadas, eu vou usar o cinco, tá? Então você tá falando lá no no acho que é o terceiro nível. Então o pacote tá indo, alguém processou ele lá, entendeu? Ele tá te dando uma resposta daquela daquela requisição. Beleza? Aí você pode estar recebendo um dado que tem nada a ver com o que você pediu. Então isso não é configurável. Isso não funciona assim, não tem como fazer. O que tem é a abordagem que a gente vai ver aqui, ó.
+ 
+ 
+01:28:57
+ 
+Fabio Diniz: Beleza?
+wallace silva: Что? M.
+Fabio Diniz: Então assim, a gente vai fazer o o que a gente vai fazer é como reaproveitar o o HTTP client da melhor forma possível disso de evitar que isso aconteça, tá? especialmente de sockets que é o é o problema. Bom, então a gente vai utilizar o a AHTTP client, tá? Que foi introduzido ele então no DNETC 2.1 que ele serve para isso, né? Pra gente, a gente tem uma fábrica de HTP client, beleza? Então aí ele vai fazer a gestão de do tempo de vida do HTTP client com suporte a midwords, enfim, com a configuração centralizada, né? Já já se pluga facilmente lá com um injetor de dependência. Então eh é bem simples de de utilizar. E aí existe mais uma forma de fazer ele. A gente vai ver aqui a forma que é o typed clients, tá? Que são os clientes nomeados, tá? Que é o é o que fica mais claro, né? Quando você tá utilizando. Então, pô, sei lá, sua aplicação fala com três, quatro sistemas externos, cada um é um API. Você pode nomear lá, XPTO de não sei o quê, API, ABC de não sei da onde.
+ 
+ 
+01:30:07
+ 
+Fabio Diniz: Opa, diz aí quem que levantou a mão,
+Eduardo Kubota: Ô, desculpa, levantei por engano aqui.
+Fabio Diniz: não? Beleza. Então, que a gente vai ter esse, pessoal, é que então a gente vai ter esse cara aqui que tá que ele vai receber, então ele passa a receber o o HTTP cliente de através de uma injeção de dependência, tá? a gente utiliza a mesma instância, é a mesma coisa, a mesma é um httpente no final das contas, só que ele é injetado. Beleza? DCAL response mantém no mudo, né? A mesma coisa, tá? E para fazer a utilização dele, a gente pode fazer lá no na hora de fazer o builders service lá, a gente dá, é importante, né? Eh, como que a gente fazia antes, né? Que a gente dá um add scope, beleza? Isso aqui não é não é o jeito correto, porque ele tem que saber lidar com aquela especificidade do ciclo de vida. do HTTP client, tá? Então ele tem essa opção aqui de add HTTP client, que ele vai saber eh lidar com o HTTP client, porque aí você vai ter que passar uma interface, tá? Que voltando aqui, né?
+ 
+ 
+01:31:15
+ 
+Fabio Diniz: Ela ela aqui não pegou, mas essa essa cara aqui ela ela implementa essa essa correct. ela ela herda de do factory que a gente viu lá antes. Aqui muito simples, só uma uma escassez aqui é utilizado para poder fazer teste carga, tá? Então aqui, opa, tá ali tudo, né? Então o end point com erro aqui, ele quer dizer o end point mal implementado, tá? Então, no teste de carga, ele vai ter 371 requisições. Quando eu faço do jeito correto, salta para 575, tá? Eh, quantidade de requisições por segundo vai de 26 para 44. O tempo médio de resposta, olha, cai de 346 para 1,76. Então, vocês veem que tem uma tem um um ganho, considerável, né, de fazer o uso disso da maneira correta e extremamente simples de ser implementado, tá? E a gente vai ver agora o flu URL, tá? Não sei quem já utilizou, né, uma bibliotecazinha aí da do DNET. Então, a biblioteca moderna pra gente fazer chamadas HTTP, tá? Ela facilita a construção de URLs e a realização de de requisições, então, de maneira fluente e intuitiva, tá?
+ 
+ 
+01:32:36
+ 
+Fabio Diniz: Ela tem suporte e resiliência, que é muito interessante. A gente vai ver aqui sobre isso. Eh, a serialização e desceralização eh automática, né, para objetos tipados. Então, facilita bastante, né, fica eh um código mais limpo, né, pra gente poder fazer isso. Intercepção de login, tá? Ele também faz um login ali de uma maneira mais simplificada. Então aqui a gente vai ter esse cara aqui, né, que ele faz um uma chamada HTTP, muda pouca coisa, tá? A gente pode utilizar esse get, ou seja, eu já sei que retorna um Jon, tá? Aqui eu já passo qual o objeto que ele vai ser tipado no retorno e ele já faz a serização, a descer pra gente, eh, de forma automatizada. E a mesma coisa, tem acesso a todos os métodos, tá? E aqui a exception personalizado. Então ele tem o jeito dele aqui de pegar exception. Fica fácil da gente fazer a o login aqui, pessoal. Ó, cadê o login aqui? Tá vendo? Ele não, ele é um file forget. Eu chamo você log erro e não fica guardando, não fico nada. Passo para ele aqui o a exception, um texto e tal.
+ 
+ 
+01:33:47
+ 
+Fabio Diniz: Acabou. Aí aqui também um pequeno eh teste de carga. Para quê? Pra gente ver se a vale a pena, né? A biblioteca tem esses usos usos interessantes, mas a gente tem que ver se ela ela adiciona alguma overhead, se ela eh o peso dela no final das contas, né? A gente vê que eh muda muito pouco, né? Então a a quantidade de conexões de requisições totais caiu cinco, muito pouco, né? quantidade de requisição de segundos também caiu muito pouco. E aqui ela até diminuiu um pouquinho o tempo médio de de resposta. Ou seja, o ganho que ela te dá de facilidade de leitura, de escrita ali, vale a pena porque ela não te atrapalha no uso do HTP client, porque ela ela ela já é preparada, tá, para utilizar o o HTTP Factory, ela já sabe também desse problema, então ela já implementa também internamente do jeito correto. E aqui agora a gente vai ver o poli, tá? que é uma é uma biblioteca também de que permite a gente criar políticas de resiliência e falha, que que é muito importante, tá, pessoal, na nas aplicações modernas, seja elas eh hoje praticamente tudo é web, né, tudo é tá online, né, mas a gente sempre se preocupar com duas coisas, é a mesma coisa no final das contas, a gente preocupar com quem tá nos consumindo e quem a gente consome, certo?
+ 
+ 
+01:35:06
+ 
+Fabio Diniz: Ou seja, o mundo externo. Tudo que é externo a nossa aplicação, a gente tem que pensar que a gente tem que manter a aplicação sempre resiliente, ela sempre de pé, ela sempre funcional. sabe que nem sempre, né? Não são todos os casos que possível fazer isso, mas a gente tem que quebrar a cabeça ali um pouco pra gente pensar, pô, se eu tô consumindo uma API externa, como que eu consumo ela de uma forma que eh eu não caia se ela cair ou caia graciosamente, né, que eles falam, né, eu consiga pelo menos dar mensagens relevantes pro usuário, ou seja, meu sistema não não ele não simplesmente para de responder, tá? Então, resiliência é algo muito importante, algo que cada vez mais tá se cobrando, né? Resiliência, observabilidade, enfim, são tudo coisas eh importantíssimas nos sistemas hoje em dia. Ele suporta várias eh políticas, tá? Nós não vamos ver todas aqui, tá? Mas o retry, que é o que a gente vai ver, né? É retentativa, né? Então eu tento acessar um recurso, não conseguir, eu faço uma nova tentativa. Ao em vez de eu falhar, eu faço uma nova tentativa ou novas tentativas com uma estratégia, não é simplesmente tentar.
+ 
+ 
+01:36:13
+ 
+Fabio Diniz: A gente vai ver aqui, a gente vê assim na na às vezes, né, principalmente quando envolve rede, né, por qualquer motivo, né, o tráfego naquele momento não funcionou, a rota, né, tem várias rotas que pode tomar chegar no mesmo lugar. Tá? Enfim, então o retry ajuda a gente. O fallback é, pô, tentei num caminho A, não funcionou, tento B, tá? Então, às vezes eu tenho eh servidor AB, né? Tenho como se fosse um load balance bem entre aspas, né? Então, tem aqui um caminho A. Eh, quem mexe com nota fiscal eletrônica, não sei quem já mexeu aí, eles têm, né? Tem um servidor de o o não sei como é que ele chamou o principal. Vou chamar de principal. Esse é um servidor principal e então de contingência. Tá? Então, se você tentar fazer alguma coisa no principal, você pode usar o de contingência, só que você tem que especificar o porquê. Falei: "Ah, tentei fazer tal coisa e tal". Aí ele permite, tá? Então, já é pensado para isso. O circuit breaker, que é um mecanismo um pouco mais e elaborado, tá?
+ 
+ 
+01:37:13
+ 
+Fabio Diniz: Ele opera do seguinte, quando ele ele opera fechado, né? Um circuito, né? Como se fosse de de tomada, né? ele opera fechado, ou seja, tá passando o fluxo, dê algum problema, ele abre, ou seja, o fluxo interrompido, beleza? Aí ele aguarda um tempo, aí ele tenta fechar, ou seja, ele tenta mandar conexões de volta, só que ele não fecha de novo, ele tenta mandar uma coisa. Por quê? Entende-se que quando um sistema cai, quando ele volta, tem um monte de coisa represada, um monte de quem consome ele pode tentar ficar mandando um monte de coisa de uma vez só. Ou seja, eu gero uma carga eh os externos geram uma carga excessível para aquele sistema, ele acaba caindo de novo. Então você opera, é fechado, deu problema, você abre. Quando deu, quando passou um tempo, você tentou e você viu que funcionou, você opera em meio aberto, que eles chamam, e aí você vai retomando aos poucos até que você fecha de novo o sistema. Então, circuit break ele funciona assim. Book isolete, cara, eu nunca lembro o que que é. Eu já pesquisei umas três, quatro vezes, mas nunca lembro.
+ 
+ 
+01:38:12
+ 
+Fabio Diniz: E o time out, né? Eh, deu, eu tenho um tempo eh fechado para aquilo ser executado. Se não deu, a operação é encerrada. Isso aqui, tá, pessoal? Eh, em banco de dados, tomem muito cuidado com timeout, muito, muito, muito, muito, muito, muito cuidado. Eu, esses mesmo sistema que eu citei para vocês que dob socket, né, Starvation era um sistema grande de processamento de fatura, de telefonia, então lidava com muitos arquivos, tanto em volume de quantidade de arquivos quanto do tamanho dos arquivos. Então, trabalhei com várias coisas diferentes ali que eram eram eram bem assim, criou casca, sabe, de coisa. E uma uma delas é é time out de banco. A galera vai fazendo consultas, às vezes fica uma consulta pesada porque é pesado mesmo, são muitos dados. E aí o que que faz? Às vezes o time out, se eu não me engano, é 30 segundos, né? Se eu não, se eu não me engano, não lembro se é assim para todos os bancos, mas o SQL Server era 30 segundos. E aí, aí tava time out, ele encerra a consulta que você tá fazendo, simplesmente é cancelada e você toma time out.
+ 
+ 
+01:39:14
+ 
+Fabio Diniz: Aí que que o inocente você vai fazer? Aumenta o time out. Ah, não. Se você não consegue fazer em 30 segundos, eu vou fazer, vou colocar 60, então. Ah, não consegui 60, eu ponho 3 minutos. Eu, eu preciso da consulta que eu tô executando. Só que que, por que que existe o time out, principalmente em banco? Porque são muitas conexões. Se eu deixar todo mundo pendurado no banco, executando coisa por um período muito longo, daqui a pouco o banco não aguenta. Então tá em oute só porque o banco não quer processar naquele tempo, não, tá? Ele ele tá ali para proteger o banco de ficar com várias conexões ativas ao mesmo tempo. Então assim, tome muito cuidado em subir time out em banco e também numa API externa, por a mesma coisa. Às vezes você tá ali, fica processando na API um tempão, um tempão, aí tem um, chega um outro processo até mesmo seu, uma outra trad, alguma outra coisa e começa a processar e começa e fica empilhando aquilo. Ou seja, você tá tá gerando uma carga eh excessiva no no servidor. Então, time out ele é importantíssimo, tá?
+ 
+ 
+01:40:18
+ 
+Fabio Diniz: Ah, Fábio, então se eu tenho uma uma consulta, uma requisição pesada, como é que eu faço, cara? é quebrar a cabeça. É isso mesmo, entender como que você consegue fazer às vezes várias consultas menores, várias requisições menores, às vezes é estratégias aí e programar, né, pensar estratégias que você consiga consumir aquele recurso sem honerar aquele recurso, tá? Eh, então é isso, né? Ajuda a a tornar as integrações mais robustas e resiliente resilientes a falhas temporais. de novo. A é muito ruim, né, a gente utilizar um sistema que simplesmente ele para, certo? Ele para por qualquer motivo. Então, se eu tô pensando em resiliência, em me manter de pé, pode ser que eu não consiga executar determinada ação, mas eu dou mensagens eh que sejam eh explicativas. Ó, o sistema tal aqui tá fora do A, não consigo executar isso aqui agora, mas estou enfileirando aqui sua sua requisição, o seu pedido. Assim que o sistema voltar, a gente vai tentar eh executar, por exemplo, pode ser um caso. Então, retry pattern é isso, ele ele ajuda a gente a passar por falhas transitórias, tá? A gente vai ver um pouco dele aqui.
+ 
+ 
+01:41:26
+ 
+Fabio Diniz: Então, esse aqui usando poli, tá? Então a gente aqui a gente define quais são os métodos que a gente quer eh verificar se o erro é eh é ocorrido transitório ou não, tá? Porque tem alguns retornos que não faz sentido, né? Por exemplo, 200 não faz sentido, tá aqui porque o 200 é o correto, certo? E a gente configura a política, tá? Aí como é que funciona aqui? Dá um ait e retry, ou seja, eu aguardo e retento, tá? No máximo cinco vezes. Beleza? E aqui em cada tentativa, eh, P é exponência, né? Então, 2 elevado a tanto, né? Então, por que isso? Por que que eu faço eh exponencial? Tentei uma vez, não deu. Espero cinco. Eh, espero dois, 2 segundos. Tento de novo. A próxima tentativa eu vou, eu vou, eu não sei agora, não lembro se é 2 elevado a 5 ou 5 elevado a 2, não lembro. Mas enfim, o tempo vai aumentando em cada tentativa. Por quê? Porque eu não quero pesar o recurso.
+ 
+ 
+01:42:28
+ 
+Fabio Diniz: Se eu tentei uma vez, não conseguir, espero. Se na segunda eu não tentei, eu não consegui de novo, cara, pode ser que a falha é mais é ela é transitória, mas ela é um transitória num tempo maior. Então, em vez de eu ser o cara que tô penalizando o recurso eh com carga alta, eu espero um tempo maior. Ao invés de eu quebrar de uma vez, não, pô, pera aí, vou vou vou tentar de novo, mas vou esperar um maior tempo. Vou tentar de novo terar um tempo maior. Então, é isso que ele faz, tá? Então aqui no máximo cinco tentativas. Beleza? Pode aqui, pessoal. Ah, qual que é o certo? Não tem. É teste, tá? Exponente backof ajuta muito quando a integração tá fora. Isso. Isso aí que aí você não é o cara que fica pressionando para poder, você tá atrapalhando, na verdade, o recurso, né? Você tá gerando carga em cima dele. Ah, e qual que é o certo? Não tem certo. Você tem que testar no seu caso, qual que é que tá funcionando, tá?
+ 
+ 
+01:43:21
+ 
+Fabio Diniz: Se é um sistema externo seu, você consegue ser o que eu digo às vezes da sua empresa, às vezes não é você que tá tomando conta, né? Mas é da empresa. Ô fulano aí que toma conta, vocês fizeram teste de carga, como é que é? Qual que é o qual que é o número legal aqui? Tal. É isso, é teste, tá? é um externo. Você que vai ver lá de acordo com o uso. Às vezes você tá logando, loga ali bastante coisa e vai analisar e depois define um número. O importante é isso, é você definir o máximo de tentativas. Você não vai tentando pro resto da vida, né? Então coloca um máximo de tentativas e cada tentativa ela ser exponencialmente, que é o nome ali que eu não conhecia esse nome aí, que esse exponente é o backof backof que o Lucas trouxe aí. Ou seja, cada tentativa ele vai espaçando mais ainda a próxima. Beleza? Então você cria aqui, isso aqui é, então você cria a política, né? A gente cria aqui a política. Beleza? E aí eu vou utilizar essa política. Então eu vou pegar aqui o o polly, né?
+ 
+ 
+01:44:18
+ 
+Fabio Diniz: Vou ter aqui o HTP retry policy, que é o que eu falei, o A5 retry. Aí vou dar um execute aqui dentro eu vou fazer a chamada, ou seja, vou envelopar ela ali dentro, né, com aquele comportamento. E aí ele automaticamente vai fazer isso para mim, tá? Aí que eu tenho se no caso de falha mesmo aplicando retry, né? Ou seja, tentei não deu, ou seja, falhou mesmo, tá? Então eu retorno aqui com o erro. E aqui o o caso de tratamento de um erro que eu que é esperado, né? Então eu faço o o log dele também. E aqui quando dá o caso eh eh correto, né? Ou seja, conseguir executar mesmo a a chamada, eu faço a desceralização igual eu faria e segue minha vida. Beleza? Então assim, é extremamente simples de implementar. e tem um ganho eh considerável, tá? Dependendo da quantidade de de chamadas externas que você faz, de quantidade de APIs que você faz utilização. E de novo, pessoal, pensem sempre nisso. O mundo externo, o mundo externo pode ser até quem consome a gente, beleza? Então, às vezes eu posso implementar o circuit break do meu lado.
+ 
+ 
+01:45:27
+ 
+Fabio Diniz: Às vezes eu posso, o quem tá consumindo a gente às vezes é um sistema interno da empresa. Então você consegue conversar com o time, falou: "Cara, pô, vocês estão usando algum mecanismo de resiliência? Se não tiver implementa isso daqui, porque aí na hora que vocês retornam, aí vocês explicam, né, tudo isso aí. Tem vários tipos ali de políticos que di, pô, aí na hora que você voltar, você não você não pesa minha API, você não vai derrubar minha API, entendeu? às vezes ajuda muito também eh com quem tá consumindo o nosso sistema, não só os sistemas que a gente consome. E esse aqui, por exemplo, os que eu não quero lançar exceção, por 400, né? Não sei se vocês lembram, né? Eh, o tudo que é 400 é erro do chamador, né? Tudo que é 500 é erro do server. Então você pode colocar isso aqui, que esses casos aqui você não quer tratar. Beleza, pessoal? Então vamos seguindo aqui no lendo, escrevendo arquivos. Agora aqui a gente vai vendo algum um passo a passo, tá? Só para vocês entenderem o uso de de leitura de arquivos aqui já.
+ 
+ 
+01:46:29
+ 
+Fabio Diniz: Eh eh deixando claro, não tem certo e errado, tá? sempre vai depender do cenário, sempre vai analisar o que qual que é seu caso e aí você vai entender o que que você implementa. Claro que tem uns tem casos aqui que vão em termos de performance vão ser mais performáticos que outros, mas ser mais rápido não quer dizer que é melhor, tá? Então esse primeiro caso aqui, por exemplo, tá, que que é o grande eh que a gente tem que tomar cuidado esse read to end, tá? Quando eu pego um stream aqui igual esse aqui, né, que eu tô lendo esse arquivo aqui, esse example.txt e eu tô fazendo uma leitura dele, dou esse read, ele carrega o o arquivo inteiro pra memória. Então, se se esse arquivo tiver 10 GB, ele vai carregar esses 10 GB na memória. Então, além de eu penalizar o disco, né, que eu tô fazendo a leitura de um arquivo eh muito grande, eu às vezes tô carregando tudo na memória e tô destruindo o a memória do computador, tá? Ah, então por que que tem isso? Porque às vezes é é uma é um é um método muito simples de leitura de arquivo. Então, dependendo do que você vai fazer, tão tão simples e você sabe que sempre vai ser arquivos pequenos, é mais negócio você utilizar isso aqui.
+ 
+ 
+01:47:41
+ 
+Fabio Diniz: Então tem espaço, né? Eles não criaram esse método à toa. Esse método existe porque ele tem uso, só que a gente tem que saber utilizar, tá? Aí um outro caso é o read eh readline. E aqui a gente coloca aqui do lado, ó, readline e sync, tá? Ou seja, normalmente, né, não são todos vários dos métodos já eh nativos do DNET para leitura de arquivo, escrita, eh os ios em si, né, até de rede, normalmente ele tem o o formato síncrono e assíncrono, tá? Então aqui no caso eu faço a leitura, né, eu, desculpa aqui, eu estabeleço um stream, beleza? E vou fazer no stream readline. Que que é o readline, tá? Quando é arquivo de texto, eu consigo, vez eu ler o arquivo inteiro de uma vez, eu vou lendo linha a linha, ou seja, cada uma das linhas eu vou lendo ela por vez, tá? Por exemplo, num CSV, CSV eu posso ir lendo linha a linha. Que que é o ponto aqui? Tá, deixa eu ver se eu abro aqui para vocês. Ah, cadê linha, pessoal? Linha. É uma é uma abstração para o humano.
+ 
+ 
+01:48:55
+ 
+Fabio Diniz: O computador ele não sabe disso. Beleza? Chega aqui, escreve um monte de coisa, enter, enter enter. O computador não sabe que isso aqui existe. Na verdade, tem caracteres aqui escondidos, tá vendo? Que me diz que trocou de linha. Então isso aqui é o CR é carryage return e o LF é line feed. Ou seja, tem são caracteres escondidos, mas estão ali, tá consumindo bytes, isso tá sendo escrito junto do arquivo. Beleza? Então quando é um arquivo que eu sei que é um arquivo de texto, tá? Não pode ser um binário. Binário não tem linha, tá? No arquivo de texto eu sei que eu posso ler linha a linha. Então uma abordagem pode ser eu fazer a leitura linha a linha, tá? E aqui tem esse aqui, ele pega CLF, ó. Mas tem vários, né? Deixa eu ver se eu troco aqui fácil aqui para vocês verem. E aqui? Ah, não vou lembrar como é que troca aqui não. Mas enfim, tem como trocar, tá? Linux, se eu não me engano, é só LF ou só CR, não sei, ou Inverte, tem, enfim, sistema Unix aí funciona de um, por isso que ele tá aqui Windows CRLF, às vezes ele pega que Mac, tem tem diferenciações, tá?
+ 
+ 
+01:50:08
+ 
+Fabio Diniz: Eh, então só essa atenção linha, né? Esse conceito de linha é um conceito nosso, humano pra máquina indiferente. É tudo uma sequência de bytes, tá? No final das contas. Então a gente consegue utilizar essa essa opção de ler linha a linha, tá? Ah, mas uma linha pode ser gigantesca e estourar, pode só escrever uma linha gigantesca também e estourar a memória. Então é mais difícil, mas pode acontecer, tá? Então a gente pode fazer essa leitura de read, pode utilizar o readline que a gente vai lendo uma a uma, tá? Um outro caso a gente lê eh de forma stream byte a bite e utilizar buffer, tá? Então vou definir um tamanho de um buffer, sei lá, 1024 nesse caso aqui, né? Então eu vou ter um bufferzinho de 1024 bytes, ou seja, eu vou ler blocos de 1024 bytes no disco, tá? Então, cada byte mesmo, pode ser texto ou não, pode ser um binário. Então, por exemplo, onde se usa muito eh leitura assim file stream eh binária, compressão, descompressão de arquivo, por exemplo, é muito utilizado, tá? Então, eu leio sempre pedacinhos rede, né?
+ 
+ 
+01:51:14
+ 
+Fabio Diniz: Normalmente quando você faz acesso à rede algum recurso, fazer download, arquivo pesado, normalmente são streams, tá? E aí aqui também, da mesma forma que eu tenho read, eu tenho read e sync, tem a forma assíncrona também. Beleza? Até aqui, pessoal, tá aí aqui de novo pontuando, nem sempre e assíncrono é melhor. Nem sempre, tá? Então, normalmente complexidade do código assíncron ele é um pouco mais complexo. A gente viu lá que a gente utilizou assíncrono. Tenho mais alguns exemplos aqui pra frente também que a gente vai ver. São códigos um pouco mais difíceis de ler. Então, pô, você vai para falar comigo que eu ler um arquivo assim não é mais simples que isso aqui, é bem mais simples, certo? Então, dependendo dos casos, de novo, nesse sistema que eu trabalhei de importação de faturas, tinha casos lá que eu tinha tinha cliente que tinha milhares de faturas pequenininhas, tinha clientes que tinham poucas faturas, só que pequenas, que eu falo eh em em Kyes, né, em espaço. Era era um volume grande em quantidade, mas um mais pequeno em tamanho. Tinha um inverso, tinha uns que tinha um volume em quantidade pequeno, uma, duas faturas, que a fatura era gigantesca.
+ 
+ 
+01:52:30
+ 
+Fabio Diniz: em termos de de um lugar no disco. Então você pode adotar estratégias diferentes para poder fazer eh a leitura, tá? Então é sim que nem sempre é é melhor, tem que tomar cuidado com isso, tem que testar, tem que fazer teste, não adianta. Algumas aplicações dá pra gente fazer teste de carga, então a gente vê qual que é a abordagem que funciona. A gente tem que lembrar disso, da troca de contexto. Quando eu tenho assíncrono, eu vou utilizar mais threads, tenho mais threads, eu vou ter mais trocas de contexto. Se eu tenho mais trocas de contexto, eu tenho um overhead, não tem jeito, tá? Tá? Então eu posso gerar um aumento de carga no sistema. Se eu tenho duas trads acessando a unidade de armazenamento, vai pesar menos. Tende a pesar menos, né? Porque elas podem fazer uma leitura pesada, mas tende a pesar menos que eu tenho 60, 80, 2.000 trades fazendo leitura no no na unidade de armazenamento, tá? E aqui agora a gente vai ver a parte de escrever. Usando praticamente igual com a com a da leitura, né? Então eu tenho também a opção de fazer um WR A5 que igual lá do Read to Ende escreve direto no no disco, né?
+ 
+ 
+01:53:35
+ 
+Fabio Diniz: Então ele vai direto, ele joga tudo, né? Lógico, o disco vai vai demandando, né? Ele que vai dizendo que ele consegue eh fazer a a escrita, né? Mas eu tô passando o arquivo, o arquivo tô passando, é o arquivo no final das contas, tô passando a informação inteira para ser gravada na na unidade. E da mesma forma que eu da mesma forma que eu tenho read line, eu tenho right line, tá? Que eu não coloquei os diferentes, tá pessoal? Mas tem o AC e não AC também. E da mesma forma também eu tenho o o stream de escrita. Beleza? E aí a mesma coisa vou usar buffers, tá? ele vai pedacinho em pedacinho, ele vai escrever no disco. Beleza? Então aqui a gente vai ver agora como ali é só as leituras escritas, né? O jeito mais simples, só para vocês entenderem ter essas diferenças. E aqui a gente vai ver formas da gente lidar mesmo com arquivos com grande volume de dados, com para otimizar a leitura, o o uso de memória, né? Vai casar muito com aquilo que o Bruno falou com vocês de Garmage Collector, eh, stack, hip, enfim, esse cara que eu nunca sei citar o nome dele, tá?
+ 
+ 
+01:54:42
+ 
+Fabio Diniz: Mandes, a Amdans LOL, não sei. Aqui bem bem simples, é o seguinte, aqui eh a porção do código que é paralelizável, tá? Tem maneiras de de calcular isso principalmente em algoritmos. Então, mesmo num código, ó, que 95% dele é paralelizável, não tem como todo o código ser paralelizável. O mesmo código que ele é 95%, seja, praticamente o código inteiro dá para rodar de forma paralela. Até ele chega um ponto que não adianta eu ficar adicionando núcleo, não adianta ter mais core, ou seja, o ganho não não acontece mais, tá? Que que é o que que que que esse gráfico aqui quer trazer? Seguinte, você vê que aqui tem uma hora que sobe muito e começa rapidinho a, né? Só que a gente tá falando 95, pô, se a gente chegar numa aplicação que 50% dela já é paralelizável, é muito. Então vamos pegar aqui o 75. Se a gente pegar o 75 já aqui em 16, ó, cords já começa a ficar flat, né, a ficar reto. Então, o que que isso quer dizer? Eh, tem muita gente que fica preocupada, não paralelizar que é mais de novo, às vezes fica muito preocupado com performance.
+ 
+ 
+01:55:56
+ 
+Fabio Diniz: Você gasta um esforço absurdo para criar uma uma um esquema, um algoritmo, alguma coisa mais complexa para ter um ganho muito pequeno, tá? Então, eh, tem que medir essas coisas de novo. Nem sempre pré-sincronismo é melhor, nem sempre paralelismo é melhor, tá? Tem que ser medido. Então, aqui a gente vai ver algumas formas de utilizar paralelismo no Dnet, algumas já nativas, tá? Que facilitam a nossa vida, tá? Então, esse aqui é o paralel for rich, OK? Eh, aqui a gente define, então aqui eu vou fazer a leitura de vários arquivos no disco, tá vendo? Então, tô lendo aqui, tô pegando os arquivos dentro do diretório. Aqui tem uma pequena configuração desse paralel options, tá? Aqui eu defino o máximo grau de paralelismo, tá? Eu pego o environment process, ou seja, ele, você lembra lá naquelas duas imagens que eu mostrei das da das minhas máquinas que tem, uma tinha seis, quatro núcleos, né, e a outra tinha seis, então ele tenta no máximo o quantidade de núcleo, tá? Aqui de novo é teste, tá? Às vezes colocar um valor maior pode ser que dê funcione mais, às vezes um menor funciona melhor, tá?
+ 
+ 
+01:57:07
+ 
+Fabio Diniz: Mas ele começa com o quantidade de núcleos que ele tem e aí ele vai saber distribuir, ele sozinho vai fazer distribuição da carga ali no nos núcleos, tá? Aí eu chamo paralel for, passo a lista, é qualquer enumerable, na verdade, né? Passo a opção e aqui um anonymous function do que eu quero fazer, ó, para cada arquivo. Faço a leitura. Ah, Fábio, read all text, né? É a mesma coisa do read to end, né? Só que aqui já transforma em texto. Ah, é ruim, pode carregar arquivo grande na memória. Sim, pode. Aí você que tem que analisar no seu contexto se isso faz sentido ou não. Às vezes eu eu é melhor isso aqui que é extremamente simples, é uma chamada só e eu carrego. Às vezes são vários arquivos pequenos. Eu sei que é pequeno, eu sei que nunca vai chegar um um arquivo grande ali que vai penalizar a memória. Então eu vou pro lado de preferir um código mais simples, mais fácil de ser lido e ser compreendido. Aqui entra muito o conceito de carga cognitiva, né? Quanto mais complexo o código, mais carga cognitiva ele exige, mais difícil é da gente entender.
+ 
+ 
+01:58:07
+ 
+Fabio Diniz: Eu faço leitura dele, processo e é isso que eu faço. Então ele automaticamente ele vai pegar isso daqui, vai distribuindo essa quantidade de de núcleos e vai fazendo. Se eu colocar 40 milhões de arquivos ou 10 arquivos, não importa, ele vai sozinho paralelizando e vai executando, vai executando, vai executando, vai executando, vai executando. É extremamente simples, né? você não tem muito, ele é facinho de usar, escalabilidade dele é alta, né? Porque ele faz ali balanceamento de carga, isso é importante, ele vai se virando ali com a quantidade de de núcleos. Então a gente tem que ter que tomar cuidado que sobre a carga de contexto. Se eu vou ter várias coisas rodando em paralelo várias trads, que que vai acontecer? Eu não eu não controlo a quem entra no na CPU para ser executado. Então uma hora vai ser uma trad, outra hora outra, uma hora outra tradutra e vai. Cada vez que entra um trad e sai outra, tem uma troca de contexto. Isso pesa, tá? Isso pesa. Então, dependendo de ser um sistema de altíssimo eh processamento, pode ser que que penalize traduja, tomar cuidado que às vezes eu tô fazendo esse process aqui, por exemplo, tá?
+ 
+ 
+01:59:13
+ 
+Fabio Diniz: Se eu acessar uma uma variável aqui fora e um outro cara acessar, eu não sei qual trado, qual que já alterou, qual que não alterou. Vocês t que pensar nisso, tá? Que é as condições de corrida, zona. Tem um outro nome também, tem condições de corrida, mas zona alguma coisa eu tô esquecendo. Mas enfim, você vai tentar acessar uma uma variável, por exemplo, que uma outra tradou. Mais para frente a gente vai ver alguns exemplos aqui. Então, thread safety tem que tomar cuidado com isso. E tamanho do trabalho, né? Ou seja, eh, aqui eu não tenho controle, né? Que se vocês viram aqui, eu jogo desse jeito aqui que foi feito, né? Eu simplesmente mando ler e executar e fazer o processamento. Se mandar uma carga de trabalho muito grande aqui, que não tem um um pare, tá vendo? E vai fazendo. Eu não tenho, não coloquei uma maneira aqui de dizer, ó pá, tá tá ruim para sacou? Então vocês têm que pensar também nesse tipo de coisa, nas implementações. Então o máximo degreed paralismo ali, né, maiores de novo é testar, né, que é esse cara aqui, né, esse cara aqui é testar, é ver, fazer teste de carga, ver o que que funciona melhor.
+ 
+ 
+02:00:21
+ 
+Fabio Diniz: Às vezes a gente não consegue fazer um teste de carga na máquina mesmo de produção, né, mas se conseguir fazer um teste de carga lá e ver que como se comporta melhor, né? Às vezes tem servidor, máquina de homologação, que é, né, em alguns lugares são ambientes exatamente iguais os de produção. Eh, então IO bound, né, pode melhorar a performance, já que as trads podem esperar por IO e não estarão competindo pela CPU, né, balanceamento de carga, enfim, final das contas, teste medição. Então começa pelo padrão e vai testando e vai ver qual que fica melhor. Aqui tesca o enol com particionamento, né? A gente viu lá o enol, ou seja, quando eu subo várias eh tesques, várias tarefas e e aguardo todas elas finalizarem, certo? Então aqui eu vou ter esse partitionary create, ou seja, eu crio blocos, né, de de trabalho qualquer tempo que eu quero trabalhar, tá? Aí eu defino o tamanho aqui nesse bet size, sei lá, 5, 10, 15, não importa. E eu vou pegando aqui os os lotes. Aí eu vou ter então pegando um bloco de cada dos lotes. Então pode, vamos dizer que eu disse que cada bloco, vou ler os arquivos aqui, são 1000 arquivos, eu vou ler em blocos de cinco, por exemplo.
+ 
+ 
+02:01:39
+ 
+Fabio Diniz: Então cada bet desse aqui vai ter cinco arquivos. Então tenho um mau controle porque eu sei que no máximo vão ter vão ter vão estar sendo lidos cinco arquivos por vez no máximo que eu defini isso o tamanho do bet, beleza? Ou seja, só quando terminar todos, tá vendo, ó? Ele vai iterar novamente e pegar mais cinco. Então tenho garantia que no máximo cinco arquivos por vez. Ah, F, pode ser que um dos arquivos, do quatro arquivos, eh, faça uma leitura em céres segundos e o único que ficou demorou 2 horas, pode acontecer, mas eu tenho a garantia de que no máximo cinco por vez. Então, eu tenho um controle mais fino do que o que eu tô fazendo, tá? Aqui acho que não precisa nem de passar, né? Basicamente ele vai pegar o o lote, vai subir aqui o bet, tá vendo? Move next é o iterator, né, que tem ali dentro. E ele vai subir o test run, tá? Então ele vai adicionar aqui na na lista de tesques, igual a gente viu aquele exemplo lá com a lista de tesques, beleza? Vai fazer o readal tex, vai fazer o pronamento e aqui eu falo, ó, quando todos terminarem, então eu ganho um controle de quantidade de arquivos que sobem, né?
+ 
+ 
+02:02:48
+ 
+Fabio Diniz: Quantidade de arquivos, desculpa que eu tô processando por vez, você eu sei que no máximo são cinco, tá? Mas eu não tenho essa garantia do tamanho, né? Então posso ter esse problema. Nesse sistema também que eu trabalhei, como a gente a gente era multitant, apesar dos bancos serem separados dos clientes, a instância do SQL Serve era a mesma, ou seja, eu tinha dentro do mesmo SQL vários bancos separados, beleza? Ou seja, eles eram isolados em termos lógicos, mas no final das contas estavam todos no mesmo SQL Server, todos na mesma unidade de armazenamento. Então a gente teve vários problemas quando a empresa foi crescendo. Um deles foi no mesmo banco, a gente a gente tinha um volume muito grande de faturas. Então a gente tinha que importar vários ao mesmo tempo, eh, que senão não dava conta, não dava para processar a tempo, tá? Porque eh elas normalmente, né, as empresas as faturas venciam próximas umas da outra das outras na mesma empresa. Então a gente tinha que processar muitas faturas num período muito curto. A gente foi vendo estratégias, começamos a fazer várias importações em paralelo, via que não funcionáva que o banco trava, depois a gente criou estratégias de ah eh pode executar várias ao mesmo tempo, mas não mesmo banco.
+ 
+ 
+02:03:58
+ 
+Fabio Diniz: Enfim, foram coisas que a gente foi fazendo, a gente utilizou certas dessas dessas estratégias. Entendeu? Você ter os ajustes mais finos de como que você faz. Então ele é simples, né? Apesar que o código bem bem simples, né? Então a gente tem esse controle de lotes, tem flexibilidade, né? Considerações sobre a carga de memória, né? Que ão tomar cuidado. De novo aqui a gente um exemplo com al text, mas poderia ser usando o stream operação manual, ou seja, eh aqui de novo, né? Se tivesse alguma variável que fora que elas estão lendo, estão escrevendo, tem que tomar cuidado, tá? Canel Based é um é um é um outro nível, tá? Então aqui funciona no esquema de produtor, consumidor, tá? Então cria um canal aqui, beleza? Aí eu crio um produtor que é quem vai adicionando coisas eh tarefas no canal e cria um consumidor, que é quem vai tirando tarefas do canal. Então eu uso aqui um test.r run, beleza? Faço a leitura dos arquivos, ou seja, ele vai lendo aqui os arquivos, vai adicionando aqui dentro da fila. consumidor contrário, ele vai olhando aqui o canal e vai lendo que que tem dentro do canal e vai executando.
+ 
+ 
+02:05:08
+ 
+Fabio Diniz: E aqui eu dou um um enor final, ou seja, subi um cara produzindo e jogando na fila. Eh, subi um outro cara eh consumindo e tirando da fila. Quando os dois não tiverem mais tarefas, eu finalizei, tá? Então, tem um pipeline de produção e consumo. Então, é legal. escalabilidade dele também é boa. Geramento eh gerenciamento automático de eh para lidar com back pressure, tá? Considerações complexidade adicional, né? Aqui tá um exemplo simples, né? Mas pode ser mais complexo, né? a latência inicial, por quê? Esse cara aqui ele vai subir produce e o e o consumer, só que enquanto ele não tá eh pode demorar um tempo dele ler esses arquivos, pode levar um tempo dele dele pegar esses arquivos, ler e escrever aqui no canal, né? Então esse cara aqui só vai consumir quando tiver coisa pronta para ele consumir. Então tem uma pequena latênciazinha ali. Então dependendo pode ser que que atrapalhe a iniciar, tá? Nada demais não, mas é bom saber que tem esse aqui data flow block, que é uma forma de se ir compondo coisas, tá? Você consegue fazer fluxos mais complexos, tá?
+ 
+ 
+02:06:26
+ 
+Fabio Diniz: Então aqui a gente define o paralelismo também, né? com com a quantidade de processadores. Aí a gente tem um transform block, que é um que faz alguma eh faz uma leitura. Então a gente cria esse bloco, define que ele é um cara que vai ler um arquivo, beleza? A gente cria um action block, que é fazer uma o processamento de fato. Aí eu um com outro, ela fala que esse bloco está linkado é um bloco de ação. Então, ou seja, eu vou lendo e vou processando, tá? Aí depois, e aí eu falo, ó, esse bloco tá linkado com esse, ele faz nessa ação. E tem esse propagate completion, que que é isso aqui? Esses são cargas de trabalho. Então eu só passo eh sempre que eu terminar, eu já passo pra próxima. Então fica num se fosse um fluxo mesmo, só vai pra próxima etapa quando a anterior terminou. Só que daquele bloco que eu iniciei, vamos supor que eu iniciou várias leituras, várias. Aí tem um bloco que acabou de iniciar, mas ele era menorzinho, ele já leu, já processou, então já passei pra frente. E às vezes, sei lá, esse é o bloco do 15, eu tô lá e o primeiro bloco ainda, ele o arquivo é grande, ele tá lá na primeira etapa, ele tá lendo ainda, ele nem ele nem eh passou, nem terminou de de fazer leitura.
+ 
+ 
+02:07:40
+ 
+Fabio Diniz: Então, eh o próprio fluxo se controla, ele passa para as próximas etapas de acordo com que a a etapa anterior finalizou. Beleza? E aqui eu faço a leitura dos arquivos e vou mandando para dentro do bloco, né, que é o bloco inicial aqui. Então assim, isso aqui é muito simples, mas dá para vocês fazerem, pessoal. Eh, esse datafow aqui ele é bem ele é bem customizável, né? Você pode fazer fluxos complexos com ele toma cuidado, tá? Porque depois para testar também um fluxo mais complexo pode ser eh difícil, mas ele dá para vocês fazerem uma estrutura bem bacana. Essa questão dele dele passar pros próximos fluxos, pros pras próximas etapas, apenas quando a etapa anterior terminou, isso é muito interessante, né? Então você tem um um passo a passo a fazer, beleza? Então ele a vantagem dele, né, configurabilidade dele é alta, forma dele de fazer composição também é alta, é muito bacana. A propagação da conclusão também é super interessante, só que ele tem complexidade inicial e de teste também, tá? Então na hora de fazer fluxo aqui, dependendo do do fluxo, tem que tomar cuidado. Aí aqui agora utilizando o uso de memória, tá? Então, para evitar locações desnecessárias, reduzir a pressão sobre o garra de coléct, né, de novo que o Bruno eh tratou ali com vocês, fazer um bom uso de tipos primitivos, isso aqui é pouquíssimo comentado, tá?
+ 
+ 
+02:09:06
+ 
+Fabio Diniz: Pouquíssimo, pouquíssimo, pouquíss muito importante. Eh, desempenho de cenário de autodesempenho. Então, a gente tem aqui o spam de T, por exemplo, tá? Então, imagina que a gente tem um, a gente vai processar um arquivo grande, tá? de de log, por exemplo, grande mesmo, um banco de dados. Eu não quero ler aquele arquivo inteiro na memória. Até para ler pedaços dele pode ser complicado. A gente utiliza esse span de T, que ele vai pegar pequenas porções dentro do arquivo e eu vou ler aquela pequena porção apenas dentro da do arquivo, ou seja, eu consigo caminhar dentro do arquivo na leitura dele de blocos, entendeu? Então esse uso spam de T, tá? Então aqui esse process file, tá? Ele recebe esse read spam. que é o arquivo de fato, né? Ou seja, um é uma cadeia de bytes. Eu vou fazendo a leitura dele aqui, tá? Então, vou ler o tamanho do, ou seja, eu tenho um eh essa lógica aqui, ó, eu o registro sou eu que determino, certo? Então, um log para um log que é com registro com tamanho eh determinístico, né?
+ 
+ 
+02:10:10
+ 
+Fabio Diniz: Eu consigo determinar o tamanho, eu sei quais os tamanhos dos blocos que eu vou que eu vou ler. Então, pega o tamanho do bloco, certo? Leio nele, faço esse slice aqui, ó, certo? Com o tamanho do bloco e vou lendo cada um e uso aqui. Esse record ficou azul, tá, pessoal? Porque palavra eh reservada, né? Isso aqui a gente não fez direto no C#ARP, então ele acabou pintando, mas não pode ter esse nome, né? Porque a palavra é reservada. Eh, aí eu registro, beleza? Faço um novo slide e vou seguindo. Beleza? Então, a ideia aqui é essa, eu vou lendo pequenas porções dentro do de um de um arquivo de de maneira que eu não peso aquilo na memória. Então, ele manipula a sessão de uma rais e e o buff é de forma segura, tá? Ele é alocado na stack, isso é importante. Não há cola de coleta de lixo, né? Porque ele tá na steack. Beleza? E o memory de T, ele é um pouquinho parecido com o span de T, mas tem algumas diferenças aqui que a gente vai ver.
+ 
+ 
+02:11:12
+ 
+Fabio Diniz: Então a gente tá lendo agora da rede, tá lendo algum volume de dados da rede, então a gente vai ler blocos e blocos da rede, tá? Então tem o network stream aqui, vou lendo num buffer de 4096. Aí eu determino aqui um memory, um memory, beleza? Com o tamanho do buffer, ou seja, vou lendo sempre nesses blocos. E aqui eu vou lendo, ó, enquanto tiver o que ler no stream, né, for maior que zero, tá? Isso aqui me retorna o o opa, isso aqui me retorna a quantidade de bytes, ó. Então, se ele lê maior que zero, tem coisa para ser lida. Se vier zero, negativo não tem, né? Mas se vier zero, ele sabe que acabou a leitura. Aí ele vai processar naquele slice, ele faz um slice de novo com o tamanho dos bytes lidos, que eu pedi para ler 4096, né? Mas pode ser que lá no final, né? Tá terminando, ele lê só 4.000, por exemplo. Então, vou ler o tamanho que ele que ele que ele retornou. Faço um slides na memória também. E aqui é o processo.
+ 
+ 
+02:12:08
+ 
+Fabio Diniz: Beleza? Faz o process aqui. Aqui é tá minha lógica de processão. Parece semelhante ao ao span de T, mas ele pode ser armazenado na HIP, tá? Pode ser convertido para expand para eh manipulações mais eficientes. E aqui um pequeno comparativo dos dois, tá? Então, expand ele não pode estar na hip, o memory pode, ele pode ser usado em assim que é weight, no expand T não, o memory pode, beleza? El pode ser campo de classe, seja, eu posso definir ele como uma propriedade lá de de uma classe qualquer. SP T não, o membro pode performance desse aqui muito altas, tá? Porque ele ele de novo não chama garba de collector nem nada. E aqui alta, tá? Então, código síncrono e rápido aqui, código assíncrono ou persistente. Beleza? E aqui o arrei pool, tá? A gente falou do thread pool, se a gente tem uma piscina de threads, a gente vai ter uma piscina de arreis. A lógica que é um pouco parecida, como eh aqui também é por questões de hardware, tá, pessoal? Não sei quem já leu sobre isso. Um arrei na memória.
+ 
+ 
+02:13:16
+ 
+Fabio Diniz: Por que que aí você tem o você coloca lá o índice, né? Você pega e coloca um índice aqui, né? 0, 2, não sei quê, não sei quê, porque um arrei nada mais é do que o endereço para onde ele ele inicia na memória. E o índice eh conta besta de de computador, né? Ele soma o índice com o o a a posição de memória com o índice e ele consegue caminhar em cada um dos do bytes do arrei na memória. E por questões do hardware, tá? Todo o arrei na memória ele é contigo, ou seja, não tem um pedaço aqui, coloca um outro pedaço aqui, não. Não é igual o armazenamento, era armazenamento em disco, né? Quem mais velho aí também deve ter passado aquele desfragmentador, né? Deve lembrar disso que ia escrevendo em várias porções pequenas onde ele achava um pedacinho que cabel e gravava. No na memória não é assim. Ela é sempre contigua. Por quê? Por causa dessa conta, certo? Eu tenho um endereço ali do do início do arrei e vou somando o índice. Então é é muito fácil. O computador calcula isso muito rápido. Então tem o início ali.
+ 
+ 
+02:14:19
+ 
+Fabio Diniz: Ah, tenho quero a posição 100. Ele soma com esse com esse endereço inicial que tá gravado lá na na stack pau. Já pula pro pro ponto exato. Se não tem não é contigo, ele tem que saber, ah, não, aqui terminou a rei, aí tem que ter um endereço pro próximo. Não funciona assim. Ele é sempre contigo. Aí qual que é o problema disso? Se eu tenho uma com uma posição que 100 posições e precisei de 101, ele vai criar uma nova de 101 em algum ponto da memória. Vai copiar o 100 que tinha antes para cá com um sobrando. Ele não pega esse aqui e adiciona uma no final. Não funciona assim, tá? Então isso tem um custo fazer isso, principalmente se são eh são um volume de dados grande, tá? Que que é a ideia do arol? Eh, as porções de memória, quando você for fazer um processamento que você sabe que você vai utilizar muita leitura de de texto, né, de bytes, né, eh, e você sabe que vai tomar muito espaço de na memória, ao invés de você ficar pegando esses espaços toda hora e realocando, ele mantém.
+ 
+ 
+02:15:26
+ 
+Fabio Diniz: Então, peguei um espaço 100, usei, ele em vez de devolver esse essa porção pro Soo, ele mantém ali, entendeu? Tá ali aquela posição, começa aqui, termina aqui. Ah, peguei um agora de 200, beleza, coloca aqui de novo. Parei de usar. Ah, precisei de um de 150. O de 100 não me atende, mas o de 200 me atende. Ele vai pegar o de 200 e passar, porque não tem problema e eu eu utilizar um arrei menor dentro de um maior. Isso não tem problema, certo? Eu só tô usando, só tô deixando posições pra frente ali vagas. O que eu preciso tá aqui dentro. Eu só não posso ter mais posições do que não tenho naquele arrei. Eu vou precisar de um novo. Então a ideia é essa. Eu crio um array pool, tá? Aí eu faço esse array pool aqui com shared, por exemplo, e aqui tem esse conceito de rent, ou seja, me empresta aí um ô p me dá um me empresta aí, me aluga, né? Alugar rent alugar, né? É verdade, né?
+ 
+ 
+02:16:18
+ 
+Fabio Diniz: Eh, pô, me me aluga aí um um arreio no tamanho tal aqui, ó, tamanho do data size que eu tô lendo. Se tiver, ele ele pega um que tá disponível. Se não tiver, ele vai criar, vai te passar, você vai utilizar, vai fazer o que você tem que fazer, né? Vai, vai processar. Enfim, terminou, eu dou um return to pull. Aí ele volta para dentro do arrepol e beleza? Aí veio uma outra chamada. Precisou de um arrei menor ou ou igual a esse, ele consegue utilizar. Beleza? Então, a ideia aqui é essa. Então eu evito ficar fazendo essas essas alocações e entrando garbas de colctor. Então eu eu reduzo a pressão sobre garba de coleta utiliz a reutilizar a raiz, tá? Suporta a raiz de de diferentes tamanhos, permitindo eficiência de memória. Beleza? Aqui, pessoal, esse value task, tá? Que que é o value tesk? Ó, lembra que a gente tava falando ali de tesque? Test. Run, tá? Quando eu dou um um test run, ele já entra em estado de running.
+ 
+ 
+02:17:29
+ 
+Fabio Diniz: Estado de running não quer dizer que ele já tá eh de fato executando na CPU, mas ele já entra em estado de running. Eh, a trad que instanciou ele não é a mesma que vai executar, certo? Entre esse, ó, só me dá um uma trad nova aqui para essa tesc. Isso tá lá na CPU executando, né? Um código que tá lá executor. Pode ser que ela levou o tempo de CPU e terminou o tempo de CPU. Ou seja, essa traduis o SO colocou lá para trabalhar e não é a tradu para iniciar aqui, beleza? Ou é, pode ser que seja. Ponto é, na hora que eu vou de fato ver a tesque, o o valor dela, ela já executou, já ten o valor em si. Eu não preciso de eh colocar o aate para esperar para pegar o valor, porque quando você tem, deixa eu ver se eu volto fácil aqui, que eu acho que se eu não comentei, esqueci de comentar. Tô no 77, deve tá no 40. Vamos pegar esse caso aqui. B. Isso aqui, pessoal, ó, esse SNC tesque com a weight, isso aqui é relativamente novo, tá? A o asincronismo do DNET, ele foi evoluindo, tá?
+ 
+ 
+02:18:50
+ 
+Fabio Diniz: Ele não ele não nasceu dentro do do dnet. Quem aí também tem é mais velho, pegou a fase que você tinha isso aqui por baixo dos panos, o compilador, né, ele entende que isso aqui tem que ele tem que criar uma máquina de estados em runim, então ele vai destrinchar isso aí numa outra estrutura que é para controlar esse asincronismo. Antigamente ele tinha um bigin execute, já até esqueci. Ele tinha uma outra forma de fazer que ainda é a mesma coisa, só que aqui ele ele pra gente, né, na hora de escrever o código, ele deu essa facilidade aqui, mas por baixo dos planos ele implementa da mesma forma que era. Ele só melhorou pra gente aqui, tanto da forma de escrever quanto de leitura. Ficou mais simples, mas na na no final das contas ele ele ele monta essa máquina de estados para poder fazer esse controle. A ideia do value tesque, a ideia do do vales é o seguinte. Quando eu tenho aqui fazer try get cash data, ó, tenho aqui, aqui eu vou tentar pegar um dado dentro de um cash, beleza? Então, como é que funciona o cash, né? Se eu tenho o dado quente, eu te retorno. Se eu não tenho dado, eu tenho que ir lá buscar o dado quente, guardo ele no cash e passo que aí na próxima vez que alguém, eu mesmo outra pessoa vi pegar o valor daquele daquele dado, ele já tá quente, certo?
+ 
+ 
+02:20:08
+ 
+Fabio Diniz: Então eu tento pegar o valor do do dado do cash. Esse try cat eh try cash try get cash data, tá vendo? Ele tem esse out in result aqui. Então ele tem esse pool aqui simples. Se eu já consigo pegar ele, eu retorno o valor. Eu não preciso de vir aqui buscar. Só que eh se é uma tesque, não é um value tesque, ou seja, é a tesque normal que a gente tá tá tá usando, ele vai criar essa máquina de estado. Por quê? porque ele não sabe que o valor tá pronto, independente do valor já tá pronto ou não. Ou seja, na entre eu pedir o valor, eh, mesmo sendo de forma cinco, pode ser que ele já foi lá porque é uma outra trad, ele já foi lá, já estruturou tudo, já pegou o valor, já tá com valor quente. A máquina não sabe disso, porque o a traduto, ela ela ainda ela ela pode ter perdido a CPU de novo, ela não tá executando, ela não sabe mais. Então ele vai criar toda a estrutura do do da máquina de estados para poder buscar aquilo. Isso tem um overhead. Então a Microsoft criou um jeito do seguinte: olha, em vez de você retornar tesque, retorno uma valy test, que é o seguinte, se eu já consegui o valor, se eu já tenho um valor de retorno, eu não preciso de montar a máquina de estados, não preciso de montar a estrutura para fazer o asincronismo.
+ 
+ 
+02:21:31
+ 
+Fabio Diniz: Por quê? Eu não vou chegar nessa parte aqui de ter que ir lá na base buscar o dado novo. Eu já tenho o valor pronto, então eu retorno. Só que no na tesquec obrigatoriamente eu teria que fazer isso, entendeu? na hora de criar uma tese que ele vai criar a estrutura para poder fazer essa essa questão. Então ele dá esse essa opção de você utilizar um value test de retorno para quando você sabe, não são todos os casos, para quando você sabe que em vários casos, quando eu for chamar esse get data e sync aqui, ó, sei que em grande parte das vezes o dado o dado quente já vai tá pronto. Eu não vou ter que criar estrutura de assincronismo para poder validar o dado, para poder buscar o dado. Desculpa. Entendeu? Então, em sistemas que t um volume muito alto, principal, esse caso de cash aqui é o mais simples de entender, né? Porque o cash é grave para isso, né? Eu ter o dado quente na na maioria do tempo, sei lá, 90% do tempo, eu vou ter o dado quente, não vou ter que ir lá na base buscar o dado. Então ele não cria toda estrutura, ele simplesmente retorna o valor. Beleza?
+ 
+ 
+02:22:33
+ 
+Fabio Diniz: Se fosse só tesque aqui, não tivesse o valor, eu não ia conseguir fazer isso. Ele ia ter que criar estrutura inteira, mesmo ele chegando aqui, o valor, o valor já tá já estando pronto, tá? Então a diferença é essa. Então em mos assim, tá? Ajuda a evitar a locação de tesque de forma desnecessária. Aí a locação de teste, pessoal, tá toda estrutura, então ou seja, pedir uma trad, fazer tudo que eu tenho que fazer para poder eh estruturar aquilo. O I5 é number numerable, tá? Eh, suponho então que a gente tá tá consumindo dados de um API que retorna resultados em partes, tá? Eh, então a gente vai fazer essa leitura de forma o numerable, tá? Deixa eu pegar aqui sem o aqui, ó. I numerable ele tem uma uma execução postergada, né, que é esquec o nome em inglês, de fer, né, que eles chamam, que é o seguinte, eu consegui empilhando a inumerable em cima de inumerable, tá? que aí você faz a materialização dos dados, ou seja, buscar o dado de fato, só quando eu tento acessar o dado. Não sei se vocês sabem disso, tá?
+ 
+ 
+02:23:43
+ 
+Fabio Diniz: Não é enumerable, isso é poderoso para um lado e perigoso de outro. Essa aplicação também que eu trabalhei quando a gente usava lá o N Hybernate, né, que foi o RM que a gente utilizava, a gente tinha camadas que eram era eh MVC, né, o controller, aí tinha lá um outras camadas até chegaram de banco, tá? Era era mais de um. a gente começou a usar esse enumerable que a gente lendo lá é mais performático, não sei quê e tal. Só o que acontece o Número, enquanto eu não tento acessar o dado dentro da da lista, ele não ele não materializa. Então, se eu uso lá no banco retornando inumerable, só que eu não tento pegar o dado, ou seja, eu não pego lá, sei lá, eu tenho uma lista que igual recebe o dado do banco e ela é uma numberable. Enquanto der um list ponto alguma coisa, ah, me dá primeira posição, me dá o dado X, ele não executa de fato a quer no banco, entendeu? Como se fosse um lazy loading, tá? Ele não executa, ele executa só quando eu tentar pegar o dado. Por quê? Pode ser que algumas coisas que eu tô fazendo ali, eu nunca chega ao ponto de querer pegar o dado.
+ 
+ 
+02:24:51
+ 
+Fabio Diniz: Então, ele evita essa execução no banco. Só que qual que é o problema? Quando a gente tava em várias camadas, tinha vez que essa execução postergada, ela ficava lá paraa camada eh do controller na entrada da aplicação. E como era bem divididinho, a a o ciclo de vida do banco já não existia na época na controller. Isso também foi um mundo que a gente custou a entender o erro. Então a gente tentava, a gente estava tentando materializar uma chamada nobal porque ela fazia em cascata. Então eles chamavam um enumerable dentro de outro de dentro de outro, certo? Era um método dentro de outro método. Eu lá no controle a gente falava: "Pega tal coisa". Aí ele: "Pera aí, eu não tenho esse informação. Vai chamar a de baixo e vai de baixo, vai de baixo até chegar no banco." Só que na hora que ele tentava executar no banco, na camada do do controle, o banco já não tinha mais ciclo de vida, quebrava. Então é número ele é muito poderoso e a gente não conseguia até usar até chegar o Icumerable utilizar ele eh em chamados assínes, fazer essa leitura eh em pedaços e eh postergada, tá? Então é numberable ele trouxe o A5 numberable ele trouxe isso pra gente.
+ 
+ 
+02:26:00
+ 
+Fabio Diniz: Isso é muito poderoso, tá? Muito, muito poderoso, mas tem que ser bem usado. Então aqui basicamente, né, eu vou ter aqui uma uma leitura aqui de get 5, tá? Então vou ler aqui, coisa simples, né? Então vou ler de zero a 10, beleza? Vou dar um tesque delay ali que a gente viu, né? Seja só para simular a mesma operação, ou seja, vou guardar eh 100 msundos, beleza? E aí eu vou fazer o uso desse return, ó, que é junto com a com ele pode usar esse enumerable, ou seja, ele vai entregando de acordo com o que vai chegando os dados. De acordo com o que vai chegando nos dados, tá? E aqui eu faço o processamento normal, como a gente já viu, beleza? Então aqui ele vai poder ele vai te permitir e usar aqui no array for reach, ó. Ele vai lendo conforme vai chegando, vai lendo conforme vai chegando, como na rede, né? Não, a gente não não é igual o armazenamento local, né? Armazenamento local, o truput tende a ser mais fluido, né? O não tem tanto, né, delay não. A rede ela tem, não fugi a palavra, ela tem um atraso da própria rede, né?
+ 
+ 
+02:27:11
+ 
+Fabio Diniz: pode ter o os atrasos ali da própria rede, ela é maior. Então a gente utilizar o E5 eh faz sentido. Então ideal para ser análise onde os dados são recebidos em partes ao longo do tempo. Isso melhor eficiência capacidade de resposta da aplicação ao process ao processar dados à medida que eles são eh recebidos. Então aqui a gente vai ver o uso das coleções concorrentes, tá? Lembra lá que eu falei alguns slides atrás que quando a gente faz essas chamadas eh execuções em paralelo, a gente faz eh processamentos em paralelo, pode ser que a gente tenta acessar uma variável, alguma coisa que uma trad tá por um caminho gravando e a outra tá lendo. Então não tenho garantir que a que tá lendo tá lendo o dado mais atual e nem que que tá gravando já tá gravando, não tá gravando um dado antigo porque já veio uma outra e gravou um mais atual antes, tá? Então, a gente tem essas coleções do próprio DNET, que elas já são preparadas para cenários de concorrência. Então, eles são preparados para cenário de multitad, tá? Eh, reduz a necessidade de gente usar os bloqueios com lock, tá? Ou seja, elas implementam o lock, só que de forma transparente pra gente.
+ 
+ 
+02:28:22
+ 
+Fabio Diniz: A gente não tem como mais se preocupar com isso, tá? Então, eh, o primeiro des é concurrent dictionary, certo? Então, define aqui um um dicionário, tá? De cash, por exemplo, e aqui, ó, get ord, né? Tá vendo? Aqui eu não tenho que me preocupar, tá? Ele é ele, ele é concorrente, eu não tenho que me preocupar em fazer lock, eu simplesmente dou um get aqui. Ah, vou lá buscar o item no database. Beleza, peguei, atribuo aqui dentro. Se entrar uma outra trad aqui, enquanto ele tá buscando esse dado, ela vai aguardar, tá? ele já faz esse controle. Eu não consigo utilizar o ponto, o o a variável de cash enquanto tem alguém aqui dentro executando alguma coisa nesse get. Beleza? E o update é a mesma coisa. Enquanto tiver alguém fazendo um update aqui do de um valor, eu não consigo fazer uma coleta de valor ou adicionar. Beleza? Então ele permite o acesso simultâneo de várias sedes sem necessidade de bloqueios explícitos, tá? tem alta performance em operações e reduz a contenção de trades. E aqui é o como ele fazia, é a mesma coisa, tá?
+ 
+ 
+02:29:31
+ 
+Fabio Diniz: Por baixo dos panos, ele tá implementando isso daqui. Só que então aquele get lá que a gente viu aqui que é uma linha, tá? Vira isso daqui, tá? Eu tenho que vir aqui e falar: "Ó, isso aqui é uma zona, tá me fugindo a palavra, não lembro, não é zona de concorrência não. Eh, é nesse trecho aqui, eu não posso deixar que duas threads, uma entre aqui para um lado e outra pro." Não posso. Quem pegar esse lock aqui primeiro, pegou o lock, acabou. Enquanto eu não soltar esse lock, seja, entrou uma trad ali, opa, loquei. Vou fazer o que eu tenho que fazer. Pode ser que demore uma eternidade. Enquanto eu não liberar outra trad, chegou uma trad ali e tentou pegar o lock, o lock tá travado. Dnet não deixa. Essa trad aqui vai vai vai parar. Veio outra trad mais uma, não importa. Vai ficar ali enfileirando, tá? Então é assim que funciona o lock. Então eu loco, tento lá pegar o valor no cash. Se não deu certo, né? Não tenho valor, vou no banco, salvo o valor que eu peguei do banco e aí eu retorno.
+ 
+ 
+02:30:32
+ 
+Fabio Diniz: Aí saiu daqui, saiu do lock, liberei o lock. Para fazer um update. A mesma coisa. Eu crio um, eu tenho um lock para dizer por você entra uma trad ali, quanto um tá lendo, o outro não pode gravar nem vice-versa, tá? Então aqui é menorzinho, né? Não fica tão diferente, né? Mas nesse outro caso aqui, né? a gente sai disso daqui para isso daqui. Então tem um ganho muito expressivo em em leitura, né, em interpretação do código, né, a carga cognitiva é muito menor, tá? Eu não vou passar por todos, tá pessoal? Mas é a mesma coisa, é a mesma lógica, tá? Então, KQ, né, é uma fila, eh, implementa já os locks de maneira eh transparente. Então, aqui eu consigo utilizar o ad, o enfilerar, o des o eh cadê o desenfileirar sem fazer os locks. E aqui seria, né? E aqui seria com lock. Então, ah, vou enfilerar. Beleza, tem que colocar o lock. Vou eh desenfileirar, vou enfilerar, vou passar aqui um lock.
+ 
+ 
+02:31:47
+ 
+Fabio Diniz: Então, eu tinha que fazer esse controle. F é um código muito mais complexo. Bag mesma coisa. Mesma coisa aqui no ed e no na hora de retornar eu ten que colocar o lock. Então, aqui na hora de antes de adicionar coloca um lock. Beleza? Então, já são coleções preparadas. E assim, eu eu sempre falo nessa aula, procurem dar uma estudada no sempre me foge o namespace, eu não, né? System eh System Collections, né? E aí tem o System Collections, que jogou são duas, são duas lá de coleções, cara. Tem muita coleção já pronta e a gente fica refazendo. Por exemplo, esse tem o debag, tem o hashta table, tem alguns que já garante unidade eh unicidade, ou seja, se entrar eh índice duplicado, ele não deixa entrar o set. Então que é o set, né? Eh, conjunto, ele não deixa entrar. E a gente às vezes não sabe que isso existe, fica tentando criar soluções para para tipos de coleções de dados que já estão prontas no Dnet, tá? Eh, e aqui boas práticas de integrações, tá? já falou ali, mas só reforçando, tá?
+ 
+ 
+02:33:00
+ 
+Fabio Diniz: Então, sempre devemos prever possíveis falhas, implementar eh mecanismo para tratá-las. Então, que entra muito aquela questão da resiliência, de pensar sempre que a gente tem que proteger nossa aplicação do mundo externo, seja na entrada ou na saída da informação, certo? usar block trat, né, para capturar exceções e fornecer feedback útil ao usuário e ou ao sistema essencial, que é aquilo que a gente comentou também, se eu tô consumindo uma API terceira, né, sei lá, minha aplicação usa um um gate de pagamento e ele tá fora do ar, sabe? Ao invés deu, ah, deu deu deu ruim, deu erro, não. Ó, eh, fizemos uma tentativa, eh, estamos aguardando x tempo, vamos fazer uma nova. te avisamos, é diferente de simplesmente parar de funcionar. Então, a gente tem que pensar essas estratégias pra gente conseguir implementar. Eh, por exemplo, capturar dados de erro, de tempos respostas longas do servidor e também a gente conseguir trabalhar em cima disso aqui. Login também é muito importante, né? Às vezes tem problemas que a gente eh eles vão se acumulando até antes de estourar. Então, se a gente vai fazendo login e analisando os dados, a gente consegue eh eh pegar isso com um certo nível de antecedência.
+ 
+ 
+02:34:19
+ 
+Fabio Diniz: Gestão de time out tentativa, né? A gente falou lá dos timeouts, cara, muito importante. Não deem mole com o time out, que o time out é parece bobeira, mas ele ele ele serve para garantir que sua aplicação não vai não vai pesar outros sistemas, tá? Eh, então implementar lá as as políticas de retentativa, né? do do poli lá com retry aqui só relembrando, né, a política aqui, monitoramento e loging, né? Então, fazer um monitoramento contínuo das aplic das integrações é fundamental pra gente identificar e resolver problemas rapidamente. Eh, identificar também eh implementar um log em detalhado, né? detalhar, eh, guardar o que a gente vê que faz sentido de ser guardado pra gente analisar depois e usar, né, ferramentas de monitoramento e de alerta. Pessoal, hoje era isso, né? Acabou indo um pouco mais longo do que esperava. Eh, eles removeram aqui, esqueci de voltar, mas eu gosto de trazer aqui alguns algumas dados eh conteúdos adicionais, né, tanto ali daim quanto do próprio Elemar. Tem alguns vídeos, alguns artigos, algumas coisas que a gente que são interessantes. Tem um do Elemar, cara, antes, só para eu não esquecer, ó, muito da parte de trads ali, de, ó, esse livro aqui, ele é o que fala de concorrência de não sei quem.
+ 
+ 
+02:35:47
+ 
+Fabio Diniz: DNET, spricynchrons.net. O meu é, ah, não lembro que versão que é esse aqui, não. Já tem uns aninhos já. Eu comprei esse aqui até uns 5 se anos, eu acho. Até um pouco mais. Ele até a última vez que eu olhei deve ter mais de ano, mas ele não tem português, tá? Infelizmente, tá? Só tem inglês. Mas vale a pena, tá? Porque que que esse livro faz? Ele ele te mostra como que era o asincronis concorrência, não sei quê, no Dnet lá desde desde do 1.0. e vai te mostrando como que foi evoluindo e por que foi evoluindo, porque que a Microsoft tomou certas decisões até chegar no A5 A que a gente conhece ali hoje, vai te mostrando passo a passo várias coisas. Então é muito interessante, ele te mostra muita coisa no no por baixo dos panos aqui que te dá uma visibilidade maior. Eu comprei isso aqui na Amazon, que tem muita gente que não sabe, tá? Mas eh você vai pagar em dólar, obviamente, né? Mas você ou você não paga imposto, tá? livro, publicação, tem lá periódico, não sei o quê, não paga imposto de importação.
+ 
+ 
+02:36:49
+ 
+Fabio Diniz: Então você vai pagar o frete que não é barato, né? Uns 20, 30 dólares, sei lá, de frete. Só o que que eu faço normalmente eu junto alguns amigos, quem quer comprar alguns livros aí, porque o frete sobe muito pouco quando você vai adicionando para um livro, ele é pesado, para três, quatro, não sei que vai diluindo, tá? Então vale a pena, tá? Um livro não é barato. Esse livro aqui, da última vez que eu li, acho que tava uns R$ 300, R$ 350, convertendo, né? Já convertendo, mas um livro muito bom, muito, muito bom. E um outro que várias coisas ali vocês viram que eu falei com vocês que pô isso aqui é do hardware, funciona assim. Esse aqui quem fez sem essa computação aí deve ter visto. Não sei porque na minha câmera não tá pegando. Vocês viram no último ali, pessoal? Eu mando ali no texto ali. Mas esse aqui, ó, sistemas operacionais modernos, tá? Esse meu aqui é bem antigo, que da época que eu fazia faculdade. Então esse aqui tá na terceira edição, acho que já tá na sexta.
+ 
+ 
+02:37:34
+ 
+Fabio Diniz: Isso aqui também deve ser uns 200, R 200 e poucos reais. Aí ele mostra muita coisa como é que funciona trad no a nível de de hardware e so. Aí vocês vão ent essa questão do do arrei contigo, entendeu? Ó, esse é Sharp and Nut Shell também, ó. Esse eu nunca li, mas legal, bacana. Aí é a indicação. Então assim, vocês vão ver nesse livro que muita coisa no Dnet é como é por conta do hardware e você entender o hardware, como que o hardware funciona, vai te ajudar um programador melhor, porque você vai entender porque que determinadas soluções são dadas da maneira que que é dada, entendeu? Então também é um livro que faz muito sentido vocês comprarem. E tem uns tem uns aqui, deixa eu ver se eu abro rápido aqui que dezinha. Ó, no YouTube daí tem tem umas playlists legais aqui do Elemar também. Ah, não vou lembrar. Esse esse aqui do DDD de jeito certo é muito bom, muito boa. Esse aqui fundamento de arquitetura também é bom. E esse aqui padrões, todos esses aqui que eu lem fez são muito bons, cara. Tem bastante. Esse aqui de do jeito certo é legal.
+ 
+ 
+02:38:58
+ 
+Fabio Diniz: Vale a pena vocês darem uma olhada. E tem um artigo que a gente falou ali de tipos primitivos. Esse aqui, ó, é obsessão por tipos primitivos. Primitivos. Olha lá. Deixa eu ver se esse é esse aqui. Cara, o Elm, a gente é muito acostumado a ficar usando int, date, não sei quê, string, ao invés da gente criar tipos, sabe? Igual, por exemplo, ele aqui criou, tipo CPF, tipo salário, tipo name, tá? Aí, pô, tem aqui string, string, string. Ele vem aqui, define. Por quê? Tem quando você cria, primeiro que quando você cria um tipo, ele vai paraa stack, certo? Você já consegue criar um monte de operações em cima daquele tipo. Então, por exemplo, pô, se eu crio um tipo e-mail, meu para minha aplicação, e-mail é muito importante. Eu não fico em todo lugar da aplicação validando se aquele e-mail é um e-mail válido, se tem @a, se não tem, se tá, entendeu? CPF é a mesma coisa. Eu crio uma uma struct ali de CPF, por exemplo, que ela se comporta como tipo.
+ 
+ 
+02:40:09
+ 
+Fabio Diniz: Eu não tenho ficar validando e se começar a ver, pô, não tudo, tá, pessoal? Nem tudo vira vira tipo, tá? Pode virar uma classe, enfim. Mas tem vários, tem várias coisas que são batidas que a gente fica usando com, pô, CPF, vai string. Aí em toda classe que eu preciso de utilizar veio do banco, não sei que tem que ficar, pô, CPF tá certo, eu tenho quantidade certa caracteres, eh, o dígito verificador eh bate, não bate. Por quê? Porque eu não uso um tipo, ou seja, eu não dou expressividade para pra minha pra minha aplicação, tá? Aqui tem um bem simplão, tá? Tem um outro, se vocês pesquisarem que vocês vão achar um delem gigantesco para CPF e um outro de CNPJ que ele fez que ele mostra os ganhos de um garba de coleto. É bem interessante, cara. Eu não sei se é nesse outro aqui dele que ele fez. Tem até um tinha até um vídeo. Esse aqui, ó, tem até um vídeo, tá? Então esse aqui vale muito a pena, tá? É o negócio parece bobo, parece é besta, mas pô, dá um ganho assim, absurdo, cara.
+ 
+ 
+02:41:12
+ 
+Fabio Diniz: Absurdo, absurdo. A expressividade que ganha o seu código, porque você começa a ver coisas eh do que elas são, sabe? No tipo que ela é, tá? Aí, pô, CPF, mail, CNPJ é os besta, né? aquelas que a gente todo mundo utiliza, mas com certeza nas aplicações de vocês, na onde vocês trabalham, vão ter tipos que são muito claros, são palavras que todo mundo usa o tempo inteiro. Esse, pô, isso aqui poderia ser um tipo, principalmente que as questões aqui de novo tá simples, cara, mas teve um que tem um que eu não vou achar fácil aqui, que ele é uma amostra usando eh principalmente isso aqui, esses implicit operator que quase ninguém conhece, tá? Quer dizer, você já dá o cast automático de um string no tipo, sabe? Tem várias coisas aqui. O index, cara, vale muito a pena isso aqui. Se vocês quiserem se tornar o melhor programa do Inc#ARP, dá uma olhada nisso aqui, que isso aqui vale a pena, tá? Aí de novo, aí tem o vídeo e tem um que ele fala, deixa eu ver se eu acho do CPF aqui. É porque não não tá mais na Não tá mais fácil de achar ali no site.
+ 
+ 
+02:42:21
+ 
+Fabio Diniz: Acho que é esse aqui, ó. É isso mesmo. Aí que ele mostra, tá vendo? Geração 2, 1 0. Aí el ó lá, eliminando alocações desnecessárias, ele vai mostrando os ganhos que ele vai tendo, ó. Ó lá, caiu de 503 para 107, tá? Eu não posso falar o cliente, tá? Mas teve um cliente que ele que ele o era isso aqui, CPF, CPF, CNPJ, tava sentando o servidor do cara só por causa disso aqui. Só, só mentira. Só por quê? Porque eles usavam CPF para num sistema que importava a pessoa, né? Então usava CPF, CNPJ para todo lado o tempo inteiro. Aí só esse negócio de ficar calculando CPF e CNPJ o tempo todo, isso eh comia a locação de memória para caramba. Os caras quase beijaram Elemar na hora que ele resolveu, que ele resolveu um negócio lógico assim, né? Tem toda a capacidade dele de ter interpretado que era isso, certo? Mas é é um negócio besta que tava sentando uma aplicação de milhões, cara. Milhões mesmo por dia. Milhões por dia.
+ 
+ 
+02:43:39
+ 
+Fabio Diniz: Pessoal ficou doido. Ele vai mostrando aqui, ó lá, tocando na locações por processamento. Aí, ó, tava 500 e pouco, caiu para 167, caiu para zero, saca? Ou seja, não teve mais realocações. Beleza? Ele vai mostrando, ó, que tem coisas mais complexas, tá vendo? Ele tem formas de movimentar. Isso aqui já é mais complexo, tá? Mas o que importa é você criar o tipo. Aí tem esse aqui, ó, implist operator, tem o override to string, tem um por que você faz isso. Você consegue usar um validar igual, por exemplo, pô, você vai você vai fazer uma uma string, pega um date time, né? Um date time, as operações em cima do date time estão dentro do próprio date time, não fora dele, certo? As operações de um CPF tem que estar no tipo CPF. Validar no CPF tem que tá dentro do CPF, dentro do próprio tipo CPF. Beleza? Então tudo isso, ou seja, você tem um encapsulamento, você tem tudo aqui dentro de um tipo. Então cara, vale muito a pena. Tem um CNPJ também, se vocês pesquisarem tem também, tá?
+ 
+ 
+02:44:40
+ 
+Fabio Diniz: Então esse artigo aqui vale jogar para vocês aí. Isso aí vale a pena vocês darem uma olhada. E esse aqui é o que tem o vídeo, né? Deixa eu pegar um do vídeo. É endereço. Eu sempre esqueço, cara. Eles removeram esse esse esse slide, cara. Tinha tinha mais coisas lá. Aí o livro, ó, os livros. Pro Synchronos. Pr synchronals. Esse aqui. Esse aqui. Esse livro aqui, ó. É R$ 237 na Amazon. Esse livro aqui pegar aqui. É, esse aqui é primeira edição. Ele é mais antigo. Podear que tem mais, tá? Por isso que ele tá mais barato. Mas vale a pena, tá, pessoal? Vale muito a pena. Por causa disso aqui, ele vai passando, ele vai, ele vai vindo lá de trás e vai mostrando como que foi evoluindo. Então você, você é bem bacana você entender como é que foi feito. E o outro do é sistemas operacionais modernos. Tanembal 290. Isso aqui já é mais no mais velha.
+ 
+ 
+02:46:07
+ 
+Fabio Diniz: Ah, pega isso aqui. A diferença é pouco. O meu é terceira edição. Ah, já tá na quinta. Então, são esses dois livros aí, tá? Essa aqui é a parte ali que eu falei de threads e tudo mais, aquelas imagens lá, eu peguei do livro, tá? Peguei do livro. Ele tem ele tem umas coisas ali muito bacanas também. Então, são esses dois aí, esses conteúdos e as listas, tá? Vocês deram olhadas aqui nas listas de nas playlist aqui da Exímia, não sei se vocês conhecem, mas tem o YouTube da Esímia, tá? E tem o do o do o do Elemar, beleza? Aí do Elemar também tem bastante coisa aqui nas playlists, ó. Tem vídeo para vocês passarem o ano aí, o ano aí assistindo, tá? Tem um aqui, cara. Deixa eu ver, ó. Esse aqui de padrões de projeto aqui é do das masterclass dele. Tem bastante coisa gravada. Esse aqui de algorit estrutura de dado também, ó. Bastante bem bacana. Bem bacana. Tem bastante coisa. Beleza, pessoal.
+ 
+ 
+02:47:23
+ 
+Fabio Diniz: É isso. Eh, quem ficou aqui até mais tarde, vocês ainda tm alguma dúvida, eh, a gente pode voltar aqui. Fica à vontade aí, quem infelizmente não puder ficar, mas quem ainda tiver alguma dúvida, quiser que a gente volta aqui em algum ponto, alguma parte aqui da apresentação, que às vezes ou não ficou claro, enfim, se vocês quiserem retomar, alguém quer quer perguntar alguma coisa? Não, tá todo mundo cansado já, quase 10 horas, né, pessoal? Então, muito obrigado. Eh, espero que vocês tenham gostado. Espero que tenha sido útil. Eh, aula acho que tá disponível aí para vocês já. Acho que até amanhã, meio-dia, acho que eles já sobem lá. Acho que material também, né? Se eu não me engano, eles disponibilizam aí, fica à vontade para perguntar ali no grupo. Às vezes fic ficaram com alguma dúvida, alguma coisa. Vou até pegar esses links aqui, pois eu falar também no WhatsApp, tá? Aí vocês ficam à vontade, pô, para perguntar o que vocês quiserem lá também depois. E a gente tem mais uma aula aí. Eu tenho mais umas aula com vocês, acho que semana que vem, se eu não me engano. Então, semana que vem a gente se vê de novo. Beleza? Obrigado aí para todos pela participação e até a próxima.
+Karine Trevisan: Obrigada.
+Fabio Diniz: Não, gente.
+Alex Silva Reis: Obrigado.
+Anderson Perim: Ja.
+Gabriel Anselmo: Valeu,
+Eduardo Kubota: Valeu,
+Gabriel Anselmo: valeu.
+Anderson Gabriel Silva: falou.
+William Ramos: Boa noite. Valeu,
