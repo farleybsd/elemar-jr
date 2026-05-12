@@ -6,6 +6,7 @@ using Microsoft.Extensions.Http.Resilience;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Resilience;
 using Polly;
+using Polly.CircuitBreaker;
 using Polly.Fallback;
 using System.Net;
 
@@ -39,7 +40,9 @@ public static class ServiceCollectionViaCepExtensions
              pipeline.AddFallback(new FallbackStrategyOptions<HttpResponseMessage>
              {
                  ShouldHandle = args =>
-                     ValueTask.FromResult(args.Outcome.Exception is HttpRequestException),
+                                ValueTask.FromResult(
+                                args.Outcome.Exception is HttpRequestException ||
+                                args.Outcome.Exception is BrokenCircuitException),
 
                  OnFallback = args =>
                  {
@@ -75,8 +78,35 @@ public static class ServiceCollectionViaCepExtensions
                  }
              });
 
+             pipeline.AddCircuitBreaker(new HttpCircuitBreakerStrategyOptions
+             {
+                 FailureRatio = 0.5,
+                 SamplingDuration = TimeSpan.FromSeconds(10),
+                 MinimumThroughput = 2,
+                 BreakDuration = TimeSpan.FromSeconds(30),
+
+                 OnOpened = args =>
+                 {
+                     Console.WriteLine("Circuit Breaker ABERTO.");
+                     return ValueTask.CompletedTask;
+                 },
+
+                 OnClosed = args =>
+                 {
+                     Console.WriteLine("Circuit Breaker FECHADO.");
+                     return ValueTask.CompletedTask;
+                 },
+
+                 OnHalfOpened = args =>
+                 {
+                     Console.WriteLine("Circuit Breaker HALF-OPEN.");
+                     return ValueTask.CompletedTask;
+                 }
+             });
+
              pipeline.AddTimeout(TimeSpan.FromSeconds(10));
          });
+
 
         return services;
     }
