@@ -4,6 +4,10 @@ using IntelligentServiceFindZipCode.App.Crosscutting.Commom;
 using IntelligentServiceFindZipCode.App.ZipCode.Endpoints;
 using System.Runtime.ConstrainedExecution;
 
+public readonly record struct ErrorResponse(
+    bool Erro,
+    string Mensagem);
+
 public interface IViaCepGateway
 {
     Task<Result<ZipCode>> GetZipCode(string cep);
@@ -18,7 +22,13 @@ internal class ViaCepGateway(HttpClient httpClient) : IViaCepGateway
         var httpResponse = await httpClient.GetAsync($"{cep}/json/");
 
         if (!httpResponse.IsSuccessStatusCode)
-            return Result<ZipCode>.Failure($"Error calling ViaCep API. StatusCode: {(int)httpResponse.StatusCode}");
+        {
+            var error =
+                await httpResponse.Content.ReadFromJsonAsync<ErrorResponse>();
+
+            return Result<ZipCode>.Failure(error.Mensagem
+                ?? "Erro desconhecido.");
+        }
 
         ZipCode? response = await httpResponse.Content.ReadFromJsonAsync<ZipCode>();
 
