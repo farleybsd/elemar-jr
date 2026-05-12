@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("POLIMORFISMO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f10e5704d72809ab10f857a6699ccca92d33e5b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+358dd860d292e626c5d3443942fafa30ca315308")]
 [assembly: System.Reflection.AssemblyProductAttribute("POLIMORFISMO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("POLIMORFISMO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

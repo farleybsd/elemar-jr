@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\useraccounts\\endpoints\\searchallusertransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\useraccounts\\endpoints\\searchallusertransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|solutionrelative:picpaymanager\\crosscutting\\database\\users\\userrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D70F3FB-8F48-B9D2-AF83-0D44EC550231}|PicPayManager\\PicPayManager.csproj|c:\\git\\elemar-jr\\banco de dados\\example\\picpaymanager\\picpaymanager\\crosscutting\\commom\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserRepositoryRead.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
               "RelativeDocumentMoniker": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
@@ -34,18 +34,17 @@
               "RelativeToolTip": "PicPayManager\\Crosscutting\\Database\\Users\\UserRepositoryRead.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAEwCAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T17:49:28.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-04T17:49:28.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SearchAllUserTransactions.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
               "RelativeDocumentMoniker": "PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\Banco De Dados\\example\\PicPayManager\\PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
               "RelativeToolTip": "PicPayManager\\UserAccounts\\Endpoints\\SearchAllUserTransactions.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAIwCYAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-04T17:47:00.625Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "PicPayManager\\Crosscutting\\Commom\\Result.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAowAgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T17:43:53.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-04T17:43:53.746Z"
             }
           ]
         }

@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/SolutionItems/" />
+  <Folder Name="/src/">
+    <Project Path="IntelligentServiceFindZipCode.App/IntelligentServiceFindZipCode.App.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>

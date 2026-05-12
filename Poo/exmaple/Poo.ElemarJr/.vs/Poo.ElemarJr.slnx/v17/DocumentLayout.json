@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\composicao\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|solutionrelative:composicao\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\ocp\\servicos\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|solutionrelative:ocp\\servicos\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\composicao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71D346E0-ABEB-4470-A45C-1E746096558C}|Composicao\\Composicao.csproj|solutionrelative:composicao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\ocp\\meiospagamento\\creditcardprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|solutionrelative:ocp\\meiospagamento\\creditcardprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|c:\\git\\elemar-jr\\poo\\exmaple\\poo.elemarjr\\ocp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7F2DB8D-7DF6-4763-9069-A38B2FB46471}|OCP\\OCP.csproj|solutionrelative:ocp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Cpf.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Cpf.cs",
-              "RelativeDocumentMoniker": "Composicao\\Cpf.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Cpf.cs",
-              "RelativeToolTip": "Composicao\\Cpf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABGAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Servicos\\PaymentService.cs",
+              "RelativeDocumentMoniker": "OCP\\Servicos\\PaymentService.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Servicos\\PaymentService.cs",
+              "RelativeToolTip": "OCP\\Servicos\\PaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T17:31:46.682Z",
+              "WhenOpened": "2026-05-07T00:36:47.233Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Student.cs",
-              "RelativeDocumentMoniker": "Composicao\\Student.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\Composicao\\Student.cs",
-              "RelativeToolTip": "Composicao\\Student.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CreditCardProcessor.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\MeiosPagamento\\CreditCardProcessor.cs",
+              "RelativeDocumentMoniker": "OCP\\MeiosPagamento\\CreditCardProcessor.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\MeiosPagamento\\CreditCardProcessor.cs",
+              "RelativeToolTip": "OCP\\MeiosPagamento\\CreditCardProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T17:05:11.272Z",
+              "WhenOpened": "2026-05-07T00:36:31.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Program.cs",
+              "RelativeDocumentMoniker": "OCP\\Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Poo\\exmaple\\Poo.ElemarJr\\OCP\\Program.cs",
+              "RelativeToolTip": "OCP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T00:36:09.9Z",
               "EditorCaption": ""
             }
           ]
