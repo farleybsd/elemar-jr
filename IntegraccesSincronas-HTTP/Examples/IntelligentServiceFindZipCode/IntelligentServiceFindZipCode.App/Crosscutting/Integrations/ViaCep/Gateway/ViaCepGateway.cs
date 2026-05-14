@@ -2,6 +2,7 @@
 
 using IntelligentServiceFindZipCode.App.Crosscutting.Commom;
 using IntelligentServiceFindZipCode.App.ZipCode.Endpoints;
+using Newtonsoft.Json;
 using System.Runtime.ConstrainedExecution;
 
 public readonly record struct ErrorResponse(
@@ -10,33 +11,41 @@ public readonly record struct ErrorResponse(
 
 public interface IViaCepGateway
 {
-    Task<Result<ZipCode>> GetZipCode(string cep);
+    Task<Result<ZipCode>> GetZipCode(string cep, CancellationToken cancellationToken = default);
 }
 
 internal class ViaCepGateway(HttpClient httpClient) : IViaCepGateway
 {
 
 
-    public async Task<Result<ZipCode>> GetZipCode(string cep)
+    public async Task<Result<ZipCode>> GetZipCode(string cep, CancellationToken cancellationToken = default)
     {
-        var httpResponse = await httpClient.GetAsync($"{cep}/json/");
+        var httpResponse = await httpClient.GetAsync($"{cep}/json/", cancellationToken).ConfigureAwait(false);
+        await using var stream = await httpResponse
+                                            .Content
+                                            .ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
         if (!httpResponse.IsSuccessStatusCode)
         {
-            var error =
-                await httpResponse.Content.ReadFromJsonAsync<ErrorResponse>();
+            var error = await httpResponse.Content
+                .ReadFromJsonAsync<ErrorResponse>(cancellationToken)
+                .ConfigureAwait(false);
 
-            return Result<ZipCode>.Failure(error.Mensagem
-                ?? "Erro desconhecido.");
+            return Result<ZipCode>.Failure(
+                error.Mensagem ?? "Erro desconhecido.");
         }
 
-        ZipCode? response = await httpResponse.Content.ReadFromJsonAsync<ZipCode>();
+        using var streamReader = new StreamReader(stream);
 
-        if (response is null)
+        using var jsonTextReader =
+            new JsonTextReader(streamReader);
 
-            return Result<ZipCode>.Failure("ViaCep API returned empty response.");
+        var serializer = new JsonSerializer();
 
-        return Result<ZipCode>.Success(response.Value);
+        ZipCode response =
+            serializer.Deserialize<ZipCode>(jsonTextReader);
+
+        return Result<ZipCode>.Success(response);
     }
 }
 
