@@ -4,10 +4,8 @@ using IntelligentServiceFindZipCode.App.Crosscutting;
 using Microsoft.Extensions.Options;
 using Polly;
 using Polly.Registry;
-using Serilog.Core;
+using Serilog;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Principal;
-using System.Transactions;
 
 namespace Api.IntelligentServiceFindZipCode.Crosscutting.Services;
 
@@ -40,37 +38,49 @@ public class ViaCepGateway(
         CancellationToken cancellationToken = default)
     {
 
-        logger.LogInformation("Buscanco o Cep: com o valor {cep}", cep);
-
-        var response = await _resiliencePipeline.ExecuteAsync(async token =>
+        try
         {
-            return await options.CurrentValue.ApiUrl
-                .WithTimeout(TimeSpan.FromMilliseconds(options.CurrentValue.DefaultTimeoutMs))
-                .AppendPathSegment($"{cep}/json/")
-                .AllowAnyHttpStatus()
-                .GetAsync(cancellationToken: token);
-        }, cancellationToken);
+            logger.LogInformation("Buscanco o Cep: com o valor {cep}", cep);
 
-        if (!response.ResponseMessage.IsSuccessStatusCode)
-        {
-            var responseContent = await response.GetStringAsync();
-            logger.LogWarning(
-            "Erro ao consultar o CEP {Cep}. StatusCode: {StatusCode}. Response: {Response}",
+            var response = await _resiliencePipeline.ExecuteAsync(async token =>
+            {
+                return await options.CurrentValue.ApiUrl
+                    .WithTimeout(TimeSpan.FromMilliseconds(options.CurrentValue.DefaultTimeoutMs))
+                    .AppendPathSegment($"{cep}/json/")
+                    .AllowAnyHttpStatus()
+                    .GetAsync(cancellationToken: token);
+            }, cancellationToken);
+
+            if (!response.ResponseMessage.IsSuccessStatusCode)
+            {
+                var responseContent = await response.GetStringAsync();
+                logger.LogWarning(
+                "Erro ao consultar o CEP {Cep}. StatusCode: {StatusCode}. Response: {Response}",
+                cep,
+                response.StatusCode,
+                responseContent
+       );
+                return Result<SearchOneZipCodeResponse>.Failure(responseContent);
+            }
+
+            var responseAsJson = await response.GetJsonAsync<SearchOneZipCodeResponse>();
+
+            logger.LogInformation(
+            "Resposta da API ViaCep para o CEP {Cep}: {@Response}",
             cep,
-            response.StatusCode,
-            responseContent
-   );
-            return Result<SearchOneZipCodeResponse>.Failure(responseContent);
+            responseAsJson
+            );
+
+            return Result<SearchOneZipCodeResponse>.Success(responseAsJson);
+        }
+        catch (Exception ex)
+        {
+            Log.Logger.Error(ex, "Erro ao buscar CEP");
+
+            return Result<SearchOneZipCodeResponse>.Failure(
+                "Serviço de CEP indisponível."
+            );
         }
 
-        var responseAsJson = await response.GetJsonAsync<SearchOneZipCodeResponse>();
-
-        logger.LogInformation(
-        "Resposta da API ViaCep para o CEP {Cep}: {@Response}",
-        cep,
-        responseAsJson
-        );
-
-        return Result<SearchOneZipCodeResponse>.Success(responseAsJson);
     }
 }
