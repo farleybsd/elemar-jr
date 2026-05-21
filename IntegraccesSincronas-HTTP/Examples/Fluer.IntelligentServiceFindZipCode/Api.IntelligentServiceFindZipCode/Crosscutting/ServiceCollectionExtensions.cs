@@ -207,4 +207,31 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    public static WebApplication WellCome(this WebApplication app)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+
+        Console.WriteLine("""
+        ══════════════════════════════════════════════════════════════
+                                                                      
+           🚀 IntelligentServiceFindZipCode API ONLINE                
+                                                                      
+           ✅ API iniciada com sucesso                                
+           ✅ Serviços carregados                                     
+           ✅ Resiliência ativa (Retry/CircuitBreaker/Fallback)       
+           ✅ Logs configurados                                       
+                                                                      
+           🌐 Ambiente: Development                                   
+        ══════════════════════════════════════════════════════════════
+        """);
+
+        Console.ResetColor();
+
+        Log.Information("🚀 IntelligentServiceFindZipCode API iniciada com sucesso.");
+        Log.Information("✅ Resiliência ativa.");
+        Log.Information("✅ API pronta para receber requisições.");
+
+        return app;
+    }
 }
+

@@ -4,7 +4,10 @@ using IntelligentServiceFindZipCode.App.Crosscutting;
 using Microsoft.Extensions.Options;
 using Polly;
 using Polly.Registry;
+using Serilog.Core;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Principal;
+using System.Transactions;
 
 namespace Api.IntelligentServiceFindZipCode.Crosscutting.Services;
 
@@ -24,7 +27,8 @@ public interface IviaCepGateway
 }
 public class ViaCepGateway(
     ResiliencePipelineProvider<string> pipelineProvider,
-    IOptionsMonitor<ViaCepServiceOptions> options) : IviaCepGateway
+    IOptionsMonitor<ViaCepServiceOptions> options,
+    ILogger<ViaCepGateway> logger) : IviaCepGateway
 {
     private readonly ResiliencePipeline<IFlurlResponse> _resiliencePipeline =
         pipelineProvider.GetPipeline<IFlurlResponse>(
@@ -35,6 +39,9 @@ public class ViaCepGateway(
         string cep,
         CancellationToken cancellationToken = default)
     {
+
+        logger.LogInformation("Buscanco o Cep: com o valor {cep}", cep);
+
         var response = await _resiliencePipeline.ExecuteAsync(async token =>
         {
             return await options.CurrentValue.ApiUrl
@@ -47,10 +54,22 @@ public class ViaCepGateway(
         if (!response.ResponseMessage.IsSuccessStatusCode)
         {
             var responseContent = await response.GetStringAsync();
+            logger.LogWarning(
+            "Erro ao consultar o CEP {Cep}. StatusCode: {StatusCode}. Response: {Response}",
+            cep,
+            response.StatusCode,
+            responseContent
+   );
             return Result<SearchOneZipCodeResponse>.Failure(responseContent);
         }
 
         var responseAsJson = await response.GetJsonAsync<SearchOneZipCodeResponse>();
+
+        logger.LogInformation(
+        "Resposta da API ViaCep para o CEP {Cep}: {@Response}",
+        cep,
+        responseAsJson
+        );
 
         return Result<SearchOneZipCodeResponse>.Success(responseAsJson);
     }

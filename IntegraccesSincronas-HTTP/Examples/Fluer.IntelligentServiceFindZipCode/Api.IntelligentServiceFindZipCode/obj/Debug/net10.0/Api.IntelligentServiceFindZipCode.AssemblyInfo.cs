@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Api.IntelligentServiceFindZipCode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68d47aef649f875fea3db33727b498cef454a8a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ff97e1008edafa0e055782077a456ae5e316636")]
 [assembly: System.Reflection.AssemblyProductAttribute("Api.IntelligentServiceFindZipCode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Api.IntelligentServiceFindZipCode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
