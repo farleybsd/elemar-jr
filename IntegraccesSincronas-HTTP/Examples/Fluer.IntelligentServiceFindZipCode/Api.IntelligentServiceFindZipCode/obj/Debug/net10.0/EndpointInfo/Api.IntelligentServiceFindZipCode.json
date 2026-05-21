@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Api.IntelligentServiceFindZipCode",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/SearchOne-ZipCode": {
+      "get": {
+        "tags": [
+          "searchOne-zipCode"
+        ],
+        "operationId": "Search One ZipCode",
+        "parameters": [
+          {
+            "name": "cep",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { },
+  "tags": [
+    {
+      "name": "searchOne-zipCode"
+    }
+  ]
+}

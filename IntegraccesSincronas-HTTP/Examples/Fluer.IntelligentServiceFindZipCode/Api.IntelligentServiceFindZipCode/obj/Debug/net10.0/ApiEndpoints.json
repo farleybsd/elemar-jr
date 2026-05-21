@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Api.IntelligentServiceFindZipCode.ZipCode.Endpoints.SearchOneZipCodeEnPoint",
+    "Method": "SearchOneZipCodeAsync",
+    "RelativePath": "api/v1/SearchOne-ZipCode",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cep",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "searchOne-zipCode"
+    ],
+    "EndpointName": "Search One ZipCode"
+  }
+]

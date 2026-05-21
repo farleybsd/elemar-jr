@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/SolutionItems/" />
+  <Folder Name="/src/">
+    <Project Path="Api.IntelligentServiceFindZipCode/Api.IntelligentServiceFindZipCode.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
