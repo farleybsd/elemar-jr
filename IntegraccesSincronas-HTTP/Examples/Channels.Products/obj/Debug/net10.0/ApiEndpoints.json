@@ -1,0 +1,33 @@
+[
+  {
+    "ContainingType": "Channels.Products.Products.EndPoints.CreateCartEndPoint",
+    "Method": "CreateCartAsync",
+    "RelativePath": "api/v1/   ",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ProductCartItems",
+        "Type": "System.Collections.Generic.List\u00601[[Channels.Products.Products.EndPoints.ProductCartItemRequest, Channels.Products, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "CreateCart"
+    ],
+    "EndpointName": "CreateCart"
+  }
+]

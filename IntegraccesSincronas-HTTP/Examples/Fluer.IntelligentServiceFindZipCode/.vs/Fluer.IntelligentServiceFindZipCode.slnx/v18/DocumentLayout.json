@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\fluer.intelligentservicefindzipcode\\api.intelligentservicefindzipcode\\crosscutting\\services\\viacepgateway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|solutionrelative:api.intelligentservicefindzipcode\\crosscutting\\services\\viacepgateway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\fluer.intelligentservicefindzipcode\\api.intelligentservicefindzipcode\\crosscutting\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|solutionrelative:api.intelligentservicefindzipcode\\crosscutting\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\fluer.intelligentservicefindzipcode\\api.intelligentservicefindzipcode\\zipcode\\endpoints\\searchonezipcodeenpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8374D2F4-E2C8-165C-B09A-D12F1BFA9540}|Api.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode.csproj|solutionrelative:api.intelligentservicefindzipcode\\zipcode\\endpoints\\searchonezipcodeenpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "viaCepGateway.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\Crosscutting\\Services\\viaCepGateway.cs",
-              "RelativeDocumentMoniker": "Api.IntelligentServiceFindZipCode\\Crosscutting\\Services\\viaCepGateway.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\Crosscutting\\Services\\viaCepGateway.cs",
-              "RelativeToolTip": "Api.IntelligentServiceFindZipCode\\Crosscutting\\Services\\viaCepGateway.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAYwFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T21:59:59.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\Crosscutting\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "Api.IntelligentServiceFindZipCode\\Crosscutting\\ServiceCollectionExtensions.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\Crosscutting\\ServiceCollectionExtensions.cs",
               "RelativeToolTip": "Api.IntelligentServiceFindZipCode\\Crosscutting\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAJsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T21:36:43.785Z",
+              "WhenOpened": "2026-05-25T18:55:19.236Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchOneZipCodeEnPoint.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\ZipCode\\Endpoints\\SearchOneZipCodeEnPoint.cs",
+              "RelativeDocumentMoniker": "Api.IntelligentServiceFindZipCode\\ZipCode\\Endpoints\\SearchOneZipCodeEnPoint.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\Fluer.IntelligentServiceFindZipCode\\Api.IntelligentServiceFindZipCode\\ZipCode\\Endpoints\\SearchOneZipCodeEnPoint.cs",
+              "RelativeToolTip": "Api.IntelligentServiceFindZipCode\\ZipCode\\Endpoints\\SearchOneZipCodeEnPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T18:08:30.914Z"
             }
           ]
         }
