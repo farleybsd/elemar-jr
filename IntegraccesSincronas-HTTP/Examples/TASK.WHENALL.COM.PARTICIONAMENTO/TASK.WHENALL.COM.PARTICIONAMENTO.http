@@ -1,0 +1,6 @@
+@TASK.WHENALL.COM.PARTICIONAMENTO_HostAddress = http://localhost:5058
+
+GET {{TASK.WHENALL.COM.PARTICIONAMENTO_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
