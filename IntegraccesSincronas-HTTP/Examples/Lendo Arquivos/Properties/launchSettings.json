@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Lendo Arquivos": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\bin\Debug\net10.0\Lendo Arquivos.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\bin\Debug\net10.0\Lendo Arquivos.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\bin\Debug\net10.0\Lendo Arquivos.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\bin\Debug\net10.0\Lendo Arquivos.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\bin\Debug\net10.0\Lendo Arquivos.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\refint\Lendo Arquivos.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\Lendo Arquivos.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Lendo Arquivos\obj\Debug\net10.0\ref\Lendo Arquivos.dll

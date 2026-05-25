@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Lendo_Arquivos;
+
+internal class EscrevendoEmArquivosMaisEficientes
+{
+
+    public async Task EscreverArquivo(string path)
+    {
+        string text = """
+            O que é Lorem Ipsum?
+
+            Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão.
+            Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500,
+            quando um impressor desconhecido pegou uma bandeja de tipos e os misturou
+            para criar um livro de amostras de tipos.
+
+            Ele sobreviveu não apenas a cinco séculos,
+            mas também à transição para a editoração eletrônica,
+            permanecendo essencialmente inalterado.
+
+            Foi popularizado na década de 1960
+            com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum
+            e, mais recentemente, com softwares de editoração eletrônica
+            como o Aldus PageMaker, que incluíam versões de Lorem Ipsum.
+
+            Por que o utilizamos?
+
+            É um fato conhecido que um leitor se distrairá
+            com o conteúdo legível de uma página ao analisar seu layout.
+
+            A vantagem de usar Lorem Ipsum é que ele possui
+            uma distribuição de letras mais ou menos normal,
+            ao contrário de usar frases como
+            "Conteúdo aqui, conteúdo aqui",
+            que o fazem parecer inglês legível.
+
+            Muitos programas de editoração eletrônica
+            e editores de páginas web agora usam Lorem Ipsum
+            como texto padrão.
+
+            Uma busca por "lorem ipsum"
+            revelará muitos sites ainda em desenvolvimento.
+
+            Diversas versões surgiram ao longo dos anos,
+            algumas por acidente,
+            outras propositalmente
+            com a inserção de humor.
+            """;
+
+        using var writer = new StreamWriter(path);
+
+        await writer.WriteAsync(text);
+
+        Console.WriteLine("Arquivo escrito com sucesso.");
+    }
+}
