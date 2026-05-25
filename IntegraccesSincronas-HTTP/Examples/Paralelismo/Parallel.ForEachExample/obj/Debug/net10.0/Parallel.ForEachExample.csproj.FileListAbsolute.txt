@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\bin\Debug\net10.0\Parallel.ForEachExample.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\bin\Debug\net10.0\Parallel.ForEachExample.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\bin\Debug\net10.0\Parallel.ForEachExample.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\bin\Debug\net10.0\Parallel.ForEachExample.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\bin\Debug\net10.0\Parallel.ForEachExample.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\refint\Parallel.ForEachExample.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\Parallel.ForEachExample.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\Paralelismo\Parallel.ForEachExample\obj\Debug\net10.0\ref\Parallel.ForEachExample.dll
