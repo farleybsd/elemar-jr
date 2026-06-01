@@ -1,0 +1,10 @@
+Dataflow Block é usado para montar um fluxo de dados em pipeline, onde cada item passa por etapas de um processo. Ele ajuda a controlar filas, concorrência, ordem, paralelismo e quando uma etapa terminou antes de passar o resultado para a próxima.
+
+
+Se quiser sem concorrência nenhuma, você configura todos os blocos com:
+
+
+new ExecutionDataflowBlockOptions
+{
+    MaxDegreeOfParallelism = 1
+}

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Dataflow.Block.Livro.csproj" />
+  <Project Path="Dataflow.Block.Livro.Tests/Dataflow.Block.Livro.Tests.csproj" />
+</Solution>

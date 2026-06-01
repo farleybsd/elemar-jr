@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Dataflow.Block.Livro/1.0.0": {
+        "runtime": {
+          "Dataflow.Block.Livro.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Dataflow.Block.Livro/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

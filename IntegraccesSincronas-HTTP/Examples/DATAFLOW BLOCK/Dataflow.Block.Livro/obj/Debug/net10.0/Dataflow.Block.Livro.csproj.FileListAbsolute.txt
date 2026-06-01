@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\bin\Debug\net10.0\Dataflow.Block.Livro.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\bin\Debug\net10.0\Dataflow.Block.Livro.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\bin\Debug\net10.0\Dataflow.Block.Livro.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\bin\Debug\net10.0\Dataflow.Block.Livro.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\bin\Debug\net10.0\Dataflow.Block.Livro.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\refint\Dataflow.Block.Livro.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\Dataflow.Block.Livro.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\DATAFLOW BLOCK\Dataflow.Block.Livro\obj\Debug\net10.0\ref\Dataflow.Block.Livro.dll
