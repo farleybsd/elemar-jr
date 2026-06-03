@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dataflow.Block.Livro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+452f285eb34e12d53ef943a172c14a7d065f29fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4829000f5c2c35fc17da20991471bfbcb483370")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dataflow.Block.Livro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dataflow.Block.Livro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

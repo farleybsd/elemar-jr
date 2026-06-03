@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\DATAFLOW BLOCK\\Dataflow.Block.Livro\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDF558D-150C-6423-BDB2-8D113C6371DC}|Dataflow.Block.Livro.Tests\\Dataflow.Block.Livro.Tests.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\dataflow block\\dataflow.block.livro\\dataflow.block.livro.tests\\pipetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BDF558D-150C-6423-BDB2-8D113C6371DC}|Dataflow.Block.Livro.Tests\\Dataflow.Block.Livro.Tests.csproj|solutionrelative:dataflow.block.livro.tests\\pipetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PipeTests.cs",
-              "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\DATAFLOW BLOCK\\Dataflow.Block.Livro\\Dataflow.Block.Livro.Tests\\PipeTests.cs",
-              "RelativeDocumentMoniker": "Dataflow.Block.Livro.Tests\\PipeTests.cs",
-              "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\DATAFLOW BLOCK\\Dataflow.Block.Livro\\Dataflow.Block.Livro.Tests\\PipeTests.cs",
-              "RelativeToolTip": "Dataflow.Block.Livro.Tests\\PipeTests.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T18:35:43.331Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
