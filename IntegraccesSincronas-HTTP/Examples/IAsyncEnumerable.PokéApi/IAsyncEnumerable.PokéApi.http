@@ -1,0 +1,6 @@
+@IAsyncEnumerable.PokéApi_HostAddress = http://localhost:5087
+
+GET {{IAsyncEnumerable.PokéApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

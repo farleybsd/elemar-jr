@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\bin\Debug\net10.0\ArrayPool.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\bin\Debug\net10.0\ArrayPool.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\bin\Debug\net10.0\ArrayPool.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\bin\Debug\net10.0\ArrayPool.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\bin\Debug\net10.0\ArrayPool.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\refint\ArrayPool.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ArrayPool.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ArrayPool\obj\Debug\net10.0\ref\ArrayPool.dll
