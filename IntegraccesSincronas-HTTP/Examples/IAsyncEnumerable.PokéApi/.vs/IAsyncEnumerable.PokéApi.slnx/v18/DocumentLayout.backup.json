@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\iasyncenumerable.pok\u00E9api\\services\\pokemonclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|solutionrelative:services\\pokemonclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\iasyncenumerable.pok\u00E9api\\backgroundservices\\consolerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|solutionrelative:backgroundservices\\consolerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|c:\\git\\elemar-jr\\integraccessincronas-http\\examples\\iasyncenumerable.pok\u00E9api\\services\\pokemonclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE00AF9E-5AF2-43F8-83CF-AD7625EBE812}|IAsyncEnumerable.Pok\u00E9Api.csproj|solutionrelative:services\\pokemonclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\IAsyncEnumerable.Pok\u00E9Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T20:00:57.936Z",
               "IsPinned": true,
@@ -40,26 +40,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PokemonClient.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\IAsyncEnumerable.Pok\u00E9Api\\Services\\PokemonClient.cs",
               "RelativeDocumentMoniker": "Services\\PokemonClient.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\IAsyncEnumerable.Pok\u00E9Api\\Services\\PokemonClient.cs",
               "RelativeToolTip": "Services\\PokemonClient.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAuwCwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T20:05:58.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ConsoleRunner.cs",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\IAsyncEnumerable.Pok\u00E9Api\\BackGroundServices\\ConsoleRunner.cs",
               "RelativeDocumentMoniker": "BackGroundServices\\ConsoleRunner.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\IntegraccesSincronas-HTTP\\Examples\\IAsyncEnumerable.Pok\u00E9Api\\BackGroundServices\\ConsoleRunner.cs",
               "RelativeToolTip": "BackGroundServices\\ConsoleRunner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T19:55:53.519Z",
               "EditorCaption": ""

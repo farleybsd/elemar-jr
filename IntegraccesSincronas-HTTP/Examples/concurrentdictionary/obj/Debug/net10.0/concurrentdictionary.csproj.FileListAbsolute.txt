@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\bin\Debug\net10.0\concurrentdictionary.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\bin\Debug\net10.0\concurrentdictionary.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\bin\Debug\net10.0\concurrentdictionary.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\bin\Debug\net10.0\concurrentdictionary.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\bin\Debug\net10.0\concurrentdictionary.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\refint\concurrentdictionary.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\concurrentdictionary.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\concurrentdictionary\obj\Debug\net10.0\ref\concurrentdictionary.dll
