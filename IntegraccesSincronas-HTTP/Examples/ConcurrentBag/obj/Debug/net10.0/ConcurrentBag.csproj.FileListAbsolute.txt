@@ -1,0 +1,15 @@
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\bin\Debug\net10.0\ConcurrentBag.exe
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\bin\Debug\net10.0\ConcurrentBag.deps.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\bin\Debug\net10.0\ConcurrentBag.runtimeconfig.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\bin\Debug\net10.0\ConcurrentBag.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\bin\Debug\net10.0\ConcurrentBag.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.AssemblyInfo.cs
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.sourcelink.json
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\refint\ConcurrentBag.dll
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.pdb
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ConcurrentBag.genruntimeconfig.cache
+C:\Git\elemar-jr\IntegraccesSincronas-HTTP\Examples\ConcurrentBag\obj\Debug\net10.0\ref\ConcurrentBag.dll
