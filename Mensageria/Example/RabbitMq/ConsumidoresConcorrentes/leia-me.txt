@@ -1,0 +1,22 @@
+COMO EXECUTAR PRODUCER E CONSUMERS
+Este exemplo demonstra a distribuição de tarefas entre dois consumidores usando RabbitMQ.
+Abra dois terminais para iniciar os consumidores.
+Terminal 1:
+dotnet run --project Worker/Worker.csproj
+Terminal 2:
+dotnet run --project Worker/Worker.csproj
+Os dois terminais devem exibir:
+[*] Aguardando tarefas. Pressione Ctrl+C para sair.
+Abra um terceiro terminal e envie duas mensagens com o Producer:
+dotnet run --project NewTask/NewTask.csproj "Farley 1"
+dotnet run --project NewTask/NewTask.csproj "Farley 2"
+RESULTADO ESPERADO
+O RabbitMQ distribui as mensagens entre os consumidores usando round-robin.
+Consumer 1:
+[x] Received 'Farley 1'
+[x] Done
+Consumer 2:
+[x] Received 'Farley 2'
+[x] Done
+O consumidor que recebe a primeira mensagem pode variar. O importante é que, com os dois consumidores conectados e disponíveis, cada consumidor receba uma mensagem.
+

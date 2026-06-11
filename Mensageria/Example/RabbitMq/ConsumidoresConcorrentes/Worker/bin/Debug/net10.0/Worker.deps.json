@@ -1,0 +1,78 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Worker/1.0.0": {
+        "dependencies": {
+          "RabbitMQ.AMQP.Client": "1.1.0"
+        },
+        "runtime": {
+          "Worker.dll": {}
+        }
+      },
+      "AMQPNetLite.Core/2.5.2": {
+        "runtime": {
+          "lib/netstandard2.0/Amqp.Net.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.2.0"
+          }
+        }
+      },
+      "AMQPNetLite.WebSockets/2.5.2": {
+        "dependencies": {
+          "AMQPNetLite.Core": "2.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amqp.WebSockets.Client.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.2.0"
+          }
+        }
+      },
+      "RabbitMQ.AMQP.Client/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite.Core": "2.5.2",
+          "AMQPNetLite.WebSockets": "2.5.2"
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.AMQP.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Worker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AMQPNetLite.Core/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tEdXWzSOmLLNAFZ7eqqIacPWVtBtFhLJSbIIyjaLYGcp64bt0w9yj2QgpakQPxqW41GJyeopAKD9keZRHLjQGw==",
+      "path": "amqpnetlite.core/2.5.2",
+      "hashPath": "amqpnetlite.core.2.5.2.nupkg.sha512"
+    },
+    "AMQPNetLite.WebSockets/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mGGGLu8iB1eAmdH/k2BHB4El8Q4voiQTrF5HVf8EpZu4b0JQjg6500f1qtUUdOQTwQDvD4yH8Amh1l/8wNbC2g==",
+      "path": "amqpnetlite.websockets/2.5.2",
+      "hashPath": "amqpnetlite.websockets.2.5.2.nupkg.sha512"
+    },
+    "RabbitMQ.AMQP.Client/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4kmUoijjJwFJjDQX6W/xT63WlUhKrll3sFgXslNg3UpY19ZNSb9VKIw1bJ61M5XEbOOhAoDTwUEgvDdtOJ3W3A==",
+      "path": "rabbitmq.amqp.client/1.1.0",
+      "hashPath": "rabbitmq.amqp.client.1.1.0.nupkg.sha512"
+    }
+  }
+}

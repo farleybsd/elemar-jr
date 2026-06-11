@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\ConsumidoresConcorrentes\\Worker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B168671-FAF2-23C4-0462-E631BE84E16B}|Worker.csproj|c:\\git\\elemar-jr\\mensageria\\example\\rabbitmq\\consumidoresconcorrentes\\worker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B168671-FAF2-23C4-0462-E631BE84E16B}|Worker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\ConsumidoresConcorrentes\\Worker\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\ConsumidoresConcorrentes\\Worker\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T13:47:16.773Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
