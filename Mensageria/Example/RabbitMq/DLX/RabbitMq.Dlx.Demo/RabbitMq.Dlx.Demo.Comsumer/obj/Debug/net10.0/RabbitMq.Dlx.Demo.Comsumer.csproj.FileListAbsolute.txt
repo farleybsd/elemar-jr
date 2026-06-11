@@ -1,0 +1,6 @@
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.csproj.AssemblyReference.cache
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.AssemblyInfoInputs.cache
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.AssemblyInfo.cs
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.csproj.CoreCompileInputs.cache
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Comsumer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Comsumer.sourcelink.json

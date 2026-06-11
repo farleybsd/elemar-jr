@@ -1,0 +1,11 @@
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\bin\Debug\net10.0\RabbitMQ.Model.deps.json
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\bin\Debug\net10.0\RabbitMQ.Model.dll
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\bin\Debug\net10.0\RabbitMQ.Model.pdb
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.AssemblyInfoInputs.cache
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.AssemblyInfo.cs
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.csproj.CoreCompileInputs.cache
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.dll
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\refint\RabbitMQ.Model.dll
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\RabbitMQ.Model.pdb
+C:\Users\djesu\source\repos\ExampleRabbitMQ\src\RabbitMQ.Model\obj\Debug\net10.0\ref\RabbitMQ.Model.dll

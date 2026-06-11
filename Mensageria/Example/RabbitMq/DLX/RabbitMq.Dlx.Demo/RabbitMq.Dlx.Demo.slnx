@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RabbitMq.Dlx.Demo.Comsumer/RabbitMq.Dlx.Demo.Comsumer.csproj" />
+  <Project Path="RabbitMq.Dlx.Demo.Model/RabbitMq.Dlx.Demo.Model.csproj" />
+  <Project Path="RabbitMq.Dlx.Demo.Producer/RabbitMq.Dlx.Demo.Producer.csproj" />
+</Solution>

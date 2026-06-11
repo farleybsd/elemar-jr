@@ -1,0 +1,4 @@
+Primeiro Subir 2 Consumers
+dotnet run --project PubSub.Consumer/PubSub.Consumer.csproj
+Execultar o Producer 
+dotnet run --project PubSub.Producer/PubSub.Producer.csproj
