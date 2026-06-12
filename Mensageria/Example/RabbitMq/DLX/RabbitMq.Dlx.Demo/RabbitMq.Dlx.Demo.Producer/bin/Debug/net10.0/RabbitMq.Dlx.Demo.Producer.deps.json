@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "RabbitMq.Dlx.Demo.Producer/1.0.0": {
         "dependencies": {
-          "RabbitMQ.AMQP.Client": "1.1.0"
+          "RabbitMQ.AMQP.Client": "1.1.0",
+          "RabbitMq.Dlx.Demo.Model": "1.0.0"
         },
         "runtime": {
           "RabbitMq.Dlx.Demo.Producer.dll": {}
@@ -44,6 +45,14 @@
             "fileVersion": "1.1.0.0"
           }
         }
+      },
+      "RabbitMq.Dlx.Demo.Model/1.0.0": {
+        "runtime": {
+          "RabbitMq.Dlx.Demo.Model.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -73,6 +82,11 @@
       "sha512": "sha512-4kmUoijjJwFJjDQX6W/xT63WlUhKrll3sFgXslNg3UpY19ZNSb9VKIw1bJ61M5XEbOOhAoDTwUEgvDdtOJ3W3A==",
       "path": "rabbitmq.amqp.client/1.1.0",
       "hashPath": "rabbitmq.amqp.client.1.1.0.nupkg.sha512"
+    },
+    "RabbitMq.Dlx.Demo.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

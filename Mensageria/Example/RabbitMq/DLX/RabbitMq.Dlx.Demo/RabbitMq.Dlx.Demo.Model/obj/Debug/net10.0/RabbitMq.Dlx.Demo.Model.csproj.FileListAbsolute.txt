@@ -3,3 +3,10 @@ C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Model.AssemblyInfo.cs
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Model.csproj.CoreCompileInputs.cache
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Model.sourcelink.json
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\bin\Debug\net10.0\RabbitMq.Dlx.Demo.Model.deps.json
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\bin\Debug\net10.0\RabbitMq.Dlx.Demo.Model.dll
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\bin\Debug\net10.0\RabbitMq.Dlx.Demo.Model.pdb
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Model.dll
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\refint\RabbitMq.Dlx.Demo.Model.dll
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Model.pdb
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Model\obj\Debug\net10.0\ref\RabbitMq.Dlx.Demo.Model.dll

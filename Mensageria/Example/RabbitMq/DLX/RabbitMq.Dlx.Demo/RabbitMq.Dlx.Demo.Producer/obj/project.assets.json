@@ -47,6 +47,16 @@
             "related": ".xml"
           }
         }
+      },
+      "RabbitMq.Dlx.Demo.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/RabbitMq.Dlx.Demo.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RabbitMq.Dlx.Demo.Model.dll": {}
+        }
       }
     }
   },
@@ -99,11 +109,17 @@
         "rabbitmq.amqp.client.1.1.0.nupkg.sha512",
         "rabbitmq.amqp.client.nuspec"
       ]
+    },
+    "RabbitMq.Dlx.Demo.Model/1.0.0": {
+      "type": "project",
+      "path": "../RabbitMq.Dlx.Demo.Model/RabbitMq.Dlx.Demo.Model.csproj",
+      "msbuildProject": "../RabbitMq.Dlx.Demo.Model/RabbitMq.Dlx.Demo.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "RabbitMQ.AMQP.Client >= 1.1.0"
+      "RabbitMQ.AMQP.Client >= 1.1.0",
+      "RabbitMq.Dlx.Demo.Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -138,7 +154,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\RabbitMq.Dlx.Demo\\RabbitMq.Dlx.Demo.Model\\RabbitMq.Dlx.Demo.Model.csproj": {
+              "projectPath": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\RabbitMq.Dlx.Demo\\RabbitMq.Dlx.Demo.Model\\RabbitMq.Dlx.Demo.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

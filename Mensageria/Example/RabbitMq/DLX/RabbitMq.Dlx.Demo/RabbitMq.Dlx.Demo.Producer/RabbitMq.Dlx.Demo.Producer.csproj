@@ -11,4 +11,8 @@
     <PackageReference Include="RabbitMQ.AMQP.Client" Version="1.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RabbitMq.Dlx.Demo.Model\RabbitMq.Dlx.Demo.Model.csproj" />
+  </ItemGroup>
+
 </Project>

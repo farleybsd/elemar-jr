@@ -18,3 +18,5 @@ C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Producer\bin\Debug\net10.0\RabbitMQ.AMQP.Client.dll
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Producer\obj\Debug\net10.0\RabbitMq.Dlx.Demo.Producer.csproj.AssemblyReference.cache
 C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Producer\obj\Debug\net10.0\RabbitMq.3146213B.Up2Date
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Producer\bin\Debug\net10.0\RabbitMq.Dlx.Demo.Model.dll
+C:\Git\elemar-jr\Mensageria\Example\RabbitMq\DLX\RabbitMq.Dlx.Demo\RabbitMq.Dlx.Demo.Producer\bin\Debug\net10.0\RabbitMq.Dlx.Demo.Model.pdb

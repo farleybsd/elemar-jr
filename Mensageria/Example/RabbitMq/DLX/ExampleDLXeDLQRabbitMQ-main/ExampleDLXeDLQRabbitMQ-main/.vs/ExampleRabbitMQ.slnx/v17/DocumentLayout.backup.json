@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68682E66-6074-5A62-D325-C9AC3CF8ECE8}|src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj|c:\\git\\elemar-jr\\mensageria\\example\\rabbitmq\\dlx\\exampledlxedlqrabbitmq-main\\exampledlxedlqrabbitmq-main\\src\\rabbitmq.consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68682E66-6074-5A62-D325-C9AC3CF8ECE8}|src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj|solutionrelative:src\\rabbitmq.consumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E41DC4-2AB8-2065-5AAE-39267EE0673E}|src\\RabbitMQ.Producer\\RabbitMQ.Producer.csproj|c:\\git\\elemar-jr\\mensageria\\example\\rabbitmq\\dlx\\exampledlxedlqrabbitmq-main\\exampledlxedlqrabbitmq-main\\src\\rabbitmq.producer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4E41DC4-2AB8-2065-5AAE-39267EE0673E}|src\\RabbitMQ.Producer\\RabbitMQ.Producer.csproj|solutionrelative:src\\rabbitmq.producer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68682E66-6074-5A62-D325-C9AC3CF8ECE8}|src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj|c:\\git\\elemar-jr\\mensageria\\example\\rabbitmq\\dlx\\exampledlxedlqrabbitmq-main\\exampledlxedlqrabbitmq-main\\src\\rabbitmq.consumer\\rabbitmq.consumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{68682E66-6074-5A62-D325-C9AC3CF8ECE8}|src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj|solutionrelative:src\\rabbitmq.consumer\\rabbitmq.consumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\Program.cs",
+              "RelativeDocumentMoniker": "src\\RabbitMQ.Consumer\\Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\Program.cs",
+              "RelativeToolTip": "src\\RabbitMQ.Consumer\\Program.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T20:16:56.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RabbitMQ.Consumer",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+              "RelativeDocumentMoniker": "src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+              "RelativeToolTip": "src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-11T19:49:48.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Producer\\Program.cs",
+              "RelativeDocumentMoniker": "src\\RabbitMQ.Producer\\Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Producer\\Program.cs",
+              "RelativeToolTip": "src\\RabbitMQ.Producer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T19:01:05.346Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

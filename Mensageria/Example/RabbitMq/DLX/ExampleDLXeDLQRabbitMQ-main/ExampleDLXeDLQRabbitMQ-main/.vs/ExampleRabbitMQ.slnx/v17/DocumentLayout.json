@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "src\\RabbitMQ.Consumer\\Program.cs",
               "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\Program.cs",
               "RelativeToolTip": "src\\RabbitMQ.Consumer\\Program.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T20:16:56.111Z",
               "EditorCaption": ""
@@ -40,15 +40,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RabbitMQ.Consumer",
+              "Title": "RabbitMQ.Consumer.csproj",
               "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
               "RelativeDocumentMoniker": "src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
               "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\RabbitMq\\DLX\\ExampleDLXeDLQRabbitMQ-main\\ExampleDLXeDLQRabbitMQ-main\\src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
               "RelativeToolTip": "src\\RabbitMQ.Consumer\\RabbitMQ.Consumer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-11T19:49:48.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T19:49:48.408Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "src\\RabbitMQ.Producer\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T19:01:05.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T19:01:05.346Z"
             }
           ]
         }
