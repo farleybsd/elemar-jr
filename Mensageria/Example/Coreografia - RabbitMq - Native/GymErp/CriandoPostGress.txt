@@ -1,0 +1,5 @@
+﻿docker run -d --name gymerp-postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=654123 -e POSTGRES_DB=GymErp -p 5432:5432 -v gymerp_postgres_data:/var/lib/postgresql/data postgres:16
+
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+dotnet ef migrations add InitialCreate
+dotnet ef database update

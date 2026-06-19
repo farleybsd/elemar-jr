@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|c:\\git\\elemar-jr\\mensageria\\example\\outbox\\backgrounds\\outboxpublisherbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|solutionrelative:backgrounds\\outboxpublisherbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|c:\\git\\elemar-jr\\mensageria\\example\\outbox\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|c:\\git\\elemar-jr\\mensageria\\example\\outbox\\domain\\services\\brokerpublisherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3F6725-F3A1-43E0-BEBC-257A08D68327}|OutBox.csproj|solutionrelative:domain\\services\\brokerpublisherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BrokerPublisherService.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Domain\\Services\\BrokerPublisherService.cs",
+              "RelativeDocumentMoniker": "Domain\\Services\\BrokerPublisherService.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Domain\\Services\\BrokerPublisherService.cs",
+              "RelativeToolTip": "Domain\\Services\\BrokerPublisherService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAgwBEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T17:45:42.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OutboxPublisherBackgroundService.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Backgrounds\\OutboxPublisherBackgroundService.cs",
+              "RelativeDocumentMoniker": "Backgrounds\\OutboxPublisherBackgroundService.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Backgrounds\\OutboxPublisherBackgroundService.cs",
+              "RelativeToolTip": "Backgrounds\\OutboxPublisherBackgroundService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T17:45:00.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\OutBox\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAowDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T17:44:52.082Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
