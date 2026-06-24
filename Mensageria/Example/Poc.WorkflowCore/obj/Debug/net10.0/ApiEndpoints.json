@@ -1,0 +1,52 @@
+[
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__8_2",
+    "RelativePath": "api/enrollments",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "Poc.WorkflowCore.Domain.Orchestration.Features.NewEnrollmentFlow.Request",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Guid",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PocWorkflowCoreDomainOrchestrationFeaturesAddNewEnrollmentEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__8_2",
+    "RelativePath": "api/enrollmentsWorkflow",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "Poc.WorkflowCore.Domain.Orchestration.Features.NewEnrollmentFlow.Request",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Poc.WorkflowCore.Domain.Orchestration.Features.NewEnrollmentFlow.NewEnrollmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PocWorkflowCoreDomainOrchestrationFeaturesNewEnrollmentFlowNewEnrollmentEndpoint"
+  }
+]

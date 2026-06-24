@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|c:\\git\\elemar-jr\\mensageria\\example\\poc.workflowcore\\domain\\orchestration\\features\\newenrollmentflow\\steps\\addenrollmentstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|solutionrelative:domain\\orchestration\\features\\newenrollmentflow\\steps\\addenrollmentstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|c:\\git\\elemar-jr\\mensageria\\example\\poc.workflowcore\\domain\\orchestration\\features\\newenrollmentflow\\mainworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|solutionrelative:domain\\orchestration\\features\\newenrollmentflow\\mainworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|c:\\git\\elemar-jr\\mensageria\\example\\poc.workflowcore\\domain\\orchestration\\features\\newenrollmentflow\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|solutionrelative:domain\\orchestration\\features\\newenrollmentflow\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|c:\\git\\elemar-jr\\mensageria\\example\\poc.workflowcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94002D3-DE7E-DCB3-0F27-C35275397DE5}|Poc.WorkflowCore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddEnrollmentStep.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Steps\\AddEnrollmentStep.cs",
+              "RelativeDocumentMoniker": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Steps\\AddEnrollmentStep.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Steps\\AddEnrollmentStep.cs",
+              "RelativeToolTip": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Steps\\AddEnrollmentStep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T15:59:45.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWorkflow.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\MainWorkflow.cs",
+              "RelativeDocumentMoniker": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\MainWorkflow.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\MainWorkflow.cs",
+              "RelativeToolTip": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\MainWorkflow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T15:59:14.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwEUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T15:58:57.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Endpoint.cs",
+              "DocumentMoniker": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Endpoint.cs",
+              "RelativeDocumentMoniker": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Endpoint.cs",
+              "ToolTip": "C:\\Git\\elemar-jr\\Mensageria\\Example\\Poc.WorkflowCore\\Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Endpoint.cs",
+              "RelativeToolTip": "Domain\\Orchestration\\Features\\NewEnrollmentFlow\\Endpoint.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T14:52:28.632Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

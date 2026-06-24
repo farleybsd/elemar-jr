@@ -1,0 +1,6 @@
+@Poc.WorkflowCore_HostAddress = http://localhost:5054
+
+GET {{Poc.WorkflowCore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
