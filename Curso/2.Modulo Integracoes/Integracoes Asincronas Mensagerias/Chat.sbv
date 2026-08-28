@@ -1,0 +1,116 @@
+00:23:02.195,00:23:05.195
+Lucas Pereira: Talvez um failover de cluster?
+
+00:24:45.311,00:24:48.311
+jonathan jimenez: outbox pattern pode resolver não perder as mensagens na publicação
+
+00:35:49.381,00:35:52.381
+Natan Barros: Acho que é muito sobre gargalo
+
+00:40:54.347,00:40:57.347
+Natan Barros: Metadados no geral
+
+00:46:35.066,00:46:38.066
+Natan Barros: A auditoria nesse caso, fica mais dificil na minha visão, se for um fluxo critico
+
+00:50:44.486,00:50:47.486
+Natan Barros: Infelizmente, pela facilidade muitos cenários vão para a coreografia apenas pela agilidade do desenvolvimento. :/ É dificil mostrar o que esse custo a mais vai gerar de ganho pra um certo processo
+
+00:54:22.061,00:54:25.061
+Natan Barros: SIstemas distribuidos na maioria dos caos
+
+00:54:46.586,00:54:49.586
+Natan Barros: casos*
+
+01:00:24.151,01:00:27.151
+Natan Barros: Ta um pouco pequena
+
+01:13:17.267,01:13:20.267
+Natan Barros: É um tipo de decisão que deve ser feito quanto antes, migrações arquiteturais como esse o custo e o risco são bem altos
+
+01:22:34.783,01:22:37.783
+Natan Barros: Ai ele iria reagir evento?
+
+01:30:56.569,01:30:59.569
+Natan Barros: Ja vi dois casos "Hibrido", ou seja tem os 2. Achei até estranho, mas entendi dado o tamanho do sistema distribuido
+
+01:32:48.199,01:32:51.199
+Natan Barros: Utilizei já o EventFlow ele é muito bom
+
+01:33:35.913,01:33:38.913
+Natan Barros: Boa ideia
+
+01:50:33.904,01:50:36.904
+Natan Barros: Sessões, é algo que acho interessante do ASB
+
+01:57:42.502,01:57:45.502
+Lucas Pereira: Por aqui tomamos bastante cuidado com isso, depois que a mensagem é processada chamamos o consumer.Commit pra enviar o Ack.
+
+02:11:34.370,02:11:37.370
+jonathan jimenez: masstransit também
+
+02:14:55.824,02:14:58.824
+Natan Barros: se utilizar event store da pra tratar assim tbm
+
+02:15:12.611,02:15:15.611
+Natan Barros: Isso ai
+
+02:25:04.834,02:25:07.834
+Natan Barros: Graceful shutdown é interessante também para evitar DLQ em deploys
+
+02:26:05.086,02:26:08.086
+Natan Barros: Sim, existe plugin
+
+02:27:06.870,02:27:09.870
+Natan Barros: rabbitmq_delayed_message_exchange é o nome do plugin do rabbit
+
+02:27:42.122,02:27:45.122
+wallace silva: Legal, Natan. nao conhecia. vou procura
+
+02:29:49.080,02:29:52.080
+Anderson Perim: Natan esse plugin foi descontinuado. Já tem um esquema interno
+
+02:31:30.399,02:31:33.399
+Natan Barros: Boa, não sabia, estou utilizando uma versão atrasada provalvemente
+
+02:32:16.366,02:32:19.366
+Anderson Perim: Estava usando também. Quase não consigo resolver sem ele, mas deu certo com a opção interna
+
+02:33:10.374,02:33:13.374
+Igor Romulo: muito obrigado
+
+02:36:39.761,02:36:42.761
+Natan Barros: concordo com vcs
+
+02:41:15.959,02:41:18.959
+Natan Barros: É que a solução da DLQ vai ser reprocessar da mesma forma... Faz sentido
+
+02:41:48.779,02:41:51.779
+Natan Barros: Mas isso não pode gerar gargalo em outros fluxos?
+
+02:50:46.844,02:50:49.844
+Natan Barros: Que massa
+
+02:51:09.670,02:51:12.670
+Natan Barros: Gostei muito também
+
+02:52:08.350,02:52:11.350
+Natan Barros: Poxa não da pra usar ele com o ASB?
+
+02:55:23.998,02:55:26.998
+Natan Barros: Acho esse livro muito bom para muito dos conceitos falados
+
+https://www.amazon.com.br/Padr%C3%B5es-Arquitetura-Aplica%C3%A7%C3%B5es-Corporativas-Martin/dp/8536306386
+
+02:56:24.098,02:56:27.098
+Natan Barros: Passei aqui
+
+03:00:34.909,03:00:37.909
+Natan Barros: Gostei muito Gabriel, e obrigado também pelo papo a todos. Vou precisar sair, boa noite turma.
+
+03:00:40.904,03:00:43.904
+Eduardo Kubota: muito bom!!
+
+03:01:09.595,03:01:12.595
+Ivan Parmigiani: Obrigado, Boa  noite!
+

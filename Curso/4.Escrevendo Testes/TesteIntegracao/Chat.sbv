@@ -1,0 +1,75 @@
+00:03:11.811,00:03:14.811
+Natan Barros: Não foi no handler do evento farley?
+
+00:04:03.866,00:04:06.866
+Farley Souza: não o handler só publica o evento
+
+00:04:18.308,00:04:21.308
+Farley Souza: e dentro do evento ele faz a chamada
+
+00:06:01.629,00:06:04.629
+Natan Barros: O que acontece com o Channel no processo de rollout? As mensagens se perdem?
+
+00:07:14.461,00:07:17.461
+Bruno Joaquim: Sim Natan
+
+00:38:32.668,00:38:35.668
+Natan Barros: Passamos por essa questão de versão, tivemos que especificar a versão do contêiner no testcontainer
+
+00:59:49.620,00:59:52.620
+Natan Barros: Para cada teste ele reexecuta a factory ou tudo é no mesmo contexto?
+
+01:26:13.746,01:26:16.746
+Bruno Joaquim: https://natenho.github.io/Mockaco/
+
+01:27:59.175,01:28:02.175
+Natan Barros: Bem parecido com o wiremock, mas achei mais simples até
+
+01:39:07.204,01:39:10.204
+Natan Barros: Isso podemos chamar esse teste de teste funcional certo? Sempre fiquei na dúvida na diferença em testes funcionais com testes de integração. Vejo o teste funcional como um subconjunto do teste de integração, não sei se faz sentido
+
+01:39:42.337,01:39:45.337
+Natan Barros: Aqui na empresa tem uma distinção dos dois kkk
+
+01:39:54.975,01:39:57.975
+Natan Barros: Mas vejo da mesma forma
+
+01:51:05.278,01:51:08.278
+Bruno Joaquim: https://github.com/eximiaco/csharp_jeito_certo/tree/main/Modulo%2001/Workshop%2003
+
+01:54:46.756,01:54:49.756
+Natan Barros: Concordo
+
+01:54:55.508,01:54:58.508
+Natan Barros: Foi o melhor que eu li
+
+01:56:56.454,01:56:59.454
+Bruno Joaquim: https://enterprisecraftsmanship.com/
+
+01:58:05.121,01:58:08.121
+Natan Barros: Vou fez uma skill pra isso baseado nas duas aulas que tivemos sobre, ficou bem legal
+
+01:58:16.331,01:58:19.331
+Natan Barros: Vou criar*
+
+01:58:58.396,01:59:01.396
+Bruno Joaquim: boa, ótima ideia
+
+02:04:17.377,02:04:20.377
+Natan Barros: Saindo aqui turma, boa noite. Muito massa a aula Bruno, valeu
+
+02:05:11.810,02:05:14.810
+Bruno Joaquim: Abraço Natan
+
+02:09:24.691,02:09:27.691
+Bruno Joaquim: https://www.youtube.com/@brunojoaquimtech/videos
+
+02:10:07.868,02:10:10.868
+Alex Silva Reis: inscrito !
+
+02:11:12.814,02:11:15.814
+Bruno Joaquim: obrigado Alex
+
+02:16:48.685,02:16:51.685
+Ivan Parmigiani: Obrigado, Boa noite a todos!
+

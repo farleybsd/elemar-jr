@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Poc.WorkflowCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48fc6a4fc515f4d4071fa07ffafd0d2011d23fc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93946fffd9faef90798b2d0bf852502050b4f097")]
 [assembly: System.Reflection.AssemblyProductAttribute("Poc.WorkflowCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Poc.WorkflowCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

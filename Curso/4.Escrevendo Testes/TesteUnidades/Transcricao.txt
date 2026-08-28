@@ -1,0 +1,7793 @@
+WEBVTT
+
+1
+00:00:04.920 --> 00:00:06.460
+Olá, pessoal, boa noite.
+
+2
+00:00:10.280 --> 00:00:11.650
+Se permitir.
+
+3
+00:00:14.360 --> 00:00:15.340
+Opa, boa noite, pessoal.
+
+4
+00:00:16.440 --> 00:00:17.200
+Boa noite, Jorge.
+
+5
+00:00:20.460 --> 00:00:21.060
+Boa noite.
+
+6
+00:00:22.070 --> 00:00:22.759
+Boa noite.
+
+7
+00:02:06.880 --> 00:02:10.200
+Vamos começar, pessoal? A gente já está num número interessante que já podemos
+
+8
+00:02:10.220 --> 00:02:10.720
+começar.
+
+9
+00:02:13.360 --> 00:02:13.640
+Ok.
+
+10
+00:02:14.360 --> 00:02:17.400
+Vamos lá então. Estamos na finaleira do nosso treinamento.
+
+11
+00:02:17.500 --> 00:02:21.220
+Acho que tem mais quatro aulas, tem duas
+
+12
+00:02:21.280 --> 00:02:23.799
+aulas sobre testes e mais duas masterclasses.
+
+13
+00:02:24.820 --> 00:02:25.000
+A
+
+14
+00:02:26.380 --> 00:02:26.950
+ideia é que a
+
+15
+00:02:28.020 --> 00:02:29.920
+gente vai ter duas aulas sobre testes.
+
+16
+00:02:29.960 --> 00:02:30.000
+Na
+
+17
+00:02:31.740 --> 00:02:35.160
+primeira aula a gente vai ver bastante da parte teórica, dos
+
+18
+00:02:35.240 --> 00:02:38.210
+conceitos, os princípios, as boas práticas quando a gente
+
+19
+00:02:38.860 --> 00:02:41.500
+adota teste de integração quanto teste de
+
+20
+00:02:41.540 --> 00:02:45.420
+unidade nos nossos projetos.
+
+21
+00:02:46.120 --> 00:02:50.000
+E na segunda aula, a gente vai numa dinâmica um pouquinho diferente.
+
+22
+00:02:50.080 --> 00:02:54.040
+A gente vai construir um teste de integração seguindo toda a teoria e todos
+
+23
+00:02:54.060 --> 00:02:56.200
+os princípios que a gente vai ver nessa aula de hoje.
+
+24
+00:02:56.829 --> 00:03:00.000
+A gente vai construir um teste do zero testando uma
+
+25
+00:03:00.020 --> 00:03:03.780
+aplicação. Acho que foi a mesma aplicação que foi mostrada pra vocês na aula
+
+26
+00:03:03.840 --> 00:03:07.720
+dois ou três. E a gente vai fazer um teste de integração
+
+27
+00:03:07.760 --> 00:03:10.700
+do zero, passo a passo, aplicando tudo que a gente
+
+28
+00:03:10.820 --> 00:03:13.940
+vem aprendendo nessa primeira aula
+
+29
+00:03:14.040 --> 00:03:17.800
+mais da
+
+30
+00:03:17.880 --> 00:03:21.760
+parte teórica. Depois a gente coloca tudo na parte prática
+
+31
+00:03:21.780 --> 00:03:23.180
+na segunda-feira.
+
+32
+00:03:26.060 --> 00:03:29.920
+Para começar, pessoal, antes de
+
+33
+00:03:29.960 --> 00:03:33.800
+começar a falar de testes, de boas práticas, eu queria
+
+34
+00:03:33.840 --> 00:03:36.840
+falar de forma bem breve das leis de Lemon.
+
+35
+00:03:38.020 --> 00:03:40.640
+As leis de Lemon são basicamente sete leis.
+
+36
+00:03:40.700 --> 00:03:42.520
+Elas se referem a
+
+37
+00:03:44.000 --> 00:03:47.260
+um conjunto de princípios e observações que
+
+38
+00:03:47.300 --> 00:03:49.900
+facilitam a evolução do nosso
+
+39
+00:03:50.320 --> 00:03:51.990
+sistema. Então
+
+40
+00:03:53.180 --> 00:03:57.140
+essas leis vão descrever a necessidade contínua de evolução
+
+41
+00:03:57.180 --> 00:04:01.100
+do sistema de software e também vão nos ajudar,
+
+42
+00:04:01.360 --> 00:04:05.160
+se a gente seguir algumas delas, a atacar essa
+
+43
+00:04:05.180 --> 00:04:08.180
+complexidade inerente ao próprio software, que vai
+
+44
+00:04:08.200 --> 00:04:12.010
+crescendo ao longo do tempo. Então conforme o nosso
+
+45
+00:04:12.120 --> 00:04:15.910
+sistema, o nosso software vai dando certo, vai entregando
+
+46
+00:04:15.980 --> 00:04:19.640
+valor pro cliente, com o passar do tempo,
+
+47
+00:04:20.320 --> 00:04:24.020
+é natural que esse sistema cresça, que tenha mais funcionalidades e
+
+48
+00:04:24.060 --> 00:04:27.500
+cada vez mais vai ficando um sistema mais complexo de
+
+49
+00:04:27.840 --> 00:04:30.280
+lidar. Aquela complexidade
+
+50
+00:04:31.180 --> 00:04:33.920
+inerente à própria evolução do projeto.
+
+51
+00:04:33.960 --> 00:04:36.590
+Então as leis de Lemon são sete leis ao total.
+
+52
+00:04:36.800 --> 00:04:40.020
+Eu não vou falar de todas, eu vou falar só das duas primeiras, que estão bem
+
+53
+00:04:40.060 --> 00:04:42.240
+relacionadas ao tema de teste.
+
+54
+00:04:43.560 --> 00:04:45.440
+A primeira basicamente
+
+55
+00:04:46.560 --> 00:04:50.480
+determina que o software precisa evoluir de forma contínua ao longo do
+
+56
+00:04:50.600 --> 00:04:54.500
+tempo pra permanecer útil e relevante, ou seja, que nem eu comentei, o
+
+57
+00:04:54.560 --> 00:04:58.380
+software vai entregando as funcionalidades, os clientes vão usando cada vez mais e
+
+58
+00:04:58.420 --> 00:05:02.280
+ao longo do tempo a gente vai evoluindo isso, a partir de
+
+59
+00:05:02.320 --> 00:05:06.040
+funcionalidades novas, a partir de melhorias de
+
+60
+00:05:06.060 --> 00:05:09.940
+performance e desempenho. Então a gente está evoluindo esse software ao longo
+
+61
+00:05:09.980 --> 00:05:13.880
+do tempo. O software que não evolui é aquele software que ninguém usa, que
+
+62
+00:05:13.960 --> 00:05:17.520
+eventualmente morreu, não é mais necessário dar manutenção, porque
+
+63
+00:05:17.580 --> 00:05:20.560
+eventualmente ninguém mais utiliza aquele sistema.
+
+64
+00:05:21.420 --> 00:05:25.260
+E a segunda lei também, que é muito importante, que ao longo do
+
+65
+00:05:25.380 --> 00:05:29.220
+tempo, conforme esse sistema vai evoluindo, se a gente
+
+66
+00:05:29.280 --> 00:05:32.990
+não tratar a complexidade desse sistema de forma deliberada,
+
+67
+00:05:34.340 --> 00:05:36.660
+é bem provável que em certo ponto,
+
+68
+00:05:37.600 --> 00:05:41.520
+essa complexidade vai ficar tão grande que vai ser
+
+69
+00:05:41.580 --> 00:05:45.440
+muito mais caro pra gente tentar resolver ela lá na frente do que se a gente
+
+70
+00:05:45.480 --> 00:05:48.260
+começasse a lidar com essa
+
+71
+00:05:48.320 --> 00:05:51.880
+complexidade o quanto antes. Então é aquela
+
+72
+00:05:51.940 --> 00:05:55.660
+questão da dívida técnica. Quanto mais tempo eu
+
+73
+00:05:55.800 --> 00:05:58.460
+levo pra pagar uma dívida, mais cara ela se torna.
+
+74
+00:05:58.500 --> 00:05:59.360
+A complexidade
+
+75
+00:06:00.820 --> 00:06:04.684
+segue na mesma linha.Conforme o projeto
+
+76
+00:06:04.724 --> 00:06:07.884
+vai evoluindo, se a gente não tratar essa entropia,
+
+77
+00:06:09.264 --> 00:06:13.244
+esse nível de desordem dentro do nosso sistema, se a gente não
+
+78
+00:06:13.264 --> 00:06:17.164
+tratar isso de forma deliberada ao longo do tempo, vai ficar cada vez
+
+79
+00:06:17.224 --> 00:06:18.044
+mais caro pra gente
+
+80
+00:06:19.344 --> 00:06:23.124
+corrigir e colocar o nosso software no trilho correto.
+
+81
+00:06:25.604 --> 00:06:26.594
+Dito isso, pessoal,
+
+82
+00:06:27.564 --> 00:06:31.144
+o aspecto mais importante do software é o comportamento.
+
+83
+00:06:31.364 --> 00:06:35.184
+A gente, como desenvolvedor de sistema, precisa garantir o
+
+84
+00:06:35.224 --> 00:06:38.764
+comportamento do sistema da forma correta das nossas
+
+85
+00:06:38.804 --> 00:06:42.604
+aplicações e diminuir o risco da mudança, que é algo que
+
+86
+00:06:42.824 --> 00:06:45.884
+o Olemar fala muito, o Gabriel também eventualmente fala muito.
+
+87
+00:06:47.064 --> 00:06:50.964
+A gente precisa diminuir o risco da mudança ao
+
+88
+00:06:51.004 --> 00:06:53.144
+longo do tempo. E como que a gente faz isso,
+
+89
+00:06:54.104 --> 00:06:57.604
+a partir de uma ótica de qualidade e
+
+90
+00:06:57.664 --> 00:07:00.944
+manutenibilidade, segurança e tudo mais?
+
+91
+00:07:01.004 --> 00:07:03.384
+É através da implantação de testes.
+
+92
+00:07:03.824 --> 00:07:07.724
+Então eventualmente, se a gente precisar convencer alguém
+
+93
+00:07:07.784 --> 00:07:10.304
+superior à gente que o teste vale a pena.
+
+94
+00:07:11.644 --> 00:07:15.464
+Agora nem tanto, porque a gente tem muita ajuda da
+
+95
+00:07:15.484 --> 00:07:19.164
+inteligência artificial pra escrever os testes, mas a gente acaba
+
+96
+00:07:19.184 --> 00:07:20.004
+escrevendo mais
+
+97
+00:07:23.624 --> 00:07:27.594
+código quando a gente implementa com testes, e isso naturalmente acaba levando
+
+98
+00:07:27.764 --> 00:07:31.284
+tempo. Mas como eu gosto de abordar testes, testes
+
+99
+00:07:32.164 --> 00:07:35.984
+acabam sendo um investimento. Então eu vou colher,
+
+100
+00:07:36.294 --> 00:07:39.424
+a longo prazo, os frutos dessa decisão que eu estou tomando agora.
+
+101
+00:07:40.684 --> 00:07:44.484
+Basicamente, essas leis de Lehman se conectam muito com o tema que a gente vai
+
+102
+00:07:44.504 --> 00:07:44.704
+ver
+
+103
+00:07:45.784 --> 00:07:46.484
+na aula de hoje.
+
+104
+00:07:48.664 --> 00:07:49.284
+Então, pessoal,
+
+105
+00:07:50.224 --> 00:07:53.984
+mudando um pouco aqui a ótica e já começando a falar dos testes, quais que são os
+
+106
+00:07:54.044 --> 00:07:57.304
+benefícios dos testes pra quem não está muito habituado ainda?
+
+107
+00:07:58.464 --> 00:08:02.044
+Por que eu vou escrever mais código, além do necessário pra
+
+108
+00:08:02.144 --> 00:08:03.454
+testar a minha funcionalidade?
+
+109
+00:08:04.784 --> 00:08:08.464
+Acho que o principal benefício do teste,
+
+110
+00:08:08.584 --> 00:08:10.764
+pessoal, ele está na questão de
+
+111
+00:08:11.664 --> 00:08:15.064
+dar mais segurança e mais
+
+112
+00:08:15.124 --> 00:08:18.884
+confiabilidade pra gente implementar e manter esse software ao longo do
+
+113
+00:08:18.924 --> 00:08:21.524
+tempo, ou eventualmente até refatorar.
+
+114
+00:08:21.604 --> 00:08:25.584
+É muito irresponsável da nossa parte, pessoal, tentar refatorar
+
+115
+00:08:25.624 --> 00:08:29.584
+e melhorar um código no qual não está coberto por testes, porque aí
+
+116
+00:08:29.604 --> 00:08:33.544
+a gente não consegue garantir que após essa refatoração, o comportamento se
+
+117
+00:08:33.584 --> 00:08:36.345
+manteve o mesmo que ele estava antes da modificação.
+
+118
+00:08:39.605 --> 00:08:43.544
+Por mais que pareça controversa essa frase, ele tende a diminuir o tempo de
+
+119
+00:08:43.564 --> 00:08:47.354
+desenvolvimento a longo prazo, porque aí a gente tem mais segurança, a
+
+120
+00:08:47.404 --> 00:08:49.904
+gente consegue entender melhor aquele código.
+
+121
+00:08:49.964 --> 00:08:52.724
+Então o teste traz esse benefício aqui pra gente também.
+
+122
+00:08:54.404 --> 00:08:58.264
+E que nem eu comentei, ele vai aumentar de forma significativa o sucesso das
+
+123
+00:08:58.304 --> 00:09:02.104
+refatorações. Então, por exemplo, quero colocar em prática o que eu aprendi lá na
+
+124
+00:09:02.124 --> 00:09:03.414
+primeira aula de C#, quero
+
+125
+00:09:04.784 --> 00:09:08.634
+mudar uma lista, usar uma lista com
+
+126
+00:09:08.704 --> 00:09:11.724
+tamanho fixo, vou trocar um record, vou fazer um stack lock,
+
+127
+00:09:12.664 --> 00:09:15.584
+e eu quero validar isso pra ver se o comportamento continua o mesmo.
+
+128
+00:09:16.024 --> 00:09:18.404
+O teste nos ajuda muito nessa questão.
+
+129
+00:09:18.424 --> 00:09:21.864
+Ele vai garantir que eu vou modificar o design do meu
+
+130
+00:09:21.964 --> 00:09:25.424
+código, mas que ele vai continuar funcional depois
+
+131
+00:09:25.484 --> 00:09:27.344
+dessa refatoração.
+
+132
+00:09:29.544 --> 00:09:32.664
+E também vai garantir o crescimento sustentável do nosso projeto a longo
+
+133
+00:09:32.764 --> 00:09:36.734
+prazo. Outra coisa muito importante, um benefício
+
+134
+00:09:36.764 --> 00:09:38.204
+também muito importante do
+
+135
+00:09:39.104 --> 00:09:42.993
+teste, pessoal, é que ele torna o nosso software
+
+136
+00:09:42.993 --> 00:09:46.844
+antifrágil. Eu gosto muito de fazer esse paralelo aqui com
+
+137
+00:09:47.724 --> 00:09:50.964
+esse termo de antifrágil, pessoal, que basicamente
+
+138
+00:09:51.884 --> 00:09:55.824
+algo antifrágil é algo que se beneficia do caos, ou seja,
+
+139
+00:09:55.964 --> 00:09:59.704
+quanto mais problema e mais ruído tem algo, ele tende a se
+
+140
+00:09:59.804 --> 00:10:03.464
+fortalecer com aquilo. Eu gosto muito de fazer esse paralelo com o
+
+141
+00:10:03.564 --> 00:10:07.544
+teste, porque basicamente toda vez que a gente escreve um teste pra corrigir
+
+142
+00:10:07.564 --> 00:10:11.244
+um comportamento que estava errado no nosso sistema,
+
+143
+00:10:11.324 --> 00:10:15.284
+pessoal, a gente garante que aquele comportamento não vai
+
+144
+00:10:15.304 --> 00:10:18.324
+voltar a acontecer. Então eu usei de um
+
+145
+00:10:18.824 --> 00:10:21.224
+problema no meu sistema pra deixar ele
+
+146
+00:10:22.204 --> 00:10:24.104
+antifrágil, deixar ele mais parrudo.
+
+147
+00:10:24.884 --> 00:10:28.364
+A partir do momento que eu identifiquei o problema, eu fiz um teste, eu garanti que
+
+148
+00:10:28.384 --> 00:10:32.064
+aquele comportamento nunca mais vai voltar a ser executado de forma errada a partir
+
+149
+00:10:32.074 --> 00:10:36.024
+do meu teste, eu estou tornando o meu software antifrágil e evitando
+
+150
+00:10:36.064 --> 00:10:39.864
+também regressões. Ele diminui também a entropia ao longo do
+
+151
+00:10:39.964 --> 00:10:40.784
+tempo, aquela
+
+152
+00:10:42.164 --> 00:10:43.284
+noção de desordem.
+
+153
+00:10:44.144 --> 00:10:47.984
+A gente consegue ter um código mais testável,
+
+154
+00:10:48.404 --> 00:10:52.144
+a gente consegue entender melhor o que está acontecendo, a gente consegue ter
+
+155
+00:10:52.184 --> 00:10:55.824
+previsibilidade de forma mais rápida da
+
+156
+00:10:55.844 --> 00:10:59.504
+modificação que a gente está fazendo no nosso código pra ver se eventualmente outra
+
+157
+00:10:59.604 --> 00:11:03.484
+coisa que não estava nem relacionada com aquilo lá quebrou, então o
+
+158
+00:11:03.624 --> 00:11:05.524
+teste nos entrega isso.
+
+159
+00:11:06.404 --> 00:11:10.264
+Ele evita que problemas do passado voltem a acontecer, que é justamente
+
+160
+00:11:10.284 --> 00:11:13.604
+essa questão da antifragilidade, tornar o software mais
+
+161
+00:11:14.264 --> 00:11:18.024
+seguro, e também vai garantir essa camada de segurança pra
+
+162
+00:11:18.044 --> 00:11:18.724
+refatoração.
+
+163
+00:11:20.264 --> 00:11:20.784
+E por último,
+
+164
+00:11:21.684 --> 00:11:24.684
+a gente tem um feedback mais rápido sobre o impacto da nossa
+
+165
+00:11:24.744 --> 00:11:28.564
+mudança. Então quanto mais cedo eu identificar um problema,
+
+166
+00:11:28.584 --> 00:11:31.384
+pessoal, mais barato é pra corrigir ele.
+
+167
+00:11:31.904 --> 00:11:35.894
+Vamos pegar um exemplo aqui. Se eu conseguir descobrir um problema em
+
+168
+00:11:35.904 --> 00:11:39.834
+nível de desenvolvimento, é muito mais barato corrigir ele do que
+
+169
+00:11:39.944 --> 00:11:43.884
+se, por exemplo, eu descobrir esse problema quando esse código já estiver
+
+170
+00:11:43.924 --> 00:11:46.344
+rodando lá em produção no cliente.
+
+171
+00:11:46.564 --> 00:11:50.444
+Vai desgastar a relação com o cliente, pode eventualmente até fazer
+
+172
+00:11:50.484 --> 00:11:53.124
+com que o cliente não utilize mais o sistema.
+
+173
+00:11:53.164 --> 00:11:57.084
+Então quanto mais rápido a gente identificar um problema, mais barato
+
+174
+00:11:57.124 --> 00:12:00.524
+é corrigir ele e o teste nos ajuda a ter esse feedback
+
+175
+00:12:00.564 --> 00:12:02.024
+rápido sobre as nossas
+
+176
+00:12:02.064 --> 00:12:05.944
+mudançasFazendo um comparativo,
+
+177
+00:12:06.044 --> 00:12:09.404
+pessoal, aqui no eixo X eu tenho o tamanho do projeto e no
+
+178
+00:12:09.444 --> 00:12:12.904
+eixo Y eu tenho o tempo e o risco pra
+
+179
+00:12:12.944 --> 00:12:13.544
+desenvolver.
+
+180
+00:12:14.364 --> 00:12:17.704
+No começo, quando eu estou desenvolvendo sem testes, eu tenho essa
+
+181
+00:12:17.724 --> 00:12:19.224
+percepção que eu
+
+182
+00:12:20.664 --> 00:12:24.404
+tenho mais agilidade pra escrever, eu consigo ter uma velocidade de entrega muito
+
+183
+00:12:24.414 --> 00:12:24.724
+maior.
+
+184
+00:12:25.684 --> 00:12:29.364
+Só que conforme vai passando o tempo, chega um ponto que
+
+185
+00:12:29.404 --> 00:12:32.824
+desenvolver sem testes acaba levando mais tempo e sendo mais
+
+186
+00:12:32.864 --> 00:12:33.924
+arriscado do que
+
+187
+00:12:34.804 --> 00:12:38.524
+desenvolver com testes. Hoje em dia, pessoal, que nem eu comentei, é muito mais
+
+188
+00:12:38.544 --> 00:12:42.304
+barato e muito mais fácil do que era cinco, 10 anos atrás, fazer um
+
+189
+00:12:42.344 --> 00:12:46.113
+desenvolvimento com os testes. Mas de qualquer forma, pessoal,
+
+190
+00:12:46.164 --> 00:12:50.124
+independente se é a gente que escreve o teste ou se é a
+
+191
+00:12:50.244 --> 00:12:54.044
+LLM que escreve, é bom que a gente conheça os princípios pra
+
+192
+00:12:54.104 --> 00:12:58.084
+conseguir avaliar se o que o Claude,
+
+193
+00:12:58.124 --> 00:13:01.844
+o Cursor, está escrevendo, se de fato ele está usando as
+
+194
+00:13:01.904 --> 00:13:05.844
+boas práticas. E também, pessoal, nada impede que tudo que
+
+195
+00:13:05.884 --> 00:13:09.364
+a gente aprenda aqui hoje, a gente condense dentro de uma própria skill do
+
+196
+00:13:09.424 --> 00:13:13.354
+Cursor e que ele use essa skill internamente pra fazer a escrita
+
+197
+00:13:13.424 --> 00:13:17.304
+dos nossos testes, aderindo às boas práticas que a gente vai
+
+198
+00:13:17.364 --> 00:13:17.744
+ver aqui.
+
+199
+00:13:18.624 --> 00:13:22.384
+Então independente se a gente está escrevendo teste na mão ou não,
+
+200
+00:13:22.744 --> 00:13:25.824
+esse conhecimento é aquele conhecimento essencial,
+
+201
+00:13:25.844 --> 00:13:29.264
+aqueles fundamentos
+
+202
+00:13:29.344 --> 00:13:33.264
+essenciais de testes, que vão nos ajudar independente da forma como a
+
+203
+00:13:33.304 --> 00:13:34.784
+gente está projetando esses testes.
+
+204
+00:13:37.324 --> 00:13:41.224
+Dito tudo isso, quais que são as características de um bom conjunto
+
+205
+00:13:41.284 --> 00:13:45.024
+de testes, pessoal? Eles têm que estar integrados no processo de
+
+206
+00:13:45.084 --> 00:13:48.484
+CI/CD pra que a gente consiga impedir que
+
+207
+00:13:48.604 --> 00:13:49.384
+código
+
+208
+00:13:50.524 --> 00:13:53.424
+com comportamento errado suba pra ambientes produtivos.
+
+209
+00:13:53.724 --> 00:13:57.454
+A gente precisa ter isso no nosso processo de CI.
+
+210
+00:13:57.904 --> 00:14:01.384
+A gente não pode confiar que o desenvolvedor sempre vai executar
+
+211
+00:14:01.844 --> 00:14:03.424
+localmente e garantir que está tudo certo.
+
+212
+00:14:03.464 --> 00:14:07.014
+A gente precisa ter uma política ali nos nossos pull
+
+213
+00:14:07.044 --> 00:14:09.124
+requests, evitar que
+
+214
+00:14:11.824 --> 00:14:15.424
+código com comportamento errado suba pra produção, então a gente precisa ter esse
+
+215
+00:14:15.464 --> 00:14:19.304
+controle. E também garante que a gente tenha a possibilidade até de fazer o code
+
+216
+00:14:19.344 --> 00:14:21.513
+review, indicar melhorias e tudo mais.
+
+217
+00:14:22.804 --> 00:14:26.414
+E também adicionar validações de build, buildar o projeto, rodar os
+
+218
+00:14:26.464 --> 00:14:29.064
+testes, ver se está com a cobertura
+
+219
+00:14:30.624 --> 00:14:34.304
+mínima estipulada. Enfim, a gente precisa adicionar isso no nosso processo de CI
+
+220
+00:14:34.964 --> 00:14:38.804
+pra de fato valer a pena e a gente conseguir ter esse
+
+221
+00:14:38.904 --> 00:14:42.484
+feedback tanto local, e antes também como uma
+
+222
+00:14:42.564 --> 00:14:46.404
+pré-condição pra gente conseguir fazer o merge daquele código ali na branch main,
+
+223
+00:14:46.464 --> 00:14:47.214
+develop, enfim.
+
+224
+00:14:49.073 --> 00:14:53.064
+Outra característica de um bom conjunto de testes, pessoal, é que eles protegem
+
+225
+00:14:53.084 --> 00:14:56.024
+a parte mais crucial do nosso sistema.
+
+226
+00:14:56.144 --> 00:14:59.884
+O nosso sistema, pessoal, não é toda a parte
+
+227
+00:14:59.944 --> 00:15:03.604
+dele que tem a mesma importância. Então, por
+
+228
+00:15:03.644 --> 00:15:04.124
+exemplo,
+
+229
+00:15:06.444 --> 00:15:10.104
+eu posso eventualmente começar a atacar a parte do meu software que mais dá
+
+230
+00:15:10.124 --> 00:15:13.164
+problema, ou eventualmente a parte que é mais alterada a partir
+
+231
+00:15:13.174 --> 00:15:17.024
+do histórico de mudanças do
+
+232
+00:15:17.104 --> 00:15:21.004
+Git. Eu consigo atacar essa parte e implementar os testes
+
+233
+00:15:21.044 --> 00:15:24.904
+nessa parte, porque eu vou ter um ganho, vou ter um benefício muito maior do que
+
+234
+00:15:24.924 --> 00:15:28.464
+se eventualmente eu cobrir uma parte do meu
+
+235
+00:15:28.524 --> 00:15:31.884
+código que talvez não seja tão crucial pro negócio, ou
+
+236
+00:15:31.944 --> 00:15:35.784
+eventualmente ela não é executada de forma muito
+
+237
+00:15:35.824 --> 00:15:39.324
+frequente. Então nesse tipo de teste eu talvez não tenha tanto
+
+238
+00:15:39.984 --> 00:15:43.364
+ganho, mas se eventualmente eu atacar a parte mais importante, onde
+
+239
+00:15:45.384 --> 00:15:49.264
+eventualmente vai ser mais arriscado e mais impactante
+
+240
+00:15:49.274 --> 00:15:53.133
+eu ter algum comportamento errado, esse teste vai me entregar muito mais
+
+241
+00:15:53.324 --> 00:15:54.784
+valor no final do dia.
+
+242
+00:15:55.744 --> 00:15:59.414
+Nem todo código vai ter esse mesmo nível de importância e
+
+243
+00:15:59.444 --> 00:16:03.324
+criticidade, então a gente tem que ser bem seleto ali, principalmente num
+
+244
+00:16:03.544 --> 00:16:07.504
+caso onde a gente está atacando um projeto que não tem nenhum tipo de teste,
+
+245
+00:16:07.544 --> 00:16:11.004
+a gente precisa começar pelas partes mais
+
+246
+00:16:11.044 --> 00:16:11.664
+sensíveis.
+
+247
+00:16:13.464 --> 00:16:16.024
+Ter testes de unidade pra operação de domínio.
+
+248
+00:16:16.084 --> 00:16:20.024
+Então se eu estiver adotando os bons princípios de
+
+249
+00:16:20.103 --> 00:16:23.304
+design, conseguir fazer uma boa separação do que é a lógica, do que
+
+250
+00:16:23.404 --> 00:16:24.144
+é
+
+251
+00:16:25.983 --> 00:16:29.424
+serviço de infraestrutura, que faz acesso ao banco, dos
+
+252
+00:16:29.464 --> 00:16:32.964
+controllers, se eu conseguir ter essa boa separação, eu consigo, nas
+
+253
+00:16:33.004 --> 00:16:36.944
+operações de domínio, atacar testes de unidade e os testes de
+
+254
+00:16:36.984 --> 00:16:40.864
+integração eu deixo daí pra escopos mais amplos, que daí é mais
+
+255
+00:16:40.924 --> 00:16:43.784
+um teste ponta a ponta. Que aí a gente
+
+256
+00:16:43.824 --> 00:16:47.444
+vai testar a nossa lógica em comportamento com o restante
+
+257
+00:16:47.504 --> 00:16:48.064
+do
+
+258
+00:16:48.904 --> 00:16:51.884
+sistema, banco de dados, message brokers,
+
+259
+00:16:52.284 --> 00:16:56.244
+arquivos no disco, enfim. E aí o teste
+
+260
+00:16:56.264 --> 00:16:56.974
+de integração
+
+261
+00:16:57.964 --> 00:16:59.144
+vai nos garantir isso.
+
+262
+00:17:00.064 --> 00:17:03.884
+E uma coisa que eu geralmente falo nesse treinamento, pessoal, e que causa
+
+263
+00:17:03.904 --> 00:17:07.085
+certo desconforto e às vezes até uma polêmica, é que
+
+264
+00:17:07.825 --> 00:17:11.045
+se a gente estiver projetando os nossos testes de forma adequada,
+
+265
+00:17:11.984 --> 00:17:15.825
+pouco provável que a gente vá precisar utilizar mock em testes de unidade.
+
+266
+00:17:16.654 --> 00:17:20.424
+E aí durante a nossa aula, essa afirmação vai ficar um
+
+267
+00:17:20.444 --> 00:17:24.204
+pouquinho mais clara. Mas a tendência é que a gente nunca utilize
+
+268
+00:17:24.305 --> 00:17:27.664
+ou tente não utilizar mocks pra testes de unidade,
+
+269
+00:17:28.104 --> 00:17:31.904
+deixar os mocks só pra testes de integração e pra mockar
+
+270
+00:17:32.024 --> 00:17:35.714
+coisas bem específicas. Não é ideal a gente também mockar tudo no
+
+271
+00:17:35.744 --> 00:17:39.704
+teste de integração. Mas aí conforme a gente vai evoluindo aqui na aula, vai ficar
+
+272
+00:17:39.724 --> 00:17:42.594
+mais clara essa questão pra vocês, pessoal.
+
+273
+00:17:44.144 --> 00:17:46.764
+E por último, ele tem que ter um baixo custo de manutenção.
+
+274
+00:17:47.504 --> 00:17:51.444
+O desenvolvimento com o teste precisa ser mais barato do
+
+275
+00:17:51.484 --> 00:17:55.074
+que o desenvolvimento sem teste, porque aí não justifica a gente aderir
+
+276
+00:17:55.084 --> 00:17:59.024
+essa prática, se eventualmente no final ela está custando mais do
+
+277
+00:17:59.064 --> 00:18:02.984
+que desenvolver sem teste. Via de regra, pessoal, é
+
+278
+00:18:03.004 --> 00:18:06.784
+preferível que a gente não tenha testes do que ter testes ruins,
+
+279
+00:18:06.864 --> 00:18:10.744
+testes que geram custo de manutenção, mas não entregam um
+
+280
+00:18:10.804 --> 00:18:14.464
+valor de um teste bem projetado. Então é melhor não ter teste, porque
+
+281
+00:18:14.504 --> 00:18:18.292
+aíUm teste
+
+282
+00:18:18.372 --> 00:18:22.222
+ruim já não entrega valor, porque ele não cobre contrarregressão, ele
+
+283
+00:18:22.232 --> 00:18:25.972
+não desempenha o papel que o teste
+
+284
+00:18:26.512 --> 00:18:30.332
+se propõe a desempenhar. Então esse tipo de teste
+
+285
+00:18:30.392 --> 00:18:34.292
+vai gerar mais custo do que benefício, é melhor a gente nem ter
+
+286
+00:18:34.372 --> 00:18:35.872
+ele do que ter um teste ruim.
+
+287
+00:18:37.872 --> 00:18:41.692
+Que nem eu comentei, o teste ruim tem esse custo de manutenção alta e ele não vai
+
+288
+00:18:41.792 --> 00:18:43.712
+proteger o código de forma adequada.
+
+289
+00:18:44.032 --> 00:18:47.892
+Então colocando aqui dentro desse nosso gráfico, desenvolver com
+
+290
+00:18:47.972 --> 00:18:49.672
+testes ruins é o pior dos cenários.
+
+291
+00:18:49.812 --> 00:18:53.252
+Porque eu tenho aqui um tempo maior no início e conforme
+
+292
+00:18:53.292 --> 00:18:56.572
+vai passando o tempo, eu tenho uma curva bem
+
+293
+00:18:56.592 --> 00:18:57.672
+similar com a
+
+294
+00:18:58.832 --> 00:19:01.252
+curva com desenvolvimento sem testes.
+
+295
+00:19:01.772 --> 00:19:04.102
+Conforme o projeto vai crescendo,
+
+296
+00:19:05.512 --> 00:19:09.212
+o meu tempo e o meu risco vai aumentando, por mais que eu tenha esses
+
+297
+00:19:09.252 --> 00:19:09.672
+testes.
+
+298
+00:19:11.432 --> 00:19:11.972
+Dito isso,
+
+299
+00:19:14.312 --> 00:19:18.172
+como é que eu consigo identificar um teste ruim e quais que
+
+300
+00:19:18.212 --> 00:19:20.472
+são as características de um bom teste?
+
+301
+00:19:20.532 --> 00:19:23.252
+Até aqui tranquilo, pessoal?
+
+302
+00:19:25.432 --> 00:19:26.652
+Vocês estão muito quietos hoje.
+
+303
+00:19:29.092 --> 00:19:30.492
+Tranquilo? Vou seguindo aqui.
+
+304
+00:19:32.292 --> 00:19:35.912
+Quando a gente fala de um bom teste, pessoal, a gente pode se atentar a quatro
+
+305
+00:19:36.012 --> 00:19:39.852
+pilares essenciais aqui. Eu diria que o primeiro e mais
+
+306
+00:19:39.912 --> 00:19:42.772
+importante de todos é a proteção contrarregressão.
+
+307
+00:19:44.252 --> 00:19:47.912
+O que é uma regressão, pessoal? É quando a gente tinha um comportamento que estava
+
+308
+00:19:47.952 --> 00:19:51.842
+funcional, que estava de acordo com os requisitos, que depois de
+
+309
+00:19:51.912 --> 00:19:55.852
+alguma mudança, seja na própria funcionalidade ou eventualmente em alguma coisa
+
+310
+00:19:55.892 --> 00:19:59.812
+que nem era relacionada com ela, ela para de se
+
+311
+00:19:59.852 --> 00:20:03.352
+comportar da maneira adequada. Então quando eu tenho algo funcional,
+
+312
+00:20:03.692 --> 00:20:07.632
+que eventualmente parou de funcionar por algum motivo, eu tenho uma regressão
+
+313
+00:20:07.692 --> 00:20:11.212
+no meu sistema. Que nem eu comentei, com o tempo,
+
+314
+00:20:11.232 --> 00:20:14.612
+conforme o sistema vai ficando grande, vai tendo mais
+
+315
+00:20:14.712 --> 00:20:18.632
+features, sempre quando a gente vai adicionar uma nova funcionalidade ou fazer
+
+316
+00:20:18.672 --> 00:20:22.232
+uma correção, a chance de regressão vai crescer de forma proporcional.
+
+317
+00:20:23.312 --> 00:20:26.412
+Ainda mais se a gente não tiver uma boa suíte de testes.
+
+318
+00:20:26.492 --> 00:20:29.612
+E que nem eu comentei algumas vezes, é bom reforçar esse
+
+319
+00:20:29.632 --> 00:20:30.662
+ponto, a
+
+320
+00:20:32.072 --> 00:20:36.002
+entropia vai crescer de forma inevitável com o
+
+321
+00:20:36.032 --> 00:20:39.262
+crescimento do nosso sistema. Então a gente precisa ter uma forma de
+
+322
+00:20:39.772 --> 00:20:43.552
+escrever um teste que consiga garantir que esse código
+
+323
+00:20:43.572 --> 00:20:45.832
+não está regredido por comportamento errado.
+
+324
+00:20:47.672 --> 00:20:51.512
+E esse pilar, pessoal, vai basicamente garantir que a gente tenha um crescimento
+
+325
+00:20:51.572 --> 00:20:55.502
+sustentável do nosso sistema, a partir do momento que a gente começa a entender e
+
+326
+00:20:55.532 --> 00:20:58.972
+escrever testes que protegem contrarregressão, a gente garante esse
+
+327
+00:20:59.012 --> 00:21:02.812
+crescimento, a gente vai aumentar a robustez do nosso código, tornando ele
+
+328
+00:21:02.822 --> 00:21:06.252
+antifrágil. Novas features vão ser incorporadas com mais
+
+329
+00:21:06.292 --> 00:21:06.852
+segurança.
+
+330
+00:21:08.652 --> 00:21:12.312
+Aqui eu estou dizendo no sentido de eu ter certeza que eu não estou quebrando outra
+
+331
+00:21:12.352 --> 00:21:15.681
+coisa e não segurança no sentido de deixar o meu código mais
+
+332
+00:21:15.712 --> 00:21:17.862
+seguro, e também com menor tempo.
+
+333
+00:21:19.592 --> 00:21:23.552
+E pra gente começar a ver aqui na prática um pouquinho de código, pessoal, eu tenho
+
+334
+00:21:23.592 --> 00:21:25.992
+esse método aqui, é um método bem simples.
+
+335
+00:21:26.472 --> 00:21:28.892
+Imaginem que esse método está numa classe de conta
+
+336
+00:21:30.092 --> 00:21:30.572
+bancária.
+
+337
+00:21:32.852 --> 00:21:34.672
+Deixa eu permitir aqui o Nicolas.
+
+338
+00:21:36.052 --> 00:21:38.692
+E eu tenho algumas validações aqui, uns pré-requisitos,
+
+339
+00:21:39.632 --> 00:21:43.392
+que eu preciso validar antes de executar a minha operação, que é diminuído o meu
+
+340
+00:21:43.472 --> 00:21:47.372
+saldo disponível, o valor que o usuário está fazendo o saque.
+
+341
+00:21:47.872 --> 00:21:51.202
+Então se a conta estiver bloqueada, eu adiciono um erro nessa lista,
+
+342
+00:21:51.332 --> 00:21:55.012
+se o valor em saldo for
+
+343
+00:21:55.092 --> 00:21:58.862
+menor do que requisitado, eu coloco um erro, e aí no final se eu
+
+344
+00:21:58.912 --> 00:22:02.742
+tiver algum erro, eu retorno um fail aqui e não deixo
+
+345
+00:22:02.872 --> 00:22:04.012
+concluir a operação.
+
+346
+00:22:05.032 --> 00:22:08.792
+E agora eu vou projetar um teste pra garantir que quando eu estiver com a
+
+347
+00:22:08.892 --> 00:22:10.841
+conta bloqueada, ele não
+
+348
+00:22:13.432 --> 00:22:15.832
+faça esse desconto na minha conta.
+
+349
+00:22:15.892 --> 00:22:19.052
+E aqui que eu vou começar a trazer vocês mais pra conversa, pessoal.
+
+350
+00:22:19.932 --> 00:22:23.752
+Se, por exemplo, vocês pegassem esse teste aqui
+
+351
+00:22:23.772 --> 00:22:27.432
+lá num review de pull request, vocês aprovariam esse
+
+352
+00:22:27.442 --> 00:22:30.392
+teste, vocês não aprovariam, por quê?
+
+353
+00:22:30.492 --> 00:22:33.312
+O que vocês acham desse teste aqui?
+
+354
+00:22:42.772 --> 00:22:44.192
+Ninguém quer dar um chute, pessoal?
+
+355
+00:22:48.472 --> 00:22:50.212
+Todo mundo com medo de dar a resposta errada?
+
+356
+00:22:51.312 --> 00:22:54.712
+Não tem resposta errada ou certa aqui, tá, pessoal? Fiquem bem à vontade.
+
+357
+00:22:59.312 --> 00:23:00.552
+Ninguém quer dar um chute?
+
+358
+00:23:04.492 --> 00:23:08.392
+"Bem
+
+359
+00:23:08.432 --> 00:23:10.492
+genérico", diz o Walison.
+
+360
+00:23:11.732 --> 00:23:13.632
+Genérico em que sentido, Walison?
+
+361
+00:23:14.032 --> 00:23:16.412
+Deixa eu mexer aqui, pessoal.
+
+362
+00:23:19.492 --> 00:23:22.072
+Pode ir digitando, depois eu leio a tua resposta aí.
+
+363
+00:23:22.772 --> 00:23:24.532
+Eu acredito.
+
+364
+00:23:24.592 --> 00:23:25.372
+Pode falar, Jonatas.
+
+365
+00:23:26.812 --> 00:23:30.512
+Aqui o assert está dizendo que não pode ser
+
+366
+00:23:30.572 --> 00:23:34.192
+nulo. Mas o objetivo do teste não seria validar se é o nulo.
+
+367
+00:23:34.852 --> 00:23:38.742
+Eu acredito que o objetivo do teste é validar o balance, quanto
+
+368
+00:23:38.812 --> 00:23:42.072
+que fica depois que ele faz o processo de
+
+369
+00:23:42.112 --> 00:23:45.602
+withdraw. Então, pra mim é um teste
+
+370
+00:23:45.632 --> 00:23:49.072
+confuso, que não é o objetivo dele acertar o nulo,
+
+371
+00:23:49.852 --> 00:23:50.692
+inclusive pelo nome.
+
+372
+00:23:52.432 --> 00:23:54.172
+Exatamente, Jonatas. Exatamente isso aí.
+
+373
+00:23:54.972 --> 00:23:58.952
+Esse teste, pessoal, não está validando o comportamento
+
+374
+00:23:58.992 --> 00:24:01.272
+observável do nosso método de resgate.
+
+375
+00:24:02.312 --> 00:24:05.272
+O nosso método de resgate tem dois outputs:
+
+376
+00:24:06.172 --> 00:24:09.892
+ou ele vai fazer o resgate, que aí ele vai diminuir aquele valor do saldo
+
+377
+00:24:10.012 --> 00:24:11.452
+disponível, ou ele vai
+
+378
+00:24:12.312 --> 00:24:13.172
+retornar um erro.
+
+379
+00:24:14.852 --> 00:24:18.232
+Então nesse caso aqui, pessoal, se por exemplo, eu colocasse isso aqui,
+
+380
+00:24:19.432 --> 00:24:23.324
+passaria lá no SonarSe eu botasse que
+
+381
+00:24:23.364 --> 00:24:25.984
+eu quero 80% de cobertura no meu código,
+
+382
+00:24:26.924 --> 00:24:30.904
+se eu olhasse a partir da ótica só da métrica de cobertura, eu teria
+
+383
+00:24:30.944 --> 00:24:34.904
+um resultado satisfatório aqui. Por isso que às vezes essa métrica de
+
+384
+00:24:34.964 --> 00:24:38.824
+cobertura é uma métrica que eu não gosto muito, e ela engana a gente,
+
+385
+00:24:38.944 --> 00:24:39.324
+porque
+
+386
+00:24:40.164 --> 00:24:43.824
+a métrica de cobertura, pessoal, um valor
+
+387
+00:24:43.864 --> 00:24:47.664
+baixo de cobertura indica que, de fato, o nosso
+
+388
+00:24:48.844 --> 00:24:52.724
+código carece de testes. Mas um alto índice de
+
+389
+00:24:52.784 --> 00:24:55.464
+cobertura não é um sinônimo de
+
+390
+00:24:57.584 --> 00:25:01.384
+que a gente está evitando problemas a partir dos testes que a
+
+391
+00:25:01.424 --> 00:25:05.404
+gente implementa. O Natan comentou ali: "Testes de mutação é
+
+392
+00:25:05.424 --> 00:25:08.644
+uma boa." Com certeza, que aí a gente consegue também garantir
+
+393
+00:25:09.304 --> 00:25:13.184
+essa variabilidade de parâmetros e testar se, de
+
+394
+00:25:13.244 --> 00:25:15.544
+fato, se eu trocar um valor, o meu teste vai quebrar.
+
+395
+00:25:16.104 --> 00:25:19.464
+Nesse caso aqui, se eu tivesse um teste de mutação, ele provavelmente falharia no
+
+396
+00:25:19.544 --> 00:25:20.344
+teste de mutação.
+
+397
+00:25:21.324 --> 00:25:24.084
+Então voltando aqui, pessoal, qual é o grande problema desse teste?
+
+398
+00:25:24.424 --> 00:25:26.804
+Eu não estou testando o resultado observável.
+
+399
+00:25:26.944 --> 00:25:28.504
+Eu não estou testando
+
+400
+00:25:29.784 --> 00:25:33.744
+o comportamento que vai gerar no estado interno do meu account quando eu
+
+401
+00:25:33.784 --> 00:25:35.984
+realizar a operação de withdraw aqui.
+
+402
+00:25:36.644 --> 00:25:40.604
+Então se, por exemplo, alguém ir lá e comentar ou eventualmente
+
+403
+00:25:40.684 --> 00:25:44.634
+remover essa linha aqui, que é a linha que faz a validação
+
+404
+00:25:44.644 --> 00:25:48.604
+para ver se tem algum erro para eventualmente retornar a falha ou
+
+405
+00:25:48.644 --> 00:25:52.594
+seguir adiante e fazer o saque, esse meu teste
+
+406
+00:25:52.744 --> 00:25:56.424
+não vai pegar essa regressão. Isso aqui seria uma regressão no meu sistema.
+
+407
+00:25:56.824 --> 00:26:00.704
+Eu tinha um método que estava funcionando de acordo com a expectativa, mas,
+
+408
+00:26:01.184 --> 00:26:02.884
+por algum motivo, ele parou de funcionar.
+
+409
+00:26:03.404 --> 00:26:07.384
+E como esse teste não pegou essa validação, ele
+
+410
+00:26:07.644 --> 00:26:11.404
+não observou esse resultado da execução desse
+
+411
+00:26:11.444 --> 00:26:14.364
+método dentro do estado de account, ele é um
+
+412
+00:26:15.364 --> 00:26:18.964
+teste inútil. Esse teste vai gerar manutenção se
+
+413
+00:26:19.004 --> 00:26:22.904
+eventualmente eu mudar alguma coisa aqui no meu método de withdraw, mas
+
+414
+00:26:22.944 --> 00:26:26.404
+ele não está protegendo contra a regressão. Então esse aqui é um teste ruim.
+
+415
+00:26:28.104 --> 00:26:30.324
+Como que eu poderia melhorar um pouquinho esse teste?
+
+416
+00:26:30.404 --> 00:26:34.364
+Vai muito do que o Jonathan muito bem pontuou, e tua resposta foi 100%
+
+417
+00:26:34.404 --> 00:26:37.564
+correta, Jonathan. Nesse caso aqui, quando eu
+
+418
+00:26:38.444 --> 00:26:41.474
+fizer uma operação que vai resultar num
+
+419
+00:26:42.984 --> 00:26:46.444
+resgate mal sucedido, além de fazer a
+
+420
+00:26:46.464 --> 00:26:49.224
+validação aqui do success true or
+
+421
+00:26:49.284 --> 00:26:51.384
+false, que é essa linha aqui,
+
+422
+00:26:52.284 --> 00:26:55.864
+é muito interessante para mim validar que o estado interno da
+
+423
+00:26:55.924 --> 00:26:59.744
+entidade continua o mesmo do que era antes da operação.
+
+424
+00:27:00.364 --> 00:27:04.264
+Então eu sei que, por mais que eu tenha retornado uma operação mal
+
+425
+00:27:04.324 --> 00:27:06.924
+sucedida, o meu estado se manteve igual.
+
+426
+00:27:07.124 --> 00:27:10.744
+Eu não tive alteração no balance. Então, para mim,
+
+427
+00:27:11.364 --> 00:27:14.944
+olhando na perspectiva desse método, o que é importante para mim é
+
+428
+00:27:14.984 --> 00:27:15.554
+validar
+
+429
+00:27:16.464 --> 00:27:20.254
+que ele está retornando uma operação mal sucedida no caminho não
+
+430
+00:27:20.344 --> 00:27:24.024
+feliz e que também o balance se mantém o mesmo que era antes da
+
+431
+00:27:24.044 --> 00:27:27.924
+operação. Então com isso aqui eu já consegui
+
+432
+00:27:27.964 --> 00:27:29.984
+melhorar um pouquinho o meu código.
+
+433
+00:27:30.044 --> 00:27:33.544
+E aí eu tenho a outra versão que vai testar para quando eu tiver uma conta
+
+434
+00:27:33.554 --> 00:27:37.344
+ativa, que de fato, quando eu fizer o resgate de 50, ele vai
+
+435
+00:27:37.384 --> 00:27:40.984
+ficar 50. Então esses dois testes melhoraram muito
+
+436
+00:27:41.004 --> 00:27:42.744
+comparado com o que eu tinha aqui antes.
+
+437
+00:27:44.844 --> 00:27:48.564
+Então aqui eu estou validando o retorno do método, eu estou validando o saldo, eu
+
+438
+00:27:48.584 --> 00:27:52.444
+estou validando também, porque talvez aqui para mim nesse teste seja importante
+
+439
+00:27:52.764 --> 00:27:55.304
+garantir que três erros voltaram dessa operação.
+
+440
+00:27:56.084 --> 00:27:59.994
+Se não for importante para mim, a partir da perspectiva de negócio,
+
+441
+00:28:00.084 --> 00:28:03.444
+validar a quantidade de erros, eu nem precisaria fazer essa validação.
+
+442
+00:28:05.244 --> 00:28:08.824
+Então se, por exemplo, eu comentar de novo esse
+
+443
+00:28:08.864 --> 00:28:12.364
+código aqui ou eventualmente remover, o meu primeiro teste vai quebrar.
+
+444
+00:28:12.384 --> 00:28:14.804
+Então ele garantiu que eu não tenho uma regressão.
+
+445
+00:28:15.704 --> 00:28:19.344
+Então eu consegui melhorar. Era um teste ruim que eu deixei um pouquinho
+
+446
+00:28:19.364 --> 00:28:21.164
+melhor.
+
+447
+00:28:22.124 --> 00:28:25.524
+O segundo pilar de um bom teste, pessoal, ele tem que dar suporte à
+
+448
+00:28:25.564 --> 00:28:28.413
+refatoração. Então o que é refatoração?
+
+449
+00:28:28.424 --> 00:28:32.004
+Refatoração, pessoal, é a habilidade que a gente tem de melhorar um código, tanto
+
+450
+00:28:32.044 --> 00:28:32.244
+em
+
+451
+00:28:33.164 --> 00:28:36.764
+termos de performance ou eventualmente de design,
+
+452
+00:28:37.444 --> 00:28:39.644
+sem mudar o comportamento original dele.
+
+453
+00:28:40.024 --> 00:28:43.703
+Então eu vou fazer uma reestruturação dele, mas o comportamento tem que ser
+
+454
+00:28:43.724 --> 00:28:47.104
+preservado. Não existe uma refatoração onde
+
+455
+00:28:47.164 --> 00:28:50.944
+eu melhoro o design, mas mudo o comportamento. Não faz sentido nenhum.
+
+456
+00:28:50.984 --> 00:28:51.724
+Eu tenho que manter o
+
+457
+00:28:53.964 --> 00:28:55.024
+comportamento correto.
+
+458
+00:28:56.244 --> 00:29:00.204
+Os testes, pessoal, que não são resistentes à refatoração,
+
+459
+00:29:01.104 --> 00:29:04.624
+com o tempo vão se tornar aqueles testes que
+
+460
+00:29:04.684 --> 00:29:08.144
+eventualmente quebram, eventualmente passam.
+
+461
+00:29:08.164 --> 00:29:12.084
+E aí como eles têm essa característica, ao longo
+
+462
+00:29:12.124 --> 00:29:14.604
+do tempo eles vão começar a ser ignorados.
+
+463
+00:29:15.084 --> 00:29:18.644
+Então um teste que falha 50% das vezes e passa
+
+464
+00:29:18.924 --> 00:29:22.604
+50% das vezes, quem garante para a gente que quando ele de
+
+465
+00:29:22.684 --> 00:29:25.744
+fato falhou, ele falhou por causa de um falso
+
+466
+00:29:25.764 --> 00:29:29.504
+positivo ou que ele falhou porque um comportamento foi de
+
+467
+00:29:29.564 --> 00:29:33.524
+fato modificado? Não tem como a gente saber, porque o teste
+
+468
+00:29:33.584 --> 00:29:33.804
+que
+
+469
+00:29:35.664 --> 00:29:39.494
+não é resistente à refatoração, e ele é muito acoplado
+
+470
+00:29:39.724 --> 00:29:43.384
+a detalhes de implementação, vai começar a quebrar,
+
+471
+00:29:44.144 --> 00:29:45.864
+mesmo se a gente não alterar
+
+472
+00:29:47.404 --> 00:29:47.464
+o
+
+473
+00:29:48.364 --> 00:29:50.744
+comportamento final do nosso método.
+
+474
+00:29:51.524 --> 00:29:54.964
+Talvez tenha ficado um pouquinho confuso, mas no próximo slide eu tenho um exemplo
+
+475
+00:29:55.004 --> 00:29:56.224
+que vai ficar um pouquinho mais claro.
+
+476
+00:29:57.784 --> 00:30:01.704
+Pessoal, aquele teste que falha de vez em quando e passa de vez em quando, é
+
+477
+00:30:01.744 --> 00:30:04.624
+melhor remover ele do que ter ele dentro do nosso sistema.
+
+478
+00:30:04.684 --> 00:30:06.444
+Porque esse teste não
+
+479
+00:30:07.284 --> 00:30:11.154
+agrega nada no final do dia e só atrapalha ali o nosso desenvolvimento,
+
+480
+00:30:11.224 --> 00:30:15.204
+porque ele traz essa carga cognitiva, ele traz esse questionamento:
+
+481
+00:30:15.304 --> 00:30:18.704
+será que o teste quebrou de fato ou será que ele quebrou
+
+482
+00:30:18.824 --> 00:30:21.904
+porque o banco de dados lá de desenvolvimento está
+
+483
+00:30:22.044 --> 00:30:26.012
+fora?E também, durante a aula a gente vai ver
+
+484
+00:30:26.452 --> 00:30:30.312
+boas práticas pra diminuir a chance de a gente ter falsos
+
+485
+00:30:30.332 --> 00:30:31.992
+positivos dentro dos nossos testes.
+
+486
+00:30:34.452 --> 00:30:38.262
+Só clarificando o que é um falso positivo, é aquele alarme falso, é
+
+487
+00:30:38.272 --> 00:30:42.232
+aquele teste que quebrou sem ter alterado o comportamento do método
+
+488
+00:30:42.252 --> 00:30:45.012
+ou da classe que ele está testando.
+
+489
+00:30:45.022 --> 00:30:48.572
+Um teste que falha quando a gente faz uma alteração de
+
+490
+00:30:48.592 --> 00:30:49.532
+design, mas
+
+491
+00:30:50.932 --> 00:30:51.011
+a
+
+492
+00:30:51.892 --> 00:30:55.872
+gente não modificou o comportamento daquele system under test, o
+
+493
+00:30:55.912 --> 00:30:57.732
+sistema sobre teste.
+
+494
+00:30:58.672 --> 00:31:02.632
+E que nem eu comentei com vocês, é aquele teste que falha, às vezes, esse que é
+
+495
+00:31:02.652 --> 00:31:06.432
+o pior cenário possível. E que nem eu comentei, o
+
+496
+00:31:06.572 --> 00:31:10.492
+teste vai falhar de forma tão frequente que, ao longo
+
+497
+00:31:10.592 --> 00:31:13.592
+do prazo, ao longo do tempo, ele vai começar a ser ignorado,
+
+498
+00:31:14.832 --> 00:31:18.512
+mesmo quando ele, de fato, falhar, porque aconteceu uma
+
+499
+00:31:18.552 --> 00:31:22.432
+regressão, porque aí a gente não consegue saber se de fato foi uma regressão ou
+
+500
+00:31:22.512 --> 00:31:23.792
+se foi um falso positivo.
+
+501
+00:31:25.652 --> 00:31:28.822
+E o que causa esses falsos positivos no nosso teste, pessoal?
+
+502
+00:31:29.472 --> 00:31:33.432
+A forma como a gente estrutura, eu acho que é o principal sintoma
+
+503
+00:31:33.452 --> 00:31:37.412
+desse problema. Se a gente acopla o nosso teste muito em
+
+504
+00:31:37.452 --> 00:31:41.142
+detalhes de implementação, mais a chance de ele gerar
+
+505
+00:31:41.152 --> 00:31:44.892
+falso positivo, porque se a gente fazer uma alteração de
+
+506
+00:31:44.932 --> 00:31:48.752
+design ou mudar a forma como a gente implementou, mas sem
+
+507
+00:31:48.812 --> 00:31:50.772
+mudar o comportamento, esse teste vai quebrar.
+
+508
+00:31:51.102 --> 00:31:54.952
+Então se ele tiver muito acoplado a esses detalhes, ele tem grandes
+
+509
+00:31:54.972 --> 00:31:56.952
+chances de gerar falsos positivos.
+
+510
+00:31:58.032 --> 00:32:00.292
+E o teste, pessoal, muito importante essa frase aqui.
+
+511
+00:32:01.132 --> 00:32:05.032
+Ele deve validar o comportamento observável do
+
+512
+00:32:05.132 --> 00:32:08.592
+método que a gente está chamando, e não quais que foram as
+
+513
+00:32:08.652 --> 00:32:11.792
+etapas que a gente fez pra chegar naquele resultado.
+
+514
+00:32:13.412 --> 00:32:15.972
+Vamos dar um exemplo
+
+515
+00:32:16.032 --> 00:32:19.552
+aqui. Eu vou somar dois números.
+
+516
+00:32:20.312 --> 00:32:23.872
+Supondo que a gente tenha mais de uma forma de somar dois números.
+
+517
+00:32:23.892 --> 00:32:27.852
+Pra mim, independente se ele usar soma ou outra forma pra chegar no resultado, pra
+
+518
+00:32:27.892 --> 00:32:30.931
+mim não interessa. Pra mim só interessa o resultado final.
+
+519
+00:32:31.711 --> 00:32:33.392
+E aí, vai ficar muito claro aqui
+
+520
+00:32:34.992 --> 00:32:36.872
+o que eu quero dizer com tudo isso, tá, pessoal?
+
+521
+00:32:37.552 --> 00:32:41.341
+Pegando o mesmo método que a gente tinha visto lá, são as mesmas regras,
+
+522
+00:32:41.572 --> 00:32:42.352
+é o mesmo método.
+
+523
+00:32:43.412 --> 00:32:47.232
+Então eu vou pegar e vou fazer agora um teste aqui, pessoal, que ele vai
+
+524
+00:32:47.292 --> 00:32:51.052
+validar que quando eu tiver
+
+525
+00:32:51.092 --> 00:32:52.632
+todas as validações aqui,
+
+526
+00:32:54.212 --> 00:32:57.252
+eu estou tentando, por exemplo, fazer um resgate com a conta
+
+527
+00:32:57.272 --> 00:33:00.692
+bloqueada, eu estou tentando fazer um resgate onde eu não tenho um
+
+528
+00:33:00.712 --> 00:33:04.572
+valor disponível na conta e também eu estou tentando fazer um
+
+529
+00:33:04.612 --> 00:33:08.152
+resgate que está acima do
+
+530
+00:33:08.212 --> 00:33:11.732
+valor máximo permitido. Então vamos supor aqui que o valor máximo
+
+531
+00:33:11.792 --> 00:33:15.752
+permitido fosse R$ 500. Eu estou tentando fazer
+
+532
+00:33:15.792 --> 00:33:19.652
+um resgate de mil pra uma conta que tem sem saldo e está bloqueada.
+
+533
+00:33:20.032 --> 00:33:21.312
+Então nesse cenário ele deveria
+
+534
+00:33:24.032 --> 00:33:26.632
+voltar todos os erros pra mim.
+
+535
+00:33:27.752 --> 00:33:31.272
+Pergunta, pessoal, vocês identificam algum problema com esse código aqui?
+
+536
+00:33:36.392 --> 00:33:37.932
+É a mesma operação que eu tinha antes.
+
+537
+00:33:38.392 --> 00:33:42.172
+Eu estou validando o sucesso, garantindo a regressão,
+
+538
+00:33:42.372 --> 00:33:45.592
+validando que o saldo permanece o
+
+539
+00:33:45.632 --> 00:33:48.152
+mesmo e que a quantidade de erros é três.
+
+540
+00:33:48.192 --> 00:33:49.952
+A única coisa que eu incluí a mais foi,
+
+541
+00:33:50.832 --> 00:33:54.632
+pra mim é importante validar que o account locked,
+
+542
+00:33:56.252 --> 00:33:59.112
+que essas mensagens são essas aqui mesmo.
+
+543
+00:33:59.122 --> 00:34:03.061
+O Natan comentou que a mensagem pode mudar, mas nesse caso aqui, Natan,
+
+544
+00:34:03.192 --> 00:34:06.412
+pensa que pra mim é importante eu saber quando a mensagem muda.
+
+545
+00:34:06.792 --> 00:34:06.912
+Não
+
+546
+00:34:09.632 --> 00:34:13.432
+faz sentido pensar dessa forma num sistema de verdade, digamos assim,
+
+547
+00:34:13.493 --> 00:34:17.033
+mas vamos supor aqui que o requisito de
+
+548
+00:34:17.072 --> 00:34:19.712
+negócio é que essa mensagem seja exatamente com esse
+
+549
+00:34:19.993 --> 00:34:23.592
+conteúdo aqui. Se
+
+550
+00:34:23.652 --> 00:34:26.572
+mudar isso aqui, eu quero que o meu teste alarme mesmo, então por isso que eu
+
+551
+00:34:26.592 --> 00:34:29.432
+coloquei essa validação aqui.
+
+552
+00:34:30.272 --> 00:34:33.592
+Então pra mim é importante ter esse conteúdo no
+
+553
+00:34:33.712 --> 00:34:36.772
+erro. Mas o que não é importante aqui pra mim, pessoal,
+
+554
+00:34:38.932 --> 00:34:42.812
+é a ordem das mensagens. Percebam que aqui eu estou acoplado a um detalhe de
+
+555
+00:34:42.852 --> 00:34:43.672
+implementação.
+
+556
+00:34:44.712 --> 00:34:45.272
+Eu estou
+
+557
+00:34:46.993 --> 00:34:50.752
+exigindo que o account locked venha na posição
+
+558
+00:34:50.932 --> 00:34:52.493
+zero aqui do meu array, por exemplo.
+
+559
+00:34:53.612 --> 00:34:57.592
+Se eventualmente eu trocar qualquer ordem aqui, vocês concordam comigo
+
+560
+00:34:57.602 --> 00:35:00.592
+que eu não estou mudando o comportamento do meu método?
+
+561
+00:35:00.652 --> 00:35:04.612
+Ele continua da mesma forma, eu só estou mudando a posição da
+
+562
+00:35:04.672 --> 00:35:08.652
+minha mensagem de erro. E pra mim, isso é irrelevante no teste.
+
+563
+00:35:08.732 --> 00:35:12.012
+Então aqui eu estou acoplado a um detalhe de implementação.
+
+564
+00:35:13.012 --> 00:35:15.912
+Se eu fizer essa troca, o meu teste vai quebrar.
+
+565
+00:35:16.672 --> 00:35:19.852
+Ele não vai quebrar porque o comportamento dele
+
+566
+00:35:19.892 --> 00:35:23.612
+mudou. Ele vai quebrar porque ele estava acoplado dentro de um detalhe de
+
+567
+00:35:23.632 --> 00:35:26.842
+implementação no qual eu fiz uma mudança ali e ele começou a
+
+568
+00:35:26.912 --> 00:35:30.672
+quebrar. Nesse caso, seria muito melhor a gente fazer dessa forma
+
+569
+00:35:30.682 --> 00:35:34.012
+aqui. Se a posição também não é importante pra
+
+570
+00:35:34.112 --> 00:35:38.032
+gente. Então eu vou fazer o mesmo passo a passo, só que aí no
+
+571
+00:35:38.092 --> 00:35:41.932
+final, eu quero validar a mensagem de qualquer uma delas.
+
+572
+00:35:42.092 --> 00:35:45.912
+Então aqui eu estou só validando que eu tenho pelo menos um erro desse
+
+573
+00:35:45.972 --> 00:35:48.512
+aqui, um erro desse e um erro desse.
+
+574
+00:35:48.552 --> 00:35:51.912
+E aí com isso, independente se eu trocar a ordem lá dentro, o meu teste vai
+
+575
+00:35:51.952 --> 00:35:55.692
+continuar passando, porque o comportamento dele continuou o mesmo.
+
+576
+00:35:57.552 --> 00:36:01.532
+E uma pergunta aqui, se esse teste está livre de falso positivo, o que vocês
+
+577
+00:36:01.672 --> 00:36:01.922
+acham?
+
+578
+00:36:04.012 --> 00:36:07.372
+Com isso aqui eu resolvi todo o problema de falso positivo do meu teste?
+
+579
+00:36:08.712 --> 00:36:10.182
+Basicamente, ainda não, tá, pessoal?
+
+580
+00:36:10.992 --> 00:36:14.612
+Que nem eu comentei, aqui eu estou validando a quantidade de erros que ele está me
+
+581
+00:36:14.652 --> 00:36:18.612
+retornando dessa operação. Se for importante pra mim isso, eu
+
+582
+00:36:18.712 --> 00:36:22.052
+posso ter esse equals aqui garantindo que sempre vai ser três.
+
+583
+00:36:22.532 --> 00:36:25.132
+Só que o problema é que a partir do momento que eu adiciono uma
+
+584
+00:36:25.152 --> 00:36:29.068
+regraEsse teste vai quebrar.
+
+585
+00:36:29.888 --> 00:36:33.588
+Se eu quiser garantir isso a partir do número de erros, eu posso fazer
+
+586
+00:36:33.628 --> 00:36:36.348
+dessa forma. Mas se, por exemplo, pra mim isso não é
+
+587
+00:36:37.368 --> 00:36:41.348
+relevante, eu poderia eventualmente ser um pouco mais assertivo e
+
+588
+00:36:41.428 --> 00:36:44.548
+separar cada cenário em um teste diferente.
+
+589
+00:36:45.168 --> 00:36:49.048
+Que a partir do momento que eu adicionar uma nova regra, eu não vou quebrar
+
+590
+00:36:49.088 --> 00:36:51.628
+pelo menos os testes que já existem.
+
+591
+00:36:51.648 --> 00:36:55.388
+Claro, eu vou ter que ter um teste pra cobrir essa nova regra, mas pelo
+
+592
+00:36:55.428 --> 00:36:58.868
+menos eu não vou gerar nenhum alarme falso nos testes que já
+
+593
+00:36:58.927 --> 00:37:02.508
+existem, porque cada teste testa uma situação bem
+
+594
+00:37:02.568 --> 00:37:06.168
+específica. Esse aqui vai testar quando a conta está bloqueada,
+
+595
+00:37:06.668 --> 00:37:10.577
+esse vai testar quando eu não tenho saldo disponível, esse vai testar quando
+
+596
+00:37:10.588 --> 00:37:11.528
+eu estou tentando
+
+597
+00:37:13.448 --> 00:37:17.228
+sacar um percentual maior do que 20%, e esse aqui vai testar o
+
+598
+00:37:17.248 --> 00:37:20.437
+valor máximo também. Então se eu eventualmente adicionar uma nova regra,
+
+599
+00:37:21.268 --> 00:37:25.058
+esses testes vão estar intactos. Eu só vou quebrar esses testes
+
+600
+00:37:25.208 --> 00:37:26.808
+se eventualmente eu mudar alguma
+
+601
+00:37:28.128 --> 00:37:31.188
+coisa relacionada ao que o teste está validando.
+
+602
+00:37:31.548 --> 00:37:32.708
+Se, por exemplo, eu tirar
+
+603
+00:37:33.908 --> 00:37:37.668
+a validação de max percentage, esse
+
+604
+00:37:37.688 --> 00:37:40.328
+teste aqui vai começar a quebrar e vai me indicar uma regressão.
+
+605
+00:37:44.428 --> 00:37:48.108
+O terceiro pilar, pessoal, é um feedback rápido.
+
+606
+00:37:48.288 --> 00:37:49.008
+Então,
+
+607
+00:37:49.828 --> 00:37:53.588
+que nem eu comentei, o teste reduz esse ciclo de feedback sobre as
+
+608
+00:37:53.608 --> 00:37:55.628
+alterações que a gente vai fazendo ali no código.
+
+609
+00:37:57.148 --> 00:38:01.108
+Sempre quando a gente tiver algum detalhe que mudou o comportamento, a
+
+610
+00:38:01.168 --> 00:38:04.008
+gente consegue identificar isso de forma muito mais rápida.
+
+611
+00:38:04.188 --> 00:38:08.088
+Porque pra executar uma suíte de testes, principalmente de unidade, é
+
+612
+00:38:08.128 --> 00:38:10.608
+muito rápido. Então, o teste
+
+613
+00:38:11.708 --> 00:38:14.978
+de integração acaba sendo um pouco mais demorado, porque a gente precisa
+
+614
+00:38:15.008 --> 00:38:18.408
+eventualmente subir as dependências, fazer as
+
+615
+00:38:18.448 --> 00:38:22.288
+configurações, mas o teste de unidade, pessoal, não pode ser um teste
+
+616
+00:38:22.388 --> 00:38:25.108
+demorado, ele tem que executar o mais rápido possível pra que
+
+617
+00:38:26.788 --> 00:38:29.508
+isso também não impacte o nosso processo de CI/CD.
+
+618
+00:38:29.548 --> 00:38:33.468
+Então a gente tem que ter esse feedback rápido das mudanças.
+
+619
+00:38:33.508 --> 00:38:37.027
+E por último, mas não menos importante, a gente tem que ter esse custo baixo de
+
+620
+00:38:37.068 --> 00:38:40.548
+manutenção. O teste de unidade, pessoal, a gente
+
+621
+00:38:40.988 --> 00:38:44.968
+sempre tem que olhar da perspectiva de ter um teste pequeno, um
+
+622
+00:38:45.008 --> 00:38:48.848
+teste enxuto. Principalmente o de unidade, o de integração acaba sendo um
+
+623
+00:38:48.868 --> 00:38:52.428
+pouquinho mais longo, mas o de unidade é quanto menor melhor,
+
+624
+00:38:52.988 --> 00:38:55.948
+pra gente não ter muita complexidade até de entendimento.
+
+625
+00:38:56.998 --> 00:39:00.608
+Que nem eu comentei lá antes, o desenvolvimento com teste tem que ser mais barato
+
+626
+00:39:00.668 --> 00:39:04.618
+que o desenvolvimento sem teste. E o código de teste, pessoal,
+
+627
+00:39:04.708 --> 00:39:08.588
+assim como o código de produção, o código das funcionalidades, precisa
+
+628
+00:39:08.688 --> 00:39:12.568
+ser legível e de fácil entendimento pra que a gente consiga manter
+
+629
+00:39:12.608 --> 00:39:15.588
+e ter essa cultura de implementar testes dentro do nosso time.
+
+630
+00:39:16.278 --> 00:39:19.588
+Se a gente tem um teste que é difícil de entender, provavelmente o código que ele
+
+631
+00:39:19.608 --> 00:39:21.708
+está testando também vai ser difícil de entender.
+
+632
+00:39:22.188 --> 00:39:25.908
+Então tem essa paridade entre o teste e a qualidade do
+
+633
+00:39:25.968 --> 00:39:28.998
+teste, e a qualidade do código que a gente está entregando.
+
+634
+00:39:30.388 --> 00:39:33.848
+E como o teste é um passivo e não um ativo, ele precisa ser barato pra gente
+
+635
+00:39:33.928 --> 00:39:34.458
+desenvolver.
+
+636
+00:39:35.568 --> 00:39:39.548
+Ele não tem que ser algo caro pra gente manter, porque aí não justifica a gente ter
+
+637
+00:39:39.688 --> 00:39:40.108
+ele como
+
+638
+00:39:42.328 --> 00:39:44.428
+algo dentro do nosso sistema, dentro do nosso
+
+639
+00:39:45.388 --> 00:39:46.088
+software.
+
+640
+00:39:48.108 --> 00:39:52.008
+Dito isso, pessoal, quando a gente olha da perspectiva de testes
+
+641
+00:39:52.088 --> 00:39:56.028
+de unidade e testes de integração, cada um deles
+
+642
+00:39:56.048 --> 00:39:58.148
+ataca de forma exclusiva
+
+643
+00:39:59.128 --> 00:40:02.608
+cada um desses pilares. Então quando a gente fala de integração, pessoal,
+
+644
+00:40:03.368 --> 00:40:07.058
+o teste de integração é muito mais eficaz em identificar a
+
+645
+00:40:07.068 --> 00:40:10.708
+proteção contra a regressão, e o teste de integração
+
+646
+00:40:10.788 --> 00:40:14.708
+tem muito mais suporte à refatoração.
+
+647
+00:40:14.718 --> 00:40:18.628
+O teste de integração, pessoal, geralmente a gente trata a nossa aplicação como
+
+648
+00:40:18.648 --> 00:40:22.588
+uma caixa preta, ou seja, eu dou um input pra ela, que geralmente
+
+649
+00:40:22.668 --> 00:40:26.248
+aqui pra gente que está mais pro back-end, é
+
+650
+00:40:26.288 --> 00:40:30.008
+uma requisição. Ou seja, eu vou subir a minha aplicação e vou fazer uma
+
+651
+00:40:30.048 --> 00:40:30.597
+requisição,
+
+652
+00:40:31.508 --> 00:40:35.268
+e o comportamento observável dessa operação provavelmente vai ser um insert no
+
+653
+00:40:35.288 --> 00:40:38.948
+banco de dados, vai ser um update, vai ser um envio de uma
+
+654
+00:40:39.008 --> 00:40:42.887
+mensagem pra um message broker, vai ser a geração de um
+
+655
+00:40:42.947 --> 00:40:46.768
+arquivo. Ou seja, no teste de integração é
+
+656
+00:40:46.788 --> 00:40:50.368
+muito mais difícil a gente acoplar o nosso teste a detalhes de
+
+657
+00:40:50.408 --> 00:40:51.808
+implementação.
+
+658
+00:40:52.688 --> 00:40:53.288
+Por exemplo,
+
+659
+00:40:54.288 --> 00:40:58.198
+no meu teste de integração, não é relevante eu saber se eu uso Entity
+
+660
+00:40:58.228 --> 00:40:59.608
+Framework ou se eu uso Dapper.
+
+661
+00:41:00.468 --> 00:41:03.928
+No meu teste de integração, não é relevante eu saber se eu uso o
+
+662
+00:41:03.948 --> 00:41:07.428
+Mediator ou se eu uso o Vertical Slice.
+
+663
+00:41:08.128 --> 00:41:11.688
+Então, por exemplo, se no meu teste de integração eu estou validando se o
+
+664
+00:41:11.728 --> 00:41:15.688
+Mediator foi chamado de uma forma correta, provavelmente esse
+
+665
+00:41:15.828 --> 00:41:19.708
+teste está acoplado a um detalhe de implementação que faz o uso do
+
+666
+00:41:19.748 --> 00:41:23.368
+Mediator. Se eventualmente eu remover o Mediator
+
+667
+00:41:23.908 --> 00:41:27.268
+e utilizar ali um Fast APIs ou um Vertical
+
+668
+00:41:27.348 --> 00:41:30.548
+Slice, o meu teste vai quebrar, mesmo que o
+
+669
+00:41:30.588 --> 00:41:34.038
+comportamento final desse método, dessa operação,
+
+670
+00:41:34.428 --> 00:41:37.708
+desse caso de uso, não tenha modificado.
+
+671
+00:41:38.448 --> 00:41:40.008
+Então aqui é um exemplo claro que
+
+672
+00:41:41.368 --> 00:41:45.068
+se o meu teste de integração está acoplado a detalhe de implementação,
+
+673
+00:41:45.568 --> 00:41:48.668
+a chance de ele quebrar é maior quando a gente fizer alguma
+
+674
+00:41:48.788 --> 00:41:52.348
+refatoração ou mudar alguma coisa internamente naquela
+
+675
+00:41:52.388 --> 00:41:56.208
+operação. E o teste de unidade tem um feedback muito mais
+
+676
+00:41:56.248 --> 00:41:58.928
+rápido. E ele acaba tendo um custo baixo de
+
+677
+00:41:58.968 --> 00:42:02.928
+manutenção. Isso não quer dizer, pessoal, que, por exemplo, um
+
+678
+00:42:02.948 --> 00:42:06.528
+teste de unidade não possa ter uma boa proteção contra a
+
+679
+00:42:06.588 --> 00:42:10.168
+regressão e um bom suporte à refatoração, e também não
+
+680
+00:42:10.248 --> 00:42:14.028
+significa que um teste de integração não vai ter um feedback rápido
+
+681
+00:42:14.408 --> 00:42:17.188
+e também não vai ter um custo baixo de manutenção.
+
+682
+00:42:17.268 --> 00:42:20.828
+Aqui eles não se excluem.
+
+683
+00:42:21.388 --> 00:42:25.328
+Então eu posso ter um teste de integração com todos esses pilares, da mesma
+
+684
+00:42:25.368 --> 00:42:27.788
+forma como eu posso ter um teste de unidade.
+
+685
+00:42:27.828 --> 00:42:31.448
+Só que o teste de integração, pelo fato de ele ser mais amplo, ele vai
+
+686
+00:42:31.548 --> 00:42:33.538
+proteger mais contra a regressão, porque eu estou
+
+687
+00:42:35.008 --> 00:42:38.868
+olhando pra mais código durante o meu teste, então logo ele vai
+
+688
+00:42:38.948 --> 00:42:42.188
+executar mais código, então ele garante uma proteção maior.
+
+689
+00:42:42.748 --> 00:42:45.548
+E conforme eu falei, como ele não está interessado
+
+690
+00:42:45.608 --> 00:42:49.298
+emComo meu sistema chegou naquela resposta e
+
+691
+00:42:49.358 --> 00:42:52.958
+sim, na resposta em si, ele tem um suporte a mais pra
+
+692
+00:42:52.998 --> 00:42:56.418
+refatoração. É mais difícil a gente acoplar um teste de
+
+693
+00:42:56.458 --> 00:43:00.378
+integração a detalhes de implementação, do que um teste de unidade.
+
+694
+00:43:04.818 --> 00:43:08.538
+Avançando aqui, pessoal, vamos falar de forma bem breve sobre code coverage, que é
+
+695
+00:43:08.938 --> 00:43:11.088
+algo bem polêmico, que provavelmente todo mundo
+
+696
+00:43:11.178 --> 00:43:15.098
+que trabalha com teste já eventualmente
+
+697
+00:43:15.138 --> 00:43:18.777
+foi barrado por um sonar ou por outra ferramenta de análise
+
+698
+00:43:18.818 --> 00:43:19.438
+estática,
+
+699
+00:43:20.318 --> 00:43:23.838
+que basicamente identificou que o nosso código não estava com
+
+700
+00:43:24.098 --> 00:43:27.958
+80% de cobertura, que é a métrica que geralmente é utilizada, que é
+
+701
+00:43:27.978 --> 00:43:31.478
+uma métrica que eu não gosto muito,
+
+702
+00:43:31.518 --> 00:43:35.318
+justamente pelo fato de ela não garantir esses quatro pilares pra
+
+703
+00:43:35.378 --> 00:43:39.198
+gente. Ele só garante que o nosso teste passou por 80% do
+
+704
+00:43:39.238 --> 00:43:41.798
+código, mas isso não diz muita coisa.
+
+705
+00:43:43.618 --> 00:43:47.418
+Dentro da cobertura de código, pessoal, a gente pode ter duas
+
+706
+00:43:47.478 --> 00:43:51.178
+formas de cobertura. A gente pode ter a cobertura de código, que ele vai
+
+707
+00:43:51.198 --> 00:43:55.098
+validar quanto do código foi executado e validado pelo
+
+708
+00:43:55.198 --> 00:43:57.758
+teste, ou seja, a partir do momento que eu executei o meu teste,
+
+709
+00:43:59.358 --> 00:44:03.078
+quanto daquele código do método foi executado, e aí é linha por
+
+710
+00:44:03.138 --> 00:44:06.338
+linha. Aqui eu pego as linhas que foram
+
+711
+00:44:06.778 --> 00:44:08.698
+cobertas, digamos assim, pelo meu teste.
+
+712
+00:44:09.558 --> 00:44:13.118
+E do outro lado, eu tenho o branch coverage, que aqui ele testa os caminhos
+
+713
+00:44:13.238 --> 00:44:13.978
+lógicos do meu
+
+714
+00:44:14.898 --> 00:44:15.238
+método.
+
+715
+00:44:16.358 --> 00:44:19.818
+Ou seja, quanto mais if, quanto mais else, se eu tiver um
+
+716
+00:44:19.858 --> 00:44:23.398
+switch, um while, decisões dentro do meu
+
+717
+00:44:23.438 --> 00:44:27.118
+método, o branch coverage vai garantir que eu tenho essa
+
+718
+00:44:27.198 --> 00:44:30.558
+cobertura dessas ramificações dentro da execução do meu método.
+
+719
+00:44:32.218 --> 00:44:35.808
+O code coverage, pessoal, vai determinar essa porcentagem do código
+
+720
+00:44:35.898 --> 00:44:39.818
+coberto por testes. Um baixo percentual indica falta de
+
+721
+00:44:39.898 --> 00:44:43.738
+testes, mas que nem eu comentei antes, um alto percentual não é
+
+722
+00:44:43.818 --> 00:44:47.378
+sinônimo de bons testes e garantia de proteção contra regressão.
+
+723
+00:44:48.358 --> 00:44:52.238
+Vamos pegar esse método aqui bem simples, que é um método que vai dizer pra gente
+
+724
+00:44:52.338 --> 00:44:56.158
+se um pedido precisa de aprovação ou
+
+725
+00:44:56.198 --> 00:44:59.738
+não. Então se o valor for maior que uma
+
+726
+00:44:59.758 --> 00:45:02.928
+variável estática, aqui eu vou retornar true, caso contrário, falso.
+
+727
+00:45:04.447 --> 00:45:08.038
+Então eu tenho esse meu teste aqui, que ele está passando o valor de 5 mil e ele
+
+728
+00:45:08.048 --> 00:45:10.438
+está validando só esse caminho aqui, basicamente.
+
+729
+00:45:11.898 --> 00:45:15.658
+Nesse meu caso aqui, pessoal, como o meu método tem três linhas,
+
+730
+00:45:15.858 --> 00:45:19.678
+eu teria uma cobertura de 66,6% aqui, ou
+
+731
+00:45:19.718 --> 00:45:22.908
+seja, dois terços do meu método está sendo coberto pelo teste.
+
+732
+00:45:23.878 --> 00:45:27.858
+Só que tem um detalhe, se eventualmente eu mudar isso aí e fazer com que o
+
+733
+00:45:27.918 --> 00:45:31.438
+meu método seja só uma operação, eu vou ter
+
+734
+00:45:31.478 --> 00:45:35.078
+100% de cobertura aqui, porque ele está validando as linhas de código que
+
+735
+00:45:35.158 --> 00:45:37.318
+são executadas pelo meu teste.
+
+736
+00:45:38.598 --> 00:45:42.298
+Já o branch coverage é diferente, ele vai testar as ramificações
+
+737
+00:45:42.338 --> 00:45:45.578
+dentro do meu método, ou seja, os caminhos lógicos que podem ser
+
+738
+00:45:45.618 --> 00:45:48.278
+percorridos de acordo com os parâmetros que eu tenho de
+
+739
+00:45:48.318 --> 00:45:52.158
+entrada. O branch coverage, pessoal, é bem mais preciso que o code
+
+740
+00:45:52.238 --> 00:45:54.738
+coverage. Então naquele caso, vocês perceberam que eu
+
+741
+00:45:56.158 --> 00:46:00.058
+consegui maquiar e manipular a métrica de cobertura, trazendo o meu
+
+742
+00:46:00.098 --> 00:46:03.558
+método pra uma linha só. Com o branch coverage eu já não consigo
+
+743
+00:46:03.638 --> 00:46:07.438
+fazer isso. Então o mesmo método que eu tinha antes
+
+744
+00:46:07.518 --> 00:46:10.538
+aqui, pessoal, se eu aplicasse o branch coverage.
+
+745
+00:46:12.578 --> 00:46:20.278
+Nesse
+
+746
+00:46:20.298 --> 00:46:24.258
+caso, como eu estou testando só uma ramificação do meu teste, independente
+
+747
+00:46:24.298 --> 00:46:24.798
+se eu tenho
+
+748
+00:46:25.958 --> 00:46:28.838
+uma linha ou três linhas, esse cara aqui vai
+
+749
+00:46:30.778 --> 00:46:34.098
+gerar métrica que eu tenho só 50% de cobertura, porque eu só estou
+
+750
+00:46:34.138 --> 00:46:37.318
+testando um caminho possível dentro desse meu método.
+
+751
+00:46:37.658 --> 00:46:39.778
+Eu não estou testando as duas ramificações.
+
+752
+00:46:40.538 --> 00:46:43.718
+E aí se eu quisesse, de fato, ter os 100%, eu teria que
+
+753
+00:46:43.758 --> 00:46:44.848
+testar os
+
+754
+00:46:46.298 --> 00:46:48.258
+dois caminhos lógicos dentro do meu método.
+
+755
+00:46:48.658 --> 00:46:52.578
+Tanto com um valor menor do que 1 mil, quanto o valor
+
+756
+00:46:52.778 --> 00:46:55.938
+maior que 1 mil. E aqui, pessoal,
+
+757
+00:46:56.878 --> 00:47:00.358
+considerações do code coverage, basicamente o seguinte: sempre
+
+758
+00:47:00.398 --> 00:47:02.598
+utilizar essas métricas quando possível,
+
+759
+00:47:03.538 --> 00:47:03.857
+mas
+
+760
+00:47:04.917 --> 00:47:07.498
+sempre ter em mente, pessoal, um alto
+
+761
+00:47:08.538 --> 00:47:12.298
+percentual de cobertura e de código, ele não é sinônimo de bons
+
+762
+00:47:12.378 --> 00:47:16.318
+testes e não garante que a gente está protegendo o nosso código contra regressão.
+
+763
+00:47:17.258 --> 00:47:20.338
+A gente tem que sempre levar em conta aqueles quatro pilares.
+
+764
+00:47:20.378 --> 00:47:24.358
+A gente nunca pode olhar a cobertura de código de forma unilateral.
+
+765
+00:47:24.378 --> 00:47:28.298
+A gente sempre tem que olhar a cobertura de código como indicativo que nossa
+
+766
+00:47:28.478 --> 00:47:31.998
+base carece de testes, mas a gente não pode
+
+767
+00:47:32.078 --> 00:47:35.838
+utilizar só essa métrica pra determinar que a gente tem uma boa
+
+768
+00:47:35.938 --> 00:47:39.798
+suíte de testes, que de fato, os testes que a gente implementou estão protegendo
+
+769
+00:47:39.818 --> 00:47:40.618
+contra regressão,
+
+770
+00:47:41.778 --> 00:47:45.538
+eles têm suporte a refatoração, eles executam rápido, eles têm um
+
+771
+00:47:45.578 --> 00:47:49.388
+custo baixo de manutenção. Então a gente pode aliar
+
+772
+00:47:49.458 --> 00:47:53.188
+essa métrica de cobertura junto com aqueles outros pilares que a
+
+773
+00:47:53.218 --> 00:47:54.398
+gente viu anteriormente.
+
+774
+00:47:56.378 --> 00:48:00.078
+E nenhuma dessas duas métricas, pessoal, quando a gente roda elas em
+
+775
+00:48:00.178 --> 00:48:04.018
+análise estáticas, vão considerar o código executado por
+
+776
+00:48:04.118 --> 00:48:07.458
+bibliotecas de terceiro. Então se, por exemplo, eu estou fazendo uma
+
+777
+00:48:07.858 --> 00:48:10.948
+utilização de uma biblioteca XYZ, a
+
+778
+00:48:11.138 --> 00:48:14.918
+cobertura não vai validar
+
+779
+00:48:15.018 --> 00:48:18.778
+a execução dentro dessa lib, até porque a gente acaba sempre
+
+780
+00:48:18.798 --> 00:48:21.938
+referenciando a DLL. Ele não
+
+781
+00:48:22.038 --> 00:48:25.498
+vai executar o código, de fato, como ele está executando o
+
+782
+00:48:25.538 --> 00:48:29.268
+nosso. Então essas métricas, tanto a de branch coverage quanto a
+
+783
+00:48:29.338 --> 00:48:33.118
+de code coverage, não vão considerar
+
+784
+00:48:33.178 --> 00:48:34.298
+bibliotecas de terceiro.
+
+785
+00:48:36.388 --> 00:48:40.158
+E aqui também, algo que dependendo como a gente estrutura a nossa
+
+786
+00:48:40.198 --> 00:48:44.158
+aplicação, até a gente consegue fazer, mas são raras exceções, tá, pessoal?
+
+787
+00:48:45.338 --> 00:48:49.298
+Eu acho que, no meu ponto de vista, só faz sentido utilizar métricas
+
+788
+00:48:49.318 --> 00:48:52.598
+de cobertura em código que
+
+789
+00:48:53.238 --> 00:48:57.210
+é relevante pro problema de domínioOu seja, eu quero,
+
+790
+00:48:57.250 --> 00:49:01.230
+por exemplo, exigir 80% de cobertura de código só na
+
+791
+00:49:01.250 --> 00:49:04.750
+camada de domínio. Pra mim faz muito mais sentido eu fazer essa
+
+792
+00:49:04.790 --> 00:49:08.370
+exigência de forma exclusiva na camada de domínio,
+
+793
+00:49:09.050 --> 00:49:11.990
+do que fazer isso uma religião e
+
+794
+00:49:13.370 --> 00:49:15.909
+fazer esse requisito pra todo o meu código.
+
+795
+00:49:16.320 --> 00:49:17.410
+Que nem eu comentei com vocês,
+
+796
+00:49:18.270 --> 00:49:21.750
+nem todo código tem a mesma importância e geralmente código de
+
+797
+00:49:21.790 --> 00:49:22.870
+controller, código de
+
+798
+00:49:24.590 --> 00:49:27.430
+serviço de infra, de repositório, esses
+
+799
+00:49:27.909 --> 00:49:31.810
+códigos a gente geralmente vai utilizar um teste de integração
+
+800
+00:49:31.830 --> 00:49:34.930
+pra validar eles, e não testes de unidade.
+
+801
+00:49:35.330 --> 00:49:38.270
+Então por isso que no meu ponto de vista, só faz sentido
+
+802
+00:49:39.010 --> 00:49:42.790
+exigir cobertura de código na camada de domínio.
+
+803
+00:49:43.350 --> 00:49:46.410
+Só que nem a gente sabe, a gente trabalha em projetos legados, eventualmente a
+
+804
+00:49:46.450 --> 00:49:49.970
+gente não tem muito bem essa separação e acaba sendo
+
+805
+00:49:50.530 --> 00:49:52.270
+imposta essa
+
+806
+00:49:55.170 --> 00:49:59.050
+cobertura em todo o código. Então eventualmente a gente vai ter que pegar
+
+807
+00:49:59.070 --> 00:50:02.890
+um controller, ter que mockar 20 dependências desse controller pra
+
+808
+00:50:02.930 --> 00:50:06.810
+conseguir testar uma, duas linhas de código que a
+
+809
+00:50:06.870 --> 00:50:10.210
+gente colocou lá dentro, porque, por exemplo, lá no Sonar ele falou
+
+810
+00:50:10.270 --> 00:50:13.630
+que o código que a gente está subindo tem 70% de
+
+811
+00:50:13.670 --> 00:50:15.690
+cobertura e o mínimo é 80.
+
+812
+00:50:16.790 --> 00:50:20.610
+Por isso que no meu ponto de vista não faz muito sentido a gente fazer
+
+813
+00:50:20.710 --> 00:50:24.690
+essa exigência pra código que não é de domínio, que não é regra de
+
+814
+00:50:24.730 --> 00:50:25.750
+negócio e
+
+815
+00:50:26.830 --> 00:50:29.240
+código que resolve, de fato, problema de domínio.
+
+816
+00:50:33.190 --> 00:50:33.830
+Beleza, pessoal?
+
+817
+00:50:38.690 --> 00:50:39.330
+Vou seguindo aqui.
+
+818
+00:50:43.070 --> 00:50:45.930
+Se eu não me engano, não sei se foi o Francisco ou foi o
+
+819
+00:50:47.090 --> 00:50:51.050
+Fábio, que comentou brevemente sobre evento de domínio, e eu queria
+
+820
+00:50:51.150 --> 00:50:54.090
+retomar esse ponto aqui com vocês, pessoal, porque os eventos de domínio
+
+821
+00:50:54.430 --> 00:50:56.590
+facilitam a nossa escrita de teste.
+
+822
+00:50:57.730 --> 00:51:01.270
+Então eu vou mostrar aqui pra vocês como que a gente pode adotar o evento de
+
+823
+00:51:01.290 --> 00:51:05.010
+domínio, olhando da perspectiva de deixar o nosso código mais
+
+824
+00:51:05.090 --> 00:51:07.350
+testável e facilitar a escrita de testes.
+
+825
+00:51:07.360 --> 00:51:11.270
+Só recapitulando, o evento de domínio, pessoal,
+
+826
+00:51:12.090 --> 00:51:16.030
+representa um acontecimento importante que aconteceu na nossa camada de
+
+827
+00:51:16.110 --> 00:51:19.650
+domínio após a execução de um use case ou uma regra de
+
+828
+00:51:19.690 --> 00:51:23.590
+negócio. Então, eu tive uma
+
+829
+00:51:23.710 --> 00:51:27.650
+ordem aprovada e eu quero emitir isso como um evento pro mundo externo.
+
+830
+00:51:27.690 --> 00:51:31.130
+Eu tive uma ordem aprovada, ou seja, eu vou gerar um
+
+831
+00:51:31.170 --> 00:51:34.930
+evento e vou publicar isso eventualmente num message broker, eu vou
+
+832
+00:51:34.950 --> 00:51:36.480
+fazer algo com esse evento.
+
+833
+00:51:38.390 --> 00:51:42.250
+O evento de domínio, pessoal, facilita a escrita, principalmente
+
+834
+00:51:42.310 --> 00:51:46.190
+do teste de unidade, porque ele remove essa necessidade que a gente
+
+835
+00:51:46.290 --> 00:51:50.020
+tem de utilizar mocks ou stubs na implementação do
+
+836
+00:51:50.130 --> 00:51:53.300
+teste, ou seja, ele é um teste mais simples, um teste mais barato,
+
+837
+00:51:54.010 --> 00:51:57.760
+ele ajuda que nosso teste
+
+838
+00:51:58.050 --> 00:51:59.570
+se torne um pouco mais simples.
+
+839
+00:52:01.610 --> 00:52:04.770
+E geralmente, pessoal, que nem eu comentei, o evento de domínio, como ele vai
+
+840
+00:52:04.810 --> 00:52:08.650
+representar um acontecimento que a nossa aplicação gostaria de
+
+841
+00:52:08.690 --> 00:52:10.570
+comunicar isso pro mundo externo,
+
+842
+00:52:11.270 --> 00:52:13.800
+provavelmente isso vai ser
+
+843
+00:52:15.030 --> 00:52:18.910
+convertido pra uma chamada out of process, ou seja, o envio
+
+844
+00:52:19.010 --> 00:52:21.090
+de um e-mail, o envio de um evento, enfim.
+
+845
+00:52:22.610 --> 00:52:26.190
+E bem importante também, ele desacopla o cliente das
+
+846
+00:52:26.250 --> 00:52:29.350
+nossas classes de domínio do estado interno do
+
+847
+00:52:30.290 --> 00:52:33.089
+método que a gente está testando, do system under test.
+
+848
+00:52:35.050 --> 00:52:38.150
+Por exemplo, aqui, pessoal, vamos supor aqui que eu estou lá numa camada de
+
+849
+00:52:38.170 --> 00:52:41.830
+application, num command handler, ou seja lá o que for,
+
+850
+00:52:42.570 --> 00:52:46.050
+e eu tenho essa operação aqui, a mesma operação que a gente viu lá, só que numa
+
+851
+00:52:46.070 --> 00:52:49.290
+camada acima agora. Antes eu estava olhando só a partir
+
+852
+00:52:49.370 --> 00:52:52.990
+do meu account, que era minha entidade de
+
+853
+00:52:53.030 --> 00:52:55.470
+negócio, e aqui eu fui um nível mais acima,
+
+854
+00:52:56.290 --> 00:53:00.050
+pra uma camada de mais de orquestração, que aí pode ser um command
+
+855
+00:53:00.090 --> 00:53:02.030
+handler, pode ser um application service, enfim.
+
+856
+00:53:02.830 --> 00:53:06.070
+Então nesse caso aqui eu vou buscar a minha conta bancária lá
+
+857
+00:53:06.190 --> 00:53:07.970
+do meu banco de dados,
+
+858
+00:53:08.930 --> 00:53:11.610
+vou fazer ali o resgate do valor
+
+859
+00:53:12.470 --> 00:53:16.430
+e depois eu vou fazer um if, vou fazer uma validação pra que se o balanço,
+
+860
+00:53:16.540 --> 00:53:19.470
+se o saldo restante dessa operação for menor do que
+
+861
+00:53:19.530 --> 00:53:22.300
+um valor que eu defini ali numa
+
+862
+00:53:22.330 --> 00:53:25.530
+constante, ele vai enviar um e-mail
+
+863
+00:53:26.310 --> 00:53:26.660
+que
+
+864
+00:53:27.870 --> 00:53:31.770
+o saldo disponível está abaixo daquele
+
+865
+00:53:31.890 --> 00:53:32.850
+threshold definido.
+
+866
+00:53:35.030 --> 00:53:36.730
+Qual é o grande problema aqui, pessoal?
+
+867
+00:53:36.870 --> 00:53:40.850
+A gente não tem essa camada aqui, essa lógica não está expressa dentro
+
+868
+00:53:40.950 --> 00:53:44.350
+da nossa camada de domínio, e ela vai dificultar um pouco os nossos testes de
+
+869
+00:53:44.390 --> 00:53:48.370
+unidade aqui. Por quê? Porque se eu quiser testar
+
+870
+00:53:48.490 --> 00:53:51.910
+essa parte aqui, eu vou provavelmente ter que subir um
+
+871
+00:53:51.950 --> 00:53:54.980
+application service, vou ter que mockar todas as dependências
+
+872
+00:53:55.050 --> 00:53:59.010
+dele, eu vou ter que mockar tanto o repositório quanto o e-mail service pra
+
+873
+00:53:59.090 --> 00:54:01.230
+garantir que eu vou conseguir validar
+
+874
+00:54:01.330 --> 00:54:05.160
+esse if aqui no meu código, essa validação.
+
+875
+00:54:06.610 --> 00:54:09.610
+Aqui é
+
+876
+00:54:10.190 --> 00:54:12.630
+um exemplo do que eu falei. Então vamos supor aqui.
+
+877
+00:54:12.930 --> 00:54:16.920
+Eu vou mockar o e-mail service, eu vou mockar
+
+878
+00:54:16.930 --> 00:54:20.900
+o meu banco de dados, eu vou criar uma conta, eu vou fazer o setup pra que quando
+
+879
+00:54:20.910 --> 00:54:23.750
+eu chame o método getAccount, ele retorne esse account.
+
+880
+00:54:24.410 --> 00:54:28.120
+Vocês percebam que eu estou basicamente escrevendo, olha a
+
+881
+00:54:28.130 --> 00:54:31.930
+quantidade de código que eu tive que escrever pra validar um simples if
+
+882
+00:54:32.050 --> 00:54:35.850
+lá. Então eu tive que criar dois mocks, fazer o setup do mock,
+
+883
+00:54:36.340 --> 00:54:40.190
+e aí no final eu quero validar que, a partir do momento que eu saquei
+
+884
+00:54:40.370 --> 00:54:40.900
+R$ 1000,
+
+885
+00:54:42.190 --> 00:54:44.430
+ele está, de fato, fazendo o envio do e-mail.
+
+886
+00:54:45.070 --> 00:54:46.710
+Então essa aqui é a minha regra de negócio.
+
+887
+00:54:47.570 --> 00:54:51.450
+Como ela está sendo expressa numa camada que não é a camada de domínio,
+
+888
+00:54:51.670 --> 00:54:54.670
+eu tenho que fazer a utilização de mocks pra conseguir validar
+
+889
+00:54:54.730 --> 00:54:58.710
+ela.Se, por exemplo, eu tivesse um evento de
+
+890
+00:54:58.790 --> 00:55:02.770
+domínio lá na minha classe de account, no método de withdraw,
+
+891
+00:55:03.330 --> 00:55:07.230
+que adicionasse um evento de domínio dentro dessa classe quando acontecesse essa
+
+892
+00:55:07.250 --> 00:55:07.870
+condição,
+
+893
+00:55:08.850 --> 00:55:12.410
+ficaria muito mais fácil de eu testar isso a partir da perspectiva
+
+894
+00:55:12.469 --> 00:55:13.009
+de
+
+895
+00:55:15.090 --> 00:55:18.770
+negócio. Ou seja, olha a diferença de complexidade
+
+896
+00:55:18.830 --> 00:55:20.410
+desses dois testes.
+
+897
+00:55:21.210 --> 00:55:24.660
+Esse aqui acaba sendo muito mais simples, porque eu quero só validar
+
+898
+00:55:24.790 --> 00:55:28.770
+que a partir do momento que eu tentar resgatar R$ 1000, ele vai
+
+899
+00:55:28.810 --> 00:55:32.630
+pelo menos ter um evento de domínio do tipo low balance
+
+900
+00:55:32.750 --> 00:55:33.960
+adicionado nessa lista.
+
+901
+00:55:37.030 --> 00:55:39.930
+Que aí, por exemplo, lá na minha camada de application,
+
+902
+00:55:40.630 --> 00:55:44.510
+ao invés de ter aquele if, que é uma regra de negócio, agora
+
+903
+00:55:44.550 --> 00:55:45.410
+eu tenho um
+
+904
+00:55:46.690 --> 00:55:50.130
+for each em cima desse tipo de evento, que vai
+
+905
+00:55:50.230 --> 00:55:53.950
+enviar o e-mail de low balance. Ou seja, eu peguei uma
+
+906
+00:55:53.990 --> 00:55:57.310
+regra de
+
+907
+00:55:57.320 --> 00:56:01.050
+negócio, que estava expressa em uma camada que não era camada de
+
+908
+00:56:01.109 --> 00:56:04.530
+domínio e trouxe ela para dentro da camada de domínio e
+
+909
+00:56:04.570 --> 00:56:07.530
+representei ela como um evento de domínio.
+
+910
+00:56:07.870 --> 00:56:10.350
+E aí o meu teste se tornou muito mais simples.
+
+911
+00:56:10.910 --> 00:56:14.850
+Percebam aqui que eu não tive que mockar nada e também isso conecta muito
+
+912
+00:56:14.890 --> 00:56:16.430
+com o que eu falei lá no início, que
+
+913
+00:56:17.250 --> 00:56:20.950
+o ideal é que testes de unidade não tenham mock.
+
+914
+00:56:21.650 --> 00:56:25.310
+Porque lembre, pessoal, sempre quando a gente mocka alguma coisa, a gente
+
+915
+00:56:25.390 --> 00:56:29.110
+mocka comportamento. Se eu mocko o comportamento, eu não consigo
+
+916
+00:56:29.150 --> 00:56:31.600
+garantir regressão dentro desse comportamento.
+
+917
+00:56:32.230 --> 00:56:36.190
+Então o ideal é que a gente sempre mock, mas nos testes de
+
+918
+00:56:36.210 --> 00:56:40.160
+integração. E nem todas as dependências, tem algumas dependências
+
+919
+00:56:40.170 --> 00:56:43.830
+que é melhor a gente mockar, tem algumas dependências que é melhor a gente utilizar
+
+920
+00:56:43.840 --> 00:56:47.830
+uma dependência real, mas aí quando a gente entrar ali no teste de integração,
+
+921
+00:56:47.870 --> 00:56:49.870
+vai ficar mais fácil pra gente entender essa parte.
+
+922
+00:56:53.230 --> 00:56:54.150
+Maravilha, pessoal?
+
+923
+00:56:55.630 --> 00:56:59.290
+Entenderam bem essa parte do evento de domínio? Tem alguma dúvida?
+
+924
+00:57:00.830 --> 00:57:02.330
+Já utilizaram evento de domínio
+
+925
+00:57:03.210 --> 00:57:04.510
+nos projetos de vocês?
+
+926
+00:57:08.970 --> 00:57:11.650
+Tranquilo, Jonathan? Tu que tinha feito a pergunta antes.
+
+927
+00:57:12.670 --> 00:57:13.150
+Show de bola.
+
+928
+00:57:17.570 --> 00:57:18.730
+Vamos seguindo aqui, pessoal.
+
+929
+00:57:22.010 --> 00:57:25.950
+Esse tema não é tão relacionado com teste de unidade, teste
+
+930
+00:57:25.970 --> 00:57:29.650
+de integração em si, pessoal, mas eu gosto de sempre trazer ele pra que a gente
+
+931
+00:57:29.690 --> 00:57:33.590
+consiga ver as similaridades e por que isso se
+
+932
+00:57:33.630 --> 00:57:35.150
+conecta muito bem com o teste.
+
+933
+00:57:36.290 --> 00:57:39.910
+Então aqui, por exemplo, essa arquitetura aqui é o
+
+934
+00:57:40.630 --> 00:57:44.030
+template de uma arquitetura hexagonal, que basicamente a
+
+935
+00:57:45.590 --> 00:57:49.030
+parte central dessa arquitetura é que a gente tenha nossas regras de
+
+936
+00:57:49.110 --> 00:57:49.750
+negócio
+
+937
+00:57:52.010 --> 00:57:53.990
+apartadas do restante do mundo externo.
+
+938
+00:57:54.030 --> 00:57:57.550
+Então, por exemplo, a minha regra de negócio não conhece o
+
+939
+00:57:57.570 --> 00:58:00.730
+repositório, ela não sabe onde ela está sendo persistida, ela não sabe,
+
+940
+00:58:00.750 --> 00:58:03.050
+eventualmente, que a requisição está vindo pelo um
+
+941
+00:58:03.950 --> 00:58:06.970
+cliente REST, pelo um event producer, pelo um soap.
+
+942
+00:58:08.390 --> 00:58:11.910
+Então a minha regra de negócio é totalmente blindada do mundo externo.
+
+943
+00:58:13.210 --> 00:58:17.090
+O Clean Architecture também, que é algo que o pessoal ultimamente não
+
+944
+00:58:17.430 --> 00:58:20.610
+gosta mais de usar tanto, ele prega essa ideia.
+
+945
+00:58:21.110 --> 00:58:25.090
+Sempre de deixar o núcleo, as entidades separadas do
+
+946
+00:58:25.170 --> 00:58:25.790
+mundo externo.
+
+947
+00:58:26.930 --> 00:58:30.590
+Por que eu quis trazer essas duas
+
+948
+00:58:30.630 --> 00:58:32.030
+arquiteturas aqui pra gente
+
+949
+00:58:32.890 --> 00:58:33.870
+conectar elas com
+
+950
+00:58:34.810 --> 00:58:38.750
+o tema de testes? Basicamente, elas promovem que a
+
+951
+00:58:38.950 --> 00:58:42.570
+gente faça essa separação do domínio, das dependências externas,
+
+952
+00:58:43.150 --> 00:58:46.410
+do banco de dados, do message broker, do sistema de e-mail.
+
+953
+00:58:48.170 --> 00:58:51.870
+Ela promove esse desacoplamento das camadas justamente pra que a gente consiga
+
+954
+00:58:51.950 --> 00:58:55.890
+ter essa facilidade de testar nossas camadas de
+
+955
+00:58:55.910 --> 00:58:56.440
+domínio,
+
+956
+00:58:57.370 --> 00:59:01.199
+eventualmente conseguir mockar as camadas externas nos
+
+957
+00:59:01.250 --> 00:59:04.770
+testes de integração. A gente tem esse fluxo de
+
+958
+00:59:04.790 --> 00:59:05.330
+dependência,
+
+959
+00:59:06.330 --> 00:59:10.060
+as dependências a gente sempre olha a
+
+960
+00:59:10.390 --> 00:59:14.230
+partir de um fluxo único, sempre de fora pra dentro e
+
+961
+00:59:14.270 --> 00:59:18.210
+nunca de dentro pra fora, ou seja, o meu domínio não deveria conhecer
+
+962
+00:59:18.270 --> 00:59:22.160
+se ele está sendo recuperado pelo anti-framework, se ele está sendo recuperado pelo
+
+963
+00:59:22.410 --> 00:59:22.820
+dapper.
+
+964
+00:59:24.310 --> 00:59:28.190
+E todos eles promovem essa facilidade de a gente
+
+965
+00:59:28.290 --> 00:59:32.210
+mockar as dependências externas da nossa aplicação.
+
+966
+00:59:33.890 --> 00:59:37.710
+Então de forma bem resumida, eu poderia pegar esses dois diagramas aqui, pessoal,
+
+967
+00:59:37.770 --> 00:59:41.530
+eles são bem mais descritivos, mas eu poderia
+
+968
+00:59:41.570 --> 00:59:45.130
+pegar eles e resumir apenas essa imagem aqui.
+
+969
+00:59:45.930 --> 00:59:49.790
+Então eu tenho o meu domínio, eu tenho minhas classes de domínio interagindo entre
+
+970
+00:59:49.850 --> 00:59:52.630
+elas aqui, a partir de comportamentos, uma
+
+971
+00:59:54.270 --> 00:59:56.270
+compondo a outra e fazendo toda essa
+
+972
+00:59:56.310 --> 01:00:00.170
+orquestração pra conseguir atender um caso de uso do
+
+973
+01:00:00.230 --> 01:00:00.810
+negócio.
+
+974
+01:00:01.630 --> 01:00:05.450
+E no mundo externo, eu tenho o banco de dados, eu tenho APIs, eu tenho
+
+975
+01:00:05.470 --> 01:00:08.130
+ali os serviços de e-mail, eu tenho message brokers.
+
+976
+01:00:10.110 --> 01:00:14.090
+Aqui eu tenho meus limites de domínio, que esses limites podem ser
+
+977
+01:00:14.150 --> 01:00:18.130
+tanto físicos, ou posso ter um CS Project, onde
+
+978
+01:00:18.150 --> 01:00:22.090
+eu tenho minha camada de domínio, ou eventualmente pode ser lógico mesmo.
+
+979
+01:00:22.170 --> 01:00:25.950
+Eu posso ter tudo dentro de um project sem problema nenhum, mas é sempre bom
+
+980
+01:00:25.990 --> 01:00:27.550
+se atentar a
+
+981
+01:00:28.850 --> 01:00:32.610
+sempre evitar referenciar alguma dependência externa dentro do
+
+982
+01:00:32.690 --> 01:00:35.070
+nosso domínio pra que a gente não tenha problema de acoplamento.
+
+983
+01:00:36.450 --> 01:00:40.170
+Dentro dos meus limites do domínio, eu trabalho com os testes de
+
+984
+01:00:40.210 --> 01:00:43.910
+unidade, que é fazendo a instanciação das classes, das
+
+985
+01:00:43.970 --> 01:00:47.420
+entidades, chamando os métodos, fazendo as validações
+
+986
+01:00:48.010 --> 01:00:51.710
+e tudo que for além disso, eu fazer testes de integração.
+
+987
+01:00:51.730 --> 01:00:55.290
+De forma bem
+
+988
+01:00:55.350 --> 01:00:59.250
+resumida, a gente poderia resumir todas as aplicações a mais ou
+
+989
+01:00:59.310 --> 01:01:00.010
+menos essa
+
+990
+01:01:01.230 --> 01:01:04.678
+ideia aquiE tem uma frase muito
+
+991
+01:01:04.698 --> 01:01:06.658
+interessante do Vladimir Korenkov, que é
+
+992
+01:01:07.718 --> 01:01:11.638
+o autor de um livro de testes de unidade de integração que eu vou indicar no
+
+993
+01:01:11.738 --> 01:01:15.708
+final da aula, que ele diz para a
+
+994
+01:01:15.738 --> 01:01:19.288
+gente tentar ter o mínimo de camadas de
+
+995
+01:01:19.558 --> 01:01:22.138
+direção possível.
+
+996
+01:01:23.058 --> 01:01:26.618
+Na maior parte dos sistemas de backends, a gente pode eventualmente
+
+997
+01:01:26.678 --> 01:01:29.658
+construir eles a partir de três camadas, basicamente.
+
+998
+01:01:30.118 --> 01:01:33.138
+A camada de domínio, a camada de application, aqui
+
+999
+01:01:33.518 --> 01:01:36.318
+controllers, handlers, application services,
+
+1000
+01:01:37.158 --> 01:01:40.958
+os nossos handlers lá do vertical slice e a
+
+1001
+01:01:41.018 --> 01:01:42.278
+layer de infraestrutura.
+
+1002
+01:01:44.258 --> 01:01:47.638
+E aqui ele diz que a camada de infraestrutura
+
+1003
+01:01:47.678 --> 01:01:50.918
+é composta de algoritmos e
+
+1004
+01:01:50.938 --> 01:01:54.798
+implementações que não pertencem à camada de domínio.
+
+1005
+01:01:55.618 --> 01:01:58.718
+E também código que permite que a gente faça
+
+1006
+01:01:58.758 --> 01:02:02.598
+as orquestrações necessárias nessa camada de
+
+1007
+01:02:03.358 --> 01:02:06.468
+application service para conseguir recuperar as entidades,
+
+1008
+01:02:06.958 --> 01:02:10.798
+invocar comportamentos dentro dessas entidades para que a gente consiga
+
+1009
+01:02:11.678 --> 01:02:15.118
+executar o caso de uso do nosso negócio.
+
+1010
+01:02:15.258 --> 01:02:18.398
+Porque eventualmente a gente vai precisar de mais do que uma entidade de
+
+1011
+01:02:18.438 --> 01:02:21.898
+negócio para conseguir fazer uma operação completa de negócio.
+
+1012
+01:02:23.358 --> 01:02:25.578
+Vamos pegar o exemplo da conta bancária.
+
+1013
+01:02:25.618 --> 01:02:28.878
+Eu preciso da conta bancária, eu preciso da transação, eventualmente eu
+
+1014
+01:02:28.898 --> 01:02:32.838
+vou publicar um evento de domínio, então tem uma série de entidades de
+
+1015
+01:02:32.898 --> 01:02:36.798
+negócio que eu preciso trazer e orquestrar o comportamento
+
+1016
+01:02:36.878 --> 01:02:39.938
+entre elas, que geralmente eu faço nessa camada aqui.
+
+1017
+01:02:40.458 --> 01:02:44.378
+E no final, eu vou gerar uma operação de volta para a camada de infraestrutura para
+
+1018
+01:02:44.478 --> 01:02:48.138
+isso ser persistido ou no banco de dados, ou ser publicada
+
+1019
+01:02:48.218 --> 01:02:50.698
+uma mensagem no meu message broker.
+
+1020
+01:02:50.738 --> 01:02:54.668
+Então com três camadas aqui eu consigo projetar a maior
+
+1021
+01:02:54.798 --> 01:02:57.478
+parte dos sistemas backends, de forma bem simples.
+
+1022
+01:02:58.338 --> 01:03:00.438
+E eu vi isso aqui, de fato, na prática, pessoal.
+
+1023
+01:03:00.498 --> 01:03:04.098
+Tem um cliente que eu estou atendendo no momento aqui na Azimia, que eles
+
+1024
+01:03:04.118 --> 01:03:05.848
+utilizam a arquitetura hexagonal,
+
+1025
+01:03:06.958 --> 01:03:09.728
+que basicamente eles têm mais de 3000 microsserviços.
+
+1026
+01:03:10.418 --> 01:03:14.038
+Todo serviço que tu abre, tem a mesma arquitetura, o mesmo
+
+1027
+01:03:14.098 --> 01:03:17.878
+design. A partir do momento que tu entende essa arquitetura
+
+1028
+01:03:17.898 --> 01:03:21.778
+hexagonal e como ela foi aplicada nesse projeto, é muito fácil de
+
+1029
+01:03:21.898 --> 01:03:24.998
+tu pegar outro projeto e começar a trabalhar nele.
+
+1030
+01:03:25.078 --> 01:03:27.818
+Então isso aqui,
+
+1031
+01:03:29.258 --> 01:03:31.247
+most backend system, que ele quer dizer, ele não
+
+1032
+01:03:32.218 --> 01:03:33.818
+se refere apenas a sistemas,
+
+1033
+01:03:35.098 --> 01:03:36.998
+mas sim sistemas de qualquer tamanho.
+
+1034
+01:03:37.218 --> 01:03:38.738
+Aqui é basicamente
+
+1035
+01:03:39.438 --> 01:03:43.218
+para a gente evitar
+
+1036
+01:03:43.558 --> 01:03:47.398
+ter complexidades desnecessárias, principalmente no início do nosso projeto.
+
+1037
+01:03:48.178 --> 01:03:51.418
+Fazer com que a gente trate a complexidade, mas
+
+1038
+01:03:51.538 --> 01:03:55.027
+que a gente não tente resolver um problema antes de
+
+1039
+01:03:55.078 --> 01:03:58.538
+existir. Eu acho que essa é uma lição muito importante que a gente pode adotar no
+
+1040
+01:03:58.578 --> 01:04:01.318
+dia a dia, porque às vezes a gente começa a
+
+1041
+01:04:02.518 --> 01:04:06.478
+complicar demais algo que é para ser muito simples, porque
+
+1042
+01:04:06.518 --> 01:04:09.278
+a gente tem aquela noção que se no futuro, eventualmente eu
+
+1043
+01:04:09.298 --> 01:04:13.278
+precisar. Mas se no futuro eu precisar, eu volto lá e eu implemento, eu não
+
+1044
+01:04:13.298 --> 01:04:17.178
+preciso antecipar o futuro e gerar uma complexidade desnecessária no
+
+1045
+01:04:17.218 --> 01:04:20.918
+momento. Então isso se alinha muito a essa frase aqui do
+
+1046
+01:04:20.938 --> 01:04:22.718
+Vladimir Korenkov e é algo que
+
+1047
+01:04:23.918 --> 01:04:24.498
+a gente pode
+
+1048
+01:04:29.118 --> 01:04:31.738
+levar para o nosso dia a dia, que faz muito sentido.
+
+1049
+01:04:34.198 --> 01:04:35.338
+Que horas que é?
+
+1050
+01:04:36.558 --> 01:04:39.538
+Vamos fazer um break, pessoal, de 10 minutos,
+
+1051
+01:04:40.318 --> 01:04:43.078
+tomar uma água ali, dar uma esticada nas pernas, ir ao banheiro.
+
+1052
+01:04:43.108 --> 01:04:45.738
+E a gente volta às 20h15, beleza?
+
+1053
+01:04:49.778 --> 01:04:50.307
+Até daqui a
+
+1054
+01:04:53.558 --> 01:04:53.678
+pouco,
+
+1055
+01:04:53.718 --> 01:14:34.658
+pessoal.Fala,
+
+1056
+01:14:34.678 --> 01:14:38.518
+pessoal, todos por aqui? Quem estiver por aí, dá um
+
+1057
+01:14:38.578 --> 01:14:39.238
+joinha.
+
+1058
+01:14:47.598 --> 01:14:49.388
+Beleza, pessoal, vamos seguir então.
+
+1059
+01:14:49.498 --> 01:14:53.178
+Agora, eu queria mostrar pra vocês algumas técnicas que a gente pode
+
+1060
+01:14:53.478 --> 01:14:57.178
+adotar pra que a gente consiga refatorar um
+
+1061
+01:14:57.198 --> 01:14:58.318
+código complexo,
+
+1062
+01:15:00.138 --> 01:15:04.048
+no sentido de deixar ele mais simples e facilitar a
+
+1063
+01:15:04.098 --> 01:15:06.438
+escrita de testes em cima desse código.
+
+1064
+01:15:10.678 --> 01:15:14.558
+Quando a gente tem um código em produção, a gente pode categorizar ele
+
+1065
+01:15:14.618 --> 01:15:18.458
+de quatro formas. A gente pode categorizar ele como um
+
+1066
+01:15:18.498 --> 01:15:21.138
+código relacionado a regras de negócio ou eventualmente
+
+1067
+01:15:21.178 --> 01:15:25.138
+algoritmos complexos que não fazem parte da regra de negócio.
+
+1068
+01:15:26.738 --> 01:15:30.678
+A gente pode classificar ele como um código complexo, ou seja, um código que
+
+1069
+01:15:30.717 --> 01:15:34.258
+faz muita coisa e eventualmente ele não delega isso pra nenhuma outra
+
+1070
+01:15:34.298 --> 01:15:38.258
+camada, aquele tipo de código que
+
+1071
+01:15:38.298 --> 01:15:42.098
+a gente vê muitas vezes num controller, que o controller tem 1000 linhas e
+
+1072
+01:15:42.198 --> 01:15:45.858
+tudo é executado ali dentro. Então a gente pode categorizar esse código como um
+
+1073
+01:15:45.898 --> 01:15:49.478
+código complexo. O código trivial, que é um código
+
+1074
+01:15:49.618 --> 01:15:53.158
+simples, e também aqueles códigos que a gente tem, que são
+
+1075
+01:15:53.178 --> 01:15:57.158
+códigos mais no sentido de orquestração, ou seja, eles recuperam
+
+1076
+01:15:57.198 --> 01:15:58.708
+entidades do banco de dados,
+
+1077
+01:16:00.018 --> 01:16:03.298
+trazem serviços, fazem ali orquestração entre as entidades,
+
+1078
+01:16:04.058 --> 01:16:06.778
+publicam eventos, fazem chamadas pra repositórios, enfim.
+
+1079
+01:16:08.258 --> 01:16:10.578
+Quanto mais à direita que a gente
+
+1080
+01:16:11.938 --> 01:16:15.358
+vai, a gente tem um número maior de dependências, ou seja, um código
+
+1081
+01:16:15.478 --> 01:16:19.138
+trivial e um código de regra de negócio, algoritmo complexo,
+
+1082
+01:16:19.638 --> 01:16:23.418
+eles têm um número de dependências menor do que um código complexo e
+
+1083
+01:16:23.458 --> 01:16:25.658
+aqueles códigos mais de orquestração.
+
+1084
+01:16:26.518 --> 01:16:30.408
+E quando a gente sobe aqui no eixo Y, a gente tem um código que
+
+1085
+01:16:30.598 --> 01:16:33.118
+tem mais significância pro negócio.
+
+1086
+01:16:33.128 --> 01:16:35.308
+Então, por exemplo, o código complexo,
+
+1087
+01:16:36.898 --> 01:16:38.908
+como é um código que tem tudo ali
+
+1088
+01:16:38.978 --> 01:16:42.778
+junto no mesmo lugar, ele
+
+1089
+01:16:42.938 --> 01:16:46.698
+tem muita regra de negócio, tudo isso
+
+1090
+01:16:46.738 --> 01:16:47.148
+dentro de
+
+1091
+01:16:49.978 --> 01:16:53.888
+um método só, ele é um código que vai ter muita dependência,
+
+1092
+01:16:53.938 --> 01:16:57.438
+porque a gente precisa interagir com o mundo externo pra
+
+1093
+01:16:57.478 --> 01:17:00.798
+recuperar as informações, mas ele tem uma
+
+1094
+01:17:00.858 --> 01:17:04.298
+significância também grande pro negócio, porque toda a regra de negócio está ali
+
+1095
+01:17:04.318 --> 01:17:07.578
+dentro. A gente não tem isso bem separado numa camada de domínio.
+
+1096
+01:17:08.938 --> 01:17:12.878
+Então, que nem eu comentei, a regra de negócio,
+
+1097
+01:17:13.098 --> 01:17:14.278
+que é esse cara aqui, o primeiro,
+
+1098
+01:17:16.078 --> 01:17:18.998
+ele tem todo o código ali relacionado à regra de negócio e domínio de
+
+1099
+01:17:19.078 --> 01:17:22.918
+problema, algoritmos complexos que podem
+
+1100
+01:17:24.498 --> 01:17:27.858
+ou não estar relacionados com a regra de negócio.
+
+1101
+01:17:27.878 --> 01:17:31.618
+O código trivial é aquele código que já foi testado pela Microsoft.
+
+1102
+01:17:32.278 --> 01:17:36.058
+Os setters, por exemplo, é um caso bem típico que a
+
+1103
+01:17:36.098 --> 01:17:37.988
+gente vê às vezes as pessoas fazendo.
+
+1104
+01:17:38.198 --> 01:17:42.047
+A pessoa cria uma classe, seta a propriedade e
+
+1105
+01:17:42.118 --> 01:17:46.038
+valida, vê se o valor está setado. Esse tipo de teste não faz sentido nenhum,
+
+1106
+01:17:46.058 --> 01:17:49.898
+código trivial já foi testado. Construtor sem parâmetro, tudo
+
+1107
+01:17:49.998 --> 01:17:50.228
+que não
+
+1108
+01:17:51.098 --> 01:17:54.898
+agrega nenhum valor a um código simples, entra dentro dessa categoria aqui.
+
+1109
+01:17:55.298 --> 01:17:56.738
+E código também que é
+
+1110
+01:17:57.658 --> 01:18:00.478
+simples e irrelevante pra nossa camada de domínio.
+
+1111
+01:18:01.338 --> 01:18:04.878
+O código complexo é aquele que eu comentei, que tem muitas dependências, muitas
+
+1112
+01:18:04.898 --> 01:18:08.778
+regras de negócio ou algoritmos complexos ali no meio.
+
+1113
+01:18:08.878 --> 01:18:12.638
+O controller ou application service, que eles têm toda a lógica e não
+
+1114
+01:18:12.658 --> 01:18:16.518
+delegam isso pras entidades, então a gente nem tem entidades
+
+1115
+01:18:16.558 --> 01:18:20.078
+nesses casos aqui, a gente tem só um DTO, a gente tem um
+
+1116
+01:18:20.158 --> 01:18:23.388
+modelo anêmico que é utilizado pra recuperar
+
+1117
+01:18:23.458 --> 01:18:27.118
+informação, e aí toda a regra de negócio, toda a
+
+1118
+01:18:27.178 --> 01:18:31.158
+lógica é feita dentro daquele controller ou dentro daquele application
+
+1119
+01:18:31.298 --> 01:18:35.158
+service. A gente não tem métodos que exibem comportamento
+
+1120
+01:18:35.218 --> 01:18:38.108
+dentro das nossas entidades, então todo esse código é
+
+1121
+01:18:38.478 --> 01:18:41.358
+categorizado como código complexo.
+
+1122
+01:18:41.458 --> 01:18:44.738
+E lá, por fim, a gente tem os controllers, application service,
+
+1123
+01:18:44.798 --> 01:18:48.698
+handlers, vertical slice. É um código que tem muita
+
+1124
+01:18:48.738 --> 01:18:52.398
+dependência, só que ele atua mais como um orquestrador
+
+1125
+01:18:52.498 --> 01:18:56.438
+entre o mundo externo e a nossa camada de domínio, que são as nossas
+
+1126
+01:18:56.478 --> 01:19:00.118
+entidades. Ou seja, busca as entidades do banco, materializa pra
+
+1127
+01:19:00.138 --> 01:19:03.288
+nossas entidades de domínio, faço as operações,
+
+1128
+01:19:03.738 --> 01:19:07.178
+escuto eventos de domínio, publico isso
+
+1129
+01:19:07.198 --> 01:19:10.658
+pra filas, pra tópicos, enfim.
+
+1130
+01:19:11.998 --> 01:19:15.898
+E o application service, que é esse código que é categorizado aqui
+
+1131
+01:19:15.978 --> 01:19:19.758
+dentro, não tem um código complexo ou regra de negócio.
+
+1132
+01:19:19.798 --> 01:19:21.358
+Ele só atua mesmo como um
+
+1133
+01:19:21.378 --> 01:19:24.530
+orquestradorMaravilha, pessoal?
+
+1134
+01:19:24.570 --> 01:19:27.690
+Então como é que a gente testa cada uma dessas categorias aqui?
+
+1135
+01:19:27.710 --> 01:19:29.850
+Como é que a gente aborda os testes?
+
+1136
+01:19:29.970 --> 01:19:32.920
+As regras de negócio e algoritmos complexos, como eles
+
+1137
+01:19:33.210 --> 01:19:34.930
+não
+
+1138
+01:19:35.890 --> 01:19:39.809
+deveriam ter nenhuma dependência externa, a gente faz a utilização de
+
+1139
+01:19:39.890 --> 01:19:43.590
+testes de unidade. Aqueles controllers, application
+
+1140
+01:19:43.610 --> 01:19:47.490
+services e handlers que fazem essa orquestração, o ideal é que a
+
+1141
+01:19:47.550 --> 01:19:49.310
+gente use testes de integração.
+
+1142
+01:19:50.390 --> 01:19:54.310
+Então aqui eu vou ter um teste de integração que vai validar desde a entrada
+
+1143
+01:19:54.370 --> 01:19:57.460
+da minha requisição até, eventualmente, a
+
+1144
+01:19:58.570 --> 01:19:59.690
+persistência no banco.
+
+1145
+01:20:00.890 --> 01:20:04.870
+O código trivial eu não testo, esse tipo de código não faz
+
+1146
+01:20:04.930 --> 01:20:06.050
+sentido a gente testar.
+
+1147
+01:20:07.130 --> 01:20:10.610
+E o código complexo, pessoal, a gente refatora ele ou
+
+1148
+01:20:10.650 --> 01:20:14.430
+para categorizar ele dentro das regras de
+
+1149
+01:20:14.490 --> 01:20:18.230
+negócio, ou ele vai lá para controllers, application services
+
+1150
+01:20:18.270 --> 01:20:19.070
+e handlers.
+
+1151
+01:20:20.590 --> 01:20:23.630
+Vamos pegar um exemplo aqui, vamos fazer esse passo a passo para ver como é que
+
+1152
+01:20:23.670 --> 01:20:27.370
+ficaria. Eu tenho esse método aqui, que é o método de
+
+1153
+01:20:27.410 --> 01:20:31.350
+resgate. Eu estou lá no meu Account Controller, então eu tenho um método aqui que
+
+1154
+01:20:31.430 --> 01:20:33.450
+acaba fazendo tudo. Eu tenho
+
+1155
+01:20:34.290 --> 01:20:37.930
+as dependências externas, que é o Database e o
+
+1156
+01:20:37.970 --> 01:20:41.950
+Notification Service, e aqui basicamente ele está fazendo, ele vai buscar
+
+1157
+01:20:42.010 --> 01:20:45.810
+lá do banco de dados a conta, que a gente quer fazer o resgate, vai
+
+1158
+01:20:45.850 --> 01:20:49.410
+validar se o status dela está bloqueado, vai buscar todas as
+
+1159
+01:20:49.430 --> 01:20:53.330
+transações do dia, vai somar essas transações e ver se o valor
+
+1160
+01:20:53.410 --> 01:20:55.930
+está acima do máximo permitido por dia.
+
+1161
+01:20:56.990 --> 01:21:00.550
+No final, ele vai executar a operação, vai ver se
+
+1162
+01:21:01.290 --> 01:21:04.710
+aquele saldo disponível ficou abaixo do mínimo para
+
+1163
+01:21:04.750 --> 01:21:08.060
+notificar e no final ele vai fazer uma
+
+1164
+01:21:08.130 --> 01:21:11.110
+atualização para o banco de dados.
+
+1165
+01:21:11.190 --> 01:21:13.970
+E aqui, pessoal, uma dica muito importante, que isso
+
+1166
+01:21:14.830 --> 01:21:16.190
+dá para a gente usar em qualquer
+
+1167
+01:21:17.350 --> 01:21:18.970
+refatoração que a gente for fazer.
+
+1168
+01:21:21.030 --> 01:21:24.730
+Sempre quando a gente estiver pedindo muita informação do estado
+
+1169
+01:21:24.750 --> 01:21:28.150
+interno de uma entidade para tomar algum tipo de
+
+1170
+01:21:28.210 --> 01:21:31.010
+decisão, provavelmente a gente está fazendo isso no lugar
+
+1171
+01:21:31.070 --> 01:21:35.030
+errado. Percebam quantas vezes que eu precisei
+
+1172
+01:21:35.070 --> 01:21:38.490
+acessar o estado interno do account para poder fazer algum
+
+1173
+01:21:38.510 --> 01:21:40.230
+processamento nessa camada aqui.
+
+1174
+01:21:41.410 --> 01:21:45.290
+Percebam quantas vezes eu faço um account ponto alguma coisa.
+
+1175
+01:21:48.990 --> 01:21:49.290
+Isso é um
+
+1176
+01:21:50.150 --> 01:21:53.930
+indicativo muito forte que provavelmente eu estou fazendo coisa
+
+1177
+01:21:54.220 --> 01:21:55.130
+em camada errada.
+
+1178
+01:21:56.590 --> 01:22:00.010
+Não faz sentido para mim acessar tantas vezes
+
+1179
+01:22:00.090 --> 01:22:04.060
+o estado interno de uma entidade para validar comportamento, sendo que
+
+1180
+01:22:04.150 --> 01:22:06.730
+eu poderia estar fazendo isso dentro da própria entidade.
+
+1181
+01:22:06.770 --> 01:22:10.490
+Isso é um indicativo muito forte que eu poderia pegar toda essa lógica e jogar
+
+1182
+01:22:10.570 --> 01:22:14.130
+dentro da entidade, que essa lógica está sendo expressada em uma
+
+1183
+01:22:14.210 --> 01:22:16.910
+camada errada. Então sempre quando vocês
+
+1184
+01:22:17.470 --> 01:22:21.270
+identificarem esse padrão, sempre levem em consideração
+
+1185
+01:22:21.330 --> 01:22:25.270
+isso. Provavelmente, isso aqui poderia estar sendo feito dentro da entidade
+
+1186
+01:22:25.310 --> 01:22:27.560
+de uma forma muito mais coesa,
+
+1187
+01:22:28.530 --> 01:22:31.690
+encapsulada e garantindo que a regra sempre vai ser
+
+1188
+01:22:31.730 --> 01:22:35.130
+executada no processo, aqui no caso, de resgate.
+
+1189
+01:22:36.790 --> 01:22:40.420
+Então, nesse caso, eu tenho as dependências externas, eu tenho regras de negócio,
+
+1190
+01:22:40.450 --> 01:22:44.390
+eu tenho tudo dentro da mesma classe aqui, dentro do mesmo
+
+1191
+01:22:44.430 --> 01:22:44.890
+método.
+
+1192
+01:22:46.370 --> 01:22:49.990
+Tem a verificação se eu devo ou não enviar notificação,
+
+1193
+01:22:50.330 --> 01:22:54.110
+e eu pego esse código aqui, a gente pode categorizar ele como um
+
+1194
+01:22:54.150 --> 01:22:57.810
+código complexo. Então, nesse momento aqui, pessoal, o Account
+
+1195
+01:22:57.910 --> 01:22:58.420
+Controller,
+
+1196
+01:22:59.350 --> 01:23:03.270
+na minha projeção aqui, ele
+
+1197
+01:23:03.290 --> 01:23:05.670
+está dentro da categoria de código complexo.
+
+1198
+01:23:07.190 --> 01:23:10.550
+Vamos olhar esse código aqui, pessoal, e vamos ver como é que a gente consegue ir
+
+1199
+01:23:10.590 --> 01:23:14.430
+refatorando ele para que a gente consiga tornar esse código mais
+
+1200
+01:23:14.470 --> 01:23:17.650
+legível, mais testável, mais condizente com
+
+1201
+01:23:17.750 --> 01:23:20.670
+todas as boas práticas que a gente vem
+
+1202
+01:23:20.730 --> 01:23:23.170
+olhando no material de hoje.
+
+1203
+01:23:25.030 --> 01:23:28.930
+A primeira refatoração, pessoal, que eu vou fazer, eu vou botar todo esse bloco
+
+1204
+01:23:28.990 --> 01:23:32.770
+de código aqui dentro de um método chamado Can Execute,
+
+1205
+01:23:33.070 --> 01:23:36.930
+utilizando o padrão Can Execute. Ou seja, eu vou pegar essa lógica
+
+1206
+01:23:36.970 --> 01:23:40.470
+aqui e eu vou expor ela dentro da minha entidade de
+
+1207
+01:23:40.490 --> 01:23:40.970
+domínio.
+
+1208
+01:23:41.790 --> 01:23:45.670
+Então aqui eu vou ter um método no qual ele vai me retornar se eu
+
+1209
+01:23:45.710 --> 01:23:49.570
+posso resgatar ou não. Então toda a regra de negócio que
+
+1210
+01:23:49.590 --> 01:23:53.330
+eu precisar expor nessa operação, eu vou colocar ela dentro desse meu método.
+
+1211
+01:23:53.990 --> 01:23:57.570
+E aqui, pessoal, percebam que eu não tenho mais aquele padrão de dar o account
+
+1212
+01:23:57.610 --> 01:24:01.510
+ponto para acessar o estado interno, porque aqui eu já estou
+
+1213
+01:24:01.570 --> 01:24:03.310
+dentro do estado interno da minha account.
+
+1214
+01:24:03.660 --> 01:24:06.630
+Eu tenho método e eu consigo acessar o estado interno dela.
+
+1215
+01:24:06.650 --> 01:24:10.010
+Então aqui, percebam que já faz muito mais sentido essa operação
+
+1216
+01:24:10.070 --> 01:24:13.730
+aqui. Eu não estou acessando o estado interno de outra entidade para fazer a
+
+1217
+01:24:13.750 --> 01:24:17.610
+validação. Aqui eu estou dentro da entidade, eu estou validando o estado
+
+1218
+01:24:17.650 --> 01:24:20.890
+interno para ver se eu posso ou não fazer uma operação.
+
+1219
+01:24:20.930 --> 01:24:24.630
+Então, por exemplo, aqui nesse método, eu estou retornando uma
+
+1220
+01:24:24.730 --> 01:24:27.600
+tupla que vai indicar se eu posso ou não fazer essa operação
+
+1221
+01:24:28.550 --> 01:24:32.250
+e também o motivo no qual eu não posso, caso ele retorne um
+
+1222
+01:24:32.290 --> 01:24:36.170
+false. Então se estiver bloqueada, é conta bloqueada, e se
+
+1223
+01:24:36.230 --> 01:24:39.980
+tiver excedido o número máximo de transações,
+
+1224
+01:24:40.210 --> 01:24:43.870
+eu vou retornar esse erro aqui. Caso contrário, retorno
+
+1225
+01:24:43.910 --> 01:24:46.390
+true e string empty, porque não tive nenhum problema de
+
+1226
+01:24:46.410 --> 01:24:50.310
+validação. E lá no meu Account Controller, ao invés
+
+1227
+01:24:50.370 --> 01:24:53.990
+de fazer toda aquela validação, eu só vou basicamente chamar o método de Can
+
+1228
+01:24:54.090 --> 01:24:57.830
+Withdraw aqui e validar. Percebam que aqui eu estou
+
+1229
+01:24:57.870 --> 01:24:59.880
+fazendo aquela questão da orquestração.
+
+1230
+01:25:00.370 --> 01:25:01.630
+Eu chamei um endpoint,
+
+1231
+01:25:02.730 --> 01:25:06.290
+eu chamei um método da minha classe e eu estou validando o retorno dele
+
+1232
+01:25:06.850 --> 01:25:10.130
+para retornar um Processable Entity, que é um 422.
+
+1233
+01:25:11.410 --> 01:25:13.830
+Isso aqui poderia ser muito bem colocado dentro de um
+
+1234
+01:25:14.710 --> 01:25:18.450
+consumidor de fila ou eventualmente uma chamada
+
+1235
+01:25:18.490 --> 01:25:22.138
+gRPC, enfim.E
+
+1236
+01:25:22.158 --> 01:25:25.578
+percebam que aqui, pra mim, não interessa o protocolo que vai ser
+
+1237
+01:25:25.618 --> 01:25:29.538
+retornado, qual que vai ser o status code, tudo isso eu vou mapear
+
+1238
+01:25:29.578 --> 01:25:32.978
+na minha camada de application, na minha camada de
+
+1239
+01:25:33.018 --> 01:25:36.478
+orquestração. Ela que sabe qual o código correto
+
+1240
+01:25:36.518 --> 01:25:39.038
+retornar, qual protocolo retornar.
+
+1241
+01:25:39.358 --> 01:25:42.608
+Isso não é uma responsabilidade da minha camada de domínio,
+
+1242
+01:25:42.978 --> 01:25:45.188
+somente da minha camada de orquestração.
+
+1243
+01:25:46.738 --> 01:25:50.678
+Beleza? Então aqui já refatorei um pouco e já deixei o meu código um pouco mais
+
+1244
+01:25:50.718 --> 01:25:54.477
+testável. Esse método aqui, pessoal, agora eu consigo
+
+1245
+01:25:54.518 --> 01:25:58.318
+validar ele sem utilizar mock nenhum, percebam?
+
+1246
+01:25:59.078 --> 01:26:02.678
+Se, por exemplo, eu quisesse testar essa lógica aqui no formato
+
+1247
+01:26:02.688 --> 01:26:06.158
+antigo, eu teria que mockar a database, eu teria que mockar o notification
+
+1248
+01:26:06.278 --> 01:26:09.958
+service e provavelmente todas as outras dependências desse
+
+1249
+01:26:09.978 --> 01:26:13.678
+account controller pra conseguir validar só esse trecho aqui.
+
+1250
+01:26:14.318 --> 01:26:14.798
+Agora,
+
+1251
+01:26:15.718 --> 01:26:19.338
+simplesmente basta eu instanciar uma account e chamar o
+
+1252
+01:26:19.378 --> 01:26:22.818
+método de canWithdraw com esse estado aqui interno.
+
+1253
+01:26:23.318 --> 01:26:26.918
+Com o status blocked, enfim, pra conseguir validar esse estado.
+
+1254
+01:26:26.938 --> 01:26:28.458
+Esse estado aqui eu não preciso mais
+
+1255
+01:26:29.318 --> 01:26:30.878
+mockar nada pra validar esse
+
+1256
+01:26:32.258 --> 01:26:33.398
+método.
+
+1257
+01:26:33.498 --> 01:26:37.518
+Aqui
+
+1258
+01:26:37.558 --> 01:26:40.338
+a gente vai utilizar os eventos de domínio que nem a gente viu antes.
+
+1259
+01:26:40.838 --> 01:26:44.618
+Então lá no meu withdraw eu vou ter o withdraw logic e lá no
+
+1260
+01:26:44.658 --> 01:26:48.438
+final, se ele tiver aquele valor abaixo, eu vou adicionar isso
+
+1261
+01:26:48.458 --> 01:26:52.078
+numa lista de eventos e depois isso aqui vai ser convertido pra uma
+
+1262
+01:26:52.138 --> 01:26:55.918
+chamada externa, que provavelmente vai ser o envio de um
+
+1263
+01:26:55.958 --> 01:26:59.678
+e-mail. Então eu vou converter um evento de domínio pra um envio de
+
+1264
+01:26:59.688 --> 01:27:01.178
+e-mail, porque aí eu consigo
+
+1265
+01:27:02.038 --> 01:27:05.908
+avisar o mundo externo que uma operação relevante aconteceu dentro da minha
+
+1266
+01:27:05.918 --> 01:27:06.518
+aplicação.
+
+1267
+01:27:07.858 --> 01:27:11.318
+E aí eu tenho um Event Dispatcher, que é uma outra
+
+1268
+01:27:11.398 --> 01:27:14.868
+classe que eu criei, que ela vai trabalhar em cima de entidades
+
+1269
+01:27:15.378 --> 01:27:19.358
+e pra cada evento dentro dessa minha entidade, ele vai
+
+1270
+01:27:19.398 --> 01:27:22.138
+saber como notificar cada uma delas.
+
+1271
+01:27:22.178 --> 01:27:26.098
+Então o meu Event Dispatcher vai ter a lógica
+
+1272
+01:27:26.118 --> 01:27:29.598
+que vai entender os eventos de domínio e despachar eles
+
+1273
+01:27:29.738 --> 01:27:33.578
+da forma apropriada. Então pode ser que eventualmente aqui no futuro eu
+
+1274
+01:27:33.638 --> 01:27:37.178
+tenha um outro tipo de evento que eu queira notificar de uma forma
+
+1275
+01:27:37.238 --> 01:27:37.698
+mais
+
+1276
+01:27:38.638 --> 01:27:41.258
+ativa. Então Low Balance Event
+
+1277
+01:27:42.578 --> 01:27:45.878
+talvez não seja um evento tão importante, então eu posso comunicar via
+
+1278
+01:27:46.478 --> 01:27:49.578
+Notification Service. Se for um
+
+1279
+01:27:50.738 --> 01:27:52.638
+evento mais importante do tipo
+
+1280
+01:27:53.618 --> 01:27:57.598
+conta negativa, se for possível a conta ficar negativa, ele
+
+1281
+01:27:57.608 --> 01:28:01.458
+que vai ter a lógica pra determinar qual que vai ser o canal que
+
+1282
+01:28:01.478 --> 01:28:05.158
+ele vai notificar. Eu posso ter uma push notification, eu posso ter um SMS,
+
+1283
+01:28:06.178 --> 01:28:10.098
+eu posso ter um envio de um WhatsApp, sei lá, um Telegram, enfim.
+
+1284
+01:28:10.478 --> 01:28:14.338
+Esse cara é responsável por toda a lógica de despachar
+
+1285
+01:28:14.358 --> 01:28:16.498
+os eventos de acordo com o tipo do evento.
+
+1286
+01:28:16.638 --> 01:28:20.478
+Então toda essa lógica vai ser expressa dentro desse
+
+1287
+01:28:20.538 --> 01:28:24.338
+dispatcher aqui. E aí lá no meu Account
+
+1288
+01:28:24.398 --> 01:28:27.478
+Controller eu vou ter isso aqui. Eu vou ter
+
+1289
+01:28:27.598 --> 01:28:29.998
+aquela chamada pro método
+
+1290
+01:28:30.038 --> 01:28:33.938
+canWithdraw. Se ele não puder resgatar, eu vou retornar um
+
+1291
+01:28:34.218 --> 01:28:37.718
+422 com a razão, pelo motivo que ele não permitiu o
+
+1292
+01:28:37.738 --> 01:28:38.338
+resgate.
+
+1293
+01:28:39.198 --> 01:28:43.118
+Eu vou fazer a operação aqui, vou fazer um updateAsync
+
+1294
+01:28:43.258 --> 01:28:47.178
+e o meu Event Dispatcher vai despachar todos os eventos
+
+1295
+01:28:47.298 --> 01:28:50.398
+de domínio que foram gerados a partir dessa operação aqui.
+
+1296
+01:28:51.618 --> 01:28:55.338
+Percebam que isso aqui alinha muito bem com o que eu falei pra vocês da
+
+1297
+01:28:55.378 --> 01:28:59.258
+orquestração. Esse cara só está orquestrando, percebam, pessoal, ele
+
+1298
+01:28:59.298 --> 01:29:03.058
+está recuperando a entidade, chamando o método, validando, executando a
+
+1299
+01:29:03.098 --> 01:29:06.358
+operação, atualizando e despachando os eventos.
+
+1300
+01:29:06.398 --> 01:29:08.678
+Ele não tem nenhuma lógica de negócio aqui dentro.
+
+1301
+01:29:09.078 --> 01:29:13.058
+Ele só tem lógica de orquestração mesmo pra conseguir atender
+
+1302
+01:29:13.098 --> 01:29:17.078
+o caso de uso da nossa aplicação, que é gerar um resgate numa conta bancária.
+
+1303
+01:29:19.558 --> 01:29:21.378
+E aí, no final, o que eu tenho aqui, pessoal?
+
+1304
+01:29:21.398 --> 01:29:25.388
+Eu tenho um Account Controller, ele estava aqui em cima, agora ele
+
+1305
+01:29:25.388 --> 01:29:29.298
+está aqui na categoria de Controller Application Service.
+
+1306
+01:29:30.238 --> 01:29:34.218
+O meu Event Dispatcher também, ele não tem nenhuma regra de
+
+1307
+01:29:34.238 --> 01:29:36.128
+negócio, ele só tem a regra que vai
+
+1308
+01:29:36.218 --> 01:29:39.757
+encaminhar os eventos de
+
+1309
+01:29:39.817 --> 01:29:43.437
+acordo com o canal mais apropriado, considerando o tipo de
+
+1310
+01:29:43.478 --> 01:29:43.937
+evento.
+
+1311
+01:29:44.878 --> 01:29:47.578
+E eu tenho o meu account aqui na minha regra de negócio.
+
+1312
+01:29:47.598 --> 01:29:50.798
+Então eu peguei um código que estava bem complexo e a partir de
+
+1313
+01:29:50.858 --> 01:29:54.718
+alguns padrões eu refatorei ele, deixei ele muito
+
+1314
+01:29:54.758 --> 01:29:58.158
+mais fácil pra testar, muito mais legível e consegui
+
+1315
+01:29:58.598 --> 01:30:02.518
+deixar mais coesa também a minha regra de negócio, toda ela dentro
+
+1316
+01:30:02.838 --> 01:30:06.578
+da minha account. Tudo que for relacionado à conta, está dentro de
+
+1317
+01:30:06.618 --> 01:30:10.598
+account, não está mais espalhada lá dentro de um controller, em
+
+1318
+01:30:10.698 --> 01:30:12.378
+outros lugares que não deveria estar.
+
+1319
+01:30:13.618 --> 01:30:15.698
+Beleza, pessoal? Pegaram a dica aqui?
+
+1320
+01:30:20.148 --> 01:30:24.018
+É um padrãozinho bem legal pra gente pegar, eventualmente quando a gente trabalhar
+
+1321
+01:30:24.038 --> 01:30:27.438
+em refatorações, melhorar código.
+
+1322
+01:30:27.678 --> 01:30:29.978
+É um padrãozinho bem interessante.
+
+1323
+01:30:30.158 --> 01:30:31.898
+A gente deixa ali o orquestrador, que vai
+
+1324
+01:30:32.898 --> 01:30:36.838
+receber as dependências externas, os serviços de infra,
+
+1325
+01:30:37.618 --> 01:30:40.938
+traz as entidades, executa comportamento, salva, envia
+
+1326
+01:30:40.978 --> 01:30:44.178
+evento, daí esse cara fica responsável por fazer isso.
+
+1327
+01:30:44.218 --> 01:30:47.698
+E aí, a regra de negócio a gente coloca nas nossas entidades
+
+1328
+01:30:48.198 --> 01:30:51.457
+e tudo o resto a gente coloca ali no Application Service, infra, enfim.
+
+1329
+01:30:53.498 --> 01:30:57.158
+Beleza, pessoal? Esse capítulo aqui, pessoal, eu adicionei
+
+1330
+01:30:57.178 --> 01:31:01.078
+basicamente porque eu acredito que muitos de vocês trabalham
+
+1331
+01:31:01.088 --> 01:31:02.218
+com código legado.
+
+1332
+01:31:03.618 --> 01:31:05.848
+Legado, não no sentido de código antigo, tá, pessoal?
+
+1333
+01:31:05.978 --> 01:31:09.268
+Código legado que eventualmente careceu de boas práticas no início de
+
+1334
+01:31:09.278 --> 01:31:13.238
+desenvolvimento e que agora a gente está pagando as dívidas técnicas que
+
+1335
+01:31:13.298 --> 01:31:17.018
+foram assumidas lá no início. Então eu vejo muita gente
+
+1336
+01:31:17.058 --> 01:31:18.478
+trabalhando com esse tipo de projeto.
+
+1337
+01:31:18.918 --> 01:31:22.268
+Eu, particularmente, trabalho bastante com esse tipo de projeto.
+
+1338
+01:31:22.898 --> 01:31:26.658
+Então é bom a gente saber aqui algumas práticas pra eventualmente a gente
+
+1339
+01:31:26.738 --> 01:31:30.590
+adotar, principalmente como é que a gente abordaA
+
+1340
+01:31:30.670 --> 01:31:34.610
+questão de testes em cima de código legado, de código que já
+
+1341
+01:31:34.670 --> 01:31:35.090
+existe.
+
+1342
+01:31:36.870 --> 01:31:40.050
+Uma pirâmide que é muito difundida na teoria, na
+
+1343
+01:31:40.450 --> 01:31:43.650
+literatura, pessoal, é essa pirâmide aqui dos testes.
+
+1344
+01:31:43.750 --> 01:31:46.630
+Então qual é a ideia dessa pirâmide?
+
+1345
+01:31:46.770 --> 01:31:47.410
+Que a gente tenha
+
+1346
+01:31:48.850 --> 01:31:52.570
+mais testes de unidade, pelo fato de ele ser mais
+
+1347
+01:31:52.610 --> 01:31:56.090
+barato executar, é mais fácil de criar teste de unidade,
+
+1348
+01:31:56.910 --> 01:32:00.670
+mas no centro da pirâmide, com volume um pouco reduzido, a gente vai ter os testes
+
+1349
+01:32:00.730 --> 01:32:04.490
+de integração. E lá na ponta, no topo da pirâmide, são os
+
+1350
+01:32:04.830 --> 01:32:05.970
+testes end-to-end.
+
+1351
+01:32:06.910 --> 01:32:07.630
+Como a gente acaba,
+
+1352
+01:32:08.690 --> 01:32:12.370
+e eu particularmente acabo trabalhando de forma mais exclusiva com back-end,
+
+1353
+01:32:13.370 --> 01:32:16.430
+eu acabo não atuando tanto com testes end-to-end.
+
+1354
+01:32:16.470 --> 01:32:20.410
+O meu escopo vai só em testes de unidade e testes de
+
+1355
+01:32:20.430 --> 01:32:24.250
+integração. Então conforme a gente sobe nessa pirâmide, a gente tem
+
+1356
+01:32:24.270 --> 01:32:27.110
+uma proteção maior contra a regressão e uma
+
+1357
+01:32:27.750 --> 01:32:29.610
+resistência maior à refatoração.
+
+1358
+01:32:30.530 --> 01:32:33.350
+Imaginem a gente fazendo um teste end-to-end.
+
+1359
+01:32:34.570 --> 01:32:38.530
+Mesmo que a gente quisesse acoplar o nosso teste lá do front com detalhes
+
+1360
+01:32:38.550 --> 01:32:42.440
+de implementação do back, a gente nem ia conseguir, porque é inacessível isso
+
+1361
+01:32:42.550 --> 01:32:46.490
+pro front-end. Então por isso que quanto mais a gente sobe, mais resistente à
+
+1362
+01:32:46.530 --> 01:32:50.370
+refatoração a gente fica. E mais pra baixo, a gente tem o feedback
+
+1363
+01:32:50.430 --> 01:32:53.770
+rápido e manutenção mais fácil. O teste de unidade tem essas
+
+1364
+01:32:53.810 --> 01:32:54.830
+características aqui.
+
+1365
+01:32:57.070 --> 01:33:00.830
+Quando a gente vai pra um projeto legado, principalmente projeto que não tem
+
+1366
+01:33:00.870 --> 01:33:03.690
+tanto teste, pessoal, que tem uma baixa cobertura de
+
+1367
+01:33:04.490 --> 01:33:07.270
+teste, eu gosto de inverter essa pirâmide.
+
+1368
+01:33:07.730 --> 01:33:09.990
+Eu gosto de ter, num primeiro momento,
+
+1369
+01:33:10.890 --> 01:33:13.930
+um maior volume de testes de integração
+
+1370
+01:33:14.990 --> 01:33:18.870
+e de forma gradual, eu vou implementando testes de unidade
+
+1371
+01:33:18.910 --> 01:33:20.130
+conforme a necessidade.
+
+1372
+01:33:21.260 --> 01:33:23.810
+Por que eu gosto desse modelo aqui, pessoal?
+
+1373
+01:33:23.850 --> 01:33:27.650
+A partir do momento que a gente está atacando um projeto que carece de
+
+1374
+01:33:27.690 --> 01:33:28.260
+testes,
+
+1375
+01:33:31.210 --> 01:33:34.690
+é muito difícil de a gente colocar testes de unidade, porque
+
+1376
+01:33:34.830 --> 01:33:35.310
+a
+
+1377
+01:33:37.770 --> 01:33:41.470
+facilidade com que a gente tem de
+
+1378
+01:33:41.490 --> 01:33:45.290
+escrever um teste de unidade nos diz muito a
+
+1379
+01:33:45.410 --> 01:33:47.970
+qualidade do código que ele está testando.
+
+1380
+01:33:48.010 --> 01:33:50.960
+Quanto mais difícil for testar um código, provavelmente
+
+1381
+01:33:51.710 --> 01:33:54.390
+más
+
+1382
+01:33:54.550 --> 01:33:58.530
+escolhas de design foram feitas
+
+1383
+01:33:58.550 --> 01:34:02.250
+pra aquele código. Então pra gente começar a ter um
+
+1384
+01:34:02.410 --> 01:34:06.110
+resultado maior e mais rápido, é mais
+
+1385
+01:34:06.130 --> 01:34:09.700
+interessante a gente começar com um teste de integração, porque
+
+1386
+01:34:09.790 --> 01:34:13.430
+justamente a gente não tem aquele acoplamento, a gente não vai precisar
+
+1387
+01:34:13.470 --> 01:34:15.329
+entender muito bem
+
+1388
+01:34:17.670 --> 01:34:21.510
+como que o método executa pra conseguir mockar tudo que precisa mockar e fazer o
+
+1389
+01:34:21.550 --> 01:34:25.050
+teste de unidade. O teste de integração vai nos garantir essa
+
+1390
+01:34:25.070 --> 01:34:28.870
+proteção inicial, essa cobertura inicial, essa rede de proteção
+
+1391
+01:34:29.390 --> 01:34:30.310
+inicial maior,
+
+1392
+01:34:31.130 --> 01:34:34.750
+e isso vai permitir que a gente, ao longo do tempo, evolua e
+
+1393
+01:34:34.830 --> 01:34:37.190
+comece a escrever mais testes de unidade.
+
+1394
+01:34:37.830 --> 01:34:41.650
+Porque com o teste de integração cobrindo ali, dando
+
+1395
+01:34:41.670 --> 01:34:45.290
+essa camada de segurança, a gente consegue fazer
+
+1396
+01:34:45.330 --> 01:34:48.890
+refatorações mais pontuais pra ter um design melhor
+
+1397
+01:34:49.370 --> 01:34:53.090
+e mais amigável pros testes de unidade, pra que a gente consiga
+
+1398
+01:34:53.130 --> 01:34:56.510
+implementar testes de unidade de forma mais rápida.
+
+1399
+01:34:56.550 --> 01:35:00.130
+Então quando a gente está trabalhando com código legado, eu gosto de inverter essa
+
+1400
+01:35:00.150 --> 01:35:03.820
+pirâmide, começar com alguns bons testes de integração,
+
+1401
+01:35:03.850 --> 01:35:06.970
+testando os caminhos mais críticos, mais importantes.
+
+1402
+01:35:07.650 --> 01:35:11.630
+E a partir daí, se eu precisar fazer alguma refatoração, alguma melhoria de
+
+1403
+01:35:11.690 --> 01:35:15.310
+design, eu tenho ali o teste de integração garantindo que eu
+
+1404
+01:35:15.450 --> 01:35:19.010
+estou mantendo o comportamento, que eu não estou tendo nenhuma regressão
+
+1405
+01:35:19.110 --> 01:35:21.330
+conforme eu vou evoluindo com essa refatoração.
+
+1406
+01:35:23.790 --> 01:35:27.770
+Então como eu comecei, a gente inicia com teste de integração, identifica as áreas
+
+1407
+01:35:27.830 --> 01:35:28.400
+críticas,
+
+1408
+01:35:29.910 --> 01:35:32.250
+a operação que tem mais relevância pro negócio.
+
+1409
+01:35:33.150 --> 01:35:33.299
+Eu,
+
+1410
+01:35:34.110 --> 01:35:37.670
+alguns anos atrás, tive a oportunidade de ser tech lead numa
+
+1411
+01:35:37.690 --> 01:35:41.630
+empresa e a gente tinha um processo que era o cargo chefe de
+
+1412
+01:35:41.670 --> 01:35:43.079
+entrada de dinheiro da empresa.
+
+1413
+01:35:43.930 --> 01:35:44.750
+E esse
+
+1414
+01:35:47.030 --> 01:35:49.250
+processo tinha muito problema na época.
+
+1415
+01:35:49.280 --> 01:35:52.770
+Então, além dessa operação, tinham outras
+
+1416
+01:35:52.810 --> 01:35:56.460
+operações dentro dessa aplicação, mas a gente optou por começar por ela
+
+1417
+01:35:56.550 --> 01:35:59.210
+justamente pela criticidade dela.
+
+1418
+01:35:59.250 --> 01:36:03.070
+Como era uma operação muito demandada e muito sensível, a gente
+
+1419
+01:36:03.090 --> 01:36:07.080
+começou a atacar ela com teste de integração, fez testes de integração
+
+1420
+01:36:07.150 --> 01:36:10.920
+garantindo pelo menos o caminho feliz, e a partir daí a gente
+
+1421
+01:36:10.930 --> 01:36:14.650
+começou a melhorar o design do código, porque a gente tinha essa segurança
+
+1422
+01:36:14.710 --> 01:36:18.450
+maior que a nossa refatoração não estava causando nenhum tipo de
+
+1423
+01:36:18.470 --> 01:36:22.270
+regressão. Então a gente começou com um bom teste de integração e a
+
+1424
+01:36:22.370 --> 01:36:26.030
+partir daí foi fazendo de forma interativa a melhoria do design do código.
+
+1425
+01:36:28.110 --> 01:36:31.870
+Que eu comentei, fazer a implementação dos testes de unidade de forma
+
+1426
+01:36:31.890 --> 01:36:35.510
+gradual, refatorar o código e permanecer nesse ciclo.
+
+1427
+01:36:35.830 --> 01:36:39.730
+Sempre utilizando o teste de integração como indicativo que a gente não
+
+1428
+01:36:39.770 --> 01:36:41.510
+está tendo regressão no nosso sistema.
+
+1429
+01:36:43.550 --> 01:36:45.880
+Beleza, pessoal? A
+
+1430
+01:36:47.130 --> 01:36:50.710
+gente falou muito de teste de integração e aqui agora a gente vai ver
+
+1431
+01:36:50.750 --> 01:36:52.200
+algumas abordagens e
+
+1432
+01:36:53.630 --> 01:36:57.430
+boas práticas que a gente adota no dia a dia pra ter bons testes de
+
+1433
+01:36:57.470 --> 01:36:58.600
+integração, tá, pessoal?
+
+1434
+01:37:00.330 --> 01:37:04.200
+Pra quem não sabe o que teste de integração é, basicamente, pessoal, o teste de
+
+1435
+01:37:04.230 --> 01:37:07.970
+unidade não consegue garantir que o sistema como um todo vai funcionar da
+
+1436
+01:37:08.070 --> 01:37:12.010
+forma correta. Por exemplo, eu não consigo ter um teste de unidade que
+
+1437
+01:37:12.050 --> 01:37:15.470
+vai garantir que minha aplicação vai subir e vai executar corretamente as
+
+1438
+01:37:15.510 --> 01:37:19.210
+migrations, por exemplo. Eu preciso de um teste de integração pra
+
+1439
+01:37:19.230 --> 01:37:23.210
+validar isso. O meu teste de unidade não consegue validar se,
+
+1440
+01:37:23.290 --> 01:37:27.130
+de fato, a minha entidade está sendo persistida da forma correta no banco de
+
+1441
+01:37:27.190 --> 01:37:31.130
+dados. O teste de integração vai garantir isso pra gente.
+
+1442
+01:37:31.170 --> 01:37:35.130
+Então o teste de unidade vai testar uma unidade bem específica de
+
+1443
+01:37:35.230 --> 01:37:39.222
+umUma porcentagem bem pequena
+
+1444
+01:37:39.282 --> 01:37:42.382
+de um caso de uso complexo. O teste de
+
+1445
+01:37:42.442 --> 01:37:46.362
+integração tem essa capacidade de
+
+1446
+01:37:46.382 --> 01:37:50.222
+testar todo o fluxo. Então ele testa o fluxo todo e mais
+
+1447
+01:37:50.242 --> 01:37:52.142
+aquela partezinha que o teste de unidade
+
+1448
+01:37:53.222 --> 01:37:53.662
+valida.
+
+1449
+01:37:56.702 --> 01:38:00.502
+Sempre quando a gente vai iniciar com teste de integração, pessoal, eu sempre gosto
+
+1450
+01:38:00.582 --> 01:38:03.912
+de iniciar pelo caminho feliz do caso de uso mais complexo.
+
+1451
+01:38:03.942 --> 01:38:09.562
+Esse
+
+1452
+01:38:09.571 --> 01:38:13.362
+teste de integração consegue garantir executar bastante código e consegue
+
+1453
+01:38:13.422 --> 01:38:16.702
+nos entregar valor de forma muito mais rápida.
+
+1454
+01:38:17.682 --> 01:38:20.322
+Depois que a gente faz esse mapeamento do caminho
+
+1455
+01:38:21.202 --> 01:38:25.162
+feliz do caso de uso mais complexo, a próxima etapa,
+
+1456
+01:38:25.202 --> 01:38:26.562
+e a mais importante, é a gente
+
+1457
+01:38:27.462 --> 01:38:31.302
+fazer o levantamento de quais dependências externas estão envolvidas dentro
+
+1458
+01:38:31.342 --> 01:38:35.222
+desse caso de uso, porque depois disso a gente vai categorizar elas.
+
+1459
+01:38:35.542 --> 01:38:38.762
+Então a gente vai categorizar essas dependências a partir do momento que a
+
+1460
+01:38:38.822 --> 01:38:42.702
+gente identifica elas, a gente vai categorizar elas
+
+1461
+01:38:42.782 --> 01:38:45.822
+como gerenciadas ou não gerenciadas.
+
+1462
+01:38:46.642 --> 01:38:50.462
+Qual é a diferença entre elas? A dependência externa
+
+1463
+01:38:50.542 --> 01:38:54.102
+gerenciada é uma dependência na qual a nossa aplicação
+
+1464
+01:38:54.362 --> 01:38:58.262
+tem controle exclusivo. Controle exclusivo, controle único e
+
+1465
+01:38:58.302 --> 01:39:02.282
+acesso único. Banco de dados, arquivos locais, esse tipo de
+
+1466
+01:39:03.042 --> 01:39:06.702
+dependência são as dependências gerenciadas, ou
+
+1467
+01:39:06.762 --> 01:39:10.742
+seja, o mundo externo só consegue chegar ao nosso banco de dados
+
+1468
+01:39:10.802 --> 01:39:14.752
+a partir da nossa aplicação. A aplicação é uma
+
+1469
+01:39:14.802 --> 01:39:18.642
+dependência externa gerenciada porque somente a nossa aplicação consegue
+
+1470
+01:39:18.662 --> 01:39:22.402
+acessar aquele banco de dados. Já do outro lado, a
+
+1471
+01:39:22.442 --> 01:39:25.902
+gente tem as dependências não gerenciadas, que envolvem
+
+1472
+01:39:25.962 --> 01:39:29.922
+qualquer sistema ou qualquer dependência fora do controle
+
+1473
+01:39:29.962 --> 01:39:33.302
+da nossa API. Ou seja, um serviço de e-mail,
+
+1474
+01:39:33.442 --> 01:39:37.422
+provavelmente, a partir do momento que eu fazer o envio de um e-mail,
+
+1475
+01:39:37.582 --> 01:39:41.522
+esse side effect
+
+1476
+01:39:41.742 --> 01:39:43.362
+vai estar visível pro mundo externo.
+
+1477
+01:39:43.962 --> 01:39:47.552
+Se eu publicar uma mensagem numa fila, essa mensagem vai estar
+
+1478
+01:39:47.582 --> 01:39:48.822
+visível pro mundo externo.
+
+1479
+01:39:49.682 --> 01:39:53.402
+Então a partir do momento que a gente categoriza essas dependências, a gente
+
+1480
+01:39:55.222 --> 01:39:58.502
+precisa ver como que a gente vai testar cada uma delas,
+
+1481
+01:39:59.102 --> 01:40:03.022
+como que a gente vai abordá-las dentro do nosso teste de integração.
+
+1482
+01:40:03.122 --> 01:40:07.082
+As gerenciadas, pessoal, a gente vai priorizar por utilizar
+
+1483
+01:40:07.102 --> 01:40:08.362
+dependências reais.
+
+1484
+01:40:09.502 --> 01:40:12.391
+Ou seja, são operações que alteram o estado
+
+1485
+01:40:14.322 --> 01:40:18.202
+do banco de dados, no caso, e ela não é visível pelo mundo externo de
+
+1486
+01:40:18.262 --> 01:40:18.942
+forma direta.
+
+1487
+01:40:20.102 --> 01:40:23.202
+Já as não gerenciadas, pessoal, que aí vem
+
+1488
+01:40:23.402 --> 01:40:24.752
+SMTP, vem
+
+1489
+01:40:26.242 --> 01:40:27.282
+message broker,
+
+1490
+01:40:28.582 --> 01:40:31.822
+um webhook da vida, qualquer coisa que possa gerar um
+
+1491
+01:40:32.242 --> 01:40:35.642
+comportamento observável pelo mundo externo,
+
+1492
+01:40:36.462 --> 01:40:39.242
+fora da nossa aplicação, a gente utiliza mock.
+
+1493
+01:40:40.462 --> 01:40:44.262
+A gente pode, pessoal, eventualmente utilizar dependência real
+
+1494
+01:40:45.082 --> 01:40:48.822
+pra dependência não gerenciada. Hoje em
+
+1495
+01:40:48.922 --> 01:40:52.322
+dia, no mundo do .NET, é muito fácil de a gente fazer isso.
+
+1496
+01:40:52.962 --> 01:40:56.662
+Então nada impede que, por exemplo, eu suba um Kafka, eu suba um message
+
+1497
+01:40:56.742 --> 01:40:59.202
+broker, eu suba um Azure Service Bus
+
+1498
+01:41:00.162 --> 01:41:03.322
+no meu teste e faça a publicação disso.
+
+1499
+01:41:03.362 --> 01:41:06.602
+Porque se a gente olhar da perspectiva
+
+1500
+01:41:06.722 --> 01:41:10.622
+de ser mockado ou não, meio que a gente está
+
+1501
+01:41:10.662 --> 01:41:12.682
+mockando uma dependência externa.
+
+1502
+01:41:12.702 --> 01:41:16.402
+Eu não estou chamando a dependência real, eu estou criando uma dependência que é
+
+1503
+01:41:16.442 --> 01:41:20.372
+real, é física, é um message broker, mas a partir do momento
+
+1504
+01:41:20.422 --> 01:41:24.152
+que eu publico algo, que eu faço uma interação com essa dependência externa,
+
+1505
+01:41:24.662 --> 01:41:26.722
+o mundo externo não está
+
+1506
+01:41:27.542 --> 01:41:31.532
+vendo essa publicação. Então, nesse caso, eu poderia, sem problema nenhum, utilizar
+
+1507
+01:41:31.582 --> 01:41:34.882
+uma dependência real. Mas se por algum motivo eu não
+
+1508
+01:41:34.902 --> 01:41:38.622
+conseguir, o ideal é utilizar o mock, justamente pra
+
+1509
+01:41:39.962 --> 01:41:40.942
+que, por exemplo,
+
+1510
+01:41:41.982 --> 01:41:45.122
+quando eu rode o meu teste de integração, eu não publique um e-mail.
+
+1511
+01:41:46.102 --> 01:41:48.242
+Então por isso que a gente faz a utilização de mocks.
+
+1512
+01:41:49.982 --> 01:41:51.882
+Então aqui um exemplo muito simples.
+
+1513
+01:41:52.002 --> 01:41:55.531
+Eu tenho a minha API e eu tenho um banco de dados, eu tenho um serviço
+
+1514
+01:41:55.602 --> 01:41:59.362
+SMTP e eu tenho um message broker. Nesse caso aqui eu vou utilizar um
+
+1515
+01:41:59.402 --> 01:42:00.482
+banco de dados real.
+
+1516
+01:42:02.162 --> 01:42:06.102
+Nesse caso aqui eu vou utilizar mocks pra fazer o mock
+
+1517
+01:42:06.302 --> 01:42:10.252
+e validar as interações que eu vou ter nas bordas com esses caras quando eu
+
+1518
+01:42:10.282 --> 01:42:13.242
+começar a publicar e executar o meu teste de integração.
+
+1519
+01:42:15.722 --> 01:42:19.642
+Então boas práticas aqui, pessoal, pra testes de integração, sempre utilizar o
+
+1520
+01:42:19.662 --> 01:42:23.422
+mock pra serviço não gerenciado, e
+
+1521
+01:42:24.962 --> 01:42:28.182
+dependência real pra dependências
+
+1522
+01:42:28.222 --> 01:42:32.162
+gerenciadas, validar as interações o mais próximo
+
+1523
+01:42:32.172 --> 01:42:36.032
+possível da borda e sempre utilizar mocks apenas em
+
+1524
+01:42:36.102 --> 01:42:39.662
+testes de integração. Tentar, a partir de hoje, fazer com que os
+
+1525
+01:42:39.762 --> 01:42:41.582
+testes no qual a gente consiga
+
+1526
+01:42:42.942 --> 01:42:46.902
+projetar do zero, sempre priorizar a utilização de mocks em testes
+
+1527
+01:42:46.942 --> 01:42:50.902
+de integração. Lembrem, sempre quando a gente usa mock, a gente está mockando o
+
+1528
+01:42:50.922 --> 01:42:54.052
+comportamento. E se eu mocko aquele comportamento,
+
+1529
+01:42:55.102 --> 01:42:58.582
+provavelmente eu não vou pegar uma regressão caso alguma coisa seja
+
+1530
+01:42:58.622 --> 01:43:02.022
+mudada nesse mock que eu estou utilizando, nessa camada
+
+1531
+01:43:02.062 --> 01:43:03.382
+intermediária que eu estou usando.
+
+1532
+01:43:04.562 --> 01:43:08.542
+E pessoal, validar as interações o mais próximo possível da
+
+1533
+01:43:08.602 --> 01:43:11.182
+borda, esse é um conceito bem importante que
+
+1534
+01:43:12.162 --> 01:43:15.802
+conecta
+
+1535
+01:43:15.902 --> 01:43:19.602
+muito com essa ideia de a gente saber o ponto exato do
+
+1536
+01:43:19.642 --> 01:43:23.292
+mock pra que a gente evite mockar comportamento e não
+
+1537
+01:43:23.322 --> 01:43:26.432
+pegar regressões nos testes, principalmente de integração.
+
+1538
+01:43:28.022 --> 01:43:31.722
+E também validar a presença e ausência no número de chamadas pra dependências
+
+1539
+01:43:31.762 --> 01:43:32.272
+externas.
+
+1540
+01:43:33.822 --> 01:43:37.522
+Quando eu falei ali, pessoal, de validar as interações o mais próximo
+
+1541
+01:43:37.542 --> 01:43:40.842
+possível da bordaQual é a ideia aqui, pessoal?
+
+1542
+01:43:40.942 --> 01:43:44.681
+Eu vou pegar aqui e vou dar um zoom nessa interação da
+
+1543
+01:43:44.762 --> 01:43:46.932
+minha API com o message broker.
+
+1544
+01:43:48.042 --> 01:43:49.862
+Então lá na minha API, o que eu tenho aqui?
+
+1545
+01:43:49.942 --> 01:43:51.882
+Eu tenho o application service, que
+
+1546
+01:43:52.842 --> 01:43:54.002
+tem uma dependência,
+
+1547
+01:43:54.902 --> 01:43:57.142
+ele recebe por parâmetro aqui no construtor
+
+1548
+01:43:58.462 --> 01:44:02.242
+o message broker service, e o message broker service
+
+1549
+01:44:02.252 --> 01:44:05.182
+tem uma injeção indireta do IBus service.
+
+1550
+01:44:05.782 --> 01:44:09.722
+E esse IBus service é a última instância, é a
+
+1551
+01:44:09.762 --> 01:44:13.342
+última classe que separa a minha aplicação do message
+
+1552
+01:44:13.442 --> 01:44:14.162
+broker em si.
+
+1553
+01:44:16.262 --> 01:44:19.522
+Então se, por exemplo, eu estou projetando o meu teste de
+
+1554
+01:44:19.542 --> 01:44:23.062
+integração e eu quero mockar, eu vou mockar essa
+
+1555
+01:44:23.122 --> 01:44:24.742
+interação com o message broker.
+
+1556
+01:44:26.382 --> 01:44:29.202
+De preferência, pessoal, eu deveria mockar esse serviço
+
+1557
+01:44:29.242 --> 01:44:32.962
+aqui. Por quê? Se eventualmente eu
+
+1558
+01:44:32.982 --> 01:44:34.462
+mockar esse serviço aqui,
+
+1559
+01:44:36.642 --> 01:44:40.392
+a minha application service vai validar, no máximo, a
+
+1560
+01:44:40.402 --> 01:44:43.001
+interação com o mock desse cara aqui.
+
+1561
+01:44:43.942 --> 01:44:47.642
+Qualquer regressão que eu tenha a partir desse ponto, até o envio
+
+1562
+01:44:47.702 --> 01:44:51.502
+da mensagem pro message broker, o meu teste de integração
+
+1563
+01:44:51.542 --> 01:44:54.642
+não vai conseguir pegar, porque eu mockei todo esse comportamento.
+
+1564
+01:44:55.142 --> 01:44:59.022
+Ou seja, o código que descreve esse comportamento não está
+
+1565
+01:44:59.082 --> 01:45:01.142
+sendo executado pelo meu teste de integração.
+
+1566
+01:45:01.582 --> 01:45:05.182
+Ele está sendo mockado nessa parte aqui, então eu estou mockando toda essa
+
+1567
+01:45:05.302 --> 01:45:09.242
+parte aqui. Se eu mocko só o IBus service, e o ideal
+
+1568
+01:45:09.342 --> 01:45:13.262
+aqui é que a gente não tenha muita lógica dentro desse cara, que ele faça
+
+1569
+01:45:13.342 --> 01:45:17.202
+só a conexão mesmo com o message broker, o meu teste de integração
+
+1570
+01:45:17.222 --> 01:45:18.722
+está sendo muito mais amplo,
+
+1571
+01:45:19.862 --> 01:45:23.842
+no sentido de quanto código ele está executando.
+
+1572
+01:45:24.822 --> 01:45:26.702
+Então é sempre bom a gente se atentar
+
+1573
+01:45:28.222 --> 01:45:32.142
+a esse ponto quando a gente estiver
+
+1574
+01:45:32.182 --> 01:45:34.182
+fazendo os mocks para a nossa aplicação.
+
+1575
+01:45:34.862 --> 01:45:38.362
+Na aula de segunda-feira, pessoal, isso aqui vai ficar bem claro, que eu vou
+
+1576
+01:45:38.402 --> 01:45:42.122
+mostrar pra vocês a diferença que faz entre a gente mockar no
+
+1577
+01:45:42.172 --> 01:45:45.782
+lugar correto e mockar muito acima e mockar muitas
+
+1578
+01:45:45.802 --> 01:45:49.502
+camadas abaixo, até a gente chegar na dependência externa.
+
+1579
+01:45:49.562 --> 01:45:52.762
+Aí vai ficar bem mais claro lá conforme a gente vai implementando, fazendo
+
+1580
+01:45:53.042 --> 01:45:56.902
+um hands on mesmo, indo passo a passo, vai ficar mais
+
+1581
+01:45:56.942 --> 01:45:58.862
+clara essa questão aqui na prática.
+
+1582
+01:46:00.022 --> 01:46:03.722
+Então que nem eu comentei, o teste de integração aborda mais código e a chance de
+
+1583
+01:46:03.762 --> 01:46:07.242
+ele pegar uma regressão é muito maior do que se a gente mockasse
+
+1584
+01:46:07.322 --> 01:46:10.922
+tudo daqui em diante, essas duas classes
+
+1585
+01:46:10.982 --> 01:46:12.062
+aqui.
+
+1586
+01:46:13.922 --> 01:46:17.882
+E também, pessoal, acho que
+
+1587
+01:46:17.902 --> 01:46:21.082
+toda aplicação que a gente vai trabalhar, toda aplicação sempre tem um banco de
+
+1588
+01:46:21.102 --> 01:46:24.962
+dados, então a gente tem algumas estratégias que a gente pode adotar pra lidar com
+
+1589
+01:46:24.982 --> 01:46:28.001
+esse banco de dados no teste de integração.
+
+1590
+01:46:28.012 --> 01:46:31.751
+A gente pode rodar um banco de dados local, a gente pode rodar
+
+1591
+01:46:31.802 --> 01:46:35.792
+esse banco de dados num ambiente compartilhado e a gente pode utilizar
+
+1592
+01:46:35.862 --> 01:46:36.862
+esse banco no Docker.
+
+1593
+01:46:37.722 --> 01:46:40.682
+Então qual é a
+
+1594
+01:46:40.742 --> 01:46:43.482
+vantagem de um em detrimento do outro?
+
+1595
+01:46:43.542 --> 01:46:45.262
+Vantagens e desvantagens.
+
+1596
+01:46:46.591 --> 01:46:50.582
+Se eu baixo aqui o SQL Server e rodo ele na minha
+
+1597
+01:46:50.622 --> 01:46:54.482
+máquina local, a vantagem é que eu tenho um controle parcial
+
+1598
+01:46:54.502 --> 01:46:56.422
+desse ambiente porque ele está rodando na minha máquina.
+
+1599
+01:46:57.242 --> 01:47:01.052
+Ele é um teste simples de implementar, porque o banco já
+
+1600
+01:47:01.142 --> 01:47:04.822
+está ali, eu não vou precisar me preocupar com ele, ele já vai estar disponível, eu
+
+1601
+01:47:04.882 --> 01:47:08.822
+só vou interagir com ele. O problema, pessoal, é que eu
+
+1602
+01:47:08.862 --> 01:47:12.482
+não consigo integrar isso na pipeline.
+
+1603
+01:47:13.042 --> 01:47:16.642
+Imagina que eu quero rodar o meu teste de integração na minha pipeline de
+
+1604
+01:47:16.702 --> 01:47:20.682
+CI/CD. Como esse banco de dados está rodando na minha máquina
+
+1605
+01:47:20.742 --> 01:47:21.172
+local,
+
+1606
+01:47:22.042 --> 01:47:25.702
+e esse agente de build vai estar rodando numa cloud ou
+
+1607
+01:47:25.742 --> 01:47:29.642
+eventualmente numa infra separada, ele não vai conseguir acessar esse
+
+1608
+01:47:29.682 --> 01:47:33.292
+banco de dados. Porque lembre, o banco de dados geralmente é
+
+1609
+01:47:33.302 --> 01:47:36.882
+uma dependência gerenciada, então o ideal é que a gente
+
+1610
+01:47:36.922 --> 01:47:40.842
+utilize um banco de dados real aqui, e não mock o banco de dados, e
+
+1611
+01:47:40.902 --> 01:47:44.542
+nem um banco em memória aqui. Então por isso
+
+1612
+01:47:44.722 --> 01:47:48.342
+que quando o banco de dados está rodando local, eu não consigo integrar ele na
+
+1613
+01:47:48.382 --> 01:47:52.202
+pipeline e provavelmente eu vou estar compartilhando esse banco
+
+1614
+01:47:52.242 --> 01:47:56.122
+com o meu desenvolvimento local, então ele acaba sendo não previsível.
+
+1615
+01:47:56.162 --> 01:47:59.762
+Então ele pode eventualmente mexer nos dados que estão sendo
+
+1616
+01:47:59.822 --> 01:48:03.602
+necessários pro meu teste rodar. E isso pode começar a gerar o
+
+1617
+01:48:03.642 --> 01:48:06.762
+falso positivo. Pode ser que eu tenha feito update
+
+1618
+01:48:06.822 --> 01:48:10.612
+numa linha que o meu teste de integração utiliza,
+
+1619
+01:48:11.102 --> 01:48:14.902
+e aí o meu teste de integração faz o assert e não é mais aquele
+
+1620
+01:48:14.922 --> 01:48:18.862
+valor que ele esperava. Então aconteceu ali uma quebra
+
+1621
+01:48:18.902 --> 01:48:22.462
+de expectativa do meu teste com o dado que estava persistido no
+
+1622
+01:48:22.482 --> 01:48:25.062
+banco. Então aqui pode gerar um falso positivo.
+
+1623
+01:48:26.082 --> 01:48:29.462
+Já em ambiente compartilhado, pessoal, a gente não tem o controle do ambiente,
+
+1624
+01:48:29.642 --> 01:48:33.622
+então eu não consigo eventualmente fazer um cleanup do banco de dados, não
+
+1625
+01:48:33.662 --> 01:48:35.842
+consigo fazer nada ali porque é um
+
+1626
+01:48:36.722 --> 01:48:40.622
+banco de dados que está sendo compartilhado com os outros desenvolvedores,
+
+1627
+01:48:40.702 --> 01:48:43.582
+eventualmente com time de QA, por que não?
+
+1628
+01:48:45.062 --> 01:48:48.682
+Ele também é mais fácil de implementar, ele é simples, porque que nem eu comentei,
+
+1629
+01:48:49.522 --> 01:48:52.282
+o banco já está lá, eu não preciso ter todo
+
+1630
+01:48:54.302 --> 01:48:57.102
+esse bootstrap de subir um banco durante o meu teste de
+
+1631
+01:48:57.122 --> 01:49:00.862
+integração. Já diferente do
+
+1632
+01:49:00.922 --> 01:49:04.702
+local, pessoal, eu consigo integrar isso na pipeline, porque provavelmente
+
+1633
+01:49:05.282 --> 01:49:09.062
+esse banco pode ser acessado pela minha pipeline, então eu vou poder
+
+1634
+01:49:09.102 --> 01:49:11.382
+colocar o meu teste de integração na pipeline.
+
+1635
+01:49:12.482 --> 01:49:15.942
+Só que que nem o teste local, como tem muita gente usando esse banco,
+
+1636
+01:49:16.982 --> 01:49:20.062
+qualquer um pode ir lá e apagar a linha, eventualmente atualizar, ele não é
+
+1637
+01:49:20.082 --> 01:49:23.262
+previsível. Eu vou ter comportamento não
+
+1638
+01:49:23.282 --> 01:49:26.362
+determinístico no meu teste e ele vai gerar falso positivo.
+
+1639
+01:49:28.262 --> 01:49:31.962
+E por fim, eu tenho a melhor das opções, que é a utilização do Docker, pessoal.
+
+1640
+01:49:32.602 --> 01:49:36.382
+Então hoje a gente tem algumas bibliotecas muito interessantes ali no .NET que
+
+1641
+01:49:36.442 --> 01:49:38.502
+facilitam essa interação com o Docker.
+
+1642
+01:49:39.202 --> 01:49:42.882
+E no Docker, pessoal, basicamente a gente tem controle total do ambiente.
+
+1643
+01:49:43.502 --> 01:49:47.302
+A implementação acaba sendo um pouquinho mais complexa, porque a gente tem que
+
+1644
+01:49:47.382 --> 01:49:48.042
+subir o
+
+1645
+01:49:49.282 --> 01:49:53.142
+container enquanto a gente está executando o teste, a gente
+
+1646
+01:49:53.202 --> 01:49:56.982
+tem que eventualmente fazer um seed, que é criar as tabelas, executar
+
+1647
+01:49:57.002 --> 01:50:00.642
+migrations, importar dados pra essas tabelas pra que o nosso
+
+1648
+01:50:00.682 --> 01:50:04.526
+teste consiga executar.A gente consegue
+
+1649
+01:50:04.546 --> 01:50:08.226
+integrar isso também na pipeline, desde que o agente que vai rodar o
+
+1650
+01:50:08.386 --> 01:50:12.346
+build tenha acesso ao Docker, tem o Docker CLI instalado ali
+
+1651
+01:50:12.366 --> 01:50:12.926
+no agente.
+
+1652
+01:50:13.906 --> 01:50:17.726
+E ele é previsível. Aqui ele não vai ter falso positivo, porque
+
+1653
+01:50:19.326 --> 01:50:22.596
+toda vez que a gente for subir ou rodar um teste de integração,
+
+1654
+01:50:23.226 --> 01:50:26.866
+ele vai subir o banco de dados limpo, sem nenhuma tabela,
+
+1655
+01:50:27.366 --> 01:50:30.876
+a gente vai criar as tabelas, vai fazer o seed, ou seja, sempre vou ter os
+
+1656
+01:50:30.966 --> 01:50:34.046
+mesmos dados, independente de quantas vezes eu vou executar.
+
+1657
+01:50:34.726 --> 01:50:38.266
+Porque no final do teste, basicamente eu vou matar esse container,
+
+1658
+01:50:38.826 --> 01:50:42.646
+ele vai limpar, eu vou excluir o container, todos os dados que foram gerados
+
+1659
+01:50:42.686 --> 01:50:44.756
+ali vão ser excluídos. E quando
+
+1660
+01:50:44.766 --> 01:50:48.226
+eu tiver uma nova execução desse
+
+1661
+01:50:48.306 --> 01:50:51.966
+teste, ele vai criar um banco de dados novo, fazer todo o
+
+1662
+01:50:52.046 --> 01:50:54.906
+seed que eu tinha antes, então ele é totalmente previsível.
+
+1663
+01:50:54.926 --> 01:50:58.346
+Eu não vou ter nenhuma chance de ter falso positivo
+
+1664
+01:50:58.406 --> 01:51:02.226
+nesse cenário aqui, porque eu consigo controlar o estado do
+
+1665
+01:51:02.306 --> 01:51:06.066
+meu banco pra que ele esteja exatamente como o meu teste de
+
+1666
+01:51:06.106 --> 01:51:07.825
+integração espera que ele esteja.
+
+1667
+01:51:08.706 --> 01:51:11.256
+E na aula de segunda também eu vou mostrar pra vocês,
+
+1668
+01:51:12.366 --> 01:51:15.686
+a gente vai subir um banco, vai fazer o seed, vai criar todas as
+
+1669
+01:51:15.706 --> 01:51:19.626
+tabelas pra que a gente sempre consiga ter essa previsibilidade
+
+1670
+01:51:19.686 --> 01:51:23.266
+no nosso teste de integração e não tenha nenhum tipo de falso
+
+1671
+01:51:23.286 --> 01:51:24.906
+positivo.
+
+1672
+01:51:25.766 --> 01:51:29.266
+E aqui, por fim, a gente tem essa tabela que faz essa comparação.
+
+1673
+01:51:31.466 --> 01:51:34.806
+Se, por exemplo, é muito difícil pra mim executar o Docker, um ambiente
+
+1674
+01:51:34.846 --> 01:51:37.846
+compartilhado já seria um bom
+
+1675
+01:51:40.086 --> 01:51:42.606
+pontapé inicial.
+
+1676
+01:51:42.656 --> 01:51:46.486
+O local não é ruim, só que o grande
+
+1677
+01:51:46.506 --> 01:51:49.086
+problema é que eu não consigo rodar ele na pipeline.
+
+1678
+01:51:50.026 --> 01:51:53.886
+Então isso aqui, se eu, por exemplo, posso começar com o ambiente local e
+
+1679
+01:51:53.896 --> 01:51:57.026
+eventualmente evoluir pra um ambiente
+
+1680
+01:51:57.066 --> 01:52:00.266
+compartilhado e, por fim, que nem o Jonathan falou,
+
+1681
+01:52:00.946 --> 01:52:04.886
+utilizar os testes container pra fazer a utilização com o Docker, que
+
+1682
+01:52:04.926 --> 01:52:05.886
+facilita muito
+
+1683
+01:52:07.486 --> 01:52:11.166
+o gerenciamento dos containers. Mas a gente vai ver
+
+1684
+01:52:11.226 --> 01:52:12.086
+tudo isso na
+
+1685
+01:52:13.125 --> 01:52:16.126
+aula de segunda-feira. A gente vai fazer um teste do zero, vendo
+
+1686
+01:52:16.866 --> 01:52:19.706
+como subir o container e tudo mais, usando o teste
+
+1687
+01:52:19.746 --> 01:52:22.206
+container. Vai ser uma aula bem legal.
+
+1688
+01:52:22.386 --> 01:52:26.306
+A gente vai fazer passo a passo, entendendo as decisões, seguindo aquele
+
+1689
+01:52:26.346 --> 01:52:29.096
+playbook lá que eu comentei com vocês antes.
+
+1690
+01:52:32.666 --> 01:52:36.526
+Esse cara aqui. A gente vai seguir esse passo a passo, vai identificar
+
+1691
+01:52:36.546 --> 01:52:40.366
+as dependências, vai mockar o que precisa ser mockado, vai
+
+1692
+01:52:40.406 --> 01:52:41.186
+criar o banco de dados.
+
+1693
+01:52:42.546 --> 01:52:46.456
+Basicamente, a gente vai colocar tudo em prática, tudo que a gente viu aqui hoje, a
+
+1694
+01:52:46.486 --> 01:52:49.246
+gente vai colocar em prática na aula de segunda-feira.
+
+1695
+01:52:50.186 --> 01:52:53.606
+E aí, pessoal, queria deixar essa recomendação pra gente finalizar a aula de hoje,
+
+1696
+01:52:53.866 --> 01:52:55.406
+uma recomendação de leitura.
+
+1697
+01:52:56.666 --> 01:53:00.206
+Se eu pudesse escolher um único livro de testes, eu escolheria esse aqui, é
+
+1698
+01:53:00.246 --> 01:53:02.726
+um livro muito bom.
+
+1699
+01:53:03.826 --> 01:53:07.606
+Basicamente, toda a parte teórica dessa aula a gente
+
+1700
+01:53:07.646 --> 01:53:10.466
+extraiu desse livro, mas conectando com a nossa
+
+1701
+01:53:11.266 --> 01:53:12.946
+experiência real nos clientes.
+
+1702
+01:53:13.766 --> 01:53:17.026
+Então a gente pegou esse material e complementou com a nossa experiência, por isso
+
+1703
+01:53:17.036 --> 01:53:19.386
+que ficou tão rica essa aula de testes de unidade.
+
+1704
+01:53:20.826 --> 01:53:24.586
+E na segunda-feira, a gente finaliza
+
+1705
+01:53:24.626 --> 01:53:28.366
+essa parte de testes, faz um teste do zero, e depois que a gente
+
+1706
+01:53:28.786 --> 01:53:32.546
+finalizar o teste, eu compartilho com vocês o código lá no GitHub.
+
+1707
+01:53:33.406 --> 01:53:36.746
+É bem fácil de executar o teste, desde que tenha o Docker instalado, ele vai
+
+1708
+01:53:36.826 --> 01:53:37.506
+sempre
+
+1709
+01:53:38.766 --> 01:53:42.066
+gerar o mesmo resultado, justamente por a gente ter essa previsibilidade.
+
+1710
+01:53:43.086 --> 01:53:46.896
+Desde que eu tenha o Docker, ele vai subir uma instância da SQL Server, vai criar
+
+1711
+01:53:46.896 --> 01:53:50.695
+as tabelas, tudo. Rodou os testes, gerou, faz os acertos,
+
+1712
+01:53:50.826 --> 01:53:54.366
+mata o container, mata os dados. É um teste bem completinho.
+
+1713
+01:53:54.926 --> 01:53:56.166
+E na segunda-feira a gente
+
+1714
+01:53:57.146 --> 01:54:00.846
+coloca tudo em prática, todos esses conceitos que a gente viu, a gente vai colocar
+
+1715
+01:54:00.886 --> 01:54:02.056
+na prática na segunda-feira.
+
+1716
+01:54:04.506 --> 01:54:06.546
+Beleza, pessoal? Dúvidas?
+
+1717
+01:54:08.506 --> 01:54:10.746
+Alguém nunca usou teste de integração aqui, pessoal?
+
+1718
+01:54:10.806 --> 01:54:13.766
+Nunca fez um teste de integração em .NET ou em
+
+1719
+01:54:13.886 --> 01:54:15.006
+outra?
+
+1720
+01:54:19.666 --> 01:54:20.445
+Pode falar, Márcio.
+
+1721
+01:54:21.486 --> 01:54:22.566
+Bem, boa noite.
+
+1722
+01:54:23.846 --> 01:54:25.946
+Eu nunca usei teste de integração.
+
+1723
+01:54:26.806 --> 01:54:30.526
+Eu já trabalhei em muitas empresas que a gente faz muito teste
+
+1724
+01:54:30.666 --> 01:54:31.366
+só pra passar.
+
+1725
+01:54:32.366 --> 01:54:36.186
+Tanto é que no meu sistema que eu desenvolvi
+
+1726
+01:54:36.246 --> 01:54:39.706
+aqui, eu não uso testes porque eu nunca consegui ver
+
+1727
+01:54:40.566 --> 01:54:43.566
+um teste real funcionando que dê
+
+1728
+01:54:43.966 --> 01:54:47.926
+credibilidade pro teste. Mas eu estou com uma dúvida, eu
+
+1729
+01:54:47.986 --> 01:54:51.926
+estou querendo reprojetar o meu sistema aqui, que eu comecei como um
+
+1730
+01:54:52.106 --> 01:54:52.646
+MVP,
+
+1731
+01:54:53.626 --> 01:54:56.086
+e agora quero reestruturar ele.
+
+1732
+01:54:57.146 --> 01:54:59.366
+Então, estou estudando essa parte.
+
+1733
+01:55:00.466 --> 01:55:04.126
+Uma dúvida que eu tenho é com relação à questão do banco de
+
+1734
+01:55:04.166 --> 01:55:07.746
+dados. Você vai fazer ali, nas próximas aulas, vai mostrar como
+
+1735
+01:55:07.826 --> 01:55:10.626
+funciona, só queria adiantar um pouco a pergunta.
+
+1736
+01:55:11.335 --> 01:55:15.006
+Quando você vai subir o banco de dados, como é um processo custoso, leva um
+
+1737
+01:55:15.026 --> 01:55:18.406
+tempinho, e você não vai fazer só um teste de integração.
+
+1738
+01:55:18.446 --> 01:55:22.046
+Normalmente, você vai testar ali vários endpoints em cima desse
+
+1739
+01:55:22.106 --> 01:55:22.626
+teste.
+
+1740
+01:55:23.546 --> 01:55:27.026
+Acredito que você vai subir uma vez o banco de dados e depois
+
+1741
+01:55:27.126 --> 01:55:30.606
+fazer várias chamadas ali pra poder testar, certo?
+
+1742
+01:55:30.626 --> 01:55:32.866
+Então depois vai ter uma
+
+1743
+01:55:34.726 --> 01:55:37.626
+ordem pra serem executadas as coisas, certo?
+
+1744
+01:55:37.726 --> 01:55:41.646
+Isso. Se um teste pode afetar o resultado do
+
+1745
+01:55:41.806 --> 01:55:43.086
+outro, aí tu vais ter que
+
+1746
+01:55:45.026 --> 01:55:48.606
+rodar os teus testes de forma serial, um após o outro, e
+
+1747
+01:55:48.706 --> 01:55:51.306
+sempre no final tu fazeres um cleanup do banco de dados.
+
+1748
+01:55:52.086 --> 01:55:56.046
+Que aí tu podes fazer isso com o Spaw, acho que é
+
+1749
+01:55:57.226 --> 01:56:00.526
+dotnet tests. É esse cara aqui.
+
+1750
+01:56:02.096 --> 01:56:05.986
+Esse cara é bem utilizado pra fazer esses cleanups de
+
+1751
+01:56:06.006 --> 01:56:06.726
+banco de dados.
+
+1752
+01:56:07.926 --> 01:56:08.626
+Até deixar o link
+
+1753
+01:56:08.646 --> 01:56:12.546
+aquiPorque que nem a gente vai
+
+1754
+01:56:12.566 --> 01:56:14.466
+ver na próxima aula, Márcio.
+
+1755
+01:56:16.246 --> 01:56:19.806
+Para cada arquivo de teste, eu vou ter um banco
+
+1756
+01:56:19.846 --> 01:56:23.806
+exclusivo. Então, se eu tenho 10 arquivos de teste, se tu
+
+1757
+01:56:23.826 --> 01:56:27.766
+projetar eles da forma como a gente vai ver na próxima aula, cada arquivo
+
+1758
+01:56:27.786 --> 01:56:29.326
+de teste vai ter um banco separado.
+
+1759
+01:56:30.286 --> 01:56:34.246
+Mas dentro do seu teste, se tu tiver concorrência entre dados, se, por exemplo,
+
+1760
+01:56:34.326 --> 01:56:37.846
+tu validar inserts, eu vou fazer uma operação, ele tem que fazer um
+
+1761
+01:56:37.866 --> 01:56:38.526
+insert.
+
+1762
+01:56:39.506 --> 01:56:43.346
+Aí tu não precisaria fazer o cleanup, porque aí tu não vai ter um
+
+1763
+01:56:43.386 --> 01:56:47.016
+teste afetando o dado do outro. Tu vai ter eles inserindo na mesma tabela,
+
+1764
+01:56:47.086 --> 01:56:51.046
+mas aqui tu não corre o risco de eventualmente um teste
+
+1765
+01:56:51.086 --> 01:56:53.936
+manipular um dado que é esperado pelo outro teste.
+
+1766
+01:56:54.546 --> 01:56:58.466
+Se esse for o teu cenário, aí tu vai ter que executar eles de forma serial e sempre
+
+1767
+01:56:58.506 --> 01:57:01.866
+fazer o cleanup do banco no final de cada um dos teus
+
+1768
+01:57:01.926 --> 01:57:03.366
+testes.
+
+1769
+01:57:03.526 --> 01:57:06.986
+Entendi. Vamos supor que eu tenha 10 blocos de
+
+1770
+01:57:07.346 --> 01:57:08.506
+teste. Eu
+
+1771
+01:57:09.386 --> 01:57:13.246
+poderia criar ou 10 testes para executar ao mesmo tempo, 10
+
+1772
+01:57:13.406 --> 01:57:17.266
+bases, ou poderia criar um, esperar terminar, fazer
+
+1773
+01:57:17.286 --> 01:57:17.846
+outro.
+
+1774
+01:57:18.566 --> 01:57:18.926
+Isso aí.
+
+1775
+01:57:19.966 --> 01:57:23.306
+E mais uma outra pergunta. Você vai mostrar na prática como funciona.
+
+1776
+01:57:23.866 --> 01:57:27.726
+Mas você vai chegar a fazer alguma pipeline para poder com configuração de
+
+1777
+01:57:27.786 --> 01:57:31.636
+alguma pipeline para isso, ou você vai fazer apenas teste local?
+
+1778
+01:57:31.636 --> 01:57:35.486
+Eu vou fazer só local, mas eu posso mostrar uma pipeline também, sem
+
+1779
+01:57:35.546 --> 01:57:37.046
+problema nenhum.
+
+1780
+01:57:37.286 --> 01:57:38.926
+Seria interessante também.
+
+1781
+01:57:39.266 --> 01:57:40.326
+A pipeline, Márcio,
+
+1782
+01:57:40.366 --> 01:57:44.386
+pelo
+
+1783
+01:57:44.426 --> 01:57:48.326
+menos no Azure, tu pode escolher por fazer uma pipeline, que é
+
+1784
+01:57:48.386 --> 01:57:52.186
+uma instância da Microsoft que ele vai executar o teu
+
+1785
+01:57:52.226 --> 01:57:55.686
+código, ou tu pode hostear esse cara na tua máquina.
+
+1786
+01:57:55.726 --> 01:57:58.326
+Aí o teu agente de build é a tua própria máquina.
+
+1787
+01:57:59.026 --> 01:58:01.266
+Então tu pode fazer esse tipo de coisa.
+
+1788
+01:58:01.886 --> 01:58:05.826
+Porque no final é basicamente um computador executando ali as instruções
+
+1789
+01:58:05.846 --> 01:58:09.806
+que tu definiu na pipeline. Desde que ele tenha o Docker, tu
+
+1790
+01:58:09.826 --> 01:58:13.246
+não vai ter problema nenhum em executar ali um teste de integração com o teste de
+
+1791
+01:58:13.326 --> 01:58:15.426
+container utilizando o Docker e tudo mais.
+
+1792
+01:58:16.526 --> 01:58:17.306
+Entendi.
+
+1793
+01:58:17.406 --> 01:58:17.686
+Mas eu
+
+1794
+01:58:18.506 --> 01:58:21.886
+monto aqui, eu faço um teste, eu vou ver se eu consigo com
+
+1795
+01:58:22.386 --> 01:58:24.706
+uma pipeline do Azure DevOps. Eu
+
+1796
+01:58:25.806 --> 01:58:29.706
+vou ver se no GitHub Actions eu consigo ter acesso ao Docker, que
+
+1797
+01:58:29.746 --> 01:58:32.746
+aí eu faço um teste e a gente vê junto isso executando na pipeline.
+
+1798
+01:58:33.286 --> 01:58:35.146
+Hoje eu uso Azure DevOps.
+
+1799
+01:58:35.246 --> 01:58:35.946
+Boa.
+
+1800
+01:58:36.466 --> 01:58:36.896
+Então,
+
+1801
+01:58:38.126 --> 01:58:41.786
+gostaria de ver, por exemplo, se possível, no Azure DevOps.
+
+1802
+01:58:42.446 --> 01:58:45.426
+Tá, eu vou montar um exemplo e daí a gente vê junto aqui, sem problema nenhum.
+
+1803
+01:58:45.986 --> 01:58:46.486
+Obrigado.
+
+1804
+01:58:46.966 --> 01:58:47.666
+Imagina, Márcio.
+
+1805
+01:58:49.186 --> 01:58:53.166
+Eu vi que o Marcelo comentou que nunca usou, o Gabriel também, o Márcio
+
+1806
+01:58:53.206 --> 01:58:57.006
+nunca utilizou, então acho que vai ser bem rica a aula de segunda-feira pra
+
+1807
+01:58:57.066 --> 01:59:00.846
+gente pegar e ver como faz na prática mesmo.
+
+1808
+01:59:01.606 --> 01:59:02.126
+Manda aí, Igor.
+
+1809
+01:59:03.926 --> 01:59:07.826
+São duas perguntas. Eu também não utilizei, não.
+
+1810
+01:59:07.986 --> 01:59:11.146
+Minha primeira pergunta é sobre a pipeline.
+
+1811
+01:59:11.986 --> 01:59:13.026
+O teste de integração,
+
+1812
+01:59:14.026 --> 01:59:16.526
+você roda na pipeline de produção também?
+
+1813
+01:59:16.846 --> 01:59:19.946
+Na pipeline de produção, ou você só
+
+1814
+01:59:19.986 --> 01:59:23.926
+roda nas pipelines de testes?
+
+1815
+01:59:23.946 --> 01:59:26.646
+Por exemplo, aqui no meu caso, eu tenho três tipos de pipeline.
+
+1816
+01:59:26.666 --> 01:59:30.386
+Eu tenho dois ambientes de teste e tenho um ambiente de
+
+1817
+01:59:30.406 --> 01:59:30.866
+produção.
+
+1818
+01:59:32.976 --> 01:59:33.446
+É
+
+1819
+01:59:35.166 --> 01:59:39.126
+preferível que tu sempre faça numa branch que vai
+
+1820
+01:59:39.146 --> 01:59:40.986
+deployar teu código pra algum ambiente.
+
+1821
+01:59:41.746 --> 01:59:45.046
+É que aí vai um pouco da tua estratégia de branching, Igor.
+
+1822
+01:59:45.366 --> 01:59:46.946
+Por que eu digo isso?
+
+1823
+01:59:53.526 --> 01:59:57.386
+Provavelmente tu deves usar alguma coisa com Git flow, tu deves ter uma
+
+1824
+01:59:57.406 --> 02:00:01.186
+branch que reflete o teu ambiente de desenvolvimento, tu deves ter uma
+
+1825
+02:00:01.226 --> 02:00:04.986
+outra branch que reflete teu ambiente de staging, tu deves ter outra branch
+
+1826
+02:00:05.006 --> 02:00:07.906
+que reflete teu ambiente de produção.
+
+1827
+02:00:08.466 --> 02:00:09.206
+Isso.
+
+1828
+02:00:09.246 --> 02:00:13.166
+Então, no teu caso, é ideal tu colocar esse teste de integração
+
+1829
+02:00:13.186 --> 02:00:15.595
+em cada uma dessas tuas branches.
+
+1830
+02:00:15.595 --> 02:00:15.595
+Entendi.
+
+1831
+02:00:16.246 --> 02:00:19.726
+O teste de integração na main não vai usar dados
+
+1832
+02:00:19.866 --> 02:00:23.846
+de produção. Ele só vai garantir que toda vez que tu fizer um merge
+
+1833
+02:00:23.886 --> 02:00:26.666
+pra main, tu vais executar o teu teste de integração.
+
+1834
+02:00:27.526 --> 02:00:31.486
+Porque hoje, Igor, por exemplo, quando tu precisas fazer um hotfix, que é
+
+1835
+02:00:31.506 --> 02:00:32.606
+uma correção em produção,
+
+1836
+02:00:33.666 --> 02:00:37.346
+tu faz a tua branch a partir da main ou tu faz a tua branch a partir
+
+1837
+02:00:37.386 --> 02:00:38.406
+da develop?
+
+1838
+02:00:40.186 --> 02:00:41.346
+Da main.
+
+1839
+02:00:41.406 --> 02:00:43.485
+Da main. E aí tu vai entregar isso na main.
+
+1840
+02:00:43.546 --> 02:00:47.366
+Se tu tiveres só o teu pipeline rodando na develop, por exemplo, ele não vai
+
+1841
+02:00:47.406 --> 02:00:49.846
+validar se a tua entrega está fazendo na main.
+
+1842
+02:00:50.186 --> 02:00:51.126
+Isso.
+
+1843
+02:00:51.166 --> 02:00:51.566
+Entendeu?
+
+1844
+02:00:52.906 --> 02:00:55.726
+E tipo que nem eu te comentei, isso é porque tu usa o Git flow.
+
+1845
+02:00:55.786 --> 02:00:59.446
+Se tu usasse uma estratégia de trunk-based, tu só tem uma
+
+1846
+02:00:59.506 --> 02:01:03.066
+branch daí. A tua main representa todos os ambientes.
+
+1847
+02:01:03.126 --> 02:01:07.106
+Então aqui não tem como tu fugir disso, tu não precisa ter essa preocupação, porque
+
+1848
+02:01:07.146 --> 02:01:08.586
+tu só tem uma branch de entrega.
+
+1849
+02:01:09.746 --> 02:01:11.706
+Entendi. Legal, massa.
+
+1850
+02:01:12.786 --> 02:01:15.086
+Vai lá.
+
+1851
+02:01:15.606 --> 02:01:15.986
+Pode falar.
+
+1852
+02:01:16.606 --> 02:01:20.206
+Eu ia comentar que o Jonathan comentou que ele roda os testes na criação do
+
+1853
+02:01:20.306 --> 02:01:23.926
+PR. É justamente nesse momento que a gente tem que rodar o teste de
+
+1854
+02:01:23.966 --> 02:01:27.886
+integração. No momento que a gente está submetendo a pull request, e
+
+1855
+02:01:27.906 --> 02:01:31.326
+não no momento que a gente já entregou na master, porque senão aí a gente pode
+
+1856
+02:01:31.366 --> 02:01:32.186
+bloquear a esteira.
+
+1857
+02:01:33.226 --> 02:01:33.786
+Boa, também.
+
+1858
+02:01:33.806 --> 02:01:36.425
+Entendeu? Eu evito, por exemplo, pensa que tu
+
+1859
+02:01:37.866 --> 02:01:41.846
+vais executar o teste de integração só a partir do momento que o
+
+1860
+02:01:41.886 --> 02:01:45.486
+código já está na master. Só que se o teste quebra,
+
+1861
+02:01:46.606 --> 02:01:49.586
+tu já não consegue publicar, porque tu não garante que o comportamento está
+
+1862
+02:01:49.646 --> 02:01:53.626
+correto. Se tu bota isso na criação do PR, tu está
+
+1863
+02:01:53.666 --> 02:01:57.446
+prevenindo que aquele código que quebrou vá pra master, ou seja, ele só
+
+1864
+02:01:57.486 --> 02:02:01.086
+vai ser merjado quando de fato ele passou nos testes de
+
+1865
+02:02:01.106 --> 02:02:05.016
+integração. Mas nada impede também, Igor, de tu rodar
+
+1866
+02:02:05.106 --> 02:02:08.946
+de novo o teste de integração quando tiver entregue na main, porque aí tu
+
+1867
+02:02:08.986 --> 02:02:12.586
+consegues validar com outras funcionalidades, talvez que estavam com pull requests
+
+1868
+02:02:12.666 --> 02:02:16.618
+abertosE na empresa que eu atuei como tech lead,
+
+1869
+02:02:16.818 --> 02:02:20.618
+uma estratégia que a gente fez foi essa, a gente só rodava na criação do PR,
+
+1870
+02:02:21.278 --> 02:02:25.058
+porque a partir do momento que eu garanto que aquele código está passando ali
+
+1871
+02:02:25.098 --> 02:02:29.018
+em tempo de pull request, eu posso mergar isso
+
+1872
+02:02:29.078 --> 02:02:31.398
+com tranquilidade na main, porque ele não vai quebrar.
+
+1873
+02:02:31.418 --> 02:02:35.168
+Eu já tive o teste que rodou e garantiu o comportamento.
+
+1874
+02:02:36.038 --> 02:02:39.838
+Então eu não tenho esse problema. É sempre bom colocar ali
+
+1875
+02:02:39.938 --> 02:02:43.198
+como um requisito para conseguir mergear o pull request.
+
+1876
+02:02:43.558 --> 02:02:45.078
+Legal, Márcio, entendi. Muito obrigado.
+
+1877
+02:02:45.498 --> 02:02:45.997
+Imagina.
+
+1878
+02:02:50.698 --> 02:02:51.998
+Boa, pessoal, mais alguma dúvida?
+
+1879
+02:03:05.858 --> 02:03:07.098
+Fala, Jorge. Boa noite.
+
+1880
+02:03:07.418 --> 02:03:11.148
+Bruno, boa noite. Não sei se você já comentou hoje, eu perdi um trecho da aula,
+
+1881
+02:03:11.878 --> 02:03:13.738
+mas você chegou a comentar sobre TDD?
+
+1882
+02:03:15.378 --> 02:03:19.228
+Eu não cheguei a comentar sobre o TDD, Jorge, porque é uma prática que a gente não
+
+1883
+02:03:19.318 --> 02:03:20.318
+adota muito aqui.
+
+1884
+02:03:21.138 --> 02:03:24.538
+E eu nunca vi nenhum cliente adotar isso de forma
+
+1885
+02:03:24.598 --> 02:03:25.398
+bem-sucedida.
+
+1886
+02:03:26.918 --> 02:03:27.398
+É até uma
+
+1887
+02:03:28.478 --> 02:03:31.778
+coisa que na empresa, quando a gente estudou a respeito, a gente
+
+1888
+02:03:32.598 --> 02:03:35.278
+viu que devia ser até um pouco complexo pra gente.
+
+1889
+02:03:35.298 --> 02:03:36.958
+A gente falou: "Como que a gente vai conseguir
+
+1890
+02:03:38.058 --> 02:03:40.578
+desenvolver os testes antes mesmo de ter
+
+1891
+02:03:41.198 --> 02:03:44.858
+criado as regras?" Era um
+
+1892
+02:03:44.898 --> 02:03:48.348
+desafio que a gente viu e a gente acabou não conseguindo seguir.
+
+1893
+02:03:48.618 --> 02:03:51.558
+E eu até tinha curiosidade de como que era a adoção disso no
+
+1894
+02:03:51.598 --> 02:03:53.078
+mercado.
+
+1895
+02:03:53.158 --> 02:03:56.878
+É bem baixa. Bem, sinceramente, Jorge, eu nunca vi uma empresa que
+
+1896
+02:03:57.138 --> 02:03:59.318
+implementou TDD mesmo assim.
+
+1897
+02:03:59.358 --> 02:04:00.858
+Sim.
+
+1898
+02:04:01.518 --> 02:04:03.638
+Ainda mais hoje que a IA escreve o teste pra ti.
+
+1899
+02:04:03.838 --> 02:04:07.138
+Entendi.
+
+1900
+02:04:07.578 --> 02:04:10.818
+Na teoria é muito bonito, mas na prática é pouca gente que
+
+1901
+02:04:10.878 --> 02:04:11.838
+usa.
+
+1902
+02:04:11.878 --> 02:04:12.438
+Entendi.
+
+1903
+02:04:13.338 --> 02:04:15.318
+Beleza. Valeu.
+
+1904
+02:04:15.638 --> 02:04:15.998
+Imagina.
+
+1905
+02:04:20.478 --> 02:04:21.418
+Fechou então, galera.
+
+1906
+02:04:26.378 --> 02:04:30.278
+Maravilha. Segunda-feira a gente volta com
+
+1907
+02:04:30.298 --> 02:04:33.778
+esse tema e a gente vai fazer um testezinho do zero.
+
+1908
+02:04:33.858 --> 02:04:37.418
+E fiquei feliz em saber que tem bastante gente aqui que nunca trabalhou com teste
+
+1909
+02:04:37.468 --> 02:04:40.678
+de integração, que daí a aula se torna mais rica ainda.
+
+1910
+02:04:41.058 --> 02:04:44.338
+E eu vou tentar fazer aquela pipeline, Márcio, pra gente ver isso rodando numa
+
+1911
+02:04:44.378 --> 02:04:44.898
+pipeline.
+
+1912
+02:04:46.698 --> 02:04:47.058
+Beleza.
+
+1913
+02:04:48.507 --> 02:04:52.218
+Quero implementar isso aqui no sistema, acho que vai ser legal.
+
+1914
+02:04:52.278 --> 02:04:55.858
+Eu vi, eu acho que eu estava na aula que tu comentou que tu começou com o MVP, o
+
+1915
+02:04:55.878 --> 02:04:59.858
+sistema cresceu e agora tu está tentando, que é mais ou menos
+
+1916
+02:04:59.898 --> 02:05:02.058
+o que eu falei de como testar o código legado.
+
+1917
+02:05:02.578 --> 02:05:06.518
+Eu acho que o teste de integração pra ti é muito mais valioso, do que tu
+
+1918
+02:05:06.598 --> 02:05:10.148
+sair querendo botar teste de unidade, justamente por tu ter uma amplitude maior,
+
+1919
+02:05:11.198 --> 02:05:15.108
+o teu teste de integração tem um alcance muito maior do que um teste de unidade.
+
+1920
+02:05:16.518 --> 02:05:20.438
+Isso. Bacana, porque o sistema cresceu, mas foi um
+
+1921
+02:05:20.458 --> 02:05:24.158
+sistema que eu mesmo fiz, eu fiz praticamente sozinho.
+
+1922
+02:05:24.168 --> 02:05:25.558
+Então eu conheço o sistema inteiro.
+
+1923
+02:05:26.318 --> 02:05:30.118
+Agora eu quero adotar as melhores práticas, agora que eu conheço as
+
+1924
+02:05:30.158 --> 02:05:33.108
+regras de negócio, as regras de negócio já foram
+
+1925
+02:05:33.158 --> 02:05:36.878
+absorvidas. Então como eu conheço todas as regras,
+
+1926
+02:05:37.378 --> 02:05:39.858
+pra mim acho que vai ser mais fácil fazer essa
+
+1927
+02:05:39.918 --> 02:05:42.078
+reorganização.
+
+1928
+02:05:42.138 --> 02:05:42.758
+Com certeza.
+
+1929
+02:05:43.858 --> 02:05:47.338
+Eu só estou pensando, nesse meu método, igual a aula
+
+1930
+02:05:47.418 --> 02:05:50.578
+passada foi sobre refatoração também,
+
+1931
+02:05:51.358 --> 02:05:55.018
+eu só estou pensando se eu vou pegar o mesmo projeto e vou
+
+1932
+02:05:55.158 --> 02:05:57.778
+começar, eu quero fazer com o vertical slice,
+
+1933
+02:05:58.758 --> 02:06:02.618
+eu estou na dúvida ainda se eu vou pegar o mesmo projeto, adoto o vertical
+
+1934
+02:06:02.718 --> 02:06:06.598
+slice nele, ou se eu crio um projeto separado, começo a
+
+1935
+02:06:06.678 --> 02:06:10.338
+refazer tudo organizadinho e as
+
+1936
+02:06:11.698 --> 02:06:15.618
+telas que eu for migrando eu já começo a fazer chamada pro novo
+
+1937
+02:06:16.178 --> 02:06:16.758
+endpoint.
+
+1938
+02:06:17.418 --> 02:06:18.238
+Sim.
+
+1939
+02:06:18.258 --> 02:06:21.838
+Acredito que esse vai ser o melhor caminho.
+
+1940
+02:06:21.918 --> 02:06:25.658
+Se tu ir pela primeira opção, eu te indico fazer um teste de integração,
+
+1941
+02:06:25.878 --> 02:06:29.698
+justamente pra tu conseguir fazer essa refatoração de forma mais tranquila.
+
+1942
+02:06:32.817 --> 02:06:35.778
+Certo, estou projetando sim, vai dar certo.
+
+1943
+02:06:37.138 --> 02:06:37.638
+Maravilha.
+
+1944
+02:06:39.498 --> 02:06:42.498
+Então tá, pessoal. Nos vemos na segunda-feira novamente.
+
+1945
+02:06:43.838 --> 02:06:45.778
+Boa noite pra vocês, gente. Até mais.
+
+1946
+02:06:45.818 --> 02:06:46.938
+Boa noite, até mais.
+
+1947
+02:06:47.118 --> 02:06:49.558
+Falou, boa noite, tchau. Valeu, pessoal. Boa noite.
+
+1948
+02:06:50.038 --> 02:06:51.578
+Boa noite, pessoal. Tchau.

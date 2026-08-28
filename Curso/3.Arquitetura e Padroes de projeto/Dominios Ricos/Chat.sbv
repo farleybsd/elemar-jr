@@ -1,0 +1,51 @@
+00:24:47.644,00:24:50.644
+Natan Barros: Depende do comportamente também né, possivelmente o comportamento ai seria diferente ai faria sentido sim ter classes diferentes
+
+00:26:03.922,00:26:06.922
+Natan Barros: As vezes muitos casos utilizam um serializador que tem que expor esse construtor
+
+00:36:31.495,00:36:34.495
+Natan Barros: Temos algo parecido aqui, porém com strategies. Mas nesse caso só seria um método mesmo.
+
+00:39:17.613,00:39:20.613
+Natan Barros: Chaos
+
+01:24:38.155,01:24:41.155
+Marcelo Henrique: EU N CONHEÇO
+
+01:25:00.390,01:25:03.390
+Ivan Parmigiani: não conheço, també.
+
+01:29:15.617,01:29:18.617
+Natan Barros: Utilizei para trace por aqui tbm
+
+01:32:58.434,01:33:01.434
+Natan Barros: Uso esse ai, ele é muito bom
+
+01:33:30.748,01:33:33.748
+Natan Barros: Particulamente, gosto muito desse padrão, não acho complexo e deixa o código bem clean para esses cenários.
+
+01:38:32.743,01:38:35.743
+Natan Barros: Estou curioso como vc vai abordar chain com injeção de dependencia, quero ver se fiz algo aceitavel kk
+
+01:39:39.397,01:39:42.397
+Natan Barros: É que ele não controla a ordem
+
+01:45:25.135,01:45:28.135
+Francisco Schneider: https://github.com/eximiaco/decorator-net
+
+02:04:02.244,02:04:05.244
+Natan Barros: Ele é muito confundido com o Adapter
+
+02:04:48.951,02:04:51.951
+Natan Barros: Aqui é bem isso que vc comentou kk, handler, service...
+
+02:05:59.571,02:06:02.571
+Natan Barros: Proxy
+
+02:17:06.226,02:17:09.226
+Eduardo Kubota: vai trocar 6 por meia dúzia... kkk
+
+02:24:46.948,02:24:49.948
+Natan Barros: Boa, valeu turma, boa noite.
+

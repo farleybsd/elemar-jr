@@ -1,0 +1,99 @@
+00:05:59.698,00:06:02.698
+Lucas Pereira: Quem fez fez kkk
+
+00:21:24.895,00:21:27.895
+Anderson Perim: Vou escrever aqui porque está um pouco de barulho aqui. Temos um site antigo no IIS e microservicos com k8s e kong
+
+00:23:31.076,00:23:34.076
+Anderson Perim: Eu uso
+
+00:23:57.053,00:24:00.053
+Anderson Perim: 100% em uma aplicação nova
+
+00:24:53.801,00:24:56.801
+Anderson Perim: Eu tenho vários arquivos usando extensão
+
+00:56:19.206,00:56:22.206
+Renan Martins: identação
+
+01:42:33.611,01:42:36.611
+Vanderlei Henrique: outbox
+
+01:43:42.765,01:43:45.765
+Vanderlei Henrique: leader election ou estratégias de locks
+
+01:56:30.744,01:56:33.744
+Vanderlei Henrique: Eu uso Channels, antes usava ConcurrencyQueue
+
+02:23:55.810,02:23:58.810
+Gabriel kohlrausch: LinqKit
+
+02:30:07.819,02:30:10.819
+wallace silva: eu uso hoje o id do tenant no JWT,
+
+02:32:42.728,02:32:45.728
+Anderson Perim: Exemplo usando o LinqKit
+
+02:32:47.181,02:32:50.181
+Anderson Perim: public async Task<PagedResult<VehiclePagedListItemDTO>> Handle(ListVehiclesQuery request, CancellationToken cancellationToken)
+  {
+      ArgumentNullException.ThrowIfNull(request);
+
+      Expression<Func<OrderItem, bool>> predicate = PredicateBuilder.New<OrderItem>(true);
+	  
+	  if (!identityService.IsAdmin())
+	  {
+		 // Remove after PBI for Dealer Access Control
+		 int[] dealerStatus = [(int)OrderStatusType.Created, (int)OrderStatusType.Builded, (int)OrderStatusType.InStock];
+		 predicate = predicate.And(a => !dealerStatus.Any(b => b == a.OrderStatusId));
+	  }
+	  
+	  if (!string.IsNullOrEmpty(request.VehicleModel))
+	  {
+		   predicate = predicate.And(a => EF.Functions.ILike(a.OrderItemVehicle!.Vehicle!.ModelDescription!, $"%{request.VehicleModel}%")
+				|| EF.Functions.ILike(a.OrderItemVehicle!.Vehicle!.ModelCode!, $"%{request.VehicleModel}%"));
+	  }
+	  
+	  ....
+	  
+	   IQueryable<VehiclePagedListItemDTO> result =
+			 from a in context.OrderItems.AsNoTracking().AsExpandable().Where(predicate)
+			 from l in a.OrderStatus!.OrderStatusLanguages.Where(x => x.Language.Code == "pt-br").DefaultIfEmpty()
+			 select new VehiclePagedListItemDTO
+			 {
+				 OrderId = a.OrderId,
+				 OrderItemId = a.Id,
+				 Chassis = a.ItemCode,
+				 Name = a.OrderItemVehicle!.Vehicle!.ModelDescription,
+				 InvoiceNumber = a.InvoiceNumber,
+				 EstimatedDeliveryDate = a.EstimatedDeliveryDate,
+				 IssuedAt = a.Order.IssuedAt,
+				 OrderCode = a.Order.OrderCode,
+				 Status = l.Description!,
+				 OrderStatusId = a.OrderStatusId,
+				 ItemType = a.ItemType,
+				 CustomerName = a.Order.CustomerName,
+				 BillingCustomerName = a.OrderSalesTypeId == 1 && a.BillingOwnerCustomerDivisionId.HasValue ? a.BillingOwnerCustomerDivision!.Name : a.BillingCustomerDivision!.Name,
+				 BillingCustomerDivisionCode = a.OrderSalesTypeId == 1 && a.BillingOwnerCustomerDivisionId.HasValue ? a.BillingOwnerCustomerDivision!.DivisionCustomerCode : a.BillingCustomerDivision!.DivisionCustomerCode,
+				 BillingCustomerCode = a.BillingCustomerDivision!.DivisionCustomerCode,
+				 CarrierID = a.CarrierDivision!.DivisionCode
+			 };
+		
+		return await result.PageQuery(request, "EstimatedDeliveryDate desc, Chassis", cancellationToken: cancellationToken);
+  }
+
+02:45:33.513,02:45:36.513
+Reinaldo Rodrigues: Pessoal...  
+As dicas de hoje foram ótimas. 
+Preciso me ausentar. 
+Boa noite a todos...
+
+02:57:00.401,02:57:03.401
+wallace silva: uso o vibecode pro layout básico rs com tailwind
+
+02:58:27.124,02:58:30.124
+wallace silva: maujor
+
+03:02:34.294,03:02:37.294
+wallace silva: deploy na sexta? kkkk
+

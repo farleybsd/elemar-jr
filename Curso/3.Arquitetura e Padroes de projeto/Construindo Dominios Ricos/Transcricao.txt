@@ -1,0 +1,795 @@
+00:00:00
+ 
+Farley Souza: Boa noite.
+Igor Romulo: Boa noite. Boa noite.
+Ivan Parmigiani: Boa noite,
+Farley Souza: Vocês estão bom, né? Ô, aproveitar aqui fazer uma pergunta para vocês.
+Fabio Diniz: Ótimo.
+Farley Souza: Marcaram uma entrevista para minha manhã feita por Iá. Alguém já fez uma loucura dessa? Iá te entrevistando.
+Fabio Diniz: Eu nunca participei não, cara.
+Farley Souza: Pois é, eu tô até meio assim. Eu tô achando que até golpe, velho. Nunca vi isso. Você fazer uma entrevista técnica con loucura, né? É. Agora não sei se é para pior, né?
+Fabio Diniz: evoluindo.
+Farley Souza: Vamos ver mais que dado
+Rafael Mendonça: A entrevista não,
+Farley Souza: aí.
+Rafael Mendonça: mas a seleção de de CV já é por IA. Já tem um tempo já.
+Farley Souza: É, não,
+Fabio Diniz: Ah, isso é isso aí,
+Farley Souza: a mulher colocou aqui,
+Fabio Diniz: sim.
+Farley Souza: ó, ó, a mensagem dela. Boa noite. Gostaria de falar que você passou paraa próxima etapa. Essa etapa de entrevista técnica será conduzida pela nossa Lila, que tem duração em média de 1 hora.
+ 
+ 
+00:01:37
+ 
+Farley Souza: Você consegue realizar até amanhã às 9? Aí, que loucura.
+Fabio Diniz: Coloca seu para conversar com deles.
+Farley Souza: Imagina que que que loucura que vai ser
+Fabio Diniz: Ja.
+Farley Souza: Угу.
+Fabio Diniz: Pessoal, só aguardar só mais um minutinho até mais gente entrar. Acredito que já tem quase todo mundo aqui. M.
+Farley Souza: Meu Deus, a entrevista é uma hora. Que que eu vou falar? Uma hora para ir.
+Fabio Diniz: Hã. Bom, vamos lá, pessoal. parar tudo. M.
+Rafael Dias: Opa, boa noite. Bom,
+Fabio Diniz: Boa noite.
+Rafael Dias: beleza.
+Fabio Diniz: Tudo certo?
+Rafael Dias: Certo.
+Fabio Diniz: Bom, vamos lá, pessoal. Boa noite a todos. Espero que estejam todos bem. Hoje a gente vai falar um pouco sobre domínio, eh, como construir domínios ricos, né? Dando sequência aí a nossas a nossas aulas. Então, o primeiro ponto que a gente quer tratar, que a gente vai tratar aqui hoje é o que que é um código legado, né? O que que a gente aqui na na exima entende como um código eh legado?
+ 
+ 
+00:05:45
+ 
+Fabio Diniz: Então, o código legado não é apenas um código, né, antigo ou mal escrito. É um é um código que já não compreendemos totalmente. Pode até ter testes e boa estrutura, mas sem clareza, confiança e contexto. Qualquer sistema se torna difícil e arriscado de evoluir, tá? Então, qualquer sistema em produção é um código legado, né? qualquer código escrito há mais de de um mês é um código legado. Bom, isso não diz muita coisa, né, sobre o código em si, né? Portanto, a gente não pode ser utilizado de uma de uma maneira objetiva pra gente dizer se um código é legado. Então, o código que requer um esforço eh significativo para ser mantido. Então, o sistema ele se torna legado quando a nossa capacidade de pagar as dívidas técnicas é menor do que a necessidade de contrair novas. Ou seja, o software ele evolui com o tempo, né? é natural, né, que o software ele ele evolua, que ele eh tenha novas necessidades de features, de funcionalidades. Isso vai surgindo. Então, quando a nossa capacidade de pagar as dívidas que já existem, né, ela é menor do que a capacidade da gente absorver novas novas no sentido de tendo novas features e funcionalidades entrando, a gente sabe que não dá para construir um software perfeito.
+ 
+ 
+00:07:07
+ 
+Fabio Diniz: Então, essas novas fatures vão trazer novas dívidas eh embutidas dentro dela e a gente não tem a capacidade nosso de esforço eh contrair novas dívidas já tá menor do que pagar as a a as que a gente eh possui. Ou seja, o nosso software tá se degradando, né? Ah, ao longo do tempo ele a gente tá a gente não tá conseguindo evoluir ele da maneira eh adequada. E a gente vai para algumas abordagens, né? Qual é? Beleza? Dado que a gente eh voltar aqui antes, dado que a gente tem que trabalhar com software legado, isso não é um, né, a gente, infelizmente, não dá para não, não vou trabalhar com esse software mais essa opção existe, né? Na maioria dos casos, a gente tem que ter, a gente tem que buscar algumas estratégias que a gente consiga trabalhar com esse código da melhor forma possível, tá? Aí, eh, reescrever tudo, né, é uma opção, né? Ou seja, fazer o código do zero é uma opção. O o código ser totalmente reescrito, seja por conta de uma tecnologia nova, seja por conta de eh que mudou o time, um time tem uma uma proficiência e às vezes numa outra linguagem, né? A gente tem que lembrar que o código ele ele deve ser visto sobre a perspectiva de negócio, certo?
+ 
+ 
+00:08:25
+ 
+Fabio Diniz: Antes de tudo, porque no final das contas o software serve para atender alguma necessidade que o negócio tem. Então, a gente não pode trazer, né, as complexidades, eh, técnicas pro mundo de negócio, né, na maioria das vezes, eh, são e somos nós mesmos que embutimos isso dentro do código, né, não é uma um problema de negócio em si. Então, o negócio normalmente, né, não tá muito interessado, entre aspas, quando a gente tá usando um banco X ou Y, uma solução X ou Y. Então, rescrever tudo normalmente não é uma boa abordagem. Pera aí que tem mais gente chegando aqui, tá? A gente tem que lembrar sempre o seguinte, o código ele é um passivo, tá? E funcionalidade ele é um ativo. Então, como que a gente mede, né, um sucesso da entrega de um software, né? Quando um software eh quando a gente entrega mais funcionalidades do que códigos, tá? Essa relação que indica pra gente o sucesso da entrega. Porque de novo sobre a perspectiva de negócios para negócio importa software funcionando, software entregando valor, software que resolve os problemas eh foi que ele foi designado a resolver. Então, quando a gente pensa em reescrever tudo, basicamente a gente tá dizendo o seguinte: "Olha, a gente tá mantendo, certo? Quando a gente eh pensando somente na reescrita,
+ 
+ 
+00:09:49
+ 
+Fabio Diniz: tá, pessoal? Ou seja, nós não estamos eh a gente tem um conjunto de de funcionalidades que existem e estamos reescrevendo esse mesmo conjunto de funcionalidades. Eu não estou adicionando nada novo. Então eu tô dizendo que eu não eu não estou entregando nada de novo. Não tô entregando nenhuma funcionalidade, nenhuma feature, nada de novo. Em contra partida, eu estou entregando muito código novo. Por quê? Porque eu tô fazendo do zero, obviamente. Então estou escrevendo muito código. Então eu tô aumentando o passivo, né? o meu passivo, eu estou aumentando ele sem aumentar o ativo. Ou seja, isso não é não é uma boa boa abordagem. Ah, quer dizer que nunca deve ser usado? Não, de novo, a gente entender quais estratégias eh são possíveis serem utilizadas e eh verem em cada eh cenário o que que faz sentido, certo? Normalmente reescrever não é uma boa não é uma boa estratégia, tá? Eu já passei por umas duas, três reis escritas totais e nenhuma delas funcionou, tá? Nenhuma delas eh vingou, nenhuma delas deu certo, tá? Por quê? N problemas. No meio do caminho a gente descobre um monte de coisa que a gente não lembrava.
+ 
+ 
+00:10:59
+ 
+Fabio Diniz: Tem um monte de funcionalidade que tava quebrada no antigo e aí na hora de ir pro novo tem que tá funcionando, porque ah, vocês não falaram que estão reescrevendo justamente para ser melhor o código, então tem que funcionar, né? Ou seja, ah, mas então eu tô entregando a funcionalidade nova. Não, funcionalidade já existia, só não funcionava. É só um minutinho, pessoal. Tocou aqui o interfone. Pessoal, peço perdão, vou precisar de descer ali 5 minutinhos. Chegou uma encomenda aqui que, infelizmente, no pior horário possível não tem como não receber. Beleza? 5 minutos eu retorno aqui. Vamos lá, pessoal. Novamente aí, mil perdões aí, mas felizmente um contratempo. Bom, conforme nós estávamos falando, né? Eh, quando a gente tá falando em reescrever todo o código, tem vários problemas que às vezes a gente não percebe, né? Então, funcionalidades que já existiam, mas não funcionavam direito. Então, o time de negócio entende, né, na cabeça deles que que faz sentido,
+Farley Souza: Vamos.
+Fabio Diniz: né, na verdade, se a gente tá reescrevendo, né, se a gente tá fazendo do zero, aquela funcionalidade deve funcionar.
+ 
+ 
+00:19:17
+ 
+Fabio Diniz: Tem vários problemas que a gente passou ao longo da construção do do legado que ele acaba tendo eh acabou ficando eh esquecido dentro do código, né? E como é que é? Desculpa, tem alguém mandando aqui. Já aceitei quem tá entrar.
+Igor Romulo: F tá gravando.
+Fabio Diniz: Sim, tá gravando. Então, tem alguns detalhes também de implementação, algumas coisas que a gente for, decisões foram tomadas que às vezes elas não estão documentadas, mas elas estão de certa forma documentadas em código, né, em como foi escrito o próprio software e tudo isso tá ali e a gente às vezes não percebe. Então, eh, a reescrita, ela tem um monte de questões que às vezes a gente não se atenta. Eh, e um ponto importantíssimo, a gente acha porque tá reescrevendo que a gente tá utilizando provavelmente tecnologias novas e tudo mais, que a gente vai tomar as melhores decisões nesse momento e não vai, a gente vai acabar tomando algumas decisões que não são as melhores. E novamente, no último de negócio vai ter um vai criar uma expectativa muito alta eh numa reescrita e às vezes isso não se concretiza da melhor maneira possível. Então assim, tem vários n cenários ali que podem acontecer numa reescrita de de um software como um todo, tá?
+ 
+ 
+00:20:43
+ 
+Fabio Diniz: Então, na prática é isso, né? Quando a gente tá tendo um aumento de passivo muito grande, um aumento de ativo eh nenhum, a gente acaba entregando nenhum benefício, tá? De novo, não são todos os cenários, né? Pode podem ter cenários que a reescrita é inevitável, né? Mas eh no geral é uma estratégia que a gente pode utilizar, mas a gente tem que ter bastante eh fazer bastante análise, planejar muito bem pra gente ter não ter problemas. Então abordagem preferível, né, a gente fazer eh refaturar ã código legado, certo? a gente buscar algumas estratégias que a gente vai eh de maneira eh iterada e contínua, sucessiva, fazendo refatorações que a gente vai evoluindo o nosso código, certo? Com entregas de valor para negócio. Por que que essa abordagem ela é preferível, né? Porque a gente, primeiro que a gente reduz o escopo, né? Normalmente a gente consegue eh pegar um escopo menor, né? Porque se a gente for fazer uma reescrita, eh, também, né? depende do caso, mas normalmente a gente vai fazer do do software inteiro. Quando a gente faz uma refatoração, a gente consegue isolar pequenos contextos, pequenas partes do código.
+ 
+ 
+00:21:52
+ 
+Fabio Diniz: Então a gente faz uma melhoria naquela área. Então a carga cognitiva da gente trabalhar com aquela aquele pedaço de software é menor, né? A chance da gente eh fazer coisas eh erradas, vamos dizer assim, que tenham grandes impactos, é menor, né? E a gente também o tempo pra gente fazer aquilo, né? pra gente fazer essa refatoração tende a ser menor do que a gente reescrever um software inteiro, né? E aí acaba que o negócio consegue eh ver aquela aquela melhoria, vamos dizer assim, eh mais rápido, inclusive para ajudar a testar, né? Para ver, pô, fizemos aquela refaturação de um módulo, de um pedaço do código, enfim. Eh, e agora a gente precisa de testar, a gente precisa de validar se isso tá, se a entrega tá tá tá dentro do do esperado. Então, essas eh essa abordagem ela é mais iterativa, né? Então, a gente consegue fazer uma uma entrega melhor, tá? Então, quando eh a reescrita, né, ele ela se torna algo eh aceitável, né, quando o projeto não é rentável, ou seja, aquele projeto ele já não dá dinheiro, ele já não traz eh recurso pra empresa, certo? Certo? Então é indiferente, né, que esse é um ponto também que a gente tem que levar em consideração, né?
+ 
+ 
+00:23:08
+ 
+Fabio Diniz: Se a gente tem um software que é um software, por exemplo, por isso que ele não seja o principal da empresa, mas ele já é um software que traz algum retorno eh pra empresa e nem sempre o retorno financeiro, tá, pessoal, direto, tá? O às vezes ele atende uma área lá que não é uma área que gera receita, né? Mas ele ele entrega um valor eh substancial indiretamente que ajuda nos objetivos de negócio da da empresa. Então a gente às vezes tá na reescrita, né? Vamos supor que a gente tá fazendo a reescrita, o pessoal não tá trabalhando na em melhorias, porque não, para que que eu vou, se eu tô reescrevendo um software do zero, não faz muito sentido adicionar funcionalidades no legado, certo? No software que eu tô matando, né? Então, na teoria, né, a gente estaria parando eh a o desenvolvimento do do software antigo para criar o novo. Então, nesse meio tempo entre a gente fazer essa entrega, né, na teoria a a aquele software não tá entregando nada de novo. Isso é ruim. Então, quando o software já não é rentável, esse esse problema ele é menor ou ele é um software pequeno, né? Ele é tão pequeno que fazer essa reescrita, o tempo que a gente vai levar para fazer essa reescrita, né?
+ 
+ 
+00:24:20
+ 
+Fabio Diniz: O risco disso é muito baixo, então pode fazer sentido do que a gente ficar tentando buscar alternativas, fazer refatorações e tudo mais, acaba não compensando. Faz mais sentido a gente fazer a reescrita. Então aqui a gente tem que dentro da exí, né, a gente tem um manifesto e que a gente segue para para nos nortear, né, na na modernização eh de legados. Então, se a gente prefere seguir essa abordagem de sempre ir fazendo eh refatorações, entregas menores e tudo mais, com objetivo de fazer a modernização de um legado. Então, pra gente, né, resultados de negócio estão acima de resultados tecnológicos. Veja, acima de não quer dizer que é para fazer o resultado de negócio sempre em detrimento do resultado tecnológico, não é isso, né? a gente pode entregar resultado tecnológico, mas o resultado de negócio está assim, porque no final das contas quem vai utilizar o software é o time, é o time de negócio, é isso que vai entregar resultado pra empresa, é isso que vai trazer receita. Tendo mais receita, né, as coisas são bem mais simples, né? Então a gente buscar a abordagem iterativa e entregas parciais, né, acima de projetos de longa duração, que era o que é o que a gente tava falando aqui, né, entregas menores, né, pedaços menores de de trabalho tem uma carga cognitiva menor, então são mais fáceis de trabalhar, é mais rápido da gente entregar, é mais fácil depois de testar.
+ 
+ 
+00:25:42
+ 
+Fabio Diniz: Então a gente preferir isso. As surpresas que a gente vai encontrar tendem a ser menores, né? que a gente tá trabalhando com uma porção menor de de código. Eh, a gente trabalhar por componentes e capabilities, ao invés de fazer imigrações inteiras, vai muito nesse sentido também, né? A gente buscar eh isolar algum contexto, alguma funcionalidade, algo desse sentido e e trabalhar em cima dela ao invés de um de uma aplicação inteira. eh responsabilidade federada ao invés de controle centralizado, ou seja, a gente tentar trazer eh os times envolvidos, né, para participar, porque a gente não tomar decisões sozinhas, né, a gente ter o time de negócio próximo, os outros times, né, eh dependendo de como é a organização dentro da empresa, né, tem empresas que funcionam por squads, tem empresas que tem times e fechados, né, de alguma coisa, time desenvolvedor, time de banco de dados, enfim. Então, se for o caso, tentar trazer esse pessoal eh de outros times que vão ter impacto no na entrega do projeto para dentro, a gente preferir escalabilidade e resiliência acima de soluções eh temporárias, né? Ou seja, pô, se eu tô eh fazendo uma refateração, se eu tô buscando fazer uma modernização de um legado, certo?
+ 
+ 
+00:26:56
+ 
+Fabio Diniz: eu tenho a preocupação, né, de que eh a gente vai tá buscando eh reduzir o risco e o custo da mudança, né, ao longo do tempo. Então, a gente já buscar a ter um software eh escalável, resiliente, não é focar só nisso, né? Vamos ter sempre essa essa esse olho mais crítico, né? Não é focar só nisso, mas gente preparar o software para isso. Até aqui. OK, pessoal. Então, a gente vai tratar um pouco aqui, falar um pouco de modelos anêmicos, tá? Então, no no paradigma aí de orientação objetos, né? Que que é um objeto, né? Como que é formado o objeto? O objeto é formado por uma identidade, né? Algo que identifica unicamente aquele objeto. Ele é formado por um estado, né? Ou seja, um conjunto de propriedades ali que num determinado momento eh indicam qual que é o estado daquele objeto e um comportamento, né, que são as ações, as operações, os métodos que ele consegue que ele consegue eh executar no modelo anêmico, né, a gente tem dois duas dois formatos, né, a gente ou a gente tem um objeto que ele só contempla estado, ele só guarda estado e não tem comportamento. ou ele só tem comportamento, mas ele não guarda nenhum estado.
+ 
+ 
+00:28:19
+ 
+Fabio Diniz: Então, né, que são quando a gente tem ali o um só estado, né, os gter sectors ali são públicos. O comportamento é quando a gente tem algum stateless service, né? Ou seja, ele não guarda nenhum tipo de estado, ele faz operações e somente isso. Então, qual que são os problemas, né, na na adoção de modelos anêmicos? eh eles não cumprem, né, as ideias de um design orientado a objetos, né, não é esse o objetivo. Em projetos grandes, há uma tendência à duplicação de código e também eh uma dificuldade de encontrar comportamentos desejados, tá? Falta eh de encapsulamento. Por se eu tenho comportamento, se eu tenho objeto que só tem comportamentos, por exemplo, tende esse comportamento ele vazar, né? ele ele ele está espalhado pela nossa aplicação. Entraria aqui mais para frente sobre isso. E quais que são as vantagens, né? O código é um código mais intuitivo, tá? e mais fácil de ser implementado, pelo menos, né, no início. Então, né, se a gente tiver aí uma relação de horas trabalhadas por tempo, né, o modelo anêmico, no início a gente trabalha muito pouco para entregar eh eh código, mas no ao longo ao longo do tempo, né, mais paraa frente a gente vai acabar tendo problema, porque essa falta de encapsulamento acaba atrapalhando a gente na coesão, acaba atrapalhando a gente na com acoplamento, enfim.
+ 
+ 
+00:29:49
+ 
+Fabio Diniz: Então, a gente tem ali um um ponto X ali que de de encontro ali onde que o modelo rico ele acaba sendo mais vantajoso ao longo do tempo, tá? Só que a gente pode ter, né, a gente pode ter eh parte do do nosso domínio senêmico, né, e ele acabar conversando com o nosso domínio rico. Então aqui a gente tem um exemplo, né, de um esse anemic square aqui, né, que ele tem essa propriedade aí de lado side length, né, que é a tamanho da lateral. Ele é um é um é um objeto anêmico que só guarda estado, ou seja, ele não tem nenhum tipo de operação, ele simplesmente guarda o valor dessa propriedade ali em decimal. Embaixo a gente tem o o stateless service, né, que é um serviço que simples, um uma classe, né, que ela simplesmente a única coisa que ela faz é calcular eh a área. Então, a gente passa ali um um square e ele faz o cálculo da área. Ele não guarda os valores, ele não guarda o estado. Beleza, pessoal? As introduções aqui são importantes, mas a gente vai chegar lá no no ponto. Então a gente vai se falar um pouco aqui agora de um guia pra gente fazer essa refatoração, né? Algumas algumas coisas, tá?
+ 
+ 
+00:31:02
+ 
+Fabio Diniz: Falando de causa própria, que eu adorava refaturar código, tá? Então a gente tem que ter alguns cuidados, tá? Eh, o primeiro deles é não refaturar código, que não tá relacionado a nova funcionalidade aqui. Ficou até uma frase ruim, mas não relacionado. Se você trabalha com user store, por exemplo, não tá relacionado com a user store que você tá trabalhando nesse momento. Ou seja, na entrega que você tem que fazer agora. Se isso, se essa, se esse código não tá relacionado a isso, não mexa, tá? Por quê? você criar eh efeitos colaterais, você acabar introduzindo bugs novos e que atinjam outras partes que não é no que você tá trabalhando, a chance é muito grande e acaba que se você não tá, se isso impacta em outras partes do código que não é exatamente a funcionalidade que você eh tá trabalhando, a entrega que você tá trabalhando, muito provavelmente você não vai testar ou às vezes você nem vai perceber que essa alteração impactou nesses outros lugares. Então também não vai ter teste. mesmo que tenha uma suit de testes que garanta e tudo mais, né, pode acontecer de isso não ser ser pego, né, acabar não sendo pego. Eh, a não ser, né, qual que é a exceção disso?
+ 
+ 
+00:32:12
+ 
+Fabio Diniz: A não ser que a refatoração seja o produto final, ou seja, a minha entrega é fazer uma refaturação X, beleza? temos umas dívidas técnicas dentro do do do time. O time de tempos em tempos paga essas dívidas, para pagar essas dívidas ou ou pega algum alguns pedaços e vão fazendo o pagamento disso e colocou lá uma atividade que é a fazer a refraturação do módulo X, do componente Y para poder eh atacar a dívida técnica tal. OK? Ah, isso faz sentido. Beleza? Voltando aqui, né, que por que isso? Porque lembrando que quanto mais funcionalidade e menos código, melhor pra gente. Quanto mais software funcional e menos código nós escrevermos, melhor. Lembrando, né, pessoal, que código também, mesmo que a gente eh a gente tem que lembrar que a gente tem a manutenção dele, né? Então, quanto mais código eu escrevo hoje também, mais tendência no futuro el aquele código me gerar mais manutenção. Então, refatu sempre de forma incremental, sem sacrificar a qualidade do código, tá? Não se preocupe em entender como toda a aplicação funciona para apenas então aplicar aplicar refatorações, OK? Então, ou seja, tem algumas eh de novo sempre pedaços menores localizados.
+ 
+ 
+00:33:31
+ 
+Fabio Diniz: a gente pega uma porção menor do código, a chance da gente não precisar de entender o todo para poder fazer eh aquela refaturação eh é bem grande. Então não tem por a gente gastar tempo tentando entender o todo assumir que nem todo o código deve ser refatorado, tá? Então aqui entra muito o conceito de 8020, né? Então, se eu tenho um código ali que, por pior que ele seja e tudo mais, é um código que, cara, nunca, praticamente nunca é utilizado, a funcionalidade pouquíssimo utilizado e tudo mais. Para que que eu vou mexer nisso, né? Para que que eu vou arrumar uma dor de cabeça? Vamos supor que tem um código ali que serve para eh gerar um relatório Y que é gerado uma vez a cada dois tr meses. Para que que eu vou perder tempo com isso? correndo o risco de gerar novos bugs, eu ter que voltar naquilo sendo que já funcionava, mesmo o código sendo ruim. Então, deixa ele lá, tá? E aceitar que sempre vai haver código ruim. Sempre, sempre, sempre, sempre. Melhor programador do mundo vai fazer código ruim. Sempre vai ter, porque seja por pressão externa do de outros times, pressão de prazo, enfim, a gente sempre vai ter código que não tá no melhor nível possível.
+ 
+ 
+00:34:48
+ 
+Fabio Diniz: Eh, e vamos ter cuidado com eh com efeito de broken window, né? Então, quando a gente aceita primeira vez um design ruim, a gente tá mais propenso, né, a realizar eh novas concessões futuras, né? Que que isso aqui quer dizer? Se eu passo sempre por um código, eu tô vendo que aquele código tá ruim e tal e nunca mexo nele, ou seja, tem uma dívida técnica ali que a gente sempre passa por ela e nunca paga, em algum momento isso vai ficar grande demais, isso vai atrapalhar a gente. E pior, a gente tende a, ah, aquilo ali já tá ruim, então, ah, não tem problema, vou piorar. Já tá ruim mesmo, não tem problema piorar, não tem problema fazer eu replicar isso aqui em outro lugar, porque ah, já tá ruim mesmo. Então, a gente ter esse cuidado, né? eh não deixar isso acontecer eh para sempre, né? Aqui agora a gente vai ver um pouco sobre eh como que a gente faz o desacoplamento, né, entre eh o domínio dos contratos externos, né? Isso aqui é algo muito importante, né? A gente isolar a nossa aplicação do mundo externo, certo? A gente expor somente aquilo que é relevante, faz sentido o mundo externo conhecer.
+ 
+ 
+00:35:59
+ 
+Fabio Diniz: Quando nós temos uma API, por exemplo, certo? E ela possui um ending point, né? Aí, por exemplo, esse point ele é appointment, certo? Se eu troco esse end point para appointments, né? Aí tem cada um, cada empresa, muitas discussões sobre isso, né? Se deve ser eh plural ou não, enfim. Mas a questão é, se eu tenho um end point appointment e tem e depois eu troco esse end point para appointments, o que que acontece? Eu gero uma breaking change, certo? Todo mundo que depende da minha PI eh, vai ter que implementar essa alteração. Todo mundo que consome MPI obrigatoriamente vai ter que fazer essa essa alteração, senão eles não vão conseguir utilizar. Ou seja, eh indiretamente eu tô gerando eh efeitos colaterais em aplicações terceiras, tá? E terceiras aqui, indiferente se é da própria empresa, de outras empresas, são terceiras aquele software, aquela API especificamente. Então aqui, eh, a gente tem uma classe de exemplo, né, de pessoa. Então, ela tem um identificador, né, um ID, tem um nome e uma data de nascimento, certo? E aqui nesse nesse pessoa, né, isso aqui é um objeto simples, é um um objeto que só guarda estado, né, não tem operações nesse caso aqui.
+ 
+ 
+00:37:21
+ 
+Fabio Diniz: Então esse aqui me representa uma classe de domínio nosso, certo? E aí eu tenho um repositório, um um repositório, desculpa, tem um um controller ali que eh da que expõe na minha PI ali um um get que é um listar pessoas, tá? Ah, eu vou lá no meu repositório don't get all e retorno à lista de todas as pessoas. OK? Qual que é o problema disso? Eu tô fazendo um retorno direto da classe de domínio pro mundo externo, ou seja, eu tô dando conhecimento do do meu mundo interno pro mundo externo, tá? Eh, lógico, isso aqui é um exemplo mais simples, né? Mas eh qual que é o problema disso? Primeiro a gente expor eh informações que não deveriam ser expostas, não deveriam mesmo estar expostas. Não é nem que assim, ah, não, tô expondo algo em excesso, então tô gerando um payload, uma um resultado maior, consumindo mais API, que é um problema também, obviamente, mas tem informações são sensíveis, são críticas que eu nem deveria estar expondo. Então, tem esse esse primeiro problema. O segundo é esse outro que é, pô, às vezes eu tô eh expondo mais informações que necessário, então tô pesando ali o a saída ali do meu da minha PI com com respostas maiores, né?
+ 
+ 
+00:38:37
+ 
+Fabio Diniz: Então, tendo mais consumo de rede, enfim. E aí eu tenho um exemplo aqui também, o seguinte, se eu tenho um uma classe, né, eu tenho ali uma propriedade, desculpa, que ela é name e aí eu troco ela para full name, eu quebrei novamente minha PI, certo? Da mesma forma que quando eu altero aqui de de appointment para appointments e não a quem consome é obrigatória a fazer essa alteração para continuar conseguindo consumir. Se eu retorno um objeto que é name e troco para full name, seja um front end, uma aplicação que tá comunicando com a nossa também via API, eh, tá aguardando o name, de repente vem full name, quebra, certo? ele não consegue eh eu tô gerando efeito colateral em outro software. Então, novamente a gente tem uma breaking change, tá? E como que a gente traz isso, tá? Aí a gente usa o conceito de DTO, né, que é data transfer object, que é um objeto, né, de transferência de dados, ou seja, ele é um objeto que guarda apenas eh dados, né? Então, a gente tem o nosso domínio, a gente tem um mundo externo e há uma comunicação eh entre esses dois, tanto na saída quanto na entrada de dados. Então a gente usa o DTO para ele fazer essa tradução, ou seja, na hora que eu for fazer a saída, eu transformo eh os meus dados em um num em um DTO e aí eu exponho ao mundo externo esse DTO.
+ 
+ 
+00:40:05
+ 
+Fabio Diniz: E aí a gente tem um conceito que é o input model request, ou seja, quando o dado tá entrando no meu sistema, né? Então eu tenho um dto desse desse tipo e quando eu tô saindo, eu tenho view model, né? o mod para qu eh para quem usa MVC, né, ou o response. A lógica é a mesma, né, mudo a nomenclatura, mas a lógica é exatamente a mesma. Então, no nosso caso ali, por exemplo, eu vou ter um person view model, né? Então, vou ter ali que representa uma pessoa, esse esse view model, certo? ele vai ter lá o ID del, ele vai ter o full name e a data de nascimento. Então, na hora que eu for fazer o o retorno ali da minha API, ao invés de eu eh retornar diretamente o que eu li do banco, eu faço eh uma outro objeto, certo? Eu transformo esse objeto num outro objeto, faço um mapeamento e mantenho. Então não tem problema eu ter trocado, pegar meu mouse aqui. Não tem problema eu ter trocado de full name, porque na hora de gerar o resultado eu mantenho, né? Ó, desculpa, não tem não tem problema. Eu eu eu continuar usando no meu banco o name, porque na hora que eu gero resultado eu transformo para full name, beleza?
+ 
+ 
+00:41:18
+ 
+Fabio Diniz: Ou seja, eu gero meu view model da da da maneira correta. Então, acabo não quebrando. Aqui, pessoal, muita atenção, tá? Aqui não, a gente não colocou o exemplo do input model, mas eh isso aqui foi um erro que muitos anos atrás, um software que eu trabalhei, que a gente usava MVC pesadamente, que ainda era um padrão muito forte, né? Eh, a gente cometia, a gente usava o mesmo, o mesmo objeto, o mesmo view, o view model que ia pra tela, a gente usava ele como input model na entrada, tá? Aí alguns problemas, o mais simples de todos, quando eu tô criando um um objeto, eu tenho, sei lá, por exemplo, uma listagem de faturas, quando eu crio uma fatura nova, ela não vai ter ID, né? Depende da implementação, né? Tem algumas implementações que geram o ID antes para depois passar o objeto, mas vamos na na nas mais na mais simples, que eu acho que é 90% as pessoas não criam o ID antes. Então você vai dar uma entrada, né? você vai ter um input model que ele não tem o ID de identificação porque eu ainda não criei aquele objeto, não não eu não criei aquela fatura dentro do da minha base de dados.
+ 
+ 
+00:42:25
+ 
+Fabio Diniz: Então, meu input modul não vai ter o identificador, vai ter algumas vai ter algumas informações e não vai ter um identificador. Quando eu tô fazendo uma edição de uma fatura já existente, meu input model passa a ter um identificador, certo? E o meu view model, como eu tô eh não tenho view modele. O meu view model ele tem ID, ele tem um identificador nesse caso. Eh, então quando eu tô fazendo uma edição, por exemplo, eu sei que obrigatoriamente eu tenho que ter um ID. Não tem como fazer edição de um recurso sem ter a identificação de qual recurso que eu tô fazendo aquela modificação, certo? Então, se eu uso o mesmo input model para criar e para eh editar, eu posso ter que ficar criando lógicas para poder fazer o teste, para garantir que aquele objeto funcione em dois cenários completamente diferentes. Eu tô dando, lógico, o exemplo mais simples do identificador, mas tem alguns mais complexos. Por exemplo, você pode, a gente pode ter eh objetos dentro de objetos. Então, a minha fatura, ela pode ser composta de itens. e itens, na verdade, é um recurso que eu salvo a parte, ou seja, tem n outras coisas que eh eh formam uma fatura que eu salvo junto, que na hora de fazer a criação às vezes não vai junto, mas na hora de fazer a edição vai.
+ 
+ 
+00:43:39
+ 
+Fabio Diniz: Eh, combob box, drop box, né, dropd, né, cada um chama de um jeito, caixa de seleção, certo? Quando eu vou fazer a criação, eu não tenho os IDs, por exemplo, a o tipo da fatura, certo? pode ser uma caixa de seleção. Quando eu salvo aquilo, eu tenho que pegar aquele ID e transferir para salvar. Quando eu tô editando, eu tenho que trazer o ID que tá gravado, trazer uma lista daquela daquela daquelas daquelas opções e dizer: "Olha, essa opção que é selecionada, é que foi escolhida, é o que tá salvo no banco e exibir aquilo." Na hora que eu devolvo aquilo no input model, eu tenho que passar a só meso só preciso do item que foi selecionado. Se for o mesmo item, né? Obviamente o mesmo ID. sen não tem que passar o novo o novo item. Beleza? Inclusive pode ter essa opção, dependendo da da aplicação, né? Tem tem caso que mescla, enfim, eu pode ser que eu tenho que passar os dois IDs, ten que passar o ID antigo e o ID novo. Pode ser, dependendo de como for. Então, assim, não usem.
+ 
+ 
+00:44:38
+ 
+Fabio Diniz: Tô te falando, vai assim, dependendo se a implicação for de média para grande, rapidinho vai degradar. Rapidinho vocês vão ter problemas, tá? Em utilizar o mesmo eh objeto dentro do código para ser o input model e o view model. Ah, fal, mas eu vou duplicar praticamente igual. Tem vezes que é é exatamente um objeto. Duplica, não tem problema. não tem problema se duplicar, porque eles aparentemente são o mesmo objeto, mas não são. Eles têm propriedades que representam as mesmas coisas, mas eles não são o mesmo objeto. Então façam essa diferenciação que vai ser muito melhor. Então, não utilizem como input model view model o mesmo objeto dentro do código mesmo, porque, né, é um objeto que só guarda propriedade, então ele é muito simples. Então, eh, encapsulamento, né, como técnica de enriquecimento de domínios, né? Então, a gente vai ver aqui um exemplo, né, de um problema aqui, né, quando a gente tá fazendo a operação de finalização de um atendimento veterinário, eh, online, né, fazendo uma consulta eh online. Então, quais são as regras de negócio que estão envolvidas nesse nesse cenário? a gente tem, né, apenas o próprio veterinário, eh, pode finalizar seu atendimento, ou seja, um outro, eh, veterinário não pode ir lá e e finalizar o o atendimento de um de um terceiro.
+ 
+ 
+00:46:06
+ 
+Fabio Diniz: Necessário que tenha ocorrido encontro na sala de vídeo entre o veterinário e o dono do pet, ou seja, para poder ser finalizado, aquela consulta online deve ter de fato ocorrido dentro da sala de de de consulta virtual. Eh, o atendimento ele já deve estar eh, desculpa, se o atendimento já estiver finalizado, retorna sucesso. O atendimento não pode estar cancelado, ou seja, se houve algum, se houve algum cancelamento, eu tentar finalizar aquele aquele aquela consulta, ele ele não pode permitir porque já foi cancelado. Então aqui a gente tem um bem simples, tem então um método eh fanaliz, beleza? que o que ele faz? Ele pega, primeira coisa, ele recebe o ID daquele agendamento mais o ID do veterinário que tá tentando fazer eh a finalização desse agendamento. Beleza? Então eles ele pega, ele consulta no banco através do ID do agendamento, verifica se esse agendamento existe, né? Se não existir, retorna que não foi encontrado. Ele valida, né? Se eh resmete, né? Ou seja, se ocorreu o encontro na sala virtual. eh entre o dono do pet e o veterinário, senão ele diz que não é possível, né, porque uma das partes não compareceu. Ele valida, né, se quem tá tentando fazer, né, se esse veterinário que tá tentando fazer a finalização é o mesmo veterinário que para quem foi eh eh designado aquela consulta, senão ele diz que não pode ser finalizado por por esse usuário.
+ 
+ 
+00:47:44
+ 
+Fabio Diniz: estado que aí ele consulta também se o status for finalizado, ou seja, esse agendamento já foi finalizado, ele simplesmente retorna. Se o status for cancelado, ele gera exceção, dizendo que o um o atendimento foi cancelado. Se isso se todas essas condições de guarda aqui passaram, né, ele atualiza o estado para finalizado, atualiza a data de finalização para agora, faz o update do das novas informações no banco de dados e gera uma notificação com com appointment. Beleza? Então a gente vê aqui o seguinte, né, que essa essa esse método de finalização, ele tá fazendo um monte de coisas, beleza? Tem várias pequenas regras aqui que são implementadas ao longo dele, certo? Espalhadas fora do objeto appointment, não é o próprio objeto que tá executando a sua a sua as suas ações. Ou seja, ele não tá encapsulado. As suas próprias operações não estão encapsuladas dentro dele. Elas alguns vários termos, né? Eu gosto de usar a palavra vazado, ou seja, isso vazou de dentro do domínio daquele objeto. Toma muito cuidado aqui, tá pessoal? Quando a gente fala de domínio, a gente tá falando mais no no sentido estrito e não de domain driven design, tá?
+ 
+ 
+00:49:01
+ 
+Fabio Diniz: Não é exatamente DDD, tá? Lógico que tem relação a algumas coisas, mas não é exatamente o DDD. Então a gente vê que tem várias regras de negócio aqui, né, como eu tava falando, espalhadas aqui, né? A gente tem um set, isso aqui também é importante, né? Ou seja, a gente tá permitindo que eh entes externos façam alterações de estado, né? Quando eu altero a alguma propriedade interna de um objeto, n, eu tô permitindo que eh eu tô alterando o estado daquele objeto, ou seja, né, normalmente, né, o estado é um conjunto de propriedades naquele determinado momento que identificam qual o estado daquele objeto, daquele objeto. E também tô fazendo uma uma ação de pós-finalização ali nesse nesse nesse método, tá aqui. como que é o objeto atual, né, do PM, né? Ele ele é um objeto que só agarra de estado, certo? Não e não ele não faz nenhuma nenhuma operação. Então ele tem lá o ID, o ID do veterinário, o status e a data de finalização. Beleza? E agora a gente vai ver como que a gente enriquece ele, né? Ou seja, eu vou fazer o encapsulamento.
+ 
+ 
+00:50:08
+ 
+Fabio Diniz: Então eu trago para dentro do objeto eh eh operações que fazem sentido para ele mesmo. E aí a primeira coisa que a gente faz é a gente utiliza um construtor, tá? Isso aqui é muito importante, muita gente eh não pega isso, mas qual que é a importância do construtor? A primeira delas é garantir que eh passe ao mundo externo uma assinatura de um contrato para dizer o que que é o mínimo para eu para eu fazer uma instância daquele objeto que ele eh esteja num estado válido, um estado de consistência válido. Ou seja, olha, você não consegue fazer eh fazer uma nova instância de objeto appointment sem me passar o ID, o ID do veterinário, o status e a e a data que é nulabo, né? Então poderia ser ser a data. Eu preciso no mínimo disso para eu criar o objeto app num em um estado válido, beleza? Ou seja, num estado consistente, certo? E aí ele mesmo tem seu suas próprias, ele mesmo faz o seu a sua o seu finalize. Ele mesmo tem a operação de finalização, certo? Então a gente eh faz a definição do construtor do construtor aqui para criação de uma entidade no estado vá, podendo ter mais de uma, tá pessoal? Que é só um exemplo, né? Então vocês já devem ter visto, né?
+ 
+ 
+00:51:30
+ 
+Fabio Diniz: Objetos que têm mais de um construtor, certo? Isso não é problema, desde que esses construtores sirvam para criar eh instâncias daquele objeto em estados consistentes e válidos. fechamento de propriedades. Então, a gente viu lá que a gente tinha vários sets eh públicos. Então, aqui o private set, ou seja, eh, externos não conseguem fazer alteração do estado. Por que que isso é importantíssimo, tá? Da mesma forma que no construtor, né? Por que que eu crio um estado válido? Porque o próprio por que que eh eu exijo isso no construtor? Porque o próprio objeto vai saber quais são os estados válidos dele. Ele deve saber disso. Ele deve saber quais são os estados válidos dele. Se eu permito que um terceiro, uma uma um ente terceiro a minha à minha instância faça alteração em alguma propriedade minha, ela está eh alterando o estado do do objeto. Só que eu não tenho ciência disso porque ela alterou direto a propriedade, certo? Então ela não usou uma operação daquele objeto para poder fazer essa alteração de de estado. Beleza? Então o que acontece? gera efeitos colaterais. E aí aqui a gente tem um comportamento para finalização.
+ 
+ 
+00:52:41
+ 
+Fabio Diniz: Aí manteve ali o que a gente já tinha, né, as cláusulas de guarda, né, se tá finalizada, a gente retorna aqui. A gente usou esse result aqui, tá? como forma de um objeto pra gente não ter eh pra gente facilitar o o a lida, né, do de quem tá consumindo, né, quem tá consumindo esse objeto. A gente manteve as mesmas clausas de guarda aqui, faz a mesma alteração de estado antes de retornar sucesso. E aí, né, o método lá que chamava anteriormente, ele passa, né, ele ele faz a a consulta do objeto no banco de dados, tá? Se a gente foi uma camada assim, fizemos uma pequena refaturação que já melhorou o cenário, ainda não é o ideal, a gente já tá avançando. Então a gente mantém, né, faz a consulta no banco de dados, verifica se se o item foi encontrado, se não, a gente diz que não encontrou, valida, né, tem essa regra aqui de validar, ou seja, porque ela não tem relação direta ali ainda com fan. faz aqui, chama o fanaliz do próprio objeto, ou seja, ele ele tem as regras de dizer como que é que faz a finalização de um agendamento e ele consulta o resultado. Se for falha, se eh isso aqui ficou errado.
+ 
+ 
+00:53:54
+ 
+Fabio Diniz: Ah, é verdade. Tá certo. Se tiver falha, ou seja, eu retorno com resultado. Se não deu falha, aí sim eu faço alteração no banco de dados. faço a mantenho aqui ainda a notificação e retorno o sucesso aqui no final. Beleza? Ou seja, a gente encapsulou, a gente pegou comportamentos que estavam espalhados e encapsulou para dentro do próprio objeto, certo? Ou seja, a gente avançou um nível, a gente foi empurrando esse esse esse domínio espalhado para dentro do objeto que que entende de fato daquele domínio, daquela operação que tá sendo realizada. Então, a regra de negócio ficou encapsulada ali dentro da finalização do atendimento. Aí de novo, pessoal, a gente tá pegando aqui, lógico, um exemplo mais simples, menor, pra gente pegar a ideia do conceito, mas isso se aplica nas outras camadas que a gente for pegando de problema. Então, se eu tenho um componente, é a mesma coisa. Ele deve estar encapsulado os comportamentos dentro daquele componente. Ao ter um módulo no sistema, é um módulo, por exemplo, tem um módulo financeiro no sistema, tudo que que tá relacionado a financeiro tem que aquele módulo executar. Outros módulos podem pedir ao módulo financeiro informações financeiras, pedir para alterar certa coisa, mas é o próprio módulo financeiro que faz por quê?
+ 
+ 
+00:55:08
+ 
+Fabio Diniz: Ele que entende as regras. Beleza? Tem extrapolar isso para micro serviço. Mesma coisa, certo? Se eu tô separando serviço, ah, eu tenho um serviço de um micro serviço de finanças, de financeiro, eu vou pedir para ele fazer as coisas, eu não altero e passo para ele, certo? Então, a classe, a pânic é enriquecida com comportamento. Beleza? Aí a gente tem essa regra de negócio aqui intencionalmente não tratada do domínio. A gente vai ver o porquê, OK? ela depende de uma de uma da dependência externa, certo? Ou seja, dependo do appointment repository para poder fazer isso, tá? Aí vem um dos primeiros pontos, né? Quando a gente tem tiver eh enriquecendo o nosso domínio, a gente tiver um cor da aplicação, núcleo da aplicação, a gente sempre deve eh buscar, não, ele deve ser agnóstico ao mundo externo, as escolhas de tecnologia externo, ou seja, eles não devem depender de infraestrutura diretamente de nenhuma forma. Fala aí, Farle.
+Farley Souza: Não. Ô, Fab, eu só ia comentar que essa parte que você comentou do finalizar, né, você pegou, um exemplo, a a regra que tava no Handley, sei lá, e foi empurrando para dentro da do domínio.
+ 
+ 
+00:56:28
+ 
+Farley Souza: Eu queria te perguntar também se é uma boa prática a gente fazer isso com request, porque eu vejo muita gente fazendo IF e não sei o que que tá vindo no request. Isso não seria às vezes interessante ter um método, tipo assim, é válido dentro do request, sabe? E ali ele validava o tipo assim, não posso aceitar se esse parâmetro não for verdadeiro ou se esse não for nulo. Acho que eu consegui explicar a ideia.
+Fabio Diniz: É, você tá falando request um DTO, né?
+Farley Souza: Isso num DTO.
+Fabio Diniz: É, não, não é o ideal, Fale, porque aí você estaria transformando o DTO num objeto com comportamento, que a ideia a a ideia do do próprio nome, né? Data transfer object. Ele só tem dados para fazer transferência entre um lado e o outro. você não tem comportamentos ali. Você pode ter eh várias pessoas usam algumas abordagens de validations. Ou seja, ela de tá entrando na sua PI, ela lê, ela tem alguns contratos que ela sabe ler aquela entrada de dados e fazer a validação em cima daquele daqueles dados. Ou seja, as regras de como validar estão estão eh desacopladas do dado em si, saca? Então, tem as regras aqui e tem os dados.
+Farley Souza: Uhum.
+ 
+ 
+00:57:40
+ 
+Fabio Diniz: Por que que isso é bom? Na hora de testar, eu testo as regras com qualquer dado,
+Farley Souza: Entendi.
+Fabio Diniz: faço vários conjuntos de dados diferentes e testo em cima da regra, beleza?
+Farley Souza: Entendi.
+Fabio Diniz: Então são objetos que ficam
+Farley Souza: E data notations também seria uma ruim,
+Fabio Diniz: separados,
+Farley Souza: né? Porque eu também já vi esse cenário também.
+Fabio Diniz: cara.
+Farley Souza: A galera também pegou o
+Fabio Diniz: Depende. É, depende. É, depende, depende, depende. Aí tem que ver o cenário. Não sei a versão do Dnet,
+Farley Souza: DTO.
+Fabio Diniz: por exemplo, tem versões DNET que só dava para usar o jeito o data notation servia para você não eh para você desacoplar certas regras, entendeu? Então depende,
+Farley Souza: Mhm.
+Fabio Diniz: depende. Aí tem que olhar, cada caso é um caso, mas normalmente normalmente, né, não é uma boa prática. você vai ter problema se você começar a enriquecer o objeto de transferência com comportamento,
+Farley Souza: né?
+Fabio Diniz: entendeu?
+Farley Souza: Porque eu vejo a galera fazendo muito if na controle e em cima do DTO.
+Fabio Diniz: Aí é uma outra coisa assim, não, mas depende, né?
+ 
+ 
+00:58:34
+ 
+Fabio Diniz: Se for controle de fluxo,
+Farley Souza: É.
+Fabio Diniz: faz sentido tá no DTO, ó, faz sentido tá no controller, entendeu? faz sentido.
+Farley Souza: Uhum.
+Fabio Diniz: Tá no controle. O que não pode é é eh eh deixa eu ver algum exemplo que eu vou lembrar aqui. Pego o próprio exemplo ali do ID no edit. Beleza? Para que que eu vou descer? Vamos supor que minha minha minha aplicação tem várias camadas. Para que que eu vou descer várias até o domínio pro domínio dizer que não tem o ID para eu retornar?
+Farley Souza: Entendi.
+Fabio Diniz: dependendo da aplicação. Minha aplicação ela é tão recebe tantas e tantas requisições, cara, que eu faço essa cláusula de guarda lá no no no controller mesmo, entendeu? Já retorno aqui um 400 um 400,
+Farley Souza: Uhum.
+Fabio Diniz: um 400 e agora me fugiu, não vou lembrar o 400 é alguma coisa, né? Ou seja, ó, usuário, você me mandou um um dado aqui inconsistente. Eu não consigo executar essa operação com os dados que você me mandou, né? Lembrando, né? Para quem não lembra, né?
+ 
+ 
+00:59:22
+ 
+Farley Souza: Угуm.
+Fabio Diniz: Os erros 400 são sempre o usuário fez alguma coisa que a PI não aguarda, certo? Então retorno para ele, ó. Você tá tentando executar uma operação com dados que não tão eh consistentes. Então assim, depende, tá? Depende. Tem algumas tem algumas eh alguns controles de fluxo que é melhor você fazer já é porque você tem que pensar às vezes no nível da camada, entendeu? Não faz sentido eu ficar dando eh retorno em cima de regras de negócio que o
+Farley Souza: M.
+Fabio Diniz: domínio que domina, vamos dizer assim. porque senão eu tô trazendo a regra do domínio para que para aquele ponto e não é o não é o que o que eu quero. Agora, se eu tô validando, por exemplo, e o dado em si, seja independente do domínio, né? Então, por exemplo, ah, pô, eu tenho que receber aqui um e-mail, mas vem em branco, pode ser que faça sentido, entendeu? Algumas vasilizações do dado, não é do conjunto dos dados que é diferente. Mas o pessoal usa muito esses validations, né? Tem várias bibliotecas aí, eu não vou saber de cabeça aqui uma agora, mas tem várias bibliotecas que fazem que fazem isso aí.
+ 
+ 
+01:00:28
+ 
+Fabio Diniz: Você desacopla o que chega o dado do da regra em si,
+Farley Souza: É,
+Fabio Diniz: entendeu?
+Farley Souza: eu vejo muito aquele fluente validator, né? Acho que a galera entendi.
+Fabio Diniz: Sim.
+Farley Souza: Eu achei que num que no DTO não teria tanto problema de ter um méo um método esválido, mas eu entendi. A ideia é que ele seja anêmico, né?
+Fabio Diniz: Ah,
+Farley Souza: Ele não tem.
+Fabio Diniz: é veja, você falou agora um valid, por exemplo, pode ser que só chama um cara que faz a validação.
+Farley Souza: É.
+Fabio Diniz: Você não tinha falado isso, falou ele validar, mas já é outra abordagem. Mas enfim, você tem que olhar cada caso é um caso, entendeu?
+Farley Souza: Hum.
+Fabio Diniz: Cada caso é um caso, mas cara, eu não gosto muito porque a tendência é ir crescendo. A tendência, se você colocar isso dentro do de um DTO, daqui a pouco um cara desavisado, ah, aqui já tem um método, por que que eu não posso adicionar mais um, né? Eh, então eu eu não eu não iria por essa abordagem de início, não, tá?
+Farley Souza: Beleza.
+Fabio Diniz: Então vamos seguindo aqui. Eh, ações então pós operação, né?
+ 
+ 
+01:01:29
+ 
+Fabio Diniz: Depois que eu faço alguma coisa, né? Eu eu fazer alerta são comuns, tá? Então vamos pro próximo passo, mas não é uma boa prática, né? A gente empilhar isso não não serve se após a operação a gente vai ver mais para frente como que a gente faz isso de eh eh de uma outra maneira. Eh, então a gente vai utilizar, né, eventos de domínio. Então, como que trabalha, como que a gente trabalha com eventos de domínio, tá, pessoal? Que o que que são primeiramente eh as eventos de domínio? É um acontecimento que ocorreu no passado, tá? Parece bobeira, mas não é. Tem gente que primeiro eh alerta e depois executa. Não, você executa e depois você alerta. Ou seja, o evento, o evento diz algo que aconteceu quando eu clico no mouse, o evento de clicar no mouse aconteceu depois que eu cliquei e não, ele alertou o evento e eu cliquei, certo? Eh, um evento que ocorreu dentro do domínio e que é propagado dentro do mesmo domínio, isso aqui é importantíssimo, tá? Eh, funciona em memória, ou seja, ele é para ser simples e funcionar em memória e frequentemente implementado com a biblioteca mediate ar, tá?
+ 
+ 
+01:02:38
+ 
+Fabio Diniz: Então, pula aqui um pouco essa questão do mediate, né? Porque muita gente já não quer usar porque é pá e tudo mais. Eh, então a gente vai ter ali, por exemplo, um um app point finalizer event, né, que ele recebe simplesmente um ID, que é isso que eu preciso de alertar, né? Ó, teve um evento, teve uma uma consulta aqui que se finalizou e o ID dela é esse, tá? E ela herda, né? Ela implementa esse notification, beleza? que é do Mediat. Aí depois eu vou ter um handler, né? Eu vou criar um appointment analyze evento, do evento que eu criei, beleza? Ele vai ter um construtor que vai receber um i notification service, certo? E a única coisa que ele faz é ele pega uma notificação, passa para ela, pro serviço de notificação, o ID e o cancelation token, que é uma boa prática, né, pra gente poder cancelar operações, beleza? Ou seja, bem bem bem simples, né? Então, a execução pós evento, tá? E aqui no finalize nosso, como é que fica, né? Eu transformo ele eh deixa eu voltar aqui. Eu transformo ele no assíncrono primeiro, tá?
+ 
+ 
+01:03:56
+ 
+Fabio Diniz: Porque ele vai disparar um um evento aqui assíncrono. Ele passa a ser um test result. Beleza? Aqui não muda nada. E na hora de chamar eu tenho esse domain events raise aqui. Eu passo as informações e ele vai eh disparar, tá? E a gente vai ver aqui que que é esse esse domain de vent aqui, que é uma classezinha que a gente criou. ele efetua a publicação dos do evento dentro do do domínio. Beleza? Então o Medacasse precisa ser assíncro para atender a publicação, né? E aqui tá o domaines, que é bem simples, né? Ele ele também tem um ele vai ter um mediator, beleza? Ele recebe então um é um T, né? Ou seja, para todos que implementam esse notification que a gente criou lá atrás, ele chama mediator invoke para pegar qual que é o mediator que tá implementado eh instanciado e faz uma publicação. Beleza? Esse é uma das formas de fazer, tá? Então, a classe domain events, né, é estática, portanto, ela publica imediatamente o evento. Que que é um problema? Ela dificulta a realização de testes, tá?
+ 
+ 
+01:05:05
+ 
+Fabio Diniz: Para quem já tá mais acostumado aí fazer teste sabe, né, que é chato e testar eh quando tem estática, né, classe estática no meio do caminho. É enjoado. É, as duas últimas aulas, acho que é só as próximas, né, se eu não me engano, é com é de teste, né? O Bruno vai tratar algumas coisas disso com vocês. E aqui um um dos maiores problemas é esse. Ele publica o evento antes da persistência de dados. Qual que é o problema disso? Pode ser que eu tenha problemas na persistência, certo? Ou seja, eu primeiro emiti o evento, depois persisti. Pode ser que na hora de persistir deu o problema, então aquele evento de fato não aconteceu. Porque o que vale é tá gravado na base, né? Depois se eu alertei alguém de um evento, aí ele vai lá consultar aquilo na base. Não tá aqui o que você me disse. A gente vai ver uma outra abordagem, né, que é a publicação adiada de eventos, tá? Então, a gente vai criar uma uma interface nossa que chama domain event, beleza? Que ela vai eh parte dela vai ser implementação do próprio notification, beleza? Então, a gente tem esse ponto, né?
+ 
+ 
+01:06:13
+ 
+Fabio Diniz: A gente provê maior expressividade, né? Fica mais eh intencional do que que tá do que que se trata aquela interface. E aí o nosso appal event ao invés de herdar diretamente do I notification, ele herda do Idomin Events. Você faz a implementação daqui e ainda temos um ganho, né, que pô, ah, não quero mais o mediator ou tem uma outra biblioteca melhor, enfim, isso aqui não altera, certo? Eu posso modificar isso que apenas, né? Só implementação do notification. Domain event se mantém. Eh, aqui a gente vai ter uma implementação aqui já é um pouquinho mais do que o pessoal usa em DDD, né? Então a gente vai ter uma implementação de uma abstract aí entidade, tá? Aí esse abstract class, né? Ele vai ter aqui uma coleção que é uma lista de de eventos de domínio, certo? Privada, tá? E aí eu vou ter um um um método aqui, ó, de adicionar um evento. Ou seja, também tá dentro do encapsulamento que a gente tava falando. A própria classe de entidade de domínio mantém os eventos de domínio dela para serem disparados. É ela que entende a regra. Lógico que a regra aqui é extremamente simples, né?
+ 
+ 
+01:07:35
+ 
+Fabio Diniz: Mas é ela que entende. Aí como é um abstract class, certo? Se aqui o modificador de acesso a gente coloca protect porque quem é dad entity, né, vai poder fazer a utilização desse método aqui, beleza? Da super da superclasse. Então, meu meu appointment passa a herdar de ent, beleza? Ele passa a herdar a classe ent o meu fan não precisa mais ser assíncrono, tá? Porque eu tô simplesmente enviando para aqui pro domain event, certo? Não vou ter mais um disparo de fato ali dentro do dentro do fanaliz, então ele não precisa ser mais assíncrone. Isso nesse nesse contexto é bom. E aí no final eu dou um um add domain, event, ou seja, aqui não mudou nada, tá? Nessa parte aqui da execução não mudou nada, só que na hora de fazer a notificação, em vez de dou notificar diretamente, eu adiciono isso na lista de eventos. Ou seja, ó, tem um evento aqui para ser disparado, beleza? Estou executando ali uma série de operações. Adicionei esse evento ali e ele vai ser disparado em algum em algum momento, né? Porque é uma publicação adiada de eventos, tá? Usando nesse caso aqui, um frame, ó, tá?
+ 
+ 
+01:08:45
+ 
+Fabio Diniz: A gente vai ver aqui mais para frente. Ou seja, eu vou vou eh empilhando os eventos ali. Aí na hora que eu vou fazer o o save, né, o save change lá, vocês devem ter visto isso já com com o Bruno, né? Ou seja, ele pega todo o estado, né? O save, eles pega todo o, como é que é o nome? Não fugi o nome, né? O saveing changes é a execução. Ele pega todos os objetos, né? Que ele percebeu que teve alteração ali dentro do contexto, né, do entity, né? Ele sabe, ele marca isso de alguma forma. Aí na hora que você dá o save change, ele pega todos esses objetos e e monta lá uma estrutura para salvar de fato na base de dados, certo? Seja e depois que isso foi feito, ou seja, eu eu aqui o wait, ó, estou aguardando ele fazer isso aqui tudo na hora que ele tem o resultado aqui que isso foi foi executado e aí sim eu faço o disparo dos eventos, beleza? Ou seja, eu garanti que eu persisti antes de disparar os eventos. Então, faço as alterações no banco, depois eu publico a a persistência, beleza?
+ 
+ 
+01:09:58
+ 
+Fabio Diniz: Então aqui tem essa mediator extension, tá? Que é esse cara aqui, né? Se dispet domains, não sei o quê. Basicamente ele recebe aqui um umat, recebe o contexto do banco, cancellation token. Aí o que que ele faz? Ele pega ah lá o change tracker. É isso aqui que eu tava tentando lembrar. Ele ele pega todas as entidades, então, que sofreram alterações, pega aquele aquele para cada entidade, né? Ele vai pegar do events, certo? Se se não tiver, ele retorna porque, ou seja, não tem nada para disparar. Se tiver eventos, ele itera para cada um deles, né? Me dá em quais são transformalistas, seja que eu tô eh materializando e vou fazendo um a um e vou disparando. Beleza? Tero sobre cada um e disparo, certo? seja bem simples, fica bem mais eh coeso assim de como funciona as coisas, encapsulado, né? Ou seja, quem eu no, a minha entidade de domínio, ela ela entende só do meu domínio, ela não entende de infraestrutura. Ela só sabe que, olha, beleza, aconteceu algo aqui, eu vou enfilerar esse esse evento para em algum momento esse evento vai ser disparado por por alguém que saiba como fazer esse disparo no momento adequado, certo?
+ 
+ 
+01:11:26
+ 
+Fabio Diniz: Eh, então para que que é muito bom eh eventos de domínio, tá? Eles são ótimos pra gente desacoplar eh classes, desacoplar eh componentes. Por quê? Às vezes eu faço um acoplamento de um componente simplesmente porque eu preciso saber que certa coisa alterou em algum lugar. Quando eu tenho o evento de domínio, eu quebro essa esse acoplamento forte para um acoplamento mais fraco. Eu passo a depender da do evento ali que é bem mais um acoplamento bem mais fraco. Então, e eu passo a ser reativo, né? Eu só executo, só acontece alguma coisa quando eu leio esse evento e esse evento realmente aconteceu. É muito útil para pra gente eh utilizar eventos de de domínio para gerar, né, quando ele fala de tratar efeitos colaterais. eh eh gerar efeitos em outros lugares que eu quero, seja reativo, né? Gerar uma reação em outro lugar para executar alguma coisa. Então, vamos supor, ah, toda vez que eu tenho uma fatura nova cadastrada no sistema, eu tenho que eh meu financeiro tem que saber que uma hora vai ter que pagar ela. Então, posso gerar um evento de domínio de fatura criada, certo? Aí eu tenho um módulo lá de financeiro que tá lendo os eventos de fatura criada.
+ 
+ 
+01:12:39
+ 
+Fabio Diniz: Ele ao invés de ir lá ficar consultando ou fatura criada ou fatura eh enviar direto pro financeiro, ou seja, eu gera um acoplamento forte, fatura lança o evento, financeiro tá lendo aquele evento, ele captura aquele evento, certo? Ah, evento de fatura criada. Opa, beleza. Então, se eu tenho uma fatura criada, eu tenho que saber que uma hora vou ter que pagar ela, ou vamos supor que seja de eu tô gerando uma fatura para receber. Uma hora eu tenho que receber isso. Então vou pegar lá as informações que me são relevantes com aquela daqu daquela fatura e vou fazer minha vou seguir minha vida aqui. Ou seja, fatura não sabe que que financeiro depende disso. Ela simplesmente publicou um evento. Ou seja, não tem um acompamento forte. Se eu tivesse fatura mandando direto para financeiro, toda vez que alterou alguma coisa, eu tenho que eh ir lá no código financeiro para ver se não quebrou e financeiro tem que entender do mundo de fatura. E ainda o seguinte, quando é eventos, facilmente outras partes do sistema podem passar ali aqueles eventos e executar ações. Então assim, o poder de de eventos, ele é muito grande, tá? E isso que a gente tá falando aqui ainda na parte de eventos internos, daqui a pouco a gente vai ver eh um pouco mais elaborado, tá?
+ 
+ 
+01:13:52
+ 
+Fabio Diniz: Eh, aí os eventos são publicados de maneira síncrona, tá? Cuidado com a realização de operações muito custosas nos eventers. Que que é isso aqui, cara? Os o os handlers tem que ser bem simples, tá? Não é para vocês ficarem executando operações, é simplesmente ele enviar o mínimo. Vocês vocês lembrarem, ó, é o appointment event aqui. Ele simplesmente envia o ID. Ah, Fábio, já poderia mandar o número da fatura, a data da fatura. poderia, mas qual que é o problema disso? Primeiro que eu tô gerando um contrato mais forte, certo? Daqui a pouco eu tô colocando um monte de propriedades ali que, né, vamos supor que tem quatro, cinco sistemas que leem desse evento. Aí entra no mesmo problema do view modelo que um dos sistemas que lei desse evento espec de cinco, seis operações eh eh propriedades, eu adiciono todas essas propriedades no objeto e todos os outros quatro não utilizam. Eu tô eh gerando complexidade desnecessária, certo? Não tô dizendo que não pode fazer, tá, pessoal? Só tomar cuidado. Então, pô, se eu coloco o ID ali, cada um que vai ler os eventos, ah, beleza.
+ 
+ 
+01:15:03
+ 
+Fabio Diniz: Eh, vou lá, vou consultar a fatura e eu pego os dados que são me são relevantes. Ou, né, podem ser criados eventos específicos, vamos supor, ah, de novo de fatura, né? Fatura a pagar. Então, na hora de na hora que eu for enfelerar um evento, em vez de usar um evento eh fatura criada, eu vou ter um fatura a pagar criada, fatura a receber criada. Eu lanço eventos diferentes. Beleza? Fala aí, Fáb.
+Farley Souza: Fábio, eu queria fazer uma pergunta. Eu já vi alguns projetos eh a galera lançando os os eventos de domínio geralmente para outro projeto pegar, né? Por exemplo, eu tenho um um pedido, aí quando eu faço, termino o evento daquele pedido, eu vou lançar alguma coisa para um outro projeto pegar. No fim do dia, você acha que vale a pena ou você acha que poderia resolver isso com serviço específico? No sentido tipo assim, é muita complexidade porque fica aquele negócio nem memória, né? Não que tr ali mesmo.
+Fabio Diniz: Eh, Não,
+Farley Souza: Vou
+Fabio Diniz: a gente vai falar um pouco disso aqui mais para frente, que aí são eventos de integração,
+Farley Souza: notificando.
+ 
+ 
+01:16:16
+ 
+Fabio Diniz: tá? Mas na prática, eu falei, eh, o evento nesse sentido serve para isso que eu falei aqui um pouco antes, que é a questão do acoplamento. Eu quebro o acoplamento,
+Farley Souza: Uhum.
+Fabio Diniz: eu saio de um acoplamento forte para um acoplamento baixo, fraco. Na verdade, bobear nem existe, né? Porque tá dependendo de um único evento ali.
+Farley Souza: É,
+Fabio Diniz: A a ideia é essa, entendeu? como que você vai implementar e onde que isso faz sentido ou não. Aí decisão de projeto para pro cenário, entendeu?
+Farley Souza: entendi.
+Fabio Diniz: Pode ser que em determinado cenário aquele acoplamento ali entre duas funcionalidades,
+Farley Souza: S.
+Fabio Diniz: dois componentes, dois módulos faça sentido. Ou seja, a complexidade às vezes eh adicionar eventos não vale a pena, tá? Mas aqui o que busca é isso. Ou seja, eu desacoplei facilmente o um uma criação de uma fatura, criação, né, um appointment finaliz aqui no caso do de todo o restante.
+Farley Souza: Entendeu? Entendeu?
+Fabio Diniz: Fala aí,
+Farley Souza: Uhum.
+Igor Romulo: uma dúvida meio parecida com essa do Falei, se eu tô entendendo correto, tá?
+ 
+ 
+01:17:19
+ 
+Igor Romulo: Por exemplo,
+Fabio Diniz: Igor.
+Igor Romulo: a questão desses eventos que a gente tá falando, eh, o quando a gente fala em TDD, por exemplo, eu tenho o meu domínio e dentro do meu domínio eu tenho meus subdomínios. Então essa comunicação entre meus subdomínios que eu tenho ali dentro daquele domínio específico que eu tenho.
+Fabio Diniz: É, pode ser dentro do próprio domínio, inclusive não precisa nem de ser subs, não.
+Igor Romulo: Ah, entendi, entendi,
+Fabio Diniz: às vezes às vezes nem tem essa divisão,
+Igor Romulo: entendi.
+Fabio Diniz: entendeu?
+Igor Romulo: Uhum. Entendi, entendi,
+Fabio Diniz: É só porque quando a gente colocou aqui dentro do próprio domínio,
+Igor Romulo: entendi.
+Fabio Diniz: é só pra gente, porque vai ter na frente a gente vai falar de de eh de eventos de integração, que aí são diferentes,
+Igor Romulo: Sim. Quer eu entendi.
+Fabio Diniz: entendeu?
+Igor Romulo: Quer? Tá. Eu não vou adiantar não me não. Mas entendi, entendi, entendi, entendi. Sim,
+Fabio Diniz: Ele tá evoluindo,
+Igor Romulo: entendi.
+Fabio Diniz: né? Eu tô indo para uma outra camada de de comunicação,
+Igor Romulo: Sim, sim, sim, sim,
+ 
+ 
+01:18:05
+ 
+Fabio Diniz: entendeu?
+Igor Romulo: sim. Tá, tá.
+Fabio Diniz: Por isso que a gente fala ali que os eventos de domínio são em memória,
+Igor Romulo: Show.
+Fabio Diniz: porque ele tá acontecendo dentro do próprio local que a que o software tá rodando,
+Igor Romulo: Peguei, peguei, peguei, peg. Show de bola. Obrigado.
+Fabio Diniz: entendeu? Então a gente tem aqui os eventos eh eh cuidado, né, com essas operações custosas dentro event handlers, né, fazer ele mais simples, tá? Se a gente vê que tá tendo necessidade de colocar propriedades, alguma coisa, porque pode ser quem vai ler esse evento para eu para ele buscar os dados na base, é mais complexo do que eu já passar dentro do evento. Aí pode ser que a gente siga essa abordagem de ter eventos diferentes, né? Então, de novo, né, o exemplo que eu dei aqui, né? Às vezes em vez de eu eu tenho um evento fatura criada, posso ter um faturas a pagar criada, fatura receber criada, né? são dois eventos diferentes. Eh, e quanto aos eventos de integração, né? Então, os eventos de integrações servem paraa gente notificar operações realizadas no domínio de determinado sistema. Então, a gente vai utilizar um evento de domínio, beleza?
+ 
+ 
+01:19:13
+ 
+Fabio Diniz: Uma outra parte do sistema vai ler aquilo e vai disparar um evento de integração. Aí se esse evento de integração vai ser usando um rabbit, vai ser usando um um redes, vai ser usando um qualquer outro sistema de um Cafka, não importa. Beleza? Porque eu desacoplei de novo, certo? Ou seja, eu vou ter uma uma eh a gente tem eh sempre pensar nessa questão de de capsulamento, que isolamento pessoal na entrada e na saída. Então eu tento não deixar eu tento não expor o meu mundo interno pro mundo externo além do necessário e tento não trazer eh coisas do mundo externo pro meu mundo eterno, além do necessário também. Porque sempre que eu tiver lidando com mais informações, mais carga de de de dados é pior, né? Pior assim, no sentido assim, é mais é mais são mais complexidades que eu tenho que tratar. Alguém perguntou alguma coisa aqui? Como é que é? Então, evento de integração construída a partir nesse caso aqui, tá? Ô, Natão, nesse caso aqui que a gente tá dizendo, nesse caso aqui você lançou um evento, certo? um evento de domínio, você pode ter uma um uma parte do seu sistema, sei lá, um módulo de integrações que o que ele faz é isso, ele fica monitorando o os eventos do domínio e aí ele sabe disparar pro mundo externo.
+ 
+ 
+01:20:35
+ 
+Fabio Diniz: Pode ser uma das abordagens que você pode fazer, entendeu? Ao invés de, pô, lançou um evento ali de domínio, eu já lançar para fora. Às vezes nem tem ninguém lendo fora, sacou? Nem tem ninguém escutando, não serve para nada. vou perder tempo implementando isso. Agora, se eu tenho uma funcional e até para pouquinho eh porque assim eh mensageria eh tem vários jeitos de fazer, né? Eh, quem tá inscrito, quem não tá, quantas pessoas estão inscritas, né? Para onde que eu envio, enfim, aí tem várias formas de serem implementadas, tá? Então você tentar desacoplar isso, ou seja, eu não tô, senão você tá, se você fizer direto no evento de domínio, você já tá trazendo uma questão do mundo externo pro pro cor do seu do seu da sua aplicação, entendeu? Então assim, a chance degradar ao longo do tempo, ou seja, de gerar dependências eh desnecessárias é muito grande. Então você já quebra esse acoplamento ali, entendeu? Eu já faço essa essa essa quebra ali já de cara, tá? E aí, por exemplo, ó lá, integração, eh, evento de integração já é assíncrono, porque, cara, não sei quanto você vai consumindo, eu vou vou enfleirando lá e vou deixando ele disparando, ele vai ele vai tomando conta do mundo dele lá, entendeu?
+ 
+ 
+01:21:53
+ 
+Fabio Diniz: Então, quando que a gente utiliza, né, serviço de domínio? Pessoal, vamos fazer uma pausa ou vocês estão tranquilo? A gente segue. Que que vocês preferem?
+Farley Souza: fazer uma pausazinha, né? Um banheiro, xixizinho aqui.
+Fabio Diniz: Vamos lá. Eh, 207 a gente volta, então. Beleza.
+Farley Souza: O o 20 não quebradinho de 3 minutos aí.
+Fabio Diniz: Pode ser, pode ser. Se o pessoal não achar ruim aí.
+Farley Souza: Pode sair daí.
+Fabio Diniz: Então, beleza, pessoal. 20:30 a gente volta. Fala pessoal, vamos lá. Opa, diz aí, Márcio.
+Márcio das Chagas Ramos: Eh, boa noite. Tão me ouvindo?
+Fabio Diniz: Boa noite.
+Márcio das Chagas Ramos: Ah, sim. Aí, uma pergunta.
+Fabio Diniz: Claro.
+Márcio das Chagas Ramos: Esse evento ele fica dentro do mesmo contexto da requisição, certo? Por exemplo, tem a requisição, eu tem o render, eu processei o handler e no final ali ele vai disparar os eventos de domínio.
+ 
+ 
+01:30:50
+ 
+Fabio Diniz: Sim.
+Márcio das Chagas Ramos: O render só vai retornar pro front end para quem chamou API depois que esses eventos forem processados, certo?
+Fabio Diniz: Não,
+Márcio das Chagas Ramos: Não, ele é ele é assíncrono.
+Fabio Diniz: não,
+Márcio das Chagas Ramos: Então,
+Fabio Diniz: não. O disparo ali interno é síncrono, mas eh eh eu não se é não,
+Márcio das Chagas Ramos: o processamento dos eventos
+Fabio Diniz: mas eu não sei como é que você implementou a PI, né? Não sei que ponto que tá ali aquele código.
+Márcio das Chagas Ramos: assim, pensando pensando em um mono em um monolítro,
+Fabio Diniz: Isso aí.
+Márcio das Chagas Ramos: eu não tenho outros módulos, outros sistemas. Eu tenho ali um end point, por exemplo, eh, pedido, venda, né? A todo sistema vendeu alguma coisa e ele vai ter queitir um evento, ah, uma venda foi feita. Esse end point só vai ter o retorno quando eh esse processo for finalizado dia do evento ou
+Fabio Diniz: Depende como você implementar.
+Márcio das Chagas Ramos: não.
+Fabio Diniz: Você pode aguardar ou não. Você pode, Passei ali a base de dados ali, disparei, vou ficar aguardando e só vou dar o retorno quando isso terminar.
+ 
+ 
+01:31:57
+ 
+Márcio das Chagas Ramos: Ah, então depende da forma de paramentar.
+Fabio Diniz: É, se que vai,
+Márcio das Chagas Ramos: OK.
+Fabio Diniz: como você vai implementar isso. Não sei como é que você foi que você chegou naquele pedido, né? Onde que veio, isso foi de fato um algo que veio da tela, se foi uma importação, por exemplo. Tem n maneiras. Maneiras,
+Márcio das Chagas Ramos: Tá certo.
+Fabio Diniz: nem se tem API,
+Márcio das Chagas Ramos: Beleza,
+Fabio Diniz: tá?
+Márcio das Chagas Ramos: então.
+Fabio Diniz: Ô, ô, Márcio, nem seque se tem API,
+Márcio das Chagas Ramos: Uhum.
+Fabio Diniz: né? Não sei nem se tem API. Pode, tem várias maneiras de como você chega naquele ponto. O ponto é, eu tenho uma eu tenho uma classe eh que ela sofre alterações. Beleza? Esse esse esse maior ponto.
+Márcio das Chagas Ramos: Sì.
+Fabio Diniz: Esse esse é o maior ponto que vocês têm que entender, tá pessoal? Eh, de novo, porque o que você tá me tr quando quando você me perguntou isso, olha o que que já me vem na mente de cara.
+ 
+ 
+01:32:43
+ 
+Fabio Diniz: Ô, Márcio, eu tô eu tô trazendo problemas externos pro meu mundo interno e é justamente isso que eu quero evitar com o evento,
+Márcio das Chagas Ramos: É porque normalmente o mais comum é o evento ser processado fora daquela
+Fabio Diniz: entendeu?
+Márcio das Chagas Ramos: trad que do do render, que o render retorna e o evento vai notificar um outro interessado, né?
+Fabio Diniz: Eh, aí você já tá trazendo um problema técnico também pro seu pro seu pro seu domínio, que é outra coisa que a gente não quer. A gente não quer que infra e impacte no nosso domínio, entende? É justamente esse esse é justamente o ponto. Quando eu faço o lançamento de eventos, eu tô tentacoplamento das coisas. Quero justamente que o um mundo externo, eu não tenho que atender necessidades do mundo externo de forma eh não é só acoplada, fujo a palavra. Quando tem muita eh o acoplamento é muito forte, isso é ruim, certo? Eu eu gero uma necessidade, uma uma necessidade de de manter as coisas funcionando muito muito fortes. Então, o evento ele quebra isso, eu quero quebrar esse acoplamento. Beleza? Então assim, eu não tô preocupado quando as o que que tá acontecendo lá de fora, qual que é a tecnologia que tá utilizando, qual que é o formato que foi implementado, quem que tá guardando.
+ 
+ 
+01:34:05
+ 
+Fabio Diniz: Eu não quero ter, meu domínio não não deve saber disso, entendeu?
+Márcio das Chagas Ramos: Entendi.
+Fabio Diniz: a a o objetivo do evento é justamente isso, eu quebrar os acoplamentos, ter um acoplamento mais fraco, entendeu? Então eu eu tenho uma necessidade que é eh alterações de estado no no meu domínio geram efeitos colaterais no
+Márcio das Chagas Ramos: Ja.
+Fabio Diniz: sentido no seguinte, não eh efeitos colaterais não não de uma forma pejorativa, né? Não não quer dizer que é ruim. Ela ela ele deve eh alterações de estados dentro do meu domínio geram eh deve podem querer gerar efeitos em outras partes do
+Márcio das Chagas Ramos: He.
+Fabio Diniz: sistema, beleza? Só que eu quero fazer isso de uma forma que não seja acoplada. Aí eu uso eventos porque outras partes vão ter vão vão ler esses eventos. Eh, algo que às vezes você não pegou direito, uma coisa é o publicar, certo?
+Márcio das Chagas Ramos: Uhum.
+Fabio Diniz: Outra coisa é alguém consumir, beleza?
+Márcio das Chagas Ramos: Beleza.
+Fabio Diniz: Pode ser que o o o publicar, eu publico agora e quem tá consumindo vai consumir daqui 10, 15 minutos, 20 dias, porque eu tô eh depende de como eu vou implementar isso.
+ 
+ 
+01:35:18
+ 
+Gustavo Ferraz Fontes: Yeah.
+Fabio Diniz: Só que o meu domínio ele não sabe disso, beleza? Porque a preocupação dele é: "Cara, eu executei a minha tarefa aqui dentro do meu mundinho, isso foi feito?" Foi. Eu sou alerta que eu fiz. Por quê? Porque eu sei que tem pessoas, eu sei que tem entidades, entes externos com aí não importa se é uma outra classe, um outro módulo, um outro sistema, enfim, eu sei que dado que só que eu sofro alterações aqui, terceiros precisam saber que isso aconteceu, beleza? Aí, ao invés de eu fazer acoplado, que eu tenho que entender como conversar diretamente com esses terceiros e esses terceiros tm que entender como conversar comigo, eu faço lançamento de eventos que aí é desacoplado, entendeu?
+Márcio das Chagas Ramos: Uhum. Entendi.
+Fabio Diniz: Mais alguma dúvida?
+Márcio das Chagas Ramos: Não, acho que é só isso mesmo.
+Fabio Diniz: Valeu. Alguém, alguém ainda tem pessoal nesse, nesse ponto aí? Opa, diz aí.
+wallace silva: Eh, só ver se eu entendi. Eh, eu uso muito evento aqui, por exemplo, quando eu vou cadastrar uma coisa no banco, quando antes, o que que eu fazia?
+ 
+ 
+01:36:32
+ 
+wallace silva: Quando ia cadastrar um cliente, executava um monte de outros serviços ali junto depois que precisava do ID do cliente cadastrado para, né, várias coisas que precisava. Hoje o que que eu faço? Cadastrei o cliente, só gera um evento lá, cliente cadastrado e cada um que se vire para ficar ouvindo, né? cada serviço que fique ouvindo ali que foi cadastrado com o ID que foi passado e cada um executa do seu jeito. É mais ou menos
+Fabio Diniz: Bom, é uma forma sim, ou seja, você não você não tem que tá preocupado em como que eles vão utilizar esses dados,
+wallace silva: isso.
+Fabio Diniz: o que que eles vão fazer, entendeu? Você simplesmente, olha, sofri modificações aqui, né? Meu estado mudou. Aí o estado mudado, tá, pessoal? Pode ser criação de coisas, pode ser exclusão de coisas, pode ser modificação de coisas. Ou seja, de novo, né? O estado é um conjunto de de dados, de propriedades e tal, num determinado momento de um de um de um T1, um T0 para um T1 modificou. Eu tô só alertando, ó, saí de T0 para T1, né? O evento é isso.
+ 
+ 
+01:37:32
+ 
+Fabio Diniz: E é isso que você fez. Você só alertou. Aí os outros que vão eh eh seguir com com o que eles precisarem, com as informações que eles precisarem. Beleza. Mais alguém? É, não. Ô, Nat, tá? Depende, depende, depende. É que de novo, uma coisa é publicar o evento, outra coisa é consumir o evento. Beleza? Uma coisa é publicar, outra coisa consumir. Mas vamos lá. Quando utilizar o o serviço de domínio, né, com determinada regra de negócio, não pretende eh exclusivamente a uma classe do domínio quando há necessidade de integração com recursos externos, né? Então a gente vai ver aqui, né, se se vocês lembram ali a gente ficou com com um pedacinho ali de código ali que a gente não colocou dentro do do appointment porque ele fazia com o o uso de um repositório, né? Então a gente tem que lembrar aqui que, né, que um então um serviço de domínio, né, ele pode ele pode ser a a conjunção ali, né, utilização, a união, enfim, ele faz o o uso de vários de várias entidades, vários objetos de valor, vários ou pode fazer uso inclusive de outros serviços de domínio, tá?
+ 
+ 
+01:39:06
+ 
+Fabio Diniz: Então, eh, ambas são classes que trabalham com entidades e value objects, tá? A principal diferença eh entre o serviço de domínio e um serviço de aplicação é que o serviço de domínio possui regra de negócio enquanto de aplicação, não. De aplicação, tá, pessoal, ele tende a ser eh um controlador de fluxo, tá? Normalmente, tá? Por exemplo, quem usa no modelo de MVC, um controller é um application, né? Porque ele orquestra o fluxo da da aplicação, tá? Ele ele tende a ser um application. Aí você tem um controle e cria uma camada de aplicação para depois ir para para uma camada de de serviço. Normalmente não faz muito sentido porque o próprio controller já é o já é o orquestrador de fundo. Então a gente vai ver um um exemplo aqui, por exemplo, withdraw money, né? Ou seja, fazer uma um saque, né? No no ATM. Na ATM, né? Para quem eu eu já não saco dinheiro. Acho que a última vez que eu saquei dinheiro tem uns 5 anos. tem aquelas máquinas de sacar dinheiro, né? Eh, então aqui um um método muito simples, né, de de fazer o saque, né?
+ 
+ 
+01:40:15
+ 
+Fabio Diniz: Eu vou ter uma um um uma instância de um ATM, né? Eu passo, eu chamo um método dispense money, passo o valor, né? Aí eu pego, calculo a comission, né? Porque quem não quem não sei se todos aí lembram, né? Nessas máquinas antigamente tinha casa de 24 horas, né? você pagava um valor, né, para poder fazer saque, né? Então ele faz, ele tem que fazer o cálculo da da do valor, né, o commission aqui, esse esse esse valor. El calcula o total baseado no quanto que você quer sacar, chama o gator de pagamento para poder pagar essa comissão e salva no banco, certo? Então aqui a gente tem uma entidade eh ATM para poder realizar essas ações de negócio, né? e a gente eh torna essas ações realizadas no domínio visivos ao mundo externo através desse desse do gatito e no caso ali salvando na no banco de dados, né? Eh, então a gente pode criar, né, uma classe de serviço, né, ATM, certo? Que ela vai eh fazer o saque e o cálculo da comissão, tá? E ela vai receber esse ATM, beleza? como um parâmetro e o total do que ele quer fazer a o saque.
+ 
+ 
+01:41:35
+ 
+Fabio Diniz: E aí o ATM vai fazer o dispense, tá? Através do do total, vai calcular o total da comissão e vai retornar, beleza? Ou seja, tem um serv de domínio bem específico, faz exclusivamente isso daqui, tá? E aí lá no ifdrawy, né, ele vai ter um ATM Service. Ele vai chamar esse ATM Service, vai passar lá o a a infância da ATM mais o valor que ele quer e sacar. Depois vai chamar o gate de pagamento, seguir a vida dele. Ou seja, encapsulei essa regra dentro de um serviço de domínio, né? Voltando aqui, né? Então tinha aqui esse dispens, né? encapsular essa regra aqui dentro de um serviço de domínio. Aí indo além, né? Eu tenho que, por exemplo, eu não tinha uma cláusula de guarda, ah, eu posso, né, fazer esse esse esse saque, né? Eu tenho que verificar, né? Então, eu tenho esse dinheiro, né? Eu tenho esse dinheiro no depositado no banco, senão não posso nem sacar esse dinheiro. Então tenho que ter uma cláusula de guarda, né, de que eu vou verificar, ah, ele pode fazer esse saque. Se não puder, ele retorna, senão aí ele faz a a o dispens, beleza?
+ 
+ 
+01:42:50
+ 
+Fabio Diniz: E se o cliente nesse caso ali, né, esquecer de realizar essa validação, né, ou seja, tô deixando isso aqui dentro do do método ali do do próprio withdraw Money, né, ou seja, tá espalhado, né? Então vou ter aqui um dispense money que eu vou vou utilizar esse can dispense money amount e eu vou vou dar um throw invid operation bel cabe o domínio manter a coesão, certo? Ou seja ele o próprio eh ATM lá que vai ter que tomar conta disso. Então vamos assumir que o serviço de pagamento pode falhar por conta de saldo insuficiente, né? Então não devemos permitir o saque do dinheiro mesmo. Sei que ficou duplicado. Eh, OK. Vou pessoal espera aí que alguém mexeu nessa apresentação aqui. É, ficou fora de ordem. Bom, mas ele vai ter aqui, né? Então, uma uma ele vai ele vai calcular aqui esse dispense mono, né, que cabe ao próprio ATM, ou seja, ele que vai dizer se ele pode ou não eh fazer o o saque, né, porque ele o ATM que sabe disso, né? Essa classe aqui que sabe consultar lá o saldo, que sabe consultar o cliente se ele pode ou não fazer a a o saque. Se ele não puder, né, obviamente ele já retorna dizendo que não pode e depois ele seca a vida dele.
+ 
+ 
+01:44:21
+ 
+Fabio Diniz: E aí se tiver falha, né, também, né, ou seja, eu tentei eh calculei lá a comissão, beleza? O ATM foi lá, calculou, ou seja, ele pode fazer o saque. Agora eu vou calcular a comissão baseada no valor. Peguei essa comissão. Se eu não conseguir fazer o a cobrança, né, fazer o charge payment aqui no no gator de pagamento, não adianta ele ter ele poder fazer, porque ele tem dinheiro, né? Não adianta eu seguir, por eu não consegui cobrar a comissão, certo? Então, se gerou falha, eu retorno. Senão, se passou, aí sim eu faço a o saque do do valor. Beleza? Então, esse IF aqui ele acaba sendo uma regra de negócio, né? Ele que decide quando o dinheiro é de fato liberado ou não. Beleza? Quem E aí quem tá tomando essa decisão é não é a entidade de domínio do ATM, beleza? Isso é um e sim um serviço de aplicação, tá? Então, a gente pode implementar um serviço de domínio nesse caso, que vai encapsular esse comportamento e ele vai dizer se pode ou não fazer essa essa esse saque. Então, o, desculpa, o serviço de domínio ele pode ele pode eh possuir várias regras de de negócios e requerer informações do mundo externo.
+ 
+ 
+01:45:45
+ 
+Fabio Diniz: Ou seja, que a gente evita que o domínio de fato tem, certo? Eu não quero que o domínio entenda de repositório aqui, entenda de outras coisas, não. Ele tem que ser o máximo possível, de novo agnóstico de de do mundo externo, agnóstico de de infraestrutura, ou seja, eu quero eu quero deixar ele o mais isolado possível, tá? Isso é um isso é um porquê, né? Porque na hora de, por exemplo, eh, principalmente na hora de testar, né, se o meu domínio ele tá mais livre dessas coisas, eu tenho menos dependências e fica mais fácil de eu testar ele, né? testar a lógica de fato do corder ali da da aplicação. Então, se a gente colocar aqui, então, por exemplo, a gente cria um payment eh gateway service, certo? Eu vou receber esse esse esse gateway aqui, né? Aí eu vou ter um ifdraw que ele vai fazer, olha, o ATM vai dizer, eu posso fazer um um um o saque, calculo a comissão, tento fazer o o a cobrança. Se não deu certo, eu retorno. Se deu certo, aí sim eu libero. Ou seja, eu encapsulo isso tudo nesse ATM Service. Beleza? Por quê?
+ 
+ 
+01:46:56
+ 
+Fabio Diniz: Eu não quero jogar esse charge payment para dentro do ATM. Por quê? Porque isso aqui é um serviço externo. Eu não quero que essa dependência aqui esteja dentro do ATM. Beleza? Só que eu preciso de alguma forma que essa regra aqui, né, seja uma regra eh de dentro do meu domínio. Então, encapsula isso dentro de um serviço de domínio, beleza? Que aí sim, dentro de um serviço de domínio eu posso ter dependências do mundo externo, que no caso é esse payment eh gator service, beleza? Então, recebo esses dois e aí ele faz esse essa essa tratativa para mim. Então eu encapsulo dentro de um serviço de domínio essa essa regra de negócio, tal. Então meu draw money acaba ficando algo extremamente mais simples, né? Eu eu pego uma instância de um ATM, passo essa instância e o valor que eu quero fazer a o saque para um serviço de de ATM que vai me fornecer esse draw money, ele vai fazer essas tratativas todas e vai retornar para mim. Eh, aqui se der, a gente colocou com o, como é que fala? Vamos voltando aqui, quer ver? Com result, né? Aí ele vai tratar aqui, se der tudo certo, ele salta.
+ 
+ 
+01:48:16
+ 
+Fabio Diniz: Beleza? Então fica extremamente mais simples do que a gente colocar isso dentro da classe de domínio, tá? Ficou claro isso aqui, pessoal? Normalmente serviço de domínio, serviço de aplicação, o pessoal se perde um pouco mais. Então vamos lá, vamos voltar aqui. Essa regra aqui é uma regra que depende do domínio, certo? se eu posso ou não fazer o saque, uma regra que é do domínio do ATM, só que para eu poder dizer se eu posso ou não, eu dependo de algo externo que esse payment gateway, beleza? Eu não quero gerar essa dependência dentro do ATM porque não faz sentido, porque é algo externo. Beleza? Apesar do meu domínio depender dessa informação, é algo externo, certo? Então, para eu não colocar isso dentro do domínio do ATM, eu crio um serviço de domínio, né? E voltando lá, ó, voltando lá, não, o serviço de domínio, então ele pode eh englobar várias entidades, várias value obs, vári pode até outro serviço de domínio, tá? Então, eu uso isso aqui, eu faço eh essa junção de coisas para gerar um comportamento que eu preciso, beleza? Porque que a eu não gero acoplamento da minha classe. Eh, vocês estão vendo, né, pessoal, que eu tô falando de acoplamento o tempo todo.
+ 
+ 
+01:49:35
+ 
+Fabio Diniz: A intenção disso tudo aqui é eu ficar evitando eh acoplamentos desnecessários ou reduzir o acoplamento onde onde eu consigo, porque na na durante o tempo, né, ao longo do tempo, as mudanças vão se tornando eh eh melhores, né, elas não não geram tanto tantos efeitos colaterais porque eu já fui ficando preocupado em não gerar acuplamentos desnecessários ou em reduzir acoplamentos onde eu conseguir reduzir, tá? Então, a ideia aqui é essa, eu não eh transformar o meu ATM eh ter dependência do gateway externo. Beleza? Por mais que, né, eh eu faço isso aqui implementar de uma forma que seja fácil de trocar depois e tudo mais, não faz sentido porque na hora de criar os testes aqui do ATM fica ruim porque eu tô dependendo de algo externo. E aqui vai ter que gerar moque, né, um monte de coisa. Enfim. Então, né, eh, idealmente, né, serviços de domínios, eh, possuem possuem regras de negócio, enquanto serviço de aplicação eles não possuem, tá? Por vezes é OK manter um pouco de regra de negócio que não se encaixa em nenhuma entidade de serviço de aplicação sem criar um serviço de domínio para todos os casos, né? Que que a gente tem que garantir, tá?
+ 
+ 
+01:50:55
+ 
+Fabio Diniz: que essa loja não seja replicada em outros serviços, ou seja, já acabo espalhando isso em outras áreas do da aplicação e nem que ela seja muito complexa. Se ela é complexa, ela tem que fazer muito espaço, provavelmente tem alguma coisa ali do domínio que eu ainda não não tem uma compreensão muito alta e ainda não pensei algum serviço de domínio, alguma coisa ou até às vezes uma outra classe, alguma entidade nova que eu não eu não percebi ainda. Então, vale a pena quebrar um pouco a cabeça ali para poder tentar entender, tá? Eh, e a gente sempre utilizar o serviço de domínio quando a regra de negócio não pertence a enti duplicado, cara. Alguém mexeu nessa aplicação. Ah, não tá certo. É estranho. Alguém mexi nessa nessa apresentação e duplicou algumas coisas, mas beleza. Eh, a gente eh utilizar serviço de domínio quando a regra de negócio não pertence a uma entidade específica, né? Ou seja, se eu não consigo colocar dentro de uma entidade aquele comportamento, certo? não faz sentido dentro nenhuma entidade ou não consigo criar uma outra entidade nova que vai absorver aquele comportamento não faz sentido pro meu domínio, né? A gente tem que pensar, quando eu falo não faz sentido, pessoal, é no sentido de eh expressividade, né?
+ 
+ 
+01:52:12
+ 
+Fabio Diniz: meu código, ele tem que ser expressivo no que ele tá fazendo. Então, não vou criar uma entidade com nome nada a ver, só porque eu não quero deixar aquele comportamento solto em algum lugar, não. Eu tenho que gerar de uma forma que até para mim, quando eu for ler no futuro, eu for eh ler novamente aquele código lá, eu entender de fato o que que aquilo faz, dado os nomes que eu utilizei, dado as entidades que eu criei e tudo mais. Eh, então a gente utilizar serviço de domínio, né, quando a lógica não pode ser atribuída a a uma entidade, por isso quebraria seu isolamento. Foi aquele caso ali do ATM, né? Eh, se eu jogasse aquela lógica para dentro do ATM, eu tava furando o isolamento dele, porque ele eu tava gerando para ele funcionar, eu tava gerando uma dependência de algo externo. E um serviço de domínio pode ser injetado em uma entidade C, tá? for puro, ou seja, ele foi isolado, ele não depende do mundo externo, beleza? Porque senão na prática, ah, não, eu vou criar um serviço de domínio para porque ele vai utilizar algo do mundo externo e eu não quero que isso fique dentro da minha entidade, mas eu vou lá, pego save de domínio e injeto ele numa entidade, vai dar o mesmo problema, só que é indireto, né?
+ 
+ 
+01:53:23
+ 
+Fabio Diniz: Então, se ele for puro, ou seja, ele não tem independência do mundo externo, não tem problema eu eu injetar ele aqui. OK, pessoal, até aqui. Então, vamos seguir, vamos falar um pouco sobre agregados, tá? Então, aqui acho que o exemplo mais simples de todos, né, que todo mundo eh conhece é o de é o de pedido, né? Então, um pedido ele pode ter vários itens, certo? e um consumidor, ele pode ser um cliente, né? Ele pode ter eh vários endereços. Beleza? Então, quando a gente vai pensar em agregado, a gente tem que pensar o seguinte, pessoal. Quando eu vou fazer uma uma salvar as coisas no banco, tem que pensar que eu consigo fazer aquilo tudo numa transação única. Por quê? A gente falou muito aqui também de consistência, estado válido e tudo mais. Quando eu tenho uma instância de algo e eu salvo ela no banco, ou seja, eu estou persistindo um estado, pegando aquele conjunto de dados, de propriedades, daqueles dados naquele momento específico e persistindo no banco. Ou seja, eu tô salvando aquele tempo daquele daquele daqueles dados, alguma fotografia daquilo, tô salvando no banco. Eu uma hora eu vou ter que fazer o caminho contrário, vou ter que pegar o que tá persistido e trazer de volta para pra aplicação.
+ 
+ 
+01:54:42
+ 
+Fabio Diniz: vou ter que trazer para uma instância novamente. Isso tem que ser tem que ser eh eh válido e consistente na hora de persistir e válido e consistente na hora de eu trazer de volta para paraa aplicação, né? Aí por isso dos construtores, porque que os construtores eh têm que ser bem escritos, né? Para gerar um estado consistente e tudo mais. Então se eu tenho, se eu pensar numa transação única de salvar um pedido, certo? Não faz sentido, por exemplo, eu salvar os itens, você salvar o pedido, certo? Não faz sentido eu salvar os itens você ter um pedido antes. Beleza? Então, se a gente pensa nessa transação única, ou seja, tem que salvar esse estado consistente junto. Ah, eu posso salvar primeiro pedido, depois os o quando eu falo primeiro, tá, pessoal? Tô dizendo assim, ó, fiz, salvei e tô fazendo depois, tá? Lógico que não consigo fazer tudo numa uma única vez, né? Mas eh não por isso que é uma transação. Se eu salvei o pedido e depois eu salvei os itens, eu tô garantindo que aquele estado que existia tá persistido no banco de alguma maneira que eu consigo retornar ele depois, tá?
+ 
+ 
+01:55:48
+ 
+Fabio Diniz: A mesma coisa o cliente, né? Então isso aqui a gente pode chamar de agregate root, né? Que é a raiz do agregado. Beleza? Então é muito comum, tá? É muito comum a gente ver a galera criar vários repositórios para um agregado e não faz sentido porque a ideia do repositório é ele ele trabalhar aquela transação única. Então eu teria, por exemplo, um um order repository, mas eu não teria um order item repository. Isso não faz sentido. É o agregado que vai lidar com tudo. Por quê? Porque é ele que vai garantir a consistência do todo. É ele que vai garantir a consistência dos dados, a validade dos dados como um todo. Beleza? Por exemplo, eu não, se eu se uma ordem lá eu adicionar um item, pegar um item X lá e falar que a quantidade dele em vez de dois é 4, certo? Ou seja, o valor altera 4 vezes, sei lá, 10 daria 40 e não, né? 2 x 10 daria 20. Então, se eu somar os meus itens e depois pegar o total do pedido, não vai bater, certo? Ou seja, para eu não gerar esses problemas, é o é o agregado que lida com isso tudo, ele que garante a consistência do todo ali, tá?
+ 
+ 
+01:57:04
+ 
+Fabio Diniz: Então, vamos supor, um agregado pode ser formado por várias entidades, beleza? O Rut é que toma conta de tudo, ele que gar a cada entidade vai vai que a gente falou ali antes, né? Cada entidade vai garantir o o dela, né? vai o encapsulamento dela, o a consistência dos dados dela e tudo mais, mas do agregado quem é quem garante é o agregate root, é ele que vai garantir que os dados estão consistentes. Beleza? Aí aqui mais uma coisa, tá? Não, por que que eu não lembro que eles mexeram? Ah, mas se vocês não tiver ali, eu falo com vocês. Mas basicamente o seguinte, a comunicação é sempre entre agregados também. Então, por exemplo, ah, o pedido tem que consultar alguma coisa do cliente. Ele pede, o agregado do pedido faz uma consulta ao agregado do do cliente, nunca vai nas nunca vai em entidades dentro do agregado que não seja pelo root, tá? por esse mesmo motivo, consistência, coesão, encapsulamento, pode ter alguma regra, alguma coisa que o agregado entende que o as entidades que não são a raiz não vão entender. Então, essa comunicação entre entre agregados tem que ser pela raiz. Então, como é que a gente descobre eh um agregate ro de uma maneira bem bem simples, né?
+ 
+ 
+01:58:24
+ 
+Fabio Diniz: Tem casos mais complexos, né? Mas é eu pensava na deleção. Se eu deletar aquele objeto, né? você excluir aquele objeto, os filhos também eh precisam ser deletados para para manter coerência. Ou seja, faz sentido manter um um um item de pedido sem ter o pedido? Não faz sentido, né? Não faz sentido. Agora, o inverso é verdadeiro, né? Se eu se eu excluir o o o faz sentido eu ter só o pedido e não ter os itens. Faz. Posso estar montando um pedido ali ainda, que eu ainda não adicionei os itens dentro daquele pedido, tá? Então vou ter ali o order, o order item, né? Então eu posso deletar um item sem precisar deletar eh todo agregado, sim, mas eu não posso deletar o pedido sem deletar o o agregado. Beleza? Então, agregate root, né? A gente falou lá, a gente fez aquele ent lá, né? A gente vai ter um agregate root, beleza? Deixa eu pegar o mouse aqui. Então, ele vai ter a mesma coisa, ele vai ter que o o events, certo? E aí vai ter o o rout, certo?
+ 
+ 
+01:59:32
+ 
+Fabio Diniz: E ele vai receber aqui a mesma coisa, praticamente a mesma coisa lá do doente, só que ele só vai servir para pro pra raiz do agregado. Beleza? Vai implementar o domain do mesmo jeito, vai adicionar uma hora ele vai disparar lá para lá paraa frente. Então a um pedido ele vai ele vai herdar do do agregado, tá? Ele vai ter uma lista de de pedidos. né? E aqui de novo a atenção pro pro construtor, certo? Então eu não consigo instanciar uma nova ordem, um objeto, uma instância de um objeto ordem, eh ordem, não, pedido, sem o ID dele, sem qual que é o o cliente, a data de criação e o o total e o status, tá? A lista aqui também, ah, mas a gente não pode ter 100 itens, pode a lista para est vazia, né? Então aqui eu preciso só de um de um de um uma lista mesmo de itens, mas a lista uma instância, né? Mas a lista pode estar vazia, tá? Então faço a tribuição dos objetos só get, ou seja, não tenho set, ou seja, ninguém externo consegue alterar nada dentro do agregado, a não ser o próprio agregado. Beleza? E aí item, tá?
+ 
+ 
+02:00:51
+ 
+Fabio Diniz: No C#ARP, né? Não sei se vocês já utilizaram, tá? a gente tem o partial class, que é uma forma da gente organizar ali os namespace, que, ou seja, eh, o, ou seja, aquele item existe dentro da da classe eh order, beleza? Só que para eu não colocar dentro do mesmo arquivo, conseguir colocar em arquivos separados, né? Eu uso espartial class. É, é mais por questão de organização, tá? Ou seja, facilita pra gente aqui é um objeto simples, né? A gente tá pegando um caso simples, mas podem ter objetos mais bem mais complexos com vários vários outros eh várias outras eh classes, entidades dentro. Então isso aqui é uma forma, né, a gente usar o parti pra gente poder eh agrupar isso, ter essa coesão entre os objetos, mas em arquivos diferentes, tá? Então aí no caso aqui o item ele vai dado entity, né? Porque ele é uma entidade, não é um agregado, não é uma raiz de agregado. Beleza? E aqui a mesma coisa, ele vai ter o controller, ó, o controller, ele vai ter o construtor garantido que ele na qual que é o estado válido, né? Para ele entrar em um estado válido, né?
+ 
+ 
+02:01:56
+ 
+Fabio Diniz: Eu conseguir criar um item. No estado válido, eu preciso do ID daquele item, a descrição e o total, certo? Então, a classe order partial, enfim, né, que eu expliquei aqui agora. Não tão e não tem como haver um item sem pedido, beleza? E aí o meu repositório, que eu tava falando lá anteriormente, eu não crio um repositório para cada entidade, isso não faz sentido. Eu crio pro agregado, que de novo eu tenho que ter uma coesão entre todas as entidades dentro do agregado. E aquela coesão, aquele aquele aquela consistência daquele estado naquele determinado momento tem que ser persistido junto, porque na hora que eu voltar eu também tenho que ser possível trazer aquele estado junto, beleza? Eh, então nem sempre teremos agregados complexos, tá? Agregados devem se, que eu falei ali mais anteriormente, agregados devem se comunicar apenas entre os roots, tá? O customer não conversa com order item, ou seja, ele tem que conversar com o order para se ele quiser alguma informação sobre os itens, ele tem que conversar com o order, que é o agregado, e aí o order vai ter alguma forma de expor isso para fora. Beleza? Eh, muitas eficazes para entidades filhas podem apresentar um problema de modelagem, ou seja, a gente tem muita fora em K, né?
+ 
+ 
+02:03:24
+ 
+Fabio Diniz: eh para entidades eh filhas, pode ser que a gente tá pensando esse agregado ali muito grande, né? Agregados de um não tem nenhum problema, tá? São aceitáveis. Ou seja, eu tenho um agregado que tem uma só uma entidade e aquela entidade é o a raiz. E sempre a gente sempre a gente observar essa regra de de exclusão em cascata, né? Paraa identificação da da raiz agregada. Até que o quê, pessoal? Ninguém achou estranho isso aqui, não. Vocês estão melhor que eu de DDD, então tá, porque no início a gente criava lá na na empresa mais um monte de repositório. Nossa senhora, dor de cabeça que a gente teve com isso. Eh, então falar aqui um pouco de boas práticas, né? Então, né, o Iagne aí, né, não sei como pronuncia, né, gente, eh, algo que você não vai precisar, né? Então, ficar com com isso na cabeça, né? A gente não não fazer mais do que o necessário para uma para uma implementação, né? A gente falou muito disso lá na parte de fatoração, né? Então, os eh a gente tem que lembrar que os requisitos de negócio mudam constantemente, né?
+ 
+ 
+02:04:43
+ 
+Fabio Diniz: Então, se a gente tá eh criando código desnecessário, mexendo em código desnecessário, a gente tá na na prática arrumando dor de cabeça no futuro, né? Então, ter isso em mente também que o código é um passivo, não ativo, porque a partir do momento que a gente escreveu aquele código, ele tem que ser mantido, certo? Então isso gera um custo ao longo do tempo paraa empresa. Eh, e um outro importante, tá, pessoal, que muita gente também não pega, teste é código. Teste é código, teste também é passível, também tem que manter os testes, tá? Então, tenham isso em mente também, encapsulamento, né? Então, o que que é na prática, né? É a gente expor apenas o necessário para alteração, certo? Então não, eu não, eu não pego um objeto e fico criando um monte de comportamento que não vai ser utilizado, que não vai fazer sentido ou que vai gerar eh confusão. Não, expõe apenas o que é necessário. Isso encapsulamento, eu tô usando do objeto, mas isso vale para qualquer coisa, para qualquer nível de de abstração. Pode ser até o mais baixo lá da entidade até um mais alto entre esses sistemas. Beleza?
+ 
+ 
+02:05:49
+ 
+Fabio Diniz: Ou seja, eu não, o que a gente viu lá, o caso da da API, né? eu não exponho eh todo o meu contrato do domínio na API. Por quê? Porque isso não faz sentido. Então, a nível de de entre integrações entre sistemas, eu não exponho mais do que o necessário, tá? Porque eh pensem até o seguinte, tá? Se eu exponho mais do que o necessário e tem algum sistema que tá pegando uma informação que até pode ser útil para eles, mas eles estão pegando da maneira errada, porque eu us porque eu expuso da maneira errada, eu tô gerando acoplamento, eu tô gerando dependência. Pode ser que lá na frente que eu queira mudar alguma coisa, o pessoal, ah, não, mas eu preciso de informação, não sei quê. Ah, não, mas isso nem deveria estar exposto. É, pois é, mas eu uso aí meu sistema aqui depende disso para fazer isso, isso, isso, isso. Então assim, toma, tomem cuidado com isso, tá? a dispor eh contratos, a gente ter essa essa preocupação. Eh, falei aqui várias vezes também, tomar cuidado para não permitir que o domínio esteja num estado ca num estado inválido.
+ 
+ 
+02:06:49
+ 
+Fabio Diniz: Eh, estados inválidos transientes não tem problema. Ou seja, são, eu tô fazendo alterações ali e aí em um outro momento pode ser que ele esteja um estado eh inválido transiente, mas agora um um estado inválido persistente, ou seja, que eu vou persistir no banco, não, não pode, certo? Não pode. Por quê? Porque na hora de eu que eu for trazer de volta esse estado do banco paraa memória, eu tenho que garantir que ele seja válido, certo? Então você imagina, eu eu persisto num estado inválido, na hora que eu vou recolher, eu tenho que saber que ele tava inválido, porque n problemas lá, enfim, não funciona, tá? Vamos sempre garantir isso. E eh tenho em mente também que encapsulamento não é a mesma coisa que isolamento, tá? Isolamento, eu iso, eu isolo funcionalidades, eu isolo eh eh fugir a palavra, responsabilidades, certo? É diferente, tá? Então, o encapsulamento encapsula ali os comportamentos, tudo mais, das regras de negócio. Então, capsulamento protege o que deve ser imutável. O isolamento separa a as responsabilidades de hoje. Era isso, pessoal. Alguma dúvida, algum ponto?
+ 
+ 
+02:08:04
+ 
+Fabio Diniz: Eu lembrei de um item aqui, eh, essa questão de isolamento, de encapsulamento e de objetos. Se vocês pararem, a gente, eu falei com vocês numa, numa outra aula de da da do aquele uso obsessivo de ob de tipos primitivos, né, que eu passei até um videozinho lá do Alemar, mostrei para vocês aquele aquele artigo dele do CPF, não sei quem chegou a dar uma olhada ou não, aquilo vai muito nesse sentido, certo? Ou seja, eu criar coisas que são encapsulados, comportamentos, eh eh expressividade do meu código dentro de um de um de um objeto. Se vocês pegarem os próprios tipos primitivos, se eu pego, por exemplo, um um date time, eu não consigo, date time é uma classe, eu não consigo instanciar um date time num estado inválido, certo? Eu quero fazer coisas com date time, operações date, onde estão essas operações? No date? dateim ped data, subtrai data, contar quanto tempo dá de um lado, enfim, tem várias operações dentro do próprio dentro do próprio tipo, certo? Int a mesma coisa. Ou seja, o eles já eles são encapsulados. Se eu pego um string, tipo string, ele já tem lá o substring, tem tram, tem um monte de coisa.
+ 
+ 
+02:09:23
+ 
+Fabio Diniz: É ele mesmo. Você poderia tá num outro lugar fazendo essas essas operações, poderia, mas não faz sentido, né? porque o próprio o próprio objeto entende do do eh as operações que são inerentes a ele e mais, ele próprio altera o seu estado. Claro que esse tipo primitivo é um pouco diferente porque, né, eu eu posso passar alterar a variável lá enf tudo mais, mas a grosso modo ele eh no date time, por exemplo, não, né? Poderia de data, por exemplo, ele mesmo se altera o seu estado. Beleza? Então, é é vocês terem essa essa essa percepção, né, de que o eh eu criar eu criar entidades, por isso que eu falei também lá no início, para tomar cuidado com a palavra domínio, né, criar entidades mais coesas, mais encapsuladas. Na prática, eu tô eu tô eh eh criando um dinho ali daquele conjunto de comportamentos, está ou seja, estô montando mesmo um objeto de fato bem coeso, bem consistente. Fala aí, fala.
+Farley Souza: Ô, eh, ô, Fábio, aproveitando, né, essa finalzinha de boas práticas e tal, eh, eu acho que foi tão pouco que o Elemar falou na live dele, né, o acompanhamento, ele é algo que que pega a gente pelo pé, né?
+ 
+ 
+02:10:38
+ 
+Farley Souza: Porque se você não parar para prestar muita atenção, se as coisas fazem sentido, está ligadas ali, passa batido, porque no final do dia funciona, né?
+Fabio Diniz: Sim,
+Farley Souza: E nem sempre o funcionar é o que está correto.
+Fabio Diniz: sim, sim.
+Farley Souza: Eu queria te perguntar se você indica alguma coisa para ler sobre essas boas práticas aí de acompanhamento e tal, porque eu acho que a gente sempre é pego nos vícios, sabe?
+Fabio Diniz: Cara, então,
+Farley Souza: Acho que a gente
+Fabio Diniz: mas na eu não cheguei a ver a você tá falando a Masterclass do Alemar, né? É, eu não cheguei, essa eu não cheguei a participar. Eh,
+Farley Souza: Oi,
+Fabio Diniz: mas provavelmente ele deve ter dito, né, assim, os padrões de projeto, os padrões de design, essas coisas todas é muito no sentido de te ajudar a evitar acoplamento. Então, assim, é prática, cara. Eh, tem um livro específico,
+Farley Souza: cabeça mesmo, né? É, entendi.
+Fabio Diniz: como é que é?
+Farley Souza: É gastando cabeça mesmo, né? Não tem
+Fabio Diniz: É, primeiro você saber que o complamento existe,
+Farley Souza: jeito.
+Fabio Diniz: né? Ou seja, tem a aula lá que mostrou para vocês o aferente, e ferente e tudo mais.
+ 
+ 
+02:11:44
+ 
+Farley Souza: Isso.
+Fabio Diniz: Então,
+Farley Souza: Uhum.
+Fabio Diniz: eh, a primeira coisa é saber que isso existe, senão nem adianta você querer tentar combater algo que você não sabe que existe,
+Farley Souza: Uhum.
+Fabio Diniz: certo? E aí praticando, você vai vendo, você vai vendo no seu dia a dia que você, pô, você já deve ter passado por isso n vezes.
+Farley Souza: Угуm.
+Fabio Diniz: Ah, alterei tal coisa em tal lugar. Toda vez que eu altera aqui, quebra em outros lugares. Isso é acoplamento. Você pode não ter, você pode não saber que era isso,
+Farley Souza: Угуm.
+Fabio Diniz: né, com esse nome, mas isso é acoplamento, entendeu? Isso é acoplamento. Só que e aí tem vários níveis, né? De novo, você pode ter acoplamento entre entidades, você pode ter acoplamento entre componentes, você pode ter acoplamento entre módulos, você pode ter acoplamento entre sistemas. Por que que mensageria ganhou tanta força? Porque as formas de integração que existiam, na verdade, mensageria existe há décadas, né, mas ela ela ganhou mais espaço porque os sistemas começaram a ficar muito distribuídos por causa por causa da internet, né?
+ 
+ 
+02:12:43
+ 
+Fabio Diniz: Mas mensagem em si já existe há muitos anos, há muitos muitos anos. Mas ela começou a ganhar força por isso, porque as formas de integração que eram mais usadas, elas elas geram um acoplamento muito forte. Então se você integrar via HTTP, integrar via disco, né? Muita gente que ainda faz integração via arquivo, via banco de dados. Muito, muito, muito, muito. Tem muito sistema que ainda faz. O sistema X gera um arquivo não sei que lá em CSV e salva num lugar X do disco de um outro lugar ou envia via SFTP. Muito, tá? Não sei. No caso de você, já peguei muito sistema assim, muito muito muito muito muito muito muito muito de empresa muito grande, tá? bem grande, bem grande. Você fala assim: "Ah, os cara não vai trabalhar, cara. Funciona, funciona, entendeu? Para que que eu vou parar um dev, não sei quê para alterar criar mensageria de novo?" Aí é um problema. Eh, eu não sei se o Lemar falou isso nessa, nessa Masterclass, mas ele traz muito isso, ele faz a diferença da das complexidades, né? Tem a complexidade essencial e a a acidental.
+ 
+ 
+02:13:48
+ 
+Fabio Diniz: acidental é que a gente coloca,
+Farley Souza: Угуm.
+Fabio Diniz: agente técnico, a essencial é que vende negócio, ou seja, são eh são necessidades de negócios que a gente tem obrigatoriamente que implementar. Eh, implementar, não, desculpa, a gente tem que atender,
+Farley Souza: Угу.
+Fabio Diniz: né? São necessidades de negócio. Então, eh quando a gente tem algumas necessidades, eh complexidades que são nossas, é essa, por exemplo, ah, não, eu não vou fazer integração via arquivo porque isso não é uma boa prática, isso não sei quê. negócio tá nem aí, cara. Tá nem aí.
+Farley Souza: para
+Fabio Diniz: Sistema A gera arquivo, o sistema B leu arquivo e sai lá o resultado que eles estão querendo.
+Farley Souza: ele.
+Fabio Diniz: Eles estão nem aí. Aí você vai lá e vai resolver mexer naquilo e quebra, entendeu?
+Farley Souza: Uhum.
+Fabio Diniz: Certo? Então assim, eh eh não tem certo nem errado, né? Depende, né? Tem que olhar o cenário, mas é é muito nesse sentido de acoplamento, entendeu? Então, mensageria ganhou muita força por isso,
+Farley Souza: Угуm.
+ 
+ 
+02:14:43
+ 
+Fabio Diniz: porque você gera um você quebra acoplamentos entre sistemas. Tem outros benefícios, né? Por exemplo, a, por exemplo, quando eu faço uma uma uma integração via HTTP, obrigatoriamente aquele canal tem que tá de pé, certo? Se eu tenho que chamar a PIx no no o sistema A, tem que chamar a PX do sistema B para poder mandar uma informação,
+Farley Souza: Угу.
+Fabio Diniz: integrar, né? Se a se a AP e B não tá de pé, não faço nada. Mensageeria não, né? As mensagerias hoje você consegue enfilerar e não sei quê e depois o o B na hora que voltar ele consome de acordo com o que ele precisa. Então você ganha em resiliência, enfim, tem outras coisas que você tem de ganhos, só que é mais complexo, certo? é mais complexo. Por que que o Não sei se porque assim, o Elemar faz várias masterclash, eu não sei exatamente o que ele trouxe nessa. Por que que o Elemar defende também eh eh não ir direto para microsserviço, quebrar um monolito em microsserviço, porque na prática você vai ter um monte de problema de integração. Então é melhor você ir de você transformar seu monolitro num monolit modular primeiro.
+ 
+ 
+02:15:50
+ 
+Farley Souza: Угуm.
+Fabio Diniz: Você você refatora ele porque você já cria os módulos internos, eles já sabem se comunicar direito. Depois você vai extraindo, pode ser que você nem extraia como o mic serviço, tem outras formas de fazer, entendeu? Porque na prática, se você sair quebrando e colocar um monte de microsserviço, você vai ter um problema seríssimo de integração que você não tava pensando antes, porque antes era só chamar um código, era igual ali ATM, né? ATM ponto não sei qu. Pronto, tá integrado. Eu chamo o método, envio as informações e funcionou. No outro não, vou ter que, vamos supor que seja de VHTP,
+Farley Souza: M.
+Fabio Diniz: eu ten que dar um jeito de criar uma forma de conversar. HTTP tem problemas eh de http, né, de de eh tratamento de de erro, de não sei o quê, tá de pé naquele momento, é latência, um monte de coisa, um monte de coisa, entendeu? Um monte de coisa. Então, monolito em si, a galera pegou a versão ao ao nome, mas monolito em si não é ruim. monolito mal feito, ele é ruim. Da mesma forma que da mesma forma que microsserviço mal feito também vai te dar uma dor de cabeça, dá nada.
+ 
+ 
+02:17:02
+ 
+Fabio Diniz: Então é muito nesse sentido, cara. No mas acuplamento é é prática,
+Farley Souza: M.
+Fabio Diniz: cara. É prática. Você vai começar a bater o olho nas coisas, vai ver, cara, isso aqui de novo é o mais clássico é esse. Você vê que você tá alterando alguma coisa e sempre que você altera aquilo, você sabe, não sempre sabe. O nosso software é sempre de 8020,
+Farley Souza: Угу.
+Fabio Diniz: tem 80%. é é aquele 20% de código que é 80% das vezes a gente tá trabalhando nele. Sempre é assim. Igual eu trouxe aqui o de fatura porque eu já trabalhei, né? Eu falei com vocês num outra aula do sistema que processava um monte de fatura. Então o o fatura era era o item crítico do do software. 90% das vezes que tinha alguma funcionalidade tocava em fatura de alguma forma. Então ela era ela era crucial no sistema. Então eu sei que se eu mexer nela vai gerar efeitos colaterais em outras partes do sistema com uma uma uma probabilidade muito alta. E ele foi até um exemplo, então eu lembrei aqui agora a gente tinha porque como é que funcionava?
+ 
+ 
+02:18:04
+ 
+Fabio Diniz: Era um era um era eh um monolito, só que a gente eh usava is, né? na época não tinha o core ainda, então, eh, sei lá, tinha cliente A ponto a o domínio lá da empresa, cliente B ponto domínio. Aí através disso, ele sabia para qual, né, o IS dividia os sites lá, beleza? Mas na, no final das contas, eh, era o mesmo código, mesma coisa, tá? Mas e subia cada um instância separada. Aí o que que acontecia? a gente tinha que gerenciar todos os clientes, todas as faturas dos clientes, porque além da gente fornecer o software, a empresa oferecia assessoria, ou seja, a empresa tomava conta das faturas dessas empresas que eram clientes, beleza? Então a gente tinha que controlar se a fatura chegou, se a fatura foi paga, enfim, tinha todo uma estrutura de gestão ali que a gente tinha que fazer. Começou, quando a gente tinha dois, três clientes, era tranquilo, começou a ter 4, 10, 15, 20, 30, começou a virar problemático, porque a gente tinha que fazer várias ações em várias em vários clientes diferentes. Então, a gente tinha que logar em cada um deles para fazer, certo?
+ 
+ 
+02:19:13
+ 
+Fabio Diniz: Isso dava um trabalho do caramba que a gente fez, a gente criou uma central, a gente criou um software chamado central lá, o nome do software, e ele meio que comunicava com todos. a gente conseguir fazer várias eh ações a de dados da central, beleza? Por exemplo, a eh é controlar a importação. A importação a gente passou, jogou pra central que a gente conseguiria conseguia ver de maneira eh consolidada todos os todas as importações de todos os clientes, entendeu? Foi lindo no papel na hora que a gente tirou várias coisas do de dentro do sistema para jogar na central, cara, para fazer essas comunicações funcionarem. Nossa, tava muito pepino no início, muito, porque a gente não não tinha essa esse no forte de acoplamento, de tomar conta da da da comunicação, resiliência e tudo mais. A gente passou muito perrengue no início, muito, muito perrengue, porque e a gente ia em palestra, ah, não, tem que ter microsserviço, tem que ter não sei o quê. A gente pegou essa central, foi criando um monte de microsserviço em volta dela. Aí é um monte de deploy, entendeu? Aí você tem que garantir que se é uma versão X ou Y de não sei que de eu não lembro já, tá?
+ 
+ 
+02:20:28
+ 
+Fabio Diniz: já tem 10, 15 anos isso, mas você tinha que você subir uma certa versão de alguma coisa, tinha que subir três, quatro softwares em volta junto e às vezes não tava todos certinhos ainda. Seja um que ficava parado enquanto os outros não estavam prontos. Só que tinha uma funcionalidade X que tava em um deles que tinha que subir para ontem porque o cliente XPTO precisava daquilo e não sei o quê. Cara, dá dá um monte de dor de cabeça, velho. Um monte de dor de cabeça, entendeu? Então assim, eh eh isso debugar, fazer é é difícil porque não era a mesma base. Aí às vezes um dado tá indo errado, você tem que subir várias aplicações ao mesmo tempo e ver o dado pulando de uma aplicação para outra. Então assim, monolito, cara, a galera fala mal de monolito sem assim saber exatamente que que tá falando, entendeu? Então assim, monolito não é ruim, tá? Eu já peguei monolito, que era eh ali os names spaces foram criados para isso, você conseguir fazer as modularizações ali dentro do código, dentro do próprio código, certo? Dentro daquele bloco ali mesmo. Acabou. Então, se ele for bem divididinho, bem modularizado e tudo mais, cara, dá para trabalhar tranquilamente, entendeu?
+ 
+ 
+02:21:43
+ 
+Fabio Diniz: Então, esse tem, eu não lembro aonde que o Elamar falou disso, cara. Não sei se foi só no curso do DDD, não vou lembrar. Mas ele traz muito esse ponto do deploy, entendeu? O deploy é é algo bem crítico. A galera não que ele tem, não sei se vocês já assistiram, não sei se é nela direito, tá? Vou abrir aqui, mas eu não sei se é, não tenho certeza, tá? Ele tem essa live aqui, ó. E tem essa live aqui do time topologies, ó, que fala das topologias dos times, entendeu? Então, por exemplo, eh,
+Farley Souza: M.
+Fabio Diniz: dependência, né, quando o seu time tá acima ou tá abaixo de outro, não em termos de hierarquia, tá? Mas em termos de uso do software, tá? Então tem, quando você faz sistemas eh distribuídos, cara, você entra num monte de de dor de cabeça que você não tem no que toca um pouco isso aqui de time topology, tá? Então assim, é complicado, tá? Não é tão simples assim igual a galera acha,
+Farley Souza: Угуm.
+Fabio Diniz: não, entendeu? Você principalmente você ter um monolito antigo, grande, você ir para para microsserviço de cara, é, você vai arrumar dor de cabeça com com certeza.
+ 
+ 
+02:23:04
+ 
+Fabio Diniz: Muito difícil você fazer alguma coisa isolada, sabe? Muito, muito difícil. Então assim, é, ó, o Natã falou 100%, provavelmente já apanhou também, né, Natã? Quando fala assim, porque já tomou surra já na vida. Então, assim, tem, tomem cuidado, tá? Tomem cuidado, tomem cuidado. Mas na prática é isso, cara. É, é pegar e ir testando. Vocês vão vão pegando o jeito, vão começar a ver acoplamento em todo lado, entendeu? As aulas ali de mostrando, né, pô. componente X, comunicando com componente Y e tudo mais,
+Farley Souza: Угу.
+Fabio Diniz: vocês vão começar pegando o o jeito disso, entendeu? Pô, aqui tem muito, esse cara aqui tem 300, tem aquele negócio de estabilidade estável, instável, né? Então vocês vão ver que tem componente que depende trocentos ou tem um componente que 300
+Farley Souza: Угу.
+Fabio Diniz: dependem dele. Então vocês vão começar a ver isso de forma mais clara. E aí vocês vão ver também que se vocês não têm o domínio a de novo, não tô falando de DDD, tá?
+ 
+ 
+02:24:06
+ 
+Fabio Diniz: Vocês não tm o núcleo de aplicação, não tem as entidades bem coesas, bem capsuladas e não sei o quê. Não adianta vocês tentarem tratar eh eh jogo o acoplamento entre entre algumas outras partes do sistema, por a primeira coisa a gente tem que fazer é enriquecer aquelas entidades. Você tem um monte de lógica espalhada, certo? você tem um monte de comportamento espalhado, o o acoplamento vai acontecer porque a a a não é os objetos que não deveriam estar comunicando entre si, é que você espalhou comportamento para todo lado e obrigam eles a comunicar entre si, né? O Lemar fala disso também. Ah, não vou lembrar a aula, cara. Assim, não é dele, né, o conceito, né? Mas ele fala muito disso. Eh, que que é diferença de de algo complexo de algo difícil? Tá relacionado a quantidade de de tá relacionado entre a relação, tá? De de linguagem orientada a objetos, mas até no mundo real. você pega um problema no mundo real que ele é complexo e difícil, né? Tá relacionado à quantidade de itens de objetos existente no no no universo que você tá que você tá que você tá trabalhando e na quantidade de relações que existem entre eles, entendeu?
+ 
+ 
+02:25:29
+ 
+Fabio Diniz: Então, se você espalha, se tem uma, vamos supor, pega lá o tipo primitivo que eu tava falando, né? o o string, por exemplo, vamos supor que o substring não tivesse dentro do string, fosse um comportamento solto. Você imagina isso solto em toda sua aplicação, em todo lugar, você ia ter que ficar fazendo a galera consumir aquilo. Olha a dor de cabeça que você ia ter. Aí na hora que você une isso para você, quando a gente voltando aqui, ó, a gente falou aqui de Não, aqui, ó, enriquecimento de domínio, certo? Ou seja, tô enriquecendo ele com comportamentos, mas com coisas que fazem sentido para ele, entendeu? Então assim, é de novo, é que vocês podem fazer prático para agora, né, na aplicação do dia a dia de vocês. É isso, cara. Que que é o 8020 da minha aplicação? Que que é aquele porcentagem pequenininha, aquele pedaço pequeno de de código da minha aplicação que ou 80% das vezes a gente tá mexendo nele ou são coisas que dependem dele indiretamente ou diretamente. Aí vocês vão começar a ver. Pô, tem um monte de comportamento desse cara aqui que tá espalhado na aplicação.
+ 
+ 
+02:26:49
+ 
+Fabio Diniz: Aí é por isso que eu sou obrigado a comunicar com esse componente, com essa entidade, com não sei o quê, porque esse comportamento não é deles e tá espalhado por aí. Eu tenho que enriquecer o o meu o meu o meu domínio com aquilo, entendeu? Só que de novo é prática assim, falando aqui é simples, né? Falando aqui é simples, de fazer não, nem sempre, porque é prática, vocês vão pegando prática, vai fazendo, vai, vai entendendo, vai fazendo, vai entendendo, vai fazendo, vai entendendo.
+Farley Souza: Fechou.
+Fabio Diniz: Beleza,
+Farley Souza: Entendi.
+Fabio Diniz: pessoal? Infelizmente tiraram aqui de novo meus Ah, não, aqui tem, ó, porque só ocultaram, mas que tem, ó, os livros lá de doméio divid design, né? Então, para quem para quem quiser, né, tem que esse aqui é o é o vermelhinho, né? É aquele vermelho do Wolverno, né? Esse aqui acho que o mais famoso depois do do Eric, né? E tem o destilando também. O Elen fala que esse aqui ele acha besteira, tá? Esse aqui ele fala que acha besteira. aqui. E daqui, ó, o manifesto do delegado.
+ 
+ 
+02:28:10
+ 
+Fabio Diniz: Deixa eu ver se vocês tiraram os tem aqui, ó. Passar isso aqui para vocês o link lá. Negro. É esse do macaque. Sim, eu tenho esse aqui. Eu tenho. Ele não tá aqui não. Não, tá lá embaixo. Eu tenho dele. Eh, aí aqui obsessão tipo primitivos, né, que eu já passei para vocês, né? Então, mas relembrando, né? Cara, isso aqui, sério mesmo, isso aqui, se vocês aprenderem isso aqui, vocês vão aprender acopulamento. Vocês vão aprender acoplamento, porque é isso, esse aqui do CPF é muito fácil. Esse aqui não é o do CPF, é esse aqui do CPF é muito fácil você entender o que eu tava dizendo. Você pode ter a regra de de CPF separada, você pode ter ela espalhada em todo lugar que recebeu um CPF. Pera aí, deixa eu ver se esse CPF é válido. Ele vai, mesmo que ele use um código compartilhado, certo? A lógica tá espalhada porque não tá no próprio objeto, não tá, você não cria, se você não criou uma classe CPF, ela não tá no próprio objeto que deveria conter aquilo, entendeu?
+ 
+ 
+02:29:23
+ 
+Fabio Diniz: Ou seja, eu enriqueço quando eu tenho um por causa que o El fez um struct, né? E tem um porqu struct, enfim, mas ele estaria aqui dentro aqui eu teria um um svalid, entendeu? Ou seja, o próprio objeto se valida, porque ele que sabe da regra se ele é válido ou não. Você imagina pegar e passar para um outro objeto para dizer se um date time é válido em vez de perguntar pro próprio date time. Não faz sentido, entendeu? Não faz sentido. Ah, e aqui tem a série de DDD do jeito certo que eu não sei se ainda tá de pé no canal 10, tá? Cara, isso aqui eu eu aconselho demais vocês assistirem, tá? demais, demais, demais, demais. Muita coisa que tá no curso de DDD do Elemar, só que aqui obviamente tá mais eh enxuto, né? Mas aqui tem bastante coisa, tá? Isso aqui já falaram que ia tirar do ar várias vezes, tá? Então assim, se vocês corriam, porque eu até hoje não sei porque que ainda tá no ar, tá? Mas vocês para vocês verem, ó, tem 5 anos que ele já fez. Mas cara, é tudo atemporal, né?
+ 
+ 
+02:30:27
+ 
+Fabio Diniz: todo conceito que é válido até hoje, porque ele tratou o conceito e não a tecnologia, porque não importa, posso implementar isso em Java, em em C#ARP, em Typescript, enfim, não importa. O que importa é o conceito, tá? Aqui tem um, esses aqui de agregados é muito bom, ó, de evento de domínio, tem um específico, tá vendo? repositório. Enfim, isso aqui é muito bom jogar aqui também no grupo aqui. Materiais, pessoal. Era isso. Se vocês tiverem mais alguma dúvida, se quiser algum tema que a gente tratou aqui, que vocês ainda que tirar alguma dúvida, perguntar, não foi isso por hoje, foi minha última aula com vocês. É, a próxima já é com, tenho a certeza que é com Bruno mesmo. Já as duas de de testes. Mais ninguém.
+Farley Souza: Acho que é isso,
+Anderson Perim: Tá aí. Tá
+Fabio Diniz: Então, beleza, então muito obrigado a todos.
+Anderson Perim: obrigado.
+Fabio Diniz: Espero que tenham gostado e até uma próxima,
+Farley Souza: pessoal.
+Fabio Diniz: quem sabe.
+Anderson Perim: Valeu. Com certeza.
+Fabio Diniz: Valeu, pessoal. Até mais. Oi,
+Farley Souza: É
+Fabio Diniz: valeu. Até mais.

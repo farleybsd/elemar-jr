@@ -1,0 +1,9432 @@
+WEBVTT
+
+1
+00:00:18.260 --> 00:00:18.760
+Boa noite
+
+2
+00:00:19.790 --> 00:00:23.140
+Boa noite, luiz tudo bem Tranquilo
+
+3
+00:02:15.600 --> 00:02:17.800
+Mais dois minutinhos a gente já inicia pessoal esperar o
+
+4
+00:02:17.800 --> 00:02:18.960
+restante da galera
+
+5
+00:04:00.970 --> 00:04:02.050
+Bora começar então pessoal.
+
+6
+00:04:03.270 --> 00:04:06.530
+Na semana passada a ideia era a gente ter falado da parte
+
+7
+00:04:06.770 --> 00:04:09.290
+teórica ter usado toda a aula para falar um pouquinho da
+
+8
+00:04:09.290 --> 00:04:10.570
+parte teórica sobre testes,
+
+9
+00:04:11.470 --> 00:04:13.970
+só que a gente não conseguiu finalizar todo o material,
+
+10
+00:04:14.430 --> 00:04:16.770
+então como faltam poucos slides.
+
+11
+00:04:16.770 --> 00:04:19.930
+Aqui, a ideia é a gente gastar os 10 20 primeiros minutos
+
+12
+00:04:20.020 --> 00:04:22.210
+dessa aula para a gente terminar de ver par.
+
+13
+00:04:22.210 --> 00:04:24.850
+Parte teórica e algumas alternativas que a gente precisa
+
+14
+00:04:26.290 --> 00:04:28.930
+entender muito bem quando a gente vai testar código ligado
+
+15
+00:04:28.930 --> 00:04:32.050
+ou trabalhar mais com testes de integração, e aí,
+
+16
+00:04:32.050 --> 00:04:34.010
+depois finalizando essa parte teórica.
+
+17
+00:04:34.610 --> 00:04:36.250
+A gente vai construir aqui todo mundo.
+
+18
+00:04:36.250 --> 00:04:38.850
+Junto um teste de integração a gente começa do zero,
+
+19
+00:04:40.910 --> 00:04:42.050
+eu vou pegar ali api,
+
+20
+00:04:42.110 --> 00:04:46.410
+que foi mo na segunda aula.
+
+21
+00:04:46.580 --> 00:04:48.410
+Deixa eu só adicionar o pessoal aqui
+
+22
+00:04:49.940 --> 00:04:51.920
+que foi mostrado lá na segunda aula.
+
+23
+00:04:51.920 --> 00:04:54.640
+Não sei se o pessoal mostrou exemplo de código para vocês,
+
+24
+00:04:54.780 --> 00:04:56.880
+mas a ideia é que a gente vai pegar essa api e vai
+
+25
+00:04:56.880 --> 00:04:59.760
+selecionar ali um endpoint mais complexo
+
+26
+00:05:00.690 --> 00:05:02.880
+deles ali e vai fazer esse teste.
+
+27
+00:05:03.320 --> 00:05:06.200
+A gente vai construir esse teste do zero para ir aplicando
+
+28
+00:05:06.360 --> 00:05:08.960
+tudo que a gente foi vendo aqui na aula
+
+29
+00:05:09.900 --> 00:05:14.680
+de uma forma mais prática boa noite, paulo e
+
+30
+00:05:15.320 --> 00:05:16.560
+teve uma pergunta muito boa.
+
+31
+00:05:16.560 --> 00:05:19.720
+Acho que foi do guilherme no final da aula passada que aí eu
+
+32
+00:05:19.720 --> 00:05:22.440
+vou deixar para a gente, eu vou falar um pouquinho mais
+
+33
+00:05:22.440 --> 00:05:23.880
+sobre a pergunta dele,
+
+34
+00:05:23.880 --> 00:05:26.720
+mas a gente deixa mais para o final da aula para a gente.
+
+35
+00:05:26.720 --> 00:05:29.960
+Não levar muito tempo aqui nessa parte inicial
+
+36
+00:05:30.860 --> 00:05:33.200
+então pessoal, retomando de onde a gente
+
+37
+00:05:33.200 --> 00:05:34.240
+parou na última aula.
+
+38
+00:05:34.330 --> 00:05:37.120
+Agora a gente vai ver aqui algumas estratégias que a gente
+
+39
+00:05:37.360 --> 00:05:40.160
+pode abordar principalmente para testes de integração,
+
+40
+00:05:41.000 --> 00:05:42.800
+como que a gente começa a testar código.
+
+41
+00:05:42.800 --> 00:05:46.880
+Legado. Eu entendo que na maioria dos casos a gente não tem
+
+42
+00:05:46.960 --> 00:05:49.240
+a oportunidade de começar um projeto dos
+
+43
+00:05:56.920 --> 00:05:59.240
+gostaria de começar a trazer
+
+44
+00:06:00.940 --> 00:06:03.040
+as boas práticas de construção,
+
+45
+00:06:03.090 --> 00:06:05.880
+tanto de teste de unidade quanto teste de integração.
+
+46
+00:06:07.110 --> 00:06:10.280
+Provavelmente, vocês já se depararam com essa pirâmide aqui
+
+47
+00:06:10.280 --> 00:06:12.960
+de testes em algum post do LinkedIn algum livro que
+
+48
+00:06:13.120 --> 00:06:15.400
+eventualmente vocês tenham lido sobre testes
+
+49
+00:06:15.970 --> 00:06:17.600
+tanto de integração de unidade
+
+50
+00:06:18.340 --> 00:06:20.440
+que ela basicamente defende que
+
+51
+00:06:25.430 --> 00:06:29.710
+o ideal em um code base saudável é que a gente tem um volume
+
+52
+00:06:29.720 --> 00:06:32.430
+maior de testes de unidade e que a gente
+
+53
+00:06:32.550 --> 00:06:33.830
+conforme vai subindo.
+
+54
+00:06:33.880 --> 00:06:37.070
+Nessa pirâmide. A gente vai tendo mais testes de integração,
+
+55
+00:06:37.790 --> 00:06:39.470
+e por fim, a gente tem o teste
+
+56
+00:06:39.970 --> 00:06:43.190
+to que é aquele teste que acaba indo lá na ponta lá no
+
+57
+00:06:43.270 --> 00:06:46.830
+front-end, fazendo o teste de ponta a ponta
+
+58
+00:06:48.070 --> 00:06:51.190
+como a gente está aqui mais no âmbito de web api,
+
+59
+00:06:51.390 --> 00:06:53.190
+e a gente não está falando muito de front.
+
+60
+00:06:54.150 --> 00:06:56.790
+A gente acaba focando mais aqui nessa parte
+
+61
+00:06:56.820 --> 00:06:57.910
+debaixo da pirâmide.
+
+62
+00:06:58.290 --> 00:07:01.630
+Ou seja, a ideia é que eu tenha muito mais testes de unidade
+
+63
+00:07:01.730 --> 00:07:05.230
+do que testes de integração e conforme a gente viu
+
+64
+00:07:05.470 --> 00:07:07.070
+conforme a gente, vai subindo.
+
+65
+00:07:07.840 --> 00:07:10.710
+Nessa pirâmide, a gente tem uma proteção melhor contra a
+
+66
+00:07:10.710 --> 00:07:13.830
+regressão e mais resistência à refatoração do código
+
+67
+00:07:15.850 --> 00:07:18.630
+por o outro lado, quanto mais abaixo a gente estiver nessa
+
+68
+00:07:18.630 --> 00:07:21.310
+pirâmide, a gente vai ter um feedback maior e
+
+69
+00:07:21.310 --> 00:07:22.510
+manutenção mais fácil.
+
+70
+00:07:22.630 --> 00:07:25.750
+O teste end to end acaba sendo muito mais caro que o teste
+
+71
+00:07:25.750 --> 00:07:29.390
+de integração que por sua vez também é mais caro que o teste
+
+72
+00:07:29.410 --> 00:07:34.190
+de unidade quando a gente vai abordar pessoal
+
+73
+00:07:35.650 --> 00:07:36.670
+um código legado,
+
+74
+00:07:36.770 --> 00:07:39.790
+um código que talvez careça tanto de teste de agilidade
+
+75
+00:07:39.790 --> 00:07:43.070
+quanto de integração o ideal em um primeiro momento
+
+76
+00:07:43.090 --> 00:07:44.110
+que a gente inverta.
+
+77
+00:07:44.350 --> 00:07:48.230
+Essa pirâmide que primeiro a gente tem ali uma rede boa de
+
+78
+00:07:48.230 --> 00:07:52.590
+proteção com testes de integração porque geralmente um
+
+79
+00:07:52.750 --> 00:07:56.390
+código legado, uma base onde eventualmente careceu e de
+
+80
+00:07:56.630 --> 00:07:57.870
+testes ao longo do tempo
+
+81
+00:07:59.080 --> 00:08:02.950
+acaba sendo um código uma base ali um code base que ele tem
+
+82
+00:08:02.970 --> 00:08:04.630
+um design que ele não é muito
+
+83
+00:08:04.660 --> 00:08:06.510
+amigável para testes de unidade.
+
+84
+00:08:07.010 --> 00:08:09.990
+Ou seja, a gente não tem uma boa separação das camadas.
+
+85
+00:08:10.510 --> 00:08:13.430
+A gente não tem uma boa separação das responsabilidades
+
+86
+00:08:13.530 --> 00:08:14.630
+dentro da aplicação.
+
+87
+00:08:14.970 --> 00:08:18.110
+Então se torna muito difícil e muito caro para a gente
+
+88
+00:08:18.140 --> 00:08:19.830
+iniciar com o teste de agilidade.
+
+89
+00:08:20.750 --> 00:08:23.670
+Eventualmente, a gente vai precisar fazer muitos mo
+
+90
+00:08:23.860 --> 00:08:28.510
+construir muitos double doubles mo para conseguir testar
+
+91
+00:08:28.750 --> 00:08:29.830
+algo bem específico.
+
+92
+00:08:30.230 --> 00:08:33.030
+A gente vai gastar muito tempo inicialmente e a gente não
+
+93
+00:08:33.030 --> 00:08:35.670
+vai ter tanto valor sendo refletido do outro lado.
+
+94
+00:08:36.370 --> 00:08:39.150
+Já quando a gente vai para o teste de integração pessoal a
+
+95
+00:08:39.150 --> 00:08:42.630
+gente consegue proteger uma gama maior de código.
+
+96
+00:08:42.750 --> 00:08:46.790
+A gente consegue validar e testar uma funcionalidade de
+
+97
+00:08:46.790 --> 00:08:48.270
+ponta a ponta, e,
+
+98
+00:08:48.270 --> 00:08:51.230
+conforme a gente vai tendo mais testes de integração,
+
+99
+00:08:51.430 --> 00:08:53.110
+a gente vai tendo mais liberdade
+
+100
+00:08:53.630 --> 00:08:56.480
+para melhorar o design desse código, ou seja,
+
+101
+00:08:56.480 --> 00:08:59.640
+aplicar padrões de projetos que a gente viu aqui no curso.
+
+102
+00:09:00.140 --> 00:09:02.680
+Talvez fazer coisas de forma mais otimizada
+
+103
+00:09:03.240 --> 00:09:06.760
+e como a gente tem essa rede de proteção.
+
+104
+00:09:07.040 --> 00:09:08.640
+Esses testes de integração que a gente foi
+
+105
+00:09:08.640 --> 00:09:09.760
+criando ao longo do tempo.
+
+106
+00:09:10.400 --> 00:09:13.240
+A gente consegue garantir que essas refatorações que a gente
+
+107
+00:09:13.600 --> 00:09:16.280
+está fazendo para tornar o código mais manutenível.
+
+108
+00:09:16.830 --> 00:09:19.880
+Eles não vão quebrar o comportamento esperado pelo teste.
+
+109
+00:09:20.620 --> 00:09:22.600
+Então a gente já conseguiu o pessoal.
+
+110
+00:09:22.600 --> 00:09:25.440
+Aplicar essa estratégia em vários clientes.
+
+111
+00:09:26.370 --> 00:09:29.170
+A gente começa com uma abordagem de testes de integração
+
+112
+00:09:30.010 --> 00:09:32.570
+para entender como é que está o código para eventualmente
+
+113
+00:09:33.130 --> 00:09:34.610
+entender as dependências ver como
+
+114
+00:09:34.610 --> 00:09:38.330
+as coisas estão estruturadas a gente cobre o cenário feliz,
+
+115
+00:09:38.530 --> 00:09:39.690
+o cenário mais complexo,
+
+116
+00:09:39.730 --> 00:09:43.090
+e a partir daí a gente começa pontualmente melhorando o
+
+117
+00:09:43.210 --> 00:09:47.610
+código melhorando escolhas de design e com
+
+118
+00:09:49.650 --> 00:09:52.410
+isso vai gerar para nós uma facilidade maior
+
+119
+00:09:53.170 --> 00:09:54.770
+para projetar testes de unidade.
+
+120
+00:09:55.430 --> 00:09:58.570
+Então eventualmente se vocês estiverem trabalhando em um
+
+121
+00:09:58.570 --> 00:10:01.530
+projeto que talvez não tenha tantos testes e vocês querem
+
+122
+00:10:01.550 --> 00:10:03.730
+trazer essa cultura.
+
+123
+00:10:04.010 --> 00:10:05.770
+Essa ideia de ter mais testes talvez
+
+124
+00:10:05.820 --> 00:10:07.050
+seria mais interessante.
+
+125
+00:10:07.330 --> 00:10:09.530
+Vocês começarem pelo teste de integração,
+
+126
+00:10:12.660 --> 00:10:15.760
+deixa eu permitir aqui um minutinho
+
+127
+00:10:18.020 --> 00:10:22.310
+Maravilha e aí o que a gente pode fazer pessoal iniciar com
+
+128
+00:10:22.310 --> 00:10:23.350
+o teste de integração,
+
+129
+00:10:23.730 --> 00:10:26.350
+mas antes de a gente iniciar com o teste de integração,
+
+130
+00:10:26.790 --> 00:10:28.270
+a gente precisa saber o que a gente
+
+131
+00:10:28.430 --> 00:10:29.750
+quer testar daquele sistema.
+
+132
+00:10:30.490 --> 00:10:34.150
+Então uma dica bem legal aqui é a gente tentar identificar
+
+133
+00:10:34.150 --> 00:10:37.750
+as áreas críticas a área que mais dá problema a operação que
+
+134
+00:10:37.990 --> 00:10:41.270
+traz mais valor para a aplicação para o negócio, enfim,
+
+135
+00:10:41.530 --> 00:10:43.310
+que nem eu comentei na aula anterior.
+
+136
+00:10:43.690 --> 00:10:46.070
+Nem todo código tem a mesma importância.
+
+137
+00:10:46.670 --> 00:10:49.990
+Conforme a gente vai cobrindo de forma gradual com os testes
+
+138
+00:10:50.090 --> 00:10:51.710
+de integração, a gente pode
+
+139
+00:10:52.900 --> 00:10:55.990
+fazendo ajustes no código implementando testes de unidade
+
+140
+00:10:56.910 --> 00:10:59.350
+trazendo o nosso domínio para um domínio mais rico
+
+141
+00:10:59.890 --> 00:11:02.190
+no qual a gente consiga expressar
+
+142
+00:11:02.250 --> 00:11:05.390
+as nossas regras de negócio de uma forma mais clara através
+
+143
+00:11:05.390 --> 00:11:09.590
+de uma camada que não seja um application um controller.
+
+144
+00:11:09.790 --> 00:11:12.470
+A gente deixa o nosso domínio bem blindado do restante
+
+145
+00:11:15.890 --> 00:11:17.030
+das outras dependências,
+
+146
+00:11:17.510 --> 00:11:20.230
+e a ideia é que a gente repita esse ciclo, até que a gente
+
+147
+00:11:20.910 --> 00:11:22.110
+tenha ali um código que,
+
+148
+00:11:22.110 --> 00:11:25.350
+ao longo do tempo ele foi ficando mais manutenível mais
+
+149
+00:11:25.370 --> 00:11:28.430
+fácil de dar manutenção mais fácil de alterar.
+
+150
+00:11:28.630 --> 00:11:31.110
+E aí a gente continua esse ciclo,
+
+151
+00:11:31.390 --> 00:11:33.630
+cada vez aumentando mais os testes de unidade,
+
+152
+00:11:34.000 --> 00:11:36.030
+aumentando também a questão da cobertura,
+
+153
+00:11:36.240 --> 00:11:39.310
+juntamente com aquela questão de ver se de fato,
+
+154
+00:11:39.790 --> 00:11:42.990
+o teste está protegendo contra a regressão e tudo mais,
+
+155
+00:11:43.430 --> 00:11:46.870
+e aí a gente ao longo do tempo é um de
+
+156
+00:11:48.770 --> 00:11:53.560
+de de do a três anos a gente com a nosso trabalho.
+
+157
+00:11:55.540 --> 00:11:58.590
+Dito isso pessoal. Vamos falar aqui dos testes de
+
+158
+00:11:58.590 --> 00:12:01.390
+integração, o que eles são como que a gente pode abordar
+
+159
+00:12:01.420 --> 00:12:04.070
+eles quais estratégias que a gente pode adotar
+
+160
+00:12:05.390 --> 00:12:06.470
+e basicamente pessoal.
+
+161
+00:12:06.830 --> 00:12:10.510
+Teste de integração, vai garantir que sistema vai funcionar
+
+162
+00:12:10.750 --> 00:12:13.310
+como um todo o teste de unidade.
+
+163
+00:12:14.350 --> 00:12:17.670
+A gente consegue pontualmente validar que uma regra de
+
+164
+00:12:17.670 --> 00:12:21.670
+negócio específico está funcional, só que o teste de unidade
+
+165
+00:12:22.870 --> 00:12:25.830
+consegue garantir que uma vez que essa funcionalidade,
+
+166
+00:12:26.590 --> 00:12:30.990
+essa regra de negócio for invocada ou chamada a partir de um
+
+167
+00:12:31.070 --> 00:12:34.630
+caso de uso um pouco mais amplo que esse comportamento vai
+
+168
+00:12:34.690 --> 00:12:37.390
+de fato ser executado da forma correta.
+
+169
+00:12:37.970 --> 00:12:39.430
+Então o teste de integração
+
+170
+00:12:40.930 --> 00:12:44.470
+vem para sanar essa necessidade de a gente pegar um caso de
+
+171
+00:12:44.470 --> 00:12:48.470
+uso só que através de uma ótica um pouco mais ampla desde o
+
+172
+00:12:48.470 --> 00:12:51.150
+nosso controller até a chamada para o banco de dados,
+
+173
+00:12:51.870 --> 00:12:54.270
+eventualmente, uma publicação de um evento
+
+174
+00:12:55.530 --> 00:12:57.110
+um arquivo gerado algo do tipo,
+
+175
+00:12:57.170 --> 00:13:00.150
+então a gente quer validar todo o comportamento executado
+
+176
+00:13:00.450 --> 00:13:02.310
+por um caso de uso completo da nossa
+
+177
+00:13:02.310 --> 00:13:05.420
+aplicação e aqui pessoal.
+
+178
+00:13:05.600 --> 00:13:08.060
+Quando a gente começa a trabalhar com teste de integração,
+
+179
+00:13:08.100 --> 00:13:10.780
+a gente tem que ter uma estratégia clara de como que a gente
+
+180
+00:13:10.880 --> 00:13:13.980
+vai projetar esse teste como é que a gente vai começar.
+
+181
+00:13:14.000 --> 00:13:17.620
+Ele, então uma boa alternativa é iniciar pelo caminho feliz
+
+182
+00:13:17.640 --> 00:13:21.380
+do caso de uso mais complexo do nosso sistema,
+
+183
+00:13:21.440 --> 00:13:25.420
+ou que dá mais problema a gente, identificando esse cenário.
+
+184
+00:13:25.480 --> 00:13:28.260
+Lá, o endpoint que a gente quer testar a gente vai começar a
+
+185
+00:13:28.280 --> 00:13:29.980
+mapear e levantar quais que são
+
+186
+00:13:30.000 --> 00:13:32.860
+as dependências externas e aqui pessoal.
+
+187
+00:13:32.920 --> 00:13:35.260
+Só recapitulando dependência externa não é
+
+188
+00:13:35.260 --> 00:13:36.460
+dependência de biblioteca.
+
+189
+00:13:36.520 --> 00:13:39.740
+É dependências que saem do escopo do nosso processo
+
+190
+00:13:40.460 --> 00:13:43.820
+qualquer coisa que faça um a que vá para um service bus.
+
+191
+00:13:44.100 --> 00:13:45.940
+Qualquer coisa que saia do nosso processo é
+
+192
+00:13:45.940 --> 00:13:47.060
+uma dependência externa.
+
+193
+00:13:47.880 --> 00:13:50.540
+Uma vez que a gente faz o levantamento dessas dependências,
+
+194
+00:13:50.780 --> 00:13:54.940
+a gente precisa categorizar elas como gerenciada ou não
+
+195
+00:13:54.940 --> 00:13:58.460
+gerenciada para a gente ver como que a gente vai lidar com
+
+196
+00:13:58.660 --> 00:14:00.380
+essa dependência no teste de integração.
+
+197
+00:14:01.540 --> 00:14:02.940
+A dependência gerenciada.
+
+198
+00:14:02.980 --> 00:14:07.680
+A dependência externa gerenciada são
+
+199
+00:14:07.680 --> 00:14:09.120
+aquelas dependências que
+
+200
+00:14:09.710 --> 00:14:12.400
+somente a nossa aplicação tem controle direto,
+
+201
+00:14:13.660 --> 00:14:15.200
+ou seja, banco de dados.
+
+202
+00:14:15.560 --> 00:14:19.280
+Arquivos locais são dependências que o mundo externo não tem
+
+203
+00:14:19.280 --> 00:14:20.760
+acesso de forma direta,
+
+204
+00:14:21.580 --> 00:14:24.840
+então o banco de dados da nossa aplicação o mundo externo
+
+205
+00:14:25.020 --> 00:14:28.880
+tem acesso somente a no aplicação através da execução das
+
+206
+00:14:28.880 --> 00:14:30.080
+nossas regras de negócio,
+
+207
+00:14:30.460 --> 00:14:32.240
+então qualquer coisa que não esteja
+
+208
+00:14:32.240 --> 00:14:33.680
+visível para o mundo externo.
+
+209
+00:14:33.840 --> 00:14:36.520
+A gente trata como dependência gerenciada.
+
+210
+00:14:37.340 --> 00:14:40.160
+Do outro lado, a gente tem a dependência não gerenciada que
+
+211
+00:14:40.160 --> 00:14:42.920
+aí é qualquer coisa externa que saia do controle da nossa
+
+212
+00:14:51.060 --> 00:14:52.360
+eu estou enviando o e-mail.
+
+213
+00:14:53.000 --> 00:14:55.360
+Tudo isso são dependências fora do meu serviço,
+
+214
+00:14:55.420 --> 00:14:58.480
+no qual eu não tenho controle exclusivo que outras
+
+215
+00:14:58.480 --> 00:15:01.240
+aplicações podem estar interagindo com elas também
+
+216
+00:15:03.310 --> 00:15:05.550
+e aí como é que a gente faz para testar a gente
+
+217
+00:15:06.190 --> 00:15:09.110
+levantou a gente, categorizou elas e aí como é que a gente
+
+218
+00:15:09.110 --> 00:15:12.190
+faz para abordar os testes em cada uma delas
+
+219
+00:15:13.170 --> 00:15:15.230
+nas dependências gerenciadas pessoal.
+
+220
+00:15:15.310 --> 00:15:18.230
+O recomendado é que a gente utilize dependências reais.
+
+221
+00:15:18.850 --> 00:15:21.590
+Então se eu tenho uma dependência para um sql server,
+
+222
+00:15:21.590 --> 00:15:25.310
+eu vou utilizar um sql server real, um banco de dados real.
+
+223
+00:15:25.650 --> 00:15:28.070
+Se eu tenho uma dependência para um post,
+
+224
+00:15:28.530 --> 00:15:32.510
+vou utilizar um posts para um s para um mono,
+
+225
+00:15:32.510 --> 00:15:35.430
+então qualquer dependência real que eu tenha de uso
+
+226
+00:15:35.430 --> 00:15:36.870
+exclusivo da minha aplicação
+
+227
+00:15:37.410 --> 00:15:40.510
+eu sempre vou optar por utilizar essa dependência real
+
+228
+00:15:40.510 --> 00:15:43.390
+sempre sem utilizar moc, nehuma aqui
+
+229
+00:15:44.150 --> 00:15:45.270
+e do outro lado pessoal.
+
+230
+00:15:45.270 --> 00:15:47.630
+Quando a gente vai para as não gerenciadas, ou seja,
+
+231
+00:15:47.670 --> 00:15:50.710
+a gente não tem controle de como essa dependência vai se
+
+232
+00:15:50.710 --> 00:15:52.830
+comportar em tempo de teste.
+
+233
+00:15:53.310 --> 00:15:56.070
+O ideal é que a gente utilize mo justamente para a gente
+
+234
+00:15:56.070 --> 00:15:58.190
+garantir um comportamento previsível.
+
+235
+00:15:58.850 --> 00:16:02.070
+Então imagina que a gente tem no nosso teste a gente tem na
+
+236
+00:16:02.070 --> 00:16:05.790
+nossa aplicação uma dependência para uma api externa no qual
+
+237
+00:16:06.050 --> 00:16:08.230
+às vezes funciona e às vezes não funciona.
+
+238
+00:16:09.270 --> 00:16:12.990
+Esse cenário leva muito aquele problema de falso positivo
+
+239
+00:16:13.050 --> 00:16:15.910
+que a gente viu na aula passada, pode ser que,
+
+240
+00:16:16.110 --> 00:16:18.310
+eventualmente, a api externa esteja fora
+
+241
+00:16:20.060 --> 00:16:23.720
+por algum motivo e a gente não consiga concretizar o nosso
+
+242
+00:16:23.880 --> 00:16:26.200
+teste por essa indisponibilidade da api.
+
+243
+00:16:26.800 --> 00:16:29.320
+E aí o nosso teste vai começar a falhar,
+
+244
+00:16:29.470 --> 00:16:33.040
+não porque teve um comportamento errado, mas sim porque
+
+245
+00:16:33.920 --> 00:16:37.040
+a gente estava dependendo de uma dependência
+
+246
+00:16:38.470 --> 00:16:40.830
+e a gente não consegue dar previsibilidade para o nosso
+
+247
+00:16:41.030 --> 00:16:45.860
+teste e aí qualquer operação que vai alterar
+
+248
+00:16:45.940 --> 00:16:49.300
+o estado e essa alteração vai ser visível para o mundo
+
+249
+00:16:49.300 --> 00:16:51.540
+externo que nem eu comentei quando a gente publica
+
+250
+00:16:51.600 --> 00:16:52.900
+uma mensagem em uma fila.
+
+251
+00:16:53.140 --> 00:16:55.940
+Eventualmente alguma outra aplicação que está fora do nosso
+
+252
+00:16:55.940 --> 00:16:58.020
+controle vai conseguir ler essa informação.
+
+253
+00:16:58.240 --> 00:16:59.460
+Quando a gente envia o e-mail.
+
+254
+00:16:59.480 --> 00:17:02.660
+Da mesma forma, então tudo que altera o estado e é
+
+255
+00:17:02.660 --> 00:17:04.060
+visível para o mundo externo.
+
+256
+00:17:04.180 --> 00:17:06.540
+A gente trata como uma dependência não gerenciada,
+
+257
+00:17:08.080 --> 00:17:09.140
+por exemplo, aqui pessoal.
+
+258
+00:17:09.140 --> 00:17:11.980
+Supondo que eu tenho uma api e eu tenho uma
+
+259
+00:17:11.980 --> 00:17:13.060
+chamada por banco de dados.
+
+260
+00:17:13.080 --> 00:17:14.940
+Eu tenho uma chamada para um serviço de e-mail,
+
+261
+00:17:15.020 --> 00:17:16.980
+e eu tenho uma chamada para o messe broker.
+
+262
+00:17:17.790 --> 00:17:20.860
+Nesse caso, aqui, eu utilizaria o banco de dados real para o
+
+263
+00:17:20.940 --> 00:17:23.260
+database e eu focaria esses dois caras,
+
+264
+00:17:23.260 --> 00:17:25.780
+aqui justamente por eu não ter controle nem da
+
+265
+00:17:25.780 --> 00:17:28.620
+disponibilidade e nem do comportamento desses serviços
+
+266
+00:17:29.240 --> 00:17:31.020
+em tempo de execução dos meus testes.
+
+267
+00:17:33.440 --> 00:17:36.120
+E quando se trata de dependências externas pessoal,
+
+268
+00:17:36.160 --> 00:17:38.440
+a gente tem que levar em considerações algumas práticas.
+
+269
+00:17:38.920 --> 00:17:43.680
+A gente sempre vai validar sempre vai usar o para serviços
+
+270
+00:17:43.680 --> 00:17:46.600
+não gerenciados e sempre vai validar
+
+271
+00:17:47.360 --> 00:17:49.720
+a interação que a gente teve com esses serviços,
+
+272
+00:17:49.920 --> 00:17:53.840
+o mais próximo possível da borda já vai ficar bem claro,
+
+273
+00:17:55.000 --> 00:17:58.400
+qual que é a ideia dessa afirmação pessoal e daí no teste.
+
+274
+00:17:58.560 --> 00:18:01.880
+Também quando a gente estiver implementando a gente vai
+
+275
+00:18:01.880 --> 00:18:06.120
+validar e bem importante pessoal sempre validar ou a
+
+276
+00:18:06.320 --> 00:18:09.280
+presença ou a ausência, porque dependendo do caso,
+
+277
+00:18:09.340 --> 00:18:11.640
+por exemplo, se eu não tiver uma configuração bem
+
+278
+00:18:11.640 --> 00:18:16.000
+específica, eu quero validar que o meu serviço não
+
+279
+00:18:16.100 --> 00:18:17.320
+chamou o messe de broker.
+
+280
+00:18:17.580 --> 00:18:20.560
+Então eu tenho que deixar isso bem explícito lá no meu teste
+
+281
+00:18:20.560 --> 00:18:23.960
+de integração porque aquilo ali faz parte da minha operação.
+
+282
+00:18:25.100 --> 00:18:27.520
+É um um
+
+283
+00:18:28.500 --> 00:18:31.560
+que eu espero não ter com aquele teste dado aquela
+
+284
+00:18:31.560 --> 00:18:36.440
+configuração e esse ponto é muito
+
+285
+00:18:36.440 --> 00:18:37.480
+importante pessoal.
+
+286
+00:18:37.580 --> 00:18:41.560
+Sempre validar o mais próximo possível da borda por que o
+
+287
+00:18:41.680 --> 00:18:43.520
+mais próximo possível da borda pessoal
+
+288
+00:18:44.050 --> 00:18:46.440
+vamos pegar aquele exemplo ali de antes que a gente estava
+
+289
+00:18:46.440 --> 00:18:49.880
+olhando e vamos dar um zoom nesse cara nessa api
+
+290
+00:18:50.520 --> 00:18:53.040
+e nessa interação com o me broker que ele está fazendo
+
+291
+00:18:54.180 --> 00:18:56.520
+então lá aqui eu peguei e dei um zoom para ver os
+
+292
+00:18:56.520 --> 00:18:59.040
+componentes da minha api e como que ela está interagindo
+
+293
+00:18:59.060 --> 00:19:00.120
+com o me broker.
+
+294
+00:19:00.540 --> 00:19:04.080
+Então eu tenho lá me application service que ela tem uma
+
+295
+00:19:04.080 --> 00:19:07.280
+injeção do messe broker service, que é esse messe.
+
+296
+00:19:07.480 --> 00:19:10.520
+Broker service tem uma injeção da interface i by service
+
+297
+00:19:11.100 --> 00:19:15.840
+que aí a ibo service é o que separa a minha aplicação
+
+298
+00:19:17.940 --> 00:19:18.960
+do messe broker.
+
+299
+00:19:18.960 --> 00:19:22.760
+Então aqui é minha última linha de integração com esse
+
+300
+00:19:23.360 --> 00:19:27.480
+broker, quando a gente fala em validar e mocal o mais
+
+301
+00:19:27.480 --> 00:19:29.480
+próximo possível pessoal.
+
+302
+00:19:29.800 --> 00:19:32.640
+A gente está basicamente falando que o serviço que tem que
+
+303
+00:19:33.260 --> 00:19:35.200
+ser mocado é o ai bus service
+
+304
+00:19:36.140 --> 00:19:37.720
+se eventualmente a gente mocar.
+
+305
+00:19:37.740 --> 00:19:41.120
+Por exemplo, qualquer coisa acima desse cara a gente vai
+
+306
+00:19:41.120 --> 00:19:44.360
+estar mondo o comportamento se, por exemplo,
+
+307
+00:19:44.390 --> 00:19:48.760
+aqui eu moo o messe broker service eu estaria no meu teste
+
+308
+00:19:48.760 --> 00:19:52.000
+de integração, sendo bem pouco efetivo porque qualquer
+
+309
+00:19:52.000 --> 00:19:54.360
+alteração que ocorresse daqui em diante.
+
+310
+00:19:55.410 --> 00:19:57.970
+O meu teste de qualquer regressão que acontecesse
+
+311
+00:19:58.620 --> 00:19:59.730
+desse ponto em diante.
+
+312
+00:19:59.890 --> 00:20:03.090
+O meu teste de integração não ia pegar porque eu estou
+
+313
+00:20:03.090 --> 00:20:06.410
+comando muito comportamento percebam que eu estou muita
+
+314
+00:20:06.410 --> 00:20:09.010
+coisa da mesma forma que se eu mosse
+
+315
+00:20:09.050 --> 00:20:10.170
+o meu application service.
+
+316
+00:20:10.710 --> 00:20:15.090
+Então a ideia é que a gente consiga até a fronteira até a
+
+317
+00:20:15.250 --> 00:20:17.410
+última instância da nossa aplicação até
+
+318
+00:20:18.690 --> 00:20:21.130
+o ponto mais perto que ele começa a encostar,
+
+319
+00:20:21.130 --> 00:20:24.810
+digamos assim na fronteira para sair daí do nosso serviço e
+
+320
+00:20:24.810 --> 00:20:27.090
+começar a interagir com esse serviço externo.
+
+321
+00:20:27.750 --> 00:20:30.800
+Por exemplo, se eu estou fazendo uma chamada mo
+
+322
+00:20:31.420 --> 00:20:36.280
+client e validar só lá na ponta que o wait client está sendo
+
+323
+00:20:36.310 --> 00:20:38.120
+chamado com os parâmetros.
+
+324
+00:20:38.250 --> 00:20:38.600
+Corre
+
+325
+00:20:47.000 --> 00:20:49.720
+a gente eventualmente consiga mocar até o serviço que a
+
+326
+00:20:49.720 --> 00:20:52.480
+gente vai chamar porque aí, no meu teste de integração,
+
+327
+00:20:52.940 --> 00:20:57.400
+eu consigo validar até a própria conexão.
+
+328
+00:20:57.710 --> 00:21:00.040
+Http com esse serviço, então eu consigo
+
+329
+00:21:00.680 --> 00:21:04.600
+para ultrapassar a fronteira de integração, digamos, assim,
+
+330
+00:21:04.940 --> 00:21:07.840
+então sempre se atente a esse ponto pessoal que ele é muito
+
+331
+00:21:07.840 --> 00:21:11.400
+importante, sempre tentar mocar o mais próximo possível da
+
+332
+00:21:11.520 --> 00:21:15.280
+borda para que a gente tenha o máximo de comportamento sendo
+
+333
+00:21:15.280 --> 00:21:19.280
+executado e validado pelo nosso teste de integração quando a
+
+334
+00:21:19.280 --> 00:21:20.440
+gente chegar ali na implementação.
+
+335
+00:21:20.500 --> 00:21:22.720
+Eu retomo esse ponto para ficar um pouquinho mais claro.
+
+336
+00:21:25.600 --> 00:21:28.210
+Dito isso pessoal. Quando a gente tem ali a dependência
+
+337
+00:21:28.260 --> 00:21:32.210
+gerenciada que basicamente na maior parte das vezes acaba
+
+338
+00:21:32.220 --> 00:21:33.290
+sendo banco de dados.
+
+339
+00:21:33.530 --> 00:21:35.770
+A gente tem algumas estratégias para lidar
+
+340
+00:21:35.870 --> 00:21:39.210
+com essa dependência.
+
+341
+00:21:39.530 --> 00:21:42.050
+A gente precisa ver como que a gente vai trabalhar com ela.
+
+342
+00:21:44.500 --> 00:21:45.530
+Nesse caso pessoal.
+
+343
+00:21:45.530 --> 00:21:47.290
+Quando estiver rodando testes de integração,
+
+344
+00:21:47.310 --> 00:21:50.170
+eu tenho três alternativas, eu posso rodar isso local.
+
+345
+00:21:50.550 --> 00:21:54.010
+Eu posso ter esse banco de dados físico rodando o local.
+
+346
+00:21:54.390 --> 00:21:56.890
+Eu posso ter esse banco de dados rodando em um ambiente
+
+347
+00:21:56.890 --> 00:22:00.410
+compartilhado ou eu posso ter esse banco de dados rodando
+
+348
+00:22:01.030 --> 00:22:02.690
+no docker como um container.
+
+349
+00:22:03.830 --> 00:22:07.090
+Então olhando da perspectiva de rodar esse ambiente local,
+
+350
+00:22:07.290 --> 00:22:10.530
+esse banco de dados local a gente tem um controle parcial do
+
+351
+00:22:10.810 --> 00:22:13.050
+ambiente, porque acaba sendo o nosso ambiente de
+
+352
+00:22:13.050 --> 00:22:14.410
+desenvolvimento nossa máquina,
+
+353
+00:22:14.410 --> 00:22:17.450
+então a gente consegue controlar isso de forma parcial.
+
+354
+00:22:18.350 --> 00:22:21.010
+É simples de implementar porque a gente já vai ter o banco
+
+355
+00:22:21.010 --> 00:22:22.170
+de dados rodando ali.
+
+356
+00:22:23.010 --> 00:22:26.010
+A gente consegue fazer validações de forma rápida e validar
+
+357
+00:22:26.030 --> 00:22:27.890
+ver se de fato ele está inserindo
+
+358
+00:22:29.210 --> 00:22:31.130
+está interagindo com o banco da forma correta.
+
+359
+00:22:32.100 --> 00:22:34.770
+Entretanto pessoal, a gente não consegue validar integrar
+
+360
+00:22:34.890 --> 00:22:36.290
+isso na pipeline claro,
+
+361
+00:22:36.290 --> 00:22:38.010
+a gente está falando de um banco de dados
+
+362
+00:22:38.010 --> 00:22:39.050
+que está rodando local.
+
+363
+00:22:39.410 --> 00:22:42.810
+Logo eu não vou conseguir rodar isso em um ambiente de
+
+364
+00:22:42.930 --> 00:22:45.370
+pipeline a não ser que a minha máquina
+
+365
+00:22:46.570 --> 00:22:49.810
+seja um host de build de pipeline que provavelmente não é o
+
+366
+00:22:49.930 --> 00:22:53.250
+caso de vocês, mas a gente, por exemplo, no DevOps
+
+367
+00:22:53.950 --> 00:22:56.930
+do we a gente consegue colocar a nossa máquina como a gente
+
+368
+00:22:56.930 --> 00:22:59.370
+de build, e aí, nesse caso, eu poderia
+
+369
+00:23:00.070 --> 00:23:02.050
+eu conseguiria rodar isso na pipeline,
+
+370
+00:23:02.670 --> 00:23:04.530
+mas geralmente a gente não vê isso,
+
+371
+00:23:04.530 --> 00:23:08.450
+sendo muito praticado no dia a dia e também pessoal
+
+372
+00:23:08.990 --> 00:23:11.850
+bem importante, ele não é previsível por que ele
+
+373
+00:23:11.850 --> 00:23:12.890
+não é previsível pessoal.
+
+374
+00:23:13.490 --> 00:23:16.370
+Como a gente acaba utilizando o banco de dados local também
+
+375
+00:23:16.650 --> 00:23:18.810
+para ambiente de desenvolvimento para a gente fazer os
+
+376
+00:23:18.810 --> 00:23:21.930
+nossos testes manuais pode ser que eventualmente a gente
+
+377
+00:23:22.020 --> 00:23:26.650
+surja algum dado que é utilizado pelo teste de integração e
+
+378
+00:23:26.690 --> 00:23:28.890
+a partir do momento que a gente surge esse dado ou
+
+379
+00:23:29.050 --> 00:23:30.170
+eventualmente altera ele.
+
+380
+00:23:30.810 --> 00:23:33.570
+O nosso teste vai começar a quebrar a gente está dependendo
+
+381
+00:23:33.570 --> 00:23:37.010
+de uma fonte de fonte de dados que não é pre
+
+382
+00:23:37.670 --> 00:23:41.570
+que ela pode ser modificada, a qual que
+
+383
+00:23:42.340 --> 00:23:46.960
+fogem do te ponto aqui é bem importante a gente se atentar
+
+384
+00:23:48.540 --> 00:23:50.240
+no ambiente controlado pessoal.
+
+385
+00:23:50.360 --> 00:23:52.800
+A gente tem algo bem parecido com o ambiente local.
+
+386
+00:23:54.880 --> 00:23:56.920
+A gente não tem esse controle do ambiente, ou seja,
+
+387
+00:23:57.160 --> 00:23:59.920
+imagina um ambiente onde o pessoal de qa acaba testando
+
+388
+00:23:59.920 --> 00:24:02.680
+fazendo seus testes, então aquele banco,
+
+389
+00:24:03.160 --> 00:24:06.160
+além de ter aquele problema do falso positivo do dado sujo,
+
+390
+00:24:06.640 --> 00:24:08.760
+a gente não tem controle nenhum, eventualmente,
+
+391
+00:24:08.760 --> 00:24:10.960
+se esse banco ficar fora por algum motivo,
+
+392
+00:24:11.500 --> 00:24:14.400
+vai começar a quebrar o nosso teste de integração e vai
+
+393
+00:24:14.400 --> 00:24:17.080
+começar também a gerar falso positivo é
+
+394
+00:24:17.960 --> 00:24:21.200
+relativamente simples de implementar porque o banco já está
+
+395
+00:24:21.200 --> 00:24:24.480
+lá a gente só precisa fazer integração e tudo mais e fazer
+
+396
+00:24:24.480 --> 00:24:27.400
+funcionar e diferente do ambiente local,
+
+397
+00:24:27.520 --> 00:24:29.600
+a gente consegue integrar ele na pipeline.
+
+398
+00:24:30.800 --> 00:24:33.600
+Como esse banco vai ser acessado tanto a nível de
+
+399
+00:24:33.600 --> 00:24:35.400
+desenvolvimento a nível de teste.
+
+400
+00:24:36.120 --> 00:24:39.440
+Nada impede de a gente conseguir a partir da nossa pipeline
+
+401
+00:24:40.060 --> 00:24:43.040
+uma conexão para esse banco de dados e começar a interagir
+
+402
+00:24:43.040 --> 00:24:47.490
+com ele dentro dos nossos testes de integração e por último,
+
+403
+00:24:47.510 --> 00:24:48.810
+mas não menos importante,
+
+404
+00:24:48.970 --> 00:24:52.050
+e a forma como a gente vai ver de implementar hoje pessoal é
+
+405
+00:24:52.050 --> 00:24:53.050
+utilizando o docker.
+
+406
+00:24:53.850 --> 00:24:56.450
+O docker pessoal tem os três pontos positivos.
+
+407
+00:24:56.600 --> 00:24:58.730
+Aqui ele tem um controle total do ambiente,
+
+408
+00:24:58.740 --> 00:25:01.050
+agora a gente consegue integrar na pipeline.
+
+409
+00:25:01.550 --> 00:25:03.770
+Ele é previsível porque a gente vai
+
+410
+00:25:04.380 --> 00:25:07.170
+subir um contêiner totalmente limpo do banco de dados
+
+411
+00:25:07.750 --> 00:25:09.930
+vai eventualmente preencher e popular.
+
+412
+00:25:09.930 --> 00:25:12.770
+Algumas tabelas se necessário para a gente fazer o cid do
+
+413
+00:25:12.770 --> 00:25:17.130
+banco de dados, só que ele é um pouquinho mais complexo de
+
+414
+00:25:17.130 --> 00:25:21.690
+implementar só que essa complexidade pelo pessoal só é uma
+
+415
+00:25:21.690 --> 00:25:23.370
+complexidade que a gente vai enfrentar no
+
+416
+00:25:23.370 --> 00:25:24.450
+começo da implementação.
+
+417
+00:25:24.950 --> 00:25:28.050
+Depois que a gente tiver o 12º caso de uso implementado,
+
+418
+00:25:28.390 --> 00:25:30.490
+os próximos é muito mais tranquilo, porque aí
+
+419
+00:25:31.090 --> 00:25:34.250
+todo aquele trabalho manual de configurar o ambiente fazer
+
+420
+00:25:34.250 --> 00:25:37.850
+um mapeamento já foi feito e aí a gente só precisa replicar
+
+421
+00:25:38.050 --> 00:25:39.010
+isso para os outros testes,
+
+422
+00:25:43.060 --> 00:25:45.780
+e aí uma tabelinha para a gente finalizar a nossa parte
+
+423
+00:25:45.980 --> 00:25:48.580
+teórica aqui comparando como que a gente trabalha
+
+424
+00:25:48.580 --> 00:25:49.620
+com o controle do ambiente.
+
+425
+00:25:49.620 --> 00:25:52.820
+Implementação. Previsibilidade se roda na pipeline para cada
+
+426
+00:25:52.880 --> 00:25:55.860
+um dos ambientes e aqui pode ser que eventualmente,
+
+427
+00:25:56.060 --> 00:25:59.060
+vocês tenham a restrição na empresa de vocês que você não
+
+428
+00:25:59.060 --> 00:26:00.260
+podem utilizar o docker,
+
+429
+00:26:00.680 --> 00:26:02.780
+aí poderia utilizar o ambiente compartilhado.
+
+430
+00:26:02.880 --> 00:26:04.740
+Mas aí nós teríamos o problema de
+
+431
+00:26:05.650 --> 00:26:08.820
+não ter uma previsibilidade ter problema de falso positivo,
+
+432
+00:26:09.340 --> 00:26:11.140
+e aí vai de caso a caso pessoal.
+
+433
+00:26:11.420 --> 00:26:14.580
+Hoje, por exemplo, a gente adota muito essa estratégia com o
+
+434
+00:26:14.580 --> 00:26:16.500
+docker, a gente sobe todas
+
+435
+00:26:16.500 --> 00:26:19.100
+as dependências heads banco de dados.
+
+436
+00:26:19.420 --> 00:26:22.700
+Eventualmente a gente sobe até um mês de broker para validar
+
+437
+00:26:22.700 --> 00:26:25.740
+interações e tudo mais a gente consegue fazer isso hoje em
+
+438
+00:26:25.760 --> 00:26:27.580
+dot net muito fácil com o docker
+
+439
+00:26:30.300 --> 00:26:31.580
+e para a gente finalizar pessoal,
+
+440
+00:26:31.580 --> 00:26:34.540
+se vocês quiserem tirar uma print esse aqui para mim é o
+
+441
+00:26:35.640 --> 00:26:38.460
+melhor livro de un
+
+442
+00:26:39.660 --> 00:26:42.220
+rangendo muita coisa do que a gente viu na aula de hoje
+
+443
+00:26:43.170 --> 00:26:45.560
+muito do material que eu apresentei para vocês.
+
+444
+00:26:45.610 --> 00:26:47.080
+Nessa parte teórica, a gente
+
+445
+00:26:47.890 --> 00:26:51.280
+pegou um pouco da nossa prática e juntou com muitas das
+
+446
+00:26:51.280 --> 00:26:53.520
+coisas que ele defende nesse livro aqui pessoal.
+
+447
+00:26:53.580 --> 00:26:55.960
+Então, se eu pudesse recomendar somente um livro
+
+448
+00:26:56.480 --> 00:26:59.240
+para vocês se aprofundarem mais nessa parte de testes.
+
+449
+00:26:59.450 --> 00:27:01.000
+Seria esse que é um livro muito bom
+
+450
+00:27:27.810 --> 00:27:28.790
+Implementação.
+
+451
+00:27:28.810 --> 00:27:30.750
+Eu quero seguir sacolinha aqui pessoal
+
+452
+00:27:32.310 --> 00:27:34.830
+essa api eu conheço já ela eu construí ela então
+
+453
+00:27:36.190 --> 00:27:38.430
+a gente está vendo um cenário hipotético,
+
+454
+00:27:38.530 --> 00:27:41.710
+mas para a gente deixar de uma forma mais didática possível
+
+455
+00:27:41.870 --> 00:27:44.550
+para que vocês entendam bem e consigam depois aplicar
+
+456
+00:27:45.290 --> 00:27:49.910
+no dia a dia dia a dia de vocês pessoal esse repositório.
+
+457
+00:27:49.910 --> 00:27:53.790
+Aqui o repositório com o teste está todo lá no nosso github.
+
+458
+00:27:53.790 --> 00:27:55.870
+Depois, eu passo o link para vocês se vocês quiserem,
+
+459
+00:27:56.030 --> 00:27:59.550
+baixar o projeto brincar dar uma olhada por conta e
+
+460
+00:27:59.890 --> 00:28:00.910
+ver como é que ele funciona.
+
+461
+00:28:02.700 --> 00:28:04.540
+Esse projeto pessoal é um projeto bem simples.
+
+462
+00:28:05.000 --> 00:28:08.940
+É uma api que ela simplesmente facilita que a gente faça ali
+
+463
+00:28:09.180 --> 00:28:11.740
+registros de gastos financeiros dentro de
+
+464
+00:28:11.760 --> 00:28:13.220
+uma conta bancária.
+
+465
+00:28:13.220 --> 00:28:16.020
+A gente pode criar várias contas bancárias e registrar
+
+466
+00:28:16.740 --> 00:28:17.860
+para cada uma dessas contas,
+
+467
+00:28:17.960 --> 00:28:20.500
+as transações que a gente vai tendo ali durante o dia de
+
+468
+00:28:20.500 --> 00:28:22.260
+gasto de receita, e aí,
+
+469
+00:28:22.260 --> 00:28:24.980
+no final ele tem o relatorio ali os endpoints, que trazem
+
+470
+00:28:26.280 --> 00:28:28.020
+quanto que a gente gastou a gente,
+
+471
+00:28:28.020 --> 00:28:31.140
+consegue lançar despesas por categoria para eventualmente a
+
+472
+00:28:31.140 --> 00:28:33.140
+gente ter um controle mais granular de onde
+
+473
+00:28:33.180 --> 00:28:34.220
+a gente está gastando mais.
+
+474
+00:28:35.080 --> 00:28:36.820
+Mas é uma api muito simples.
+
+475
+00:28:37.050 --> 00:28:39.740
+Aqui a gente está falando de uma arquitetura vertical slide
+
+476
+00:28:39.740 --> 00:28:44.180
+pessoal lá no github tem um exemplo do controller based.
+
+477
+00:28:44.760 --> 00:28:48.660
+Os testes estão aplicados somente nessa versão do vertical
+
+478
+00:28:49.140 --> 00:28:51.100
+slide, mas nada impede que
+
+479
+00:28:52.360 --> 00:28:55.100
+eu replique esse teste para o ctr based
+
+480
+00:28:55.620 --> 00:28:57.300
+e ele funcione da mesma forma,
+
+481
+00:28:58.350 --> 00:29:01.330
+lembra que eu comentei que a ideia do teste é validar o
+
+482
+00:29:01.330 --> 00:29:02.410
+resultado final e não
+
+483
+00:29:02.430 --> 00:29:05.450
+as etapas que a gente levou para chegar nesse resultado,
+
+484
+00:29:06.210 --> 00:29:09.570
+e basicamente, o teste vai ser estruturado para que a gente
+
+485
+00:29:09.640 --> 00:29:13.170
+não se preocupe com a arquitetura interna da aplicação,
+
+486
+00:29:13.770 --> 00:29:16.530
+e sim com o resultado que ela está gerando depois
+
+487
+00:29:17.090 --> 00:29:19.410
+a partir do momento que a gente interage com o caso de uso,
+
+488
+00:29:22.090 --> 00:29:23.350
+Eu vou pegar aqui pessoal.
+
+489
+00:29:23.950 --> 00:29:27.070
+Esse end point a para a gente validar e fazer o nosso teste
+
+490
+00:29:27.410 --> 00:29:29.710
+que esse aqui é um endpoint mais complexo que
+
+491
+00:29:29.710 --> 00:29:30.830
+a gente tem nessa aplicação.
+
+492
+00:29:31.670 --> 00:29:34.550
+Seguindo esse cara, aqui a gente vai pegar o caminho feliz
+
+493
+00:29:35.170 --> 00:29:37.630
+do caso de uso mais complexo dessa aplicação.
+
+494
+00:29:38.090 --> 00:29:41.280
+Então vamos só dar uma repassada para a gente entender o que
+
+495
+00:29:41.520 --> 00:29:43.160
+está acontecendo aqui dentro desse método.
+
+496
+00:29:43.620 --> 00:29:46.320
+Então eu tenho esse endpoint que ele vai criar uma
+
+497
+00:29:46.480 --> 00:29:47.920
+transação para uma conta bancária.
+
+498
+00:29:48.420 --> 00:29:51.280
+Então a primeira etapa que consiste em recuperar qual que é
+
+499
+00:29:51.280 --> 00:29:52.680
+a conta que ele está transacionando.
+
+500
+00:29:53.620 --> 00:29:55.920
+Ele vai fazer algumas validações ver se a conta existe
+
+501
+00:29:56.720 --> 00:29:58.080
+a fonte está boa pessoal.
+
+502
+00:29:58.200 --> 00:30:03.110
+Vocês estão conseguindo ver está tranquilo
+
+503
+00:30:03.890 --> 00:30:05.630
+Se desse para aumentar um pouquinho, bruno
+
+504
+00:30:06.030 --> 00:30:08.660
+Tenho ver
+
+505
+00:30:08.660 --> 00:30:11.590
+aqui assim está bom
+
+506
+00:30:13.380 --> 00:30:14.440
+Beleza aí do lado.
+
+507
+00:30:14.440 --> 00:30:17.600
+Ali não tem como ali, nos arquivos é beleza
+
+508
+00:30:17.880 --> 00:30:18.880
+Qualquer coisa se tiver alguma,
+
+509
+00:30:18.880 --> 00:30:20.400
+dúvida pode me pedir que eu falo aqui.
+
+510
+00:30:22.180 --> 00:30:23.680
+Então ele vai buscar a conta,
+
+511
+00:30:23.980 --> 00:30:27.040
+vai buscar a categoria lembrem que sempre quando eu faço uma
+
+512
+00:30:27.160 --> 00:30:29.600
+transação, eu preciso dizer qual é a categoria,
+
+513
+00:30:29.730 --> 00:30:32.440
+deixa eu mostrar para vocês como é que é a minha requisição
+
+514
+00:30:32.440 --> 00:30:34.680
+que eu passo para api aqui para ficar um pouco mais claro,
+
+515
+00:30:35.260 --> 00:30:38.200
+eu vou passar qual é o valor qual é a descrição dessa minha
+
+516
+00:30:38.360 --> 00:30:41.320
+transação e qual é a categoria no qual eu quero inserir essa
+
+517
+00:30:41.480 --> 00:30:45.560
+transação e além disso, na própria rota, eu vou passar.
+
+518
+00:30:45.840 --> 00:30:47.240
+Qual é o id da conta que
+
+519
+00:30:48.740 --> 00:30:50.280
+que eu quero colocar essa transação.
+
+520
+00:30:50.900 --> 00:30:54.080
+Ele vai buscar a categoria se ela não existir bad request
+
+521
+00:30:54.280 --> 00:30:57.360
+também e aqui que ele começa a fazer algumas interações
+
+522
+00:30:57.400 --> 00:31:00.800
+externas sempre quando eu faço uma transação aqui pessoal.
+
+523
+00:31:02.040 --> 00:31:04.240
+Além de persistir o valor que foi informado,
+
+524
+00:31:04.300 --> 00:31:07.200
+eu quero pegar a cotação em dólar e eu quero persistir
+
+525
+00:31:07.360 --> 00:31:09.080
+também esse valor da cotação em dólar.
+
+526
+00:31:10.240 --> 00:31:13.400
+Para isso, eu estou buscando essa informação desse serviço.
+
+527
+00:31:13.400 --> 00:31:13.680
+Aqui
+
+528
+00:31:18.870 --> 00:31:23.520
+esse cara aqui só para vocês a carinha dele.
+
+529
+00:31:25.240 --> 00:31:28.800
+Esse aqui é o host e aí a gente adiciona isso aqui no path
+
+530
+00:31:28.860 --> 00:31:31.530
+lá e ele vai retornar.
+
+531
+00:31:31.530 --> 00:31:34.530
+Basicamente esse json aqui para a gente, ele tem o ssd
+
+532
+00:31:35.310 --> 00:31:39.210
+brl e aqui a gente vai buscar informação a partir do rae
+
+533
+00:31:41.080 --> 00:31:43.600
+para saber a cotação e fazer a conversão, então,
+
+534
+00:31:44.400 --> 00:31:47.080
+além de persistir o valor em reais eu quero persistir esse
+
+535
+00:31:47.080 --> 00:31:51.080
+valor em dólar também e percebam que
+
+536
+00:31:54.350 --> 00:31:59.010
+eu uso velo e object de money aqui para voltar essa
+
+537
+00:31:59.010 --> 00:32:02.720
+informação pegar aqui um
+
+538
+00:32:02.720 --> 00:32:06.390
+money esse cara.
+
+539
+00:32:06.390 --> 00:32:11.380
+Aqui esse aqui é uma
+
+540
+00:32:11.500 --> 00:32:13.860
+struct que ele tem o valor e a curr
+
+541
+00:32:14.720 --> 00:32:17.900
+que aí o valor e como é, eu estou representando aquele valor
+
+542
+00:32:19.690 --> 00:32:21.230
+se der algum problema com
+
+543
+00:32:22.870 --> 00:32:25.990
+essa chamada http que eu estou fazendo ele vai me dar um
+
+544
+00:32:26.110 --> 00:32:30.030
+erro de bad request, passando todas essas etapas pessoal,
+
+545
+00:32:30.030 --> 00:32:32.550
+eu vou lá vou criar a minha entidade de domínio utilizando
+
+546
+00:32:32.550 --> 00:32:36.670
+um factor method, passando aqui qualquer descrição, o valor,
+
+547
+00:32:37.190 --> 00:32:39.880
+o valor em dólar qualquer categoria
+
+548
+00:32:40.160 --> 00:32:41.360
+e qual que é a conta bancária.
+
+549
+00:32:41.910 --> 00:32:44.880
+Aqui eu faço mais algumas validações e aí, no final,
+
+550
+00:32:44.900 --> 00:32:49.500
+eu retorno uma nova transação dentro da minha conta.
+
+551
+00:32:49.500 --> 00:32:53.420
+Eu adiciono essa transação e no final, eu só faço um save,
+
+552
+00:32:53.420 --> 00:32:55.900
+changes assim que do próprio ente framework
+
+553
+00:32:57.060 --> 00:32:59.620
+e relembrando a aula de anti framework pessoal.
+
+554
+00:32:59.650 --> 00:33:02.020
+Aqui, quando eu faço o fet da minha conta,
+
+555
+00:33:02.020 --> 00:33:03.780
+eu estou botando ela lá no tracking
+
+556
+00:33:04.490 --> 00:33:06.590
+no obje tracking do anti framework.
+
+557
+00:33:07.230 --> 00:33:09.670
+Qualquer alteração que eu fizer nessa conta seja
+
+558
+00:33:10.550 --> 00:33:12.240
+alterando uma propriedade, ou seja,
+
+559
+00:33:12.240 --> 00:33:16.800
+adicionando uma transação que dentro desse método,
+
+560
+00:33:17.100 --> 00:33:19.920
+eu vou incluir ela aqui no meu transactions.
+
+561
+00:33:20.560 --> 00:33:22.040
+Isso aqui é mapeado pelo f.
+
+562
+00:33:22.500 --> 00:33:25.120
+Ele já vai fazer toda a persistência.
+
+563
+00:33:25.120 --> 00:33:27.240
+Ele vai criar a transação, vai atualizar o balanço,
+
+564
+00:33:27.260 --> 00:33:29.960
+vai fazer tudo isso dentro de uma unity to off work.
+
+565
+00:33:30.540 --> 00:33:32.160
+Aí com tudo isso certo,
+
+566
+00:33:32.180 --> 00:33:36.480
+ele vai disparar qualquer evento para o hub tq aqui no meu
+
+567
+00:33:36.560 --> 00:33:37.720
+caso eu uso o hub tq.
+
+568
+00:33:38.260 --> 00:33:41.880
+Ele vai disparar qualquer evento que foi gerado dentro dessa
+
+569
+00:33:42.080 --> 00:33:43.400
+operação de ed transaction,
+
+570
+00:33:43.700 --> 00:33:45.920
+que são os nossos domain eventos que a gente viu
+
+571
+00:33:46.900 --> 00:33:48.360
+no final da última aula lá
+
+572
+00:33:49.580 --> 00:33:51.400
+na última aula sobre testes de unidade
+
+573
+00:33:52.180 --> 00:33:55.560
+que vocês viram também em outras aulas e, no final,
+
+574
+00:33:55.560 --> 00:33:59.160
+vou fazer um log aqui e vou criar daí uma response dizendo
+
+575
+00:33:59.160 --> 00:34:00.520
+que está ok e tudo certo.
+
+576
+00:34:01.310 --> 00:34:03.850
+Então, basicamente esse aqui vai ser o método no qual
+
+577
+00:34:05.490 --> 00:34:07.970
+a gente vai fazer o nosso teste de integração a gente vai
+
+578
+00:34:07.970 --> 00:34:10.570
+projetar o nosso teste de integração em cima desse cara,
+
+579
+00:34:10.570 --> 00:34:13.780
+aqui Deixa eu botar aqui o
+
+580
+00:34:15.930 --> 00:34:17.420
+não sei esqueci.
+
+581
+00:34:17.620 --> 00:34:18.220
+Como x
+
+582
+00:34:22.280 --> 00:34:24.070
+deixa eu abrir o ex aqui para a gente fazer
+
+583
+00:34:24.070 --> 00:34:25.190
+uns desenhos pessoal.
+
+584
+00:34:26.910 --> 00:34:30.690
+Então a gente já iniciou pelo caminho feliz e já mapeou
+
+585
+00:34:31.050 --> 00:34:32.290
+o caso de uso complexo.
+
+586
+00:34:32.290 --> 00:34:35.210
+Então a gente já fez esse mapeamento já entendeu o que está
+
+587
+00:34:35.210 --> 00:34:36.450
+acontecendo naquele método.
+
+588
+00:34:37.280 --> 00:34:39.890
+Aqui agora a gente vai começar a fazer o levantamento das
+
+589
+00:34:39.890 --> 00:34:41.050
+dependências externas,
+
+590
+00:34:41.050 --> 00:34:43.570
+então vamos começar aqui eu tenho o meu teste?
+
+591
+00:34:43.570 --> 00:34:47.010
+Aqui esse aqui vai ser o meu teste que eu vou escrever ele
+
+592
+00:34:47.010 --> 00:34:49.850
+ainda não escrevi eu vou ter a minha api.
+
+593
+00:34:49.920 --> 00:34:53.650
+Aqui o meu teste vai interagir com a minha api como se ele
+
+594
+00:34:53.650 --> 00:34:55.050
+fosse um usuário externo.
+
+595
+00:34:55.550 --> 00:34:57.490
+Então aqui eu vou ter uma requisição
+
+596
+00:34:58.120 --> 00:35:01.170
+http sendo feita por a minha api pelo teste.
+
+597
+00:35:03.300 --> 00:35:04.100
+Essa api pessoal
+
+598
+00:35:08.840 --> 00:35:09.640
+está rodando em memória.
+
+599
+00:35:10.760 --> 00:35:12.200
+Essa minha api vai rodar em memória.
+
+600
+00:35:15.710 --> 00:35:18.130
+Então a gente vai subir vai ser uma api real,
+
+601
+00:35:18.430 --> 00:35:21.170
+mas ela vai estar rodando na memória da nossa aplicação.
+
+602
+00:35:21.280 --> 00:35:22.490
+Não é da nossa aplicação,
+
+603
+00:35:22.590 --> 00:35:24.690
+mas enquanto o meu teste estiver rodando,
+
+604
+00:35:25.410 --> 00:35:28.770
+essa api vai estar sendo disponibilizada a partir de uma
+
+605
+00:35:28.770 --> 00:35:30.490
+instância que vai estar rodando na memória,
+
+606
+00:35:34.090 --> 00:35:35.450
+e agora a gente tem que mapear
+
+607
+00:35:35.450 --> 00:35:37.050
+as nossas dependências externas.
+
+608
+00:35:37.360 --> 00:35:38.560
+Aqui basicamente,
+
+609
+00:35:38.640 --> 00:35:41.040
+a gente tem três dependências que a gente precisa se
+
+610
+00:35:41.040 --> 00:35:44.240
+preocupar nesse caso, aqui a gente tem o próprio banco de
+
+611
+00:35:44.240 --> 00:35:44.520
+dados
+
+612
+00:35:49.770 --> 00:35:50.750
+Que eu vou botar db.
+
+613
+00:35:51.930 --> 00:35:55.350
+Eu tenho além do db essa api que eu estou chamando para
+
+614
+00:35:55.350 --> 00:35:58.830
+fazer para buscar esse valor em cotação do dólar,
+
+615
+00:35:58.830 --> 00:36:01.470
+então vou botar aqui a api cota
+
+616
+00:36:05.860 --> 00:36:07.380
+e além dessa api, a gente tem
+
+617
+00:36:09.430 --> 00:36:12.910
+esse cara aqui que vai fazer o despacho da nossa mensagem
+
+618
+00:36:13.050 --> 00:36:15.670
+que ele vai publicar lá para
+
+619
+00:36:16.990 --> 00:36:18.710
+o hub tq caso eventualmente,
+
+620
+00:36:18.830 --> 00:36:20.670
+eu tenho uma mensagem a ser publicada
+
+621
+00:36:21.830 --> 00:36:25.070
+como eu estou testando o cenário mais complexo possível.
+
+622
+00:36:25.570 --> 00:36:28.630
+Eu quero levar a minha aplicação em um cenário aonde ele vai
+
+623
+00:36:28.630 --> 00:36:30.750
+de fato despachar, então também preciso
+
+624
+00:36:32.870 --> 00:36:34.910
+ter a estratégia correta para lidar com esse cara.
+
+625
+00:36:34.910 --> 00:36:39.380
+Aqui então eu vou botar red time timekill aqui beleza.
+
+626
+00:36:39.610 --> 00:36:42.420
+Fizemos o entendimento mapeamos e agora a gente precisa
+
+627
+00:36:42.450 --> 00:36:47.020
+categorizar elas como externa não gerenciadas e gerenciadas.
+
+628
+00:36:47.940 --> 00:36:50.740
+Como a gente viu o banco de dados na maior parte das vezes,
+
+629
+00:36:50.740 --> 00:36:52.700
+se ele não for um banco de dados compartilhado,
+
+630
+00:36:52.700 --> 00:36:55.140
+ele vai ser uma dependência gerenciada,
+
+631
+00:36:55.140 --> 00:36:57.580
+então vou colocar aqui um amarelinho
+
+632
+00:36:58.220 --> 00:37:01.660
+e essas duas outras aqui são não gerenciadas pessoal,
+
+633
+00:37:01.660 --> 00:37:04.220
+e a gente vai precisar mocar e trabalhar com o
+
+634
+00:37:04.220 --> 00:37:06.900
+mo nessas operações.
+
+635
+00:37:06.930 --> 00:37:11.120
+Aqui, então,
+
+636
+00:37:11.220 --> 00:37:12.640
+no final do dia a gente tem
+
+637
+00:37:13.160 --> 00:37:16.480
+isso aqui até aqui tranquilo pessoal ficou claro
+
+638
+00:37:17.520 --> 00:37:20.760
+esse nosso passo a passo aqui é sempre importante a gente
+
+639
+00:37:20.880 --> 00:37:22.480
+ter essa visão para que a gente daí
+
+640
+00:37:23.620 --> 00:37:25.720
+comece a projetar o nosso teste
+
+641
+00:37:26.680 --> 00:37:29.260
+pode falar june boa noite.
+
+642
+00:37:34.780 --> 00:37:39.770
+Não estou te escutando june foi sem
+
+643
+00:37:39.850 --> 00:37:43.340
+querer tranquilo beleza,
+
+644
+00:37:43.340 --> 00:37:46.180
+então a gente mapeou e a gente vai começar a escrever
+
+645
+00:37:46.220 --> 00:37:47.300
+o nosso teste pessoal.
+
+646
+00:37:47.980 --> 00:37:50.460
+Para quem nunca trabalhou com testes de integração no doc
+
+647
+00:37:50.560 --> 00:37:55.380
+net, basicamente,
+
+648
+00:37:55.560 --> 00:37:57.020
+no próprio site da microsoft,
+
+649
+00:37:57.200 --> 00:38:00.460
+tem um passo a passo de como que a gente faz a gente
+
+650
+00:38:01.250 --> 00:38:03.580
+estrutura, o nosso teste de integração,
+
+651
+00:38:04.600 --> 00:38:08.460
+mas o primeiro passo aqui pessoal é a gente criar um arquivo
+
+652
+00:38:08.560 --> 00:38:12.220
+que vai representar a nossa aplicação em memória.
+
+653
+00:38:12.760 --> 00:38:16.020
+Então vocês vão perceber que a gente já tem alguns arquivos
+
+654
+00:38:16.090 --> 00:38:20.420
+aqui a gente já tem alguns arquivos aqui talvez vocês não
+
+655
+00:38:20.420 --> 00:38:22.460
+estão conseguindo ver porque está muito pequena a fonte,
+
+656
+00:38:23.120 --> 00:38:24.900
+mas conforme a gente vai progredindo,
+
+657
+00:38:24.900 --> 00:38:26.060
+eu vou explicando para vocês,
+
+658
+00:38:26.100 --> 00:38:27.860
+o que significa cada um desses arquivos.
+
+659
+00:38:28.320 --> 00:38:31.060
+Eu não quis fazer tudo do zero porque senão a gente ia ficar
+
+660
+00:38:31.060 --> 00:38:32.340
+aqui até às 11 da noite.
+
+661
+00:38:32.340 --> 00:38:34.580
+Eu acho que ficar bem cansativa a aula.
+
+662
+00:38:35.140 --> 00:38:36.560
+Então primeiro aqui pessoal,
+
+663
+00:38:36.560 --> 00:38:39.440
+vou criar um arquivo que eu vou chamar de no meu caso,
+
+664
+00:38:39.440 --> 00:38:40.760
+eu quero testar uma transação,
+
+665
+00:38:40.760 --> 00:38:43.440
+então eu vou botar aqui como transaction integration
+
+666
+00:38:45.580 --> 00:38:48.250
+test, perfeito.
+
+667
+00:38:51.340 --> 00:38:52.970
+Nesse artigo da microsoft,
+
+668
+00:38:53.480 --> 00:38:56.490
+basicamente a gente vai ali diz o passo a passo,
+
+669
+00:38:56.550 --> 00:38:59.130
+mas a gente vai precisar dessa lib aqui,
+
+670
+00:38:59.360 --> 00:39:01.170
+microsoft spinnet mvc.
+
+671
+00:39:01.330 --> 00:39:04.690
+Teste. Esse cara vai disponibilizar para a gente.
+
+672
+00:39:04.930 --> 00:39:06.570
+O web application factor,
+
+673
+00:39:06.670 --> 00:39:09.010
+então deixa eu fazer o seguinte pessoal aqui e a gente vai
+
+674
+00:39:09.010 --> 00:39:10.930
+trabalhar com duas classes, eu vou deixar
+
+675
+00:39:11.550 --> 00:39:15.010
+as duas classes no mesmo arquivo só para a gente facilitar e
+
+676
+00:39:15.010 --> 00:39:18.170
+não precisa trocando de arquivo toda hora a gente consegue
+
+677
+00:39:18.170 --> 00:39:21.010
+ver tudo que está acontecendo a partir de um arquivo,
+
+678
+00:39:21.070 --> 00:39:22.530
+só então eu
+
+679
+00:39:23.120 --> 00:39:27.010
+esse que vai ser o meu teste que eu vou definir o meu caso de uso.
+
+680
+00:39:27.010 --> 00:39:30.610
+Então já vamos até definir a vamos dar um nome para ele.
+
+681
+00:39:30.850 --> 00:39:32.970
+Certinho, então como eu estou usando
+
+682
+00:39:34.490 --> 00:39:38.450
+o x unit aqui eu vou usar um fac, então vou declarar aqui
+
+683
+00:39:39.210 --> 00:39:42.050
+o nome desse meu método vai ser create transaction que é o
+
+684
+00:39:42.650 --> 00:39:47.250
+o método que eu estou testando esse
+
+685
+00:39:47.310 --> 00:39:48.610
+val de transaction.
+
+686
+00:39:48.610 --> 00:39:51.570
+Então, dado uma transação válida de
+
+687
+00:39:52.630 --> 00:39:57.330
+return successful, vamos colocar esse nome aqui não vamos
+
+688
+00:39:58.230 --> 00:40:00.290
+tentar muito ao nome só para a gente definir
+
+689
+00:40:00.890 --> 00:40:01.930
+o nosso teste inicial.
+
+690
+00:40:03.790 --> 00:40:05.610
+Eu preciso que nem eu comentei com vocês
+
+691
+00:40:06.180 --> 00:40:07.610
+rodar essa api memória então
+
+692
+00:40:08.170 --> 00:40:10.890
+ter uma forma de representar minha aplicação em memória.
+
+693
+00:40:11.730 --> 00:40:14.650
+Para isso, eu vou criar uma classe aqui que eu vou chamar de
+
+694
+00:40:17.490 --> 00:40:22.170
+finance control web application factor.
+
+695
+00:40:24.110 --> 00:40:28.030
+Esse cara basicamente vai representar uma instância
+
+696
+00:40:28.650 --> 00:40:33.430
+da minha aplicação e memória deixa eu só organizar vocês
+
+697
+00:40:33.430 --> 00:40:35.750
+aqui em uma outra tela que eu não estou vendo
+
+698
+00:40:38.450 --> 00:40:39.010
+perfeito
+
+699
+00:40:44.600 --> 00:40:47.460
+só que para eu conseguir fazer com que api rode memória.
+
+700
+00:40:47.460 --> 00:40:49.860
+Eu preciso herdar de um carinho chamado web application
+
+701
+00:40:49.960 --> 00:40:52.860
+factor que ele vem justamente daquele pacote que eu comentei
+
+702
+00:40:53.020 --> 00:40:54.820
+com vocês esse e c teste.
+
+703
+00:40:55.680 --> 00:40:57.940
+Quando a gente define o web application factor,
+
+704
+00:40:58.060 --> 00:41:00.740
+a gente precisa dar para ele um entre point, ou seja,
+
+705
+00:41:01.020 --> 00:41:03.420
+qual é a classe de entre point da nossa aplicação.
+
+706
+00:41:04.280 --> 00:41:07.340
+No meu caso aqui o entre point da minha aplicação é o
+
+707
+00:41:07.420 --> 00:41:09.260
+arquivo de program é onde ele vai começar
+
+708
+00:41:09.300 --> 00:41:10.380
+a fazer toda a injeção.
+
+709
+00:41:10.740 --> 00:41:13.380
+Toda a configuração pode ser que esse arquivo se chame
+
+710
+00:41:13.580 --> 00:41:15.260
+startup pode ser que ele esteja outro nome,
+
+711
+00:41:15.560 --> 00:41:18.660
+mas basicamente a gente tem que apontar para aquele programa
+
+712
+00:41:18.720 --> 00:41:21.340
+que é o startup da nossa aplicação.
+
+713
+00:41:23.030 --> 00:41:25.610
+Só com isso aqui minimamente com isso aqui pessoal a gente
+
+714
+00:41:25.610 --> 00:41:29.050
+já está criando a nossa aplicação em memória.
+
+715
+00:41:30.210 --> 00:41:32.370
+Além disso, eu preciso saber pessoal em que,
+
+716
+00:41:32.370 --> 00:41:35.800
+momento o meu teste vai iniciar e em que momento ele vai
+
+717
+00:41:35.800 --> 00:41:39.520
+parar justamente para eu conseguir iniciar todas
+
+718
+00:41:39.540 --> 00:41:41.960
+as dependências que vão ser utilizadas nesse teste.
+
+719
+00:41:42.640 --> 00:41:45.680
+Para isso, eu vou basicamente implementar o ás i tk
+
+720
+00:41:45.880 --> 00:41:48.760
+lifetime, que é uma interface que ele vai me dar dois
+
+721
+00:41:48.760 --> 00:41:52.320
+métodos, o in sink e o dispose e
+
+722
+00:41:52.320 --> 00:41:55.640
+as sink que basicamente aqui eu vou conseguir controlar
+
+723
+00:41:55.640 --> 00:41:58.720
+quando o meu teste está iniciando e quando o meu teste está
+
+724
+00:41:58.720 --> 00:42:02.610
+finalizando beleza pessoal,
+
+725
+00:42:02.610 --> 00:42:04.450
+então a primeira coisa que eu vou fazer aqui.
+
+726
+00:42:07.250 --> 00:42:10.190
+Quando a gente herda dessa classe web application factor.
+
+727
+00:42:10.270 --> 00:42:12.430
+A gente começa a fazer algumas coisas interessantes,
+
+728
+00:42:13.650 --> 00:42:16.350
+por exemplo, eu consigo dar o over nesse método a
+
+729
+00:42:16.540 --> 00:42:17.750
+configure web host.
+
+730
+00:42:19.110 --> 00:42:23.110
+Esse método aqui me dá a possibilidade e configure
+
+731
+00:42:23.990 --> 00:42:27.190
+teste services de eu manipular qualquer
+
+732
+00:42:28.020 --> 00:42:30.990
+injeção de dependência da minha aplicação antes que
+
+733
+00:42:31.670 --> 00:42:33.190
+essa aplicação suba em memória
+
+734
+00:42:34.190 --> 00:42:35.950
+como a gente vai precisar trabalhar com mo.
+
+735
+00:42:36.100 --> 00:42:38.350
+Aqui pessoal. A gente vai ter que eventualmente
+
+736
+00:42:42.030 --> 00:42:45.700
+mocar algumas coisas e substituir algumas implementações,
+
+737
+00:42:46.320 --> 00:42:50.180
+só que, como a gente está olhando a api de fora aqui eu não
+
+738
+00:42:50.180 --> 00:42:54.260
+consigo simplesmente ir lá e no meio da execução,
+
+739
+00:42:54.400 --> 00:42:57.820
+trocar um construtor como a gente faz no teste de unidade
+
+740
+00:42:57.820 --> 00:42:58.940
+quando a gente utiliza a mo,
+
+741
+00:42:59.480 --> 00:43:02.300
+eu não consigo simplesmente falar para aquele construtor.
+
+742
+00:43:02.300 --> 00:43:05.980
+Eu quero passar essa classe mocada o nosso teste.
+
+743
+00:43:06.170 --> 00:43:08.860
+Não sabe os detalhes internos da nossa aplicação.
+
+744
+00:43:09.280 --> 00:43:11.940
+Ele só vai interagir com ela a partir de um endpoint.
+
+745
+00:43:12.290 --> 00:43:16.870
+Http fechei esse que
+
+746
+00:43:17.450 --> 00:43:18.910
+então dessa forma pessoal.
+
+747
+00:43:18.910 --> 00:43:22.350
+Aqui eu vou conseguir fazer a manipulação de qualquer
+
+748
+00:43:22.350 --> 00:43:24.390
+serviço que eventualmente eu precise mocar
+
+749
+00:43:24.390 --> 00:43:25.470
+dentro da minha aplicação.
+
+750
+00:43:26.940 --> 00:43:30.090
+Outra coisa muito importante que esqueci de comentar é que
+
+751
+00:43:30.250 --> 00:43:32.330
+essa nossa api pessoal tem autenticação,
+
+752
+00:43:37.600 --> 00:43:41.540
+Ou seja, eu preciso saber qual é a estratégia que eu vou
+
+753
+00:43:41.980 --> 00:43:45.140
+utilizar para manipular essa autenticação.
+
+754
+00:43:45.580 --> 00:43:47.660
+A gente tem duas alternativas aqui pessoal.
+
+755
+00:43:47.900 --> 00:43:51.540
+A gente pode utilizar a própria api para obter um beer token
+
+756
+00:43:51.940 --> 00:43:53.980
+e passar esse token durante a requisição
+
+757
+00:43:55.240 --> 00:43:58.900
+ou a gente pode simplesmente substituir o mecanismo de
+
+758
+00:43:58.900 --> 00:44:02.420
+autenticação interno para que a gente consiga mocar isso em
+
+759
+00:44:02.420 --> 00:44:03.980
+tempo de execução do teste.
+
+760
+00:44:04.880 --> 00:44:07.500
+Eu prefiro muito mais a segunda alternativa pessoal,
+
+761
+00:44:07.500 --> 00:44:10.820
+porque eu gosto de separar os testes de autenticação em um
+
+762
+00:44:10.820 --> 00:44:12.140
+outro teste de integração,
+
+763
+00:44:12.880 --> 00:44:16.180
+então nos meus testes de integração onde eu não tenho essa
+
+764
+00:44:16.180 --> 00:44:17.540
+preocupação com autenticação,
+
+765
+00:44:17.540 --> 00:44:19.980
+eu não quero validar autenticação nem autorização.
+
+766
+00:44:20.700 --> 00:44:25.140
+A gente acaba esses testes de a acaba focando todo
+
+767
+00:44:25.980 --> 00:44:27.940
+o processo de au.
+
+768
+00:44:30.960 --> 00:44:34.000
+A gente pode vir aqui em services e
+
+769
+00:44:35.920 --> 00:44:39.110
+substituir a implementação atual e de autenticação
+
+770
+00:44:39.250 --> 00:44:40.270
+do as net core.
+
+771
+00:44:40.790 --> 00:44:42.030
+E como é que a gente faz isso,
+
+772
+00:44:42.310 --> 00:44:44.750
+a gente vem aqui e adiciono a trasnsit
+
+773
+00:44:46.030 --> 00:44:47.750
+esse mecanismo que controla pessoal.
+
+774
+00:44:47.950 --> 00:44:50.710
+Essa implementação que controla a autenticação dos serviços,
+
+775
+00:44:51.050 --> 00:44:53.910
+ela é o a authentication
+
+776
+00:44:54.580 --> 00:44:58.760
+esquema provider pro.
+
+777
+00:45:00.240 --> 00:45:03.420
+Então para essa interface aqui eu não quero utilizar a
+
+778
+00:45:03.420 --> 00:45:04.860
+implementação do a net core.
+
+779
+00:45:05.160 --> 00:45:08.380
+Eu quero passar para ele uma implementação
+
+780
+00:45:08.990 --> 00:45:12.500
+minha uma autenticação que eu vou mocar ou seja,
+
+781
+00:45:13.070 --> 00:45:16.740
+desde que eu use esse usuário aqui para fazer os testes,
+
+782
+00:45:18.070 --> 00:45:19.490
+eu consigo by passar.
+
+783
+00:45:19.590 --> 00:45:21.690
+Eu consigo pular a etapa de autenticação,
+
+784
+00:45:22.030 --> 00:45:24.050
+então para aquela interface eu quero
+
+785
+00:45:24.330 --> 00:45:25.930
+utilizar essa implementação.
+
+786
+00:45:25.960 --> 00:45:27.410
+Aqui eu não quero
+
+787
+00:45:27.650 --> 00:45:32.530
+utilizar moma pro.
+
+788
+00:45:33.650 --> 00:45:36.530
+Esse aqui é o cara que eu quero usar que internamente ele
+
+789
+00:45:36.530 --> 00:45:39.370
+vai substituir as c e vai dar um autentication
+
+790
+00:45:39.880 --> 00:45:42.890
+resulte success e vai dar um bypass na autenticação.
+
+791
+00:45:42.910 --> 00:45:45.570
+Ele não vai validar token, ele não vai validar nada aqui
+
+792
+00:45:46.770 --> 00:45:49.930
+justamente pelo fato de não ser o objetivo do nosso teste
+
+793
+00:45:50.500 --> 00:45:51.610
+fazer essa validação.
+
+794
+00:45:53.310 --> 00:45:56.910
+Esse cara aqui pessoal vai ser chamado depois de todas
+
+795
+00:45:56.930 --> 00:46:00.110
+as injeções normais da minha aplicação, ou seja,
+
+796
+00:46:00.280 --> 00:46:03.350
+nesse momento aqui antes de ele buildar a minha aplicação,
+
+797
+00:46:04.050 --> 00:46:06.310
+ele vai chamar esse cara que a gente
+
+798
+00:46:06.310 --> 00:46:07.430
+fez a sobre a escrita aqui.
+
+799
+00:46:07.570 --> 00:46:10.870
+Então aqui eu consigo substituir qualquer implementação que
+
+800
+00:46:11.070 --> 00:46:12.710
+eventualmente eu precise trabalhar
+
+801
+00:46:13.570 --> 00:46:14.590
+ao longo da minha aplicação.
+
+802
+00:46:14.590 --> 00:46:17.390
+Então a primeira que eu quero substituir aqui é a
+
+803
+00:46:17.390 --> 00:46:20.790
+autenticação, eu não quero utilizar uma autenticação real
+
+804
+00:46:20.860 --> 00:46:23.830
+aqui perfeito pessoal.
+
+805
+00:46:23.830 --> 00:46:27.390
+Então vamos pegar aqui a nossa primeira dependência e vamos
+
+806
+00:46:27.390 --> 00:46:28.910
+ver como que a gente pode trabalhar com ela.
+
+807
+00:46:29.690 --> 00:46:31.390
+Eu não sei se vocês conhecem pessoal.
+
+808
+00:46:31.390 --> 00:46:34.790
+Mas a gente tem o teste container para a dotnet.
+
+809
+00:46:36.550 --> 00:46:39.750
+Essa biblioteca é, é espetacular essa biblioteca aqui
+
+810
+00:46:39.750 --> 00:46:41.150
+pessoal com ela.
+
+811
+00:46:41.150 --> 00:46:44.230
+Basicamente, a gente consegue facilitar muito a interação
+
+812
+00:46:44.290 --> 00:46:47.390
+que o nosso teste que a nossa aplicação tem com o docker.
+
+813
+00:46:48.460 --> 00:46:51.390
+Antigamente pessoal eu trabalhava já com o docker, só que eu
+
+814
+00:46:52.220 --> 00:46:53.230
+não existia ainda.
+
+815
+00:46:53.430 --> 00:46:55.630
+Essa biblioteca do teste container aí
+
+816
+00:46:55.630 --> 00:46:57.070
+basicamente o que eu tinha que fazer.
+
+817
+00:46:57.130 --> 00:46:59.190
+Eu tinha que ter um arquivo ali sh,
+
+818
+00:46:59.330 --> 00:47:02.070
+no qual eu ia dando instruções manualmente para o
+
+819
+00:47:02.070 --> 00:47:03.390
+docker docker.
+
+820
+00:47:03.490 --> 00:47:04.510
+Imagem pool.
+
+821
+00:47:05.150 --> 00:47:07.550
+Baixa imagem do sql server no
+
+822
+00:47:09.380 --> 00:47:10.660
+esse aqui é um sql server.
+
+823
+00:47:12.930 --> 00:47:16.350
+Eu teria que manualmente baixar a imagem do sql server
+
+824
+00:47:16.950 --> 00:47:20.390
+teria que botar os parâmetros de autenticação de usuário e
+
+825
+00:47:20.510 --> 00:47:22.790
+tudo mais teria que subir manualmente
+
+826
+00:47:23.310 --> 00:47:26.110
+esse container e depois finalizar ele manualmente a partir
+
+827
+00:47:26.110 --> 00:47:27.830
+do que te de.
+
+828
+00:47:29.240 --> 00:47:32.960
+O teste container abstrai muito dessa interação que a gente
+
+829
+00:47:32.960 --> 00:47:35.480
+tem com as dependências com as imagens do docker,
+
+830
+00:47:35.780 --> 00:47:37.760
+então como é que ele funciona aqui pessoal.
+
+831
+00:47:39.240 --> 00:47:43.330
+Basicamente, a gente fala para ele, usa essa imagem aqui
+
+832
+00:47:44.150 --> 00:47:47.570
+com essa de porte e mais algumas outras informações.
+
+833
+00:47:48.550 --> 00:47:50.290
+No nosso caso do sql server,
+
+834
+00:47:50.370 --> 00:47:52.770
+a gente teria que passar qual é a porta que a gente vai
+
+835
+00:47:53.010 --> 00:47:56.050
+utilizar qual é a porta que a gente vai utilizar tanto no
+
+836
+00:47:56.210 --> 00:47:57.530
+host quanto no container,
+
+837
+00:47:57.910 --> 00:48:00.650
+eu teria que passar qual é o usuário e qual é a senha?
+
+838
+00:48:01.310 --> 00:48:03.290
+Eu teria que ter uma forma de construir essa
+
+839
+00:48:03.290 --> 00:48:04.330
+connection string.
+
+840
+00:48:04.570 --> 00:48:05.610
+E aí lá. No final,
+
+841
+00:48:05.670 --> 00:48:09.050
+ele ia construir um container com a imagem que eu passei
+
+842
+00:48:09.850 --> 00:48:12.170
+ia subir esse container e depois, no final,
+
+843
+00:48:12.210 --> 00:48:13.970
+a gente faria um dispose desse container
+
+844
+00:48:14.810 --> 00:48:16.850
+e aqui pessoal eu esqueci de perguntar.
+
+845
+00:48:16.850 --> 00:48:19.370
+Mas se todo mundo está familiarizado com container com
+
+846
+00:48:19.370 --> 00:48:20.970
+docker tem alguém aqui que nunca trabalhou
+
+847
+00:48:20.970 --> 00:48:22.050
+com container e doc.
+
+848
+00:48:22.240 --> 00:48:24.250
+Não sabe o que é,
+
+849
+00:48:24.750 --> 00:48:27.370
+eu posso fazer uma introdução bem rápida aqui só para todo
+
+850
+00:48:27.370 --> 00:48:31.390
+mundo ficar na mesma página se está todo mundo de acordo
+
+851
+00:48:31.390 --> 00:48:34.550
+aqui, eu vou seguir partindo da premissa que a gente tem o
+
+852
+00:48:34.630 --> 00:48:36.950
+entendimento básico do que é docker do que é container.
+
+853
+00:48:40.730 --> 00:48:42.830
+Vou entender o silêncio como um sim então pessoal,
+
+854
+00:48:44.300 --> 00:48:47.480
+só que mesmo utilizando o teste container dessa forma
+
+855
+00:48:47.600 --> 00:48:49.760
+pessoal, a gente acaba sendo muito verboso.
+
+856
+00:48:49.960 --> 00:48:51.960
+A gente tem que controlar qual é a porta
+
+857
+00:48:52.340 --> 00:48:53.480
+que a gente vai utilizar.
+
+858
+00:48:54.160 --> 00:48:56.280
+Eventualmente, quando a gente tem múltiplos testes,
+
+859
+00:48:56.440 --> 00:48:58.600
+a gente tem que começar a randomizar a porta
+
+860
+00:48:59.160 --> 00:49:01.200
+para a gente não ter conflito de rodar
+
+861
+00:49:01.830 --> 00:49:04.240
+dois containers diferentes na mesma porta,
+
+862
+00:49:05.160 --> 00:49:06.800
+e aí conforme foi passando tempo.
+
+863
+00:49:07.470 --> 00:49:09.760
+Eles introduziram essa questão de módulos
+
+864
+00:49:09.760 --> 00:49:11.520
+pessoal, o que é o módulo.
+
+865
+00:49:11.520 --> 00:49:16.510
+Basicamente, o módulo é uma forma mais
+
+866
+00:49:16.590 --> 00:49:19.950
+compacta de a gente conseguir interagir com algumas
+
+867
+00:49:19.950 --> 00:49:21.670
+dependências que são mais utilizadas.
+
+868
+00:49:22.050 --> 00:49:25.110
+Então aqui, na própria documentação deixa eu mandar o link
+
+869
+00:49:29.850 --> 00:49:31.380
+aqui na própria documentação.
+
+870
+00:49:31.500 --> 00:49:32.980
+A gente vê quais são
+
+871
+00:49:33.000 --> 00:49:35.700
+as implementações no qual a gente pode utilizar esses
+
+872
+00:49:35.860 --> 00:49:39.220
+módulos que dentro de cada um desses módulos a gente já tem
+
+873
+00:49:39.240 --> 00:49:42.820
+um monte de implementação pronta que a gente teria que fazer
+
+874
+00:49:43.340 --> 00:49:44.460
+caso a gente utilizasse,
+
+875
+00:49:45.340 --> 00:49:48.180
+o teste container da forma mais crua,
+
+876
+00:49:48.180 --> 00:49:50.700
+digamos assim no qual a gente teria que especificar porta
+
+877
+00:49:51.560 --> 00:49:56.340
+imagem, usuário e outras configurações dentro desse cara,
+
+878
+00:49:56.340 --> 00:50:01.330
+aqui a gente tem o deixa eu procurar aqui cadê o sql
+
+879
+00:50:04.630 --> 00:50:08.940
+sql server esse carinho aqui basicamente,
+
+880
+00:50:09.170 --> 00:50:12.140
+abstrai muito do que a gente precisaria fazer mesmo
+
+881
+00:50:12.140 --> 00:50:13.620
+utilizando o teste container,
+
+882
+00:50:14.120 --> 00:50:16.340
+então como que a gente vai trabalhar com esse teste
+
+883
+00:50:16.340 --> 00:50:17.900
+container eu vou declarar aqui
+
+884
+00:50:21.060 --> 00:50:24.200
+uma variável para a gente representar o container
+
+885
+00:50:24.220 --> 00:50:25.280
+do nosso banco de dados.
+
+886
+00:50:25.280 --> 00:50:27.520
+Então private hand only vai ser
+
+887
+00:50:30.870 --> 00:50:35.330
+umk de pegar col a que eu esqueci da
+
+888
+00:50:36.270 --> 00:50:39.770
+skl container esse cara aqui vai representar um container
+
+889
+00:50:40.110 --> 00:50:41.570
+sql server da nossa aplicação,
+
+890
+00:50:41.570 --> 00:50:45.490
+então vou botar aqui database e container eu vou fazer um
+
+891
+00:50:46.040 --> 00:50:48.130
+msql builder build.
+
+892
+00:50:50.170 --> 00:50:51.560
+Estou com isso aqui pessoal.
+
+893
+00:50:51.620 --> 00:50:55.000
+Eu garanto que eu vou ter uma instância do sql rodando
+
+894
+00:50:55.150 --> 00:50:56.960
+durante o meu teste de integração,
+
+895
+00:50:58.140 --> 00:51:01.080
+já com o usuário configurado com a porta randomizada para
+
+896
+00:51:01.080 --> 00:51:04.360
+que eu não tenha problema de conflitar a porta se eu tiver
+
+897
+00:51:04.520 --> 00:51:08.560
+mais que um teste de integração rodando deixa eu ver aqui
+
+898
+00:51:09.520 --> 00:51:10.760
+internamente pessoal,
+
+899
+00:51:10.980 --> 00:51:13.520
+ele já tem muita coisa padrão aqui para mim.
+
+900
+00:51:13.540 --> 00:51:17.280
+Então ele vai usar essa imagem aqui que é 2022 para um,
+
+901
+00:51:18.140 --> 00:51:22.840
+ele vai usar a porta quatro 14 e 33 ele vai utilizar o banco
+
+902
+00:51:22.840 --> 00:51:24.240
+de dados default master
+
+903
+00:51:24.780 --> 00:51:27.560
+vai utilizar esse aqui como default user e esse aqui como
+
+904
+00:51:27.560 --> 00:51:28.800
+default pass word,
+
+905
+00:51:29.480 --> 00:51:31.760
+e internamente ele vai fazer toda a
+
+906
+00:51:31.760 --> 00:51:32.800
+configuração para a gente.
+
+907
+00:51:32.860 --> 00:51:33.960
+Ele vai randomizar.
+
+908
+00:51:34.000 --> 00:51:37.200
+A porta já vai deixar tudo certinho e a gente simplesmente
+
+909
+00:51:37.200 --> 00:51:39.040
+precisa interagir com esse container.
+
+910
+00:51:39.380 --> 00:51:43.280
+Sql serve basicamente
+
+911
+00:51:43.440 --> 00:51:44.560
+eu fazendo isso aqui pessoal.
+
+912
+00:51:44.560 --> 00:51:46.040
+Eu só estou criando container.
+
+913
+00:51:46.060 --> 00:51:48.680
+Eu não estou iniciando ele ainda então lá
+
+914
+00:51:48.680 --> 00:51:49.760
+no meu método de ni.
+
+915
+00:51:50.090 --> 00:51:52.840
+Assim que eu vou começar a interagir
+
+916
+00:51:53.400 --> 00:51:55.520
+e gerenciar essas minhas dependências
+
+917
+00:51:56.580 --> 00:51:59.520
+dentro desse container, eu posso chamar o método start.
+
+918
+00:51:59.520 --> 00:52:03.160
+Assim, então, a partir desse momento aqui eu já vou ter
+
+919
+00:52:03.260 --> 00:52:04.440
+uma instância do sq.
+
+920
+00:52:04.440 --> 00:52:05.880
+Quando eu rodar esse teste aqui
+
+921
+00:52:06.420 --> 00:52:09.240
+eu já vou ter uma instância do sql server rodando
+
+922
+00:52:10.060 --> 00:52:13.200
+eu vou mostrar o docker para vocês, ele já vai montar.
+
+923
+00:52:14.040 --> 00:52:16.840
+Davidson. Ele já vai montar connection string prontinha para
+
+924
+00:52:16.840 --> 00:52:21.400
+mim aqui database connection connection get
+
+925
+00:52:21.400 --> 00:52:22.400
+connection string.
+
+926
+00:52:22.980 --> 00:52:25.520
+Então ele internamente já vai pegar todas
+
+927
+00:52:25.520 --> 00:52:28.600
+as propriedades que ele passou para o container e vai já
+
+928
+00:52:28.600 --> 00:52:31.280
+montar connection string para eu utilizar para que eu não
+
+929
+00:52:31.280 --> 00:52:33.280
+precise me preocupar com essa construção.
+
+930
+00:52:33.940 --> 00:52:35.760
+Se eu usasse desse outro formato.
+
+931
+00:52:35.910 --> 00:52:39.130
+Aqui, eu teria que construir
+
+932
+00:52:39.650 --> 00:52:42.570
+a connection string a partir dos parâmetros de autenticação
+
+933
+00:52:42.690 --> 00:52:45.250
+e de porta que eu enviei para o meu container.
+
+934
+00:52:45.760 --> 00:52:47.930
+Aqui ele já deixa pront para mim por isso que eu
+
+935
+00:52:47.930 --> 00:52:49.290
+comentei internamente.
+
+936
+00:52:49.310 --> 00:52:51.450
+Ele está usando o teste de container só que ele está
+
+937
+00:52:51.450 --> 00:52:55.810
+abstraindo várias funcionalidades várias camadas de código
+
+938
+00:52:55.810 --> 00:52:58.010
+que a gente precisaria executar de forma manual
+
+939
+00:53:01.300 --> 00:53:05.700
+e no dispose pessoal, lembrando que esse esses dois métodos
+
+940
+00:53:06.760 --> 00:53:08.900
+estão vindo aqui dessa minha implementação.
+
+941
+00:53:09.480 --> 00:53:11.700
+Então lá no meu dispose eu quero
+
+942
+00:53:11.700 --> 00:53:15.120
+basicamente stop e sinc.
+
+943
+00:53:15.300 --> 00:53:17.280
+Eu quero parar esse meu container.
+
+944
+00:53:17.300 --> 00:53:20.280
+Então, quando meus testes começarem a rodar,
+
+945
+00:53:20.620 --> 00:53:22.000
+eu vou iniciar o banco.
+
+946
+00:53:22.480 --> 00:53:23.840
+E quando os meus testes pararem,
+
+947
+00:53:23.900 --> 00:53:25.720
+eu vou matar a instância do docker
+
+948
+00:53:27.190 --> 00:53:29.170
+beleza pessoal só que tem um.
+
+949
+00:53:29.170 --> 00:53:34.150
+Porém aqui vamos
+
+950
+00:53:34.150 --> 00:53:35.950
+dar uma olhadinha no nosso web settings aqui
+
+951
+00:53:38.880 --> 00:53:40.930
+durante o meu teste de integração,
+
+952
+00:53:41.150 --> 00:53:43.850
+eu não vou querer usar o banco de dados que está a setado
+
+953
+00:53:43.920 --> 00:53:47.250
+aqui no meu connection string do meu app configuration,
+
+954
+00:53:48.390 --> 00:53:52.290
+eu preciso utilizar connection string do container que eu
+
+955
+00:53:52.290 --> 00:53:54.210
+estou subindo no teste de integração.
+
+956
+00:53:54.750 --> 00:53:58.130
+Ou seja, eu preciso achar uma forma de substituir esse cara
+
+957
+00:53:58.130 --> 00:54:02.330
+aqui e também eu não posso simplesmente vir aqui e colocar
+
+958
+00:54:02.330 --> 00:54:05.410
+connection string do container porque o container toda vez
+
+959
+00:54:05.410 --> 00:54:07.130
+que a gente rodar ele vai mudar a porta.
+
+960
+00:54:07.630 --> 00:54:09.490
+Então eu não vou ter uma porta fixa ali,
+
+961
+00:54:09.530 --> 00:54:12.690
+e nem seria interessante também a gente deixar fixo aqui
+
+962
+00:54:14.010 --> 00:54:16.290
+a connection string do container
+
+963
+00:54:17.840 --> 00:54:19.760
+para a gente fazer isso pessoal é bem simples
+
+964
+00:54:20.790 --> 00:54:24.360
+aqui no meu in assim que depois que eu subir o banco de
+
+965
+00:54:24.360 --> 00:54:26.560
+dados, eu posso vir aqui em environment
+
+966
+00:54:27.480 --> 00:54:29.160
+e setar uma variável de ambiente.
+
+967
+00:54:30.090 --> 00:54:32.110
+Eu não sei se vocês lembram da aula.
+
+968
+00:54:32.170 --> 00:54:35.070
+Eu acho que foi o ruan que falou dessa aula
+
+969
+00:54:35.730 --> 00:54:38.190
+que a gente tem níveis de precedência dentro de uma
+
+970
+00:54:38.190 --> 00:54:39.310
+aplicação, as sp cor,
+
+971
+00:54:39.310 --> 00:54:41.630
+no qual a gente pode trabalhar com as configurações.
+
+972
+00:54:42.330 --> 00:54:45.790
+Uma variável de ambiente sempre vai ter procedência no que
+
+973
+00:54:45.950 --> 00:54:47.550
+está definido dentro de um app seting,
+
+974
+00:54:47.970 --> 00:54:51.710
+então tudo que eu definir aqui vai ter precedência sobre o
+
+975
+00:54:51.710 --> 00:54:54.670
+que tiver definido lá dentro do app seting, então,
+
+976
+00:54:54.700 --> 00:54:57.630
+aqui simplesmente o que eu vou fazer eu vou informar qual é
+
+977
+00:54:57.790 --> 00:55:02.590
+o valor que eu quero substituir a sessão connection string e
+
+978
+00:55:02.670 --> 00:55:03.870
+o valor database.
+
+979
+00:55:04.830 --> 00:55:07.270
+E aí eu vou utilizar a connection string
+
+980
+00:55:08.950 --> 00:55:11.810
+lá do meu container que ele já vai retornar isso aqui
+
+981
+00:55:11.810 --> 00:55:12.930
+pronto para eu utilizar.
+
+982
+00:55:13.610 --> 00:55:15.170
+E aí, a partir desse momento,
+
+983
+00:55:15.390 --> 00:55:19.410
+eu vou estar usando como connection string esse valor aqui e
+
+984
+00:55:19.410 --> 00:55:21.770
+não mais o que está definido dentro do app settings
+
+985
+00:55:24.110 --> 00:55:28.090
+beleza pessoal, só que não acabou por aqui ainda o nosso
+
+986
+00:55:28.140 --> 00:55:29.410
+setup do banco de dados.
+
+987
+00:55:29.500 --> 00:55:31.290
+Geralmente, o banco de dados pessoal
+
+988
+00:55:32.070 --> 00:55:33.850
+é a dependência que mais dá trabalho.
+
+989
+00:55:35.970 --> 00:55:39.350
+Se a gente voltar aqui no bank account vamos voltar no nosso
+
+990
+00:55:39.510 --> 00:55:41.590
+caso de uso, vocês vão perceber que
+
+991
+00:55:43.640 --> 00:55:46.320
+para que eu consiga executar esse caso de uso com sucesso.
+
+992
+00:55:46.340 --> 00:55:49.640
+Eu preciso ter algumas entidades já criadas no meu banco de
+
+993
+00:55:49.640 --> 00:55:52.560
+dados, eu preciso ter uma conta perida.
+
+994
+00:55:52.660 --> 00:55:57.640
+Eu preciso ter uma categoria perida aqui está para vocês,
+
+995
+00:55:57.840 --> 00:56:00.960
+vocês não conseguem ver, mas eu preciso ter um budget alerte
+
+996
+00:56:00.960 --> 00:56:03.640
+porque esse budget alerte pessoal.
+
+997
+00:56:03.980 --> 00:56:07.520
+Sempre quando exceder um valor que eu especificar em um
+
+998
+00:56:07.520 --> 00:56:10.400
+alerta, ele vai gerar um domínio de evento,
+
+999
+00:56:10.820 --> 00:56:14.000
+um evento de domínio que vai ser convertido para uma
+
+1000
+00:56:14.160 --> 00:56:16.440
+mensagem que vai ser enviada pelo req,
+
+1001
+00:56:16.780 --> 00:56:20.000
+então toda vez que eu exceder um limite que eu pré criei na
+
+1002
+00:56:20.000 --> 00:56:23.400
+minha aplicação, eu
+
+1003
+00:56:25.030 --> 00:56:27.360
+preciso ter um usuário para eu conseguir
+
+1004
+00:56:28.870 --> 00:56:30.960
+trabalhar até com a própria autenticação,
+
+1005
+00:56:30.960 --> 00:56:32.120
+que nem eu mostrei aqui para vocês.
+
+1006
+00:56:32.200 --> 00:56:34.760
+A gente tem que ter esse usuário criado no banco de dados.
+
+1007
+00:56:35.040 --> 00:56:37.400
+Caso contrário, ele não vai saber da onde buscar
+
+1008
+00:56:37.540 --> 00:56:38.680
+as contas bancárias.
+
+1009
+00:56:39.580 --> 00:56:40.920
+Eu preciso ter a conta bancária.
+
+1010
+00:56:40.920 --> 00:56:42.320
+Eu preciso ter a categoria e
+
+1011
+00:56:43.980 --> 00:56:46.920
+eu preciso ter o budget chale para eu testar todo o
+
+1012
+00:56:46.920 --> 00:56:48.520
+cenário completo aqui.
+
+1013
+00:56:49.990 --> 00:56:52.260
+Geralmente quando a gente tem esses cenários pessoal,
+
+1014
+00:56:52.260 --> 00:56:54.340
+a gente precisa trabalhar com cids, ou seja,
+
+1015
+00:56:54.420 --> 00:56:56.140
+a gente precisa levar o banco de
+
+1016
+00:56:56.710 --> 00:56:59.020
+dedos em um estado no qual a gente consiga
+
+1017
+00:56:59.020 --> 00:57:00.300
+validar o nosso teste.
+
+1018
+00:57:00.880 --> 00:57:03.220
+Então, para a gente conseguir validar esse teste,
+
+1019
+00:57:03.280 --> 00:57:05.100
+eu vou precisar criar um usuário,
+
+1020
+00:57:05.720 --> 00:57:08.420
+então aqui eu estou passando algumas informações fixas mesmo
+
+1021
+00:57:08.420 --> 00:57:09.860
+pessoal é bem normal a gente fazer.
+
+1022
+00:57:09.860 --> 00:57:12.940
+Dessa forma, o usuário tem e-mail tem nome id,
+
+1023
+00:57:13.050 --> 00:57:16.300
+data de criação e tudo mais eu vou ter que ter a categoria
+
+1024
+00:57:16.320 --> 00:57:17.620
+que eu vou usar no meu teste,
+
+1025
+00:57:17.620 --> 00:57:19.540
+então eu vou fazer o cid dela também eu vou
+
+1026
+00:57:20.730 --> 00:57:23.990
+vou criar conta bancária e vou criar aquele alerta.
+
+1027
+00:57:24.830 --> 00:57:28.070
+O alerta pessoal. Basicamente vai disparar toda vez que eu
+
+1028
+00:57:28.070 --> 00:57:30.270
+tiver um gasto que segue R$ 100.
+
+1029
+00:57:30.340 --> 00:57:32.590
+Aqui então vai ficar bem fácil de a gente conseguir
+
+1030
+00:57:32.590 --> 00:57:33.670
+validar esse cara.
+
+1031
+00:57:35.060 --> 00:57:36.480
+Então lá, no meu teste,
+
+1032
+00:57:41.060 --> 00:57:44.480
+eu preciso ler esse arquivo e executar ele no meu banco de
+
+1033
+00:57:44.480 --> 00:57:46.480
+dados para que ele gere esse cid, então eu
+
+1034
+00:57:47.100 --> 00:57:51.970
+vou ler aqui o cid igual a fie,
+
+1035
+00:57:52.530 --> 00:57:56.050
+read, out, text e eu vou passar a cid sql,
+
+1036
+00:57:56.190 --> 00:57:57.690
+então vou ler o meu arquivo
+
+1037
+00:57:58.610 --> 00:58:01.050
+e aqui no meu database container eu consigo
+
+1038
+00:58:01.370 --> 00:58:02.770
+executar um script.
+
+1039
+00:58:03.930 --> 00:58:06.250
+E aí eu vou passar basicamente o meu ed,
+
+1040
+00:58:10.080 --> 00:58:12.660
+então com essas duas linhas de comando aqui pessoal eu
+
+1041
+00:58:12.660 --> 00:58:16.020
+basicamente eu espero meu banco de dados iniciar.
+
+1042
+00:58:16.180 --> 00:58:17.820
+A partir desse ponto, ele já iniciou.
+
+1043
+00:58:18.160 --> 00:58:20.540
+Eu leio meu arquivo de cid e executo,
+
+1044
+00:58:21.180 --> 00:58:22.620
+e a partir desse momento.
+
+1045
+00:58:22.640 --> 00:58:27.400
+Eu já tenho todas as tabelas criadas como que eu tenho
+
+1046
+00:58:27.400 --> 00:58:28.880
+as tabelas criadas porque basicamente,
+
+1047
+00:58:28.880 --> 00:58:31.040
+eu estou migrando o banco de dados aqui em startup.
+
+1048
+00:58:31.660 --> 00:58:34.000
+Eu estou usando o f. Migrations e toda vez que
+
+1049
+00:58:34.000 --> 00:58:35.040
+eu inicio essa aplicação.
+
+1050
+00:58:35.060 --> 00:58:36.840
+Ele executa as migrations, então,
+
+1051
+00:58:36.880 --> 00:58:38.360
+a partir do momento que a minha aplicação
+
+1052
+00:58:38.430 --> 00:58:39.680
+iniciar ele vai executar.
+
+1053
+00:58:39.680 --> 00:58:42.800
+Migration, vai criar as tabelas a gente roda o cid
+
+1054
+00:58:43.610 --> 00:58:47.320
+substituir a variável de ambiente, e basicamente a gente tem
+
+1055
+00:58:51.360 --> 00:58:54.720
+a primeira etapa do nosso teste rodando pessoal,
+
+1056
+00:58:55.260 --> 00:58:56.920
+só que tem um detalhe esse cara.
+
+1057
+00:58:56.920 --> 00:59:01.480
+Aqui a gente precisa executar ele somente a partir do teste.
+
+1058
+00:59:01.480 --> 00:59:02.880
+Eu não posso executar isso
+
+1059
+00:59:03.500 --> 00:59:07.320
+no meu in cha a synk eu tenho que executar lá no meu teste,
+
+1060
+00:59:07.340 --> 00:59:10.160
+depois de já ter validado que a aplicação está no ar,
+
+1061
+00:59:10.460 --> 00:59:14.880
+então eu só vou basicamente fazer aqui a syn task
+
+1062
+00:59:16.200 --> 00:59:21.060
+cid e se vou criar só método
+
+1063
+00:59:21.160 --> 00:59:22.280
+aqui para a gente poder chamar ele.
+
+1064
+00:59:22.300 --> 00:59:24.520
+Depois no teste esse cara a que vai
+
+1065
+00:59:24.690 --> 00:59:25.800
+fazer o cid para a gente.
+
+1066
+00:59:27.620 --> 00:59:29.600
+Com isso aqui pessoal, a gente já superou.
+
+1067
+00:59:29.600 --> 00:59:31.960
+Então a gente já fez esse cara.
+
+1068
+00:59:31.960 --> 00:59:35.110
+Aqui ele já está mapeado.
+
+1069
+00:59:35.390 --> 00:59:40.150
+A gente mapeou criou criou ali fez o cid, então a gente
+
+1070
+00:59:40.710 --> 00:59:42.550
+está tudo pront para que a gente consiga
+
+1071
+00:59:42.950 --> 00:59:45.190
+utilizar esse banco de dados.
+
+1072
+00:59:45.220 --> 00:59:48.470
+Aqui, agora o próximo que a gente precisa ver como a gente
+
+1073
+00:59:48.470 --> 00:59:53.060
+vai fazer vai ser essa api da cotação aqui dentro
+
+1074
+00:59:53.880 --> 00:59:57.180
+do docker pessoal é moco
+
+1075
+01:00:00.140 --> 01:00:03.650
+esse cara aqui pesso isso aqui é uma imagem docker que ela
+
+1076
+01:00:03.650 --> 01:00:07.050
+permite pessoal que a gente consiga mocar uma api externa,
+
+1077
+01:00:07.750 --> 01:00:11.690
+ou seja, a partir do momento que eu uso essa imagem aqui
+
+1078
+01:00:12.310 --> 01:00:14.210
+eu consigo subir uma ti local
+
+1079
+01:00:14.790 --> 01:00:17.730
+que ela vai estar mocada com os dados que eu vou passar para
+
+1080
+01:00:17.730 --> 01:00:19.130
+ela, ou seja,
+
+1081
+01:00:22.090 --> 01:00:23.570
+esse aqui é o container aqui.
+
+1082
+01:00:23.570 --> 01:00:27.330
+Eu também estou utilizando o testes container para subir um
+
+1083
+01:00:27.330 --> 01:00:29.090
+contêiner com essa imagem aqui pessoal.
+
+1084
+01:00:29.510 --> 01:00:31.330
+Só que diferente do sql server,
+
+1085
+01:00:31.650 --> 01:00:33.970
+esse cara não tem um módulo pronto, ou seja,
+
+1086
+01:00:33.990 --> 01:00:35.290
+eu tenho que ser mais verboso.
+
+1087
+01:00:35.310 --> 01:00:37.290
+Eu tenho que configurar passo a passo
+
+1088
+01:00:37.930 --> 01:00:40.690
+como que eu quero que esse meu container se comporte.
+
+1089
+01:00:41.310 --> 01:00:43.930
+Então aqui percebam um pessoal que eu estou randomizando a
+
+1090
+01:00:43.930 --> 01:00:47.810
+porta justamente para a gente ter uma chance menor aqui.
+
+1091
+01:00:47.810 --> 01:00:49.250
+Eu tenho uma chance de um e 1000,
+
+1092
+01:00:49.250 --> 01:00:50.770
+ainda de conflitar a porta,
+
+1093
+01:00:50.770 --> 01:00:53.130
+porque eu estou gerando randômico pode ser que por
+
+1094
+01:00:53.130 --> 01:00:54.450
+infelicidade ou por azar.
+
+1095
+01:00:54.450 --> 01:00:57.410
+Mesmo eu gere a mesma porta para dois testes diferentes,
+
+1096
+01:00:58.710 --> 01:01:00.850
+mas aqui não tem muito o que a gente fazer pessoal.
+
+1097
+01:01:00.850 --> 01:01:03.850
+Então aqui eu posso aumentar talvez o range para ter
+
+1098
+01:01:03.850 --> 01:01:04.970
+uma possibilidade menor.
+
+1099
+01:01:05.630 --> 01:01:08.650
+Mas basicamente aqui eu vou subir uma api utilizando
+
+1100
+01:01:09.170 --> 01:01:10.650
+essa imagem do moco,
+
+1101
+01:01:11.740 --> 01:01:14.800
+eu vou bidar para uma porta randômica aqui que eu vou
+
+1102
+01:01:14.800 --> 01:01:17.160
+gerar e aqui pessoal.
+
+1103
+01:01:17.160 --> 01:01:19.360
+Eu vou montar um volume dentro desse container,
+
+1104
+01:01:19.380 --> 01:01:21.520
+no qual eu vou passar alguns arquivos para ele.
+
+1105
+01:01:22.610 --> 01:01:26.930
+O que são esses arquivos é basicamente uma
+
+1106
+01:01:26.930 --> 01:01:28.490
+especificação da api
+
+1107
+01:01:29.150 --> 01:01:31.450
+que eu quero mocar durante o meu teste de integração,
+
+1108
+01:01:32.470 --> 01:01:35.770
+então toda vez que eu tiver um get nessa rota,
+
+1109
+01:01:36.430 --> 01:01:39.530
+eu quero ter uma resposta com o status ok.
+
+1110
+01:01:40.210 --> 01:01:43.010
+E com esse body aqui com essa responsa aqui
+
+1111
+01:01:43.850 --> 01:01:47.210
+percebam que é exatamente o mesmo contrato que eu tenho
+
+1112
+01:01:47.790 --> 01:01:49.050
+lá naquela minha api externa.
+
+1113
+01:01:49.830 --> 01:01:53.930
+Então no meu teste de integração ao invés de eu chamar e de
+
+1114
+01:01:53.930 --> 01:01:58.570
+eu mocar um be client, eventualmente um serviço.
+
+1115
+01:01:59.270 --> 01:02:02.450
+Eu estou deixando a minha aplicação fazer essa requisição
+
+1116
+01:02:02.880 --> 01:02:05.690
+http só que ao invés de ela bater em uma api de verdade,
+
+1117
+01:02:05.790 --> 01:02:08.050
+ela vai estar rodando batendo em uma api
+
+1118
+01:02:08.630 --> 01:02:11.770
+que vai devolver exatamente o mesmo contrato só que ela vai
+
+1119
+01:02:11.770 --> 01:02:14.610
+estar rodando dentro do container dentro do docker.
+
+1120
+01:02:14.910 --> 01:02:17.850
+Então ele vai rodar uma api e vai disponibilizar essa api
+
+1121
+01:02:18.110 --> 01:02:21.040
+com um endpoint com esse endpoint aqui.
+
+1122
+01:02:21.120 --> 01:02:22.440
+E com essa resposta aqui
+
+1123
+01:02:25.050 --> 01:02:26.410
+e mais adiante pessoal,
+
+1124
+01:02:26.410 --> 01:02:28.530
+vai ficar muito mais fácil de entender,
+
+1125
+01:02:28.630 --> 01:02:31.050
+porque é importante a gente se preocupar com isso.
+
+1126
+01:02:31.050 --> 01:02:33.610
+Aqui eu poderia pessoal.
+
+1127
+01:02:33.830 --> 01:02:36.890
+Ao invés de usar essa api mocada, eu poderia vir aqui
+
+1128
+01:02:38.060 --> 01:02:39.690
+vamos voltar no nosso caso de uso,
+
+1129
+01:02:47.670 --> 01:02:49.930
+eu poderia botar o exchange service.
+
+1130
+01:02:50.210 --> 01:02:52.690
+Vocês concordam comigo faria uma interface aqui e colocaria
+
+1131
+01:02:52.690 --> 01:02:54.690
+a interface muria o exchange service
+
+1132
+01:02:55.670 --> 01:02:57.570
+só que se eu morasse o exchange service
+
+1133
+01:02:59.250 --> 01:03:00.930
+toda essa lógica que está sendo executada.
+
+1134
+01:03:01.000 --> 01:03:03.610
+Aqui ela não estaria sendo coberta pelo meu teste de
+
+1135
+01:03:03.610 --> 01:03:07.370
+integração se eu viesse aqui e fizesse um return zero.
+
+1136
+01:03:08.090 --> 01:03:09.850
+O meu teste continuaria passando
+
+1137
+01:03:11.090 --> 01:03:13.040
+desde que eu esperasse zero lá no valor.
+
+1138
+01:03:13.620 --> 01:03:16.960
+Então por isso que é bem importante a gente conseguir ver
+
+1139
+01:03:17.920 --> 01:03:20.200
+qual que é o ponto no qual a gente consegue mocar,
+
+1140
+01:03:20.780 --> 01:03:22.920
+mas no qual a gente consiga executar
+
+1141
+01:03:24.140 --> 01:03:26.680
+um número maior de linhas de código para a gente conseguir
+
+1142
+01:03:26.680 --> 01:03:28.280
+pegar qualquer tipo de regressão que
+
+1143
+01:03:28.440 --> 01:03:29.560
+eventualmente possa acontecer.
+
+1144
+01:03:30.480 --> 01:03:33.380
+Então, nesse caso aqui pessoal ele vai fazer até a própria
+
+1145
+01:03:33.380 --> 01:03:38.220
+requisição por http porque a gente ando a api no
+
+1146
+01:03:38.300 --> 01:03:41.900
+qual o nosso serviço está interagindo como eu
+
+1147
+01:03:42.940 --> 01:03:45.340
+já tenho todo esse container pronto aqui pessoal não quis
+
+1148
+01:03:45.340 --> 01:03:48.540
+fazer ele do zero, porque aí fugiria um pouco do escopo da
+
+1149
+01:03:48.540 --> 01:03:51.740
+nossa aula, eu vou simplesmente vou criá-lo na minha
+
+1150
+01:03:51.740 --> 01:03:53.580
+aplicação e vou fazer da mesma forma,
+
+1151
+01:03:53.620 --> 01:03:55.180
+o que eu fiz com o banco de dados,
+
+1152
+01:03:55.590 --> 01:03:58.660
+deixa eu fechar tudo aqui e deixar só o nosso teste aberto.
+
+1153
+01:03:58.660 --> 01:04:03.300
+Aqui vou definir aqui private hand only moco container eu
+
+1154
+01:04:03.300 --> 01:04:06.950
+vou botar aqui a api container e o moco container
+
+1155
+01:04:08.670 --> 01:04:11.910
+e da mesma forma pessoal a gente vai iniciar ele aqui
+
+1156
+01:04:12.710 --> 01:04:14.230
+e vai dar o dispose dele aqui.
+
+1157
+01:04:16.550 --> 01:04:19.390
+Esse aqui são métodos da própria minha implementação.
+
+1158
+01:04:19.410 --> 01:04:21.910
+Porque internamente ele usa o start, o stop
+
+1159
+01:04:22.540 --> 01:04:26.110
+poderia ter colocado aqui start e syn para manter
+
+1160
+01:04:27.430 --> 01:04:31.780
+o padrão do outro sem problema, nenhum deixa.
+
+1161
+01:04:31.780 --> 01:04:35.780
+Eu só colocar esse método em cima para ficar mais organizado
+
+1162
+01:04:38.260 --> 01:04:41.030
+até aqui tranquilo pessoal alguma dúvida está claro
+
+1163
+01:04:42.590 --> 01:04:46.310
+o racional o passo a passo pessoal
+
+1164
+01:04:48.160 --> 01:04:50.010
+tranquilo muita coisa para digerir
+
+1165
+01:04:51.190 --> 01:04:53.560
+alguém já tinha trabalhado com teste de container pessoal
+
+1166
+01:04:53.580 --> 01:04:54.760
+com teste de integração.
+
+1167
+01:04:58.300 --> 01:05:00.960
+Eu vi que alguém comentou do teste container aqui
+
+1168
+01:05:02.190 --> 01:05:04.560
+acho que foi o tarcísio já tinha trabalhado.
+
+1169
+01:05:04.560 --> 01:05:05.560
+Então o tarcísio
+
+1170
+01:05:06.500 --> 01:05:08.400
+Sim a gente usa bastante
+
+1171
+01:05:09.020 --> 01:05:11.440
+Boa ótimo o paulo sérgio não conhecia
+
+1172
+01:05:15.380 --> 01:05:19.210
+show de bola ainda pessoal está reclamando aqui,
+
+1173
+01:05:26.900 --> 01:05:29.300
+o davi perguntou o que eu acho doimo já
+
+1174
+01:05:29.820 --> 01:05:32.180
+o pessoal utilizando o davi, mas eu nunca utilizei.
+
+1175
+01:05:32.640 --> 01:05:34.620
+Eu não consigo opinar sobre
+
+1176
+01:05:37.130 --> 01:05:40.130
+a utilização dele, mas se ele servir para esse mesmo
+
+1177
+01:05:40.400 --> 01:05:44.450
+intuito, eu acho que daria para utilizar no lugar do moco
+
+1178
+01:05:45.110 --> 01:05:50.070
+sem problema nenhum esse aqui eu acho que ele segue.
+
+1179
+01:05:50.070 --> 01:05:52.950
+Na mesma linha a gente cria uma api e consome ela.
+
+1180
+01:05:53.330 --> 01:05:58.030
+De forma a gente cria api local e acaba consumindo
+
+1181
+01:05:59.120 --> 01:06:00.780
+que eu não estou enganado, mas isso que eu nunca usei.
+
+1182
+01:06:00.780 --> 01:06:03.220
+Eu já vi, gente que usou. Mas eu particularmente nunca usei,
+
+1183
+01:06:03.810 --> 01:06:08.310
+deixa eu só implementar essa interface aqui ni.
+
+1184
+01:06:08.960 --> 01:06:13.710
+Assim que eu acabei renomeando esse cara aqui
+
+1185
+01:06:13.890 --> 01:06:15.630
+in e sink
+
+1186
+01:06:17.800 --> 01:06:19.910
+deixa eu só abrir odar ver se está tudo certinho para a
+
+1187
+01:06:19.910 --> 01:06:24.070
+gente seguir para a nossa próxima dependência
+
+1188
+01:06:28.210 --> 01:06:30.430
+sim, eu não posso renomear aquele cara lá para
+
+1189
+01:06:31.960 --> 01:06:35.430
+deixa eu colocar ele tem que ser in porque eu estou em cima
+
+1190
+01:06:35.650 --> 01:06:38.390
+do que eu estou na implementação do assim que núm.
+
+1191
+01:06:38.570 --> 01:06:42.760
+Então esse cara tem que ser in que eu não posso renomear
+
+1192
+01:06:45.370 --> 01:06:46.750
+beleza, tudo certinho.
+
+1193
+01:06:46.750 --> 01:06:49.950
+Então, nesse caso, aqui pessoal quando iniciar o meu teste,
+
+1194
+01:06:49.950 --> 01:06:53.830
+eu vou iniciar tanto o database quanto essa api,
+
+1195
+01:06:53.850 --> 01:06:57.230
+que eu vou estar chamando mocada e internamente ele está
+
+1196
+01:06:57.230 --> 01:06:59.590
+chamando o método do container start a sink
+
+1197
+01:07:00.110 --> 01:07:02.750
+e da mesma forma que ele vai fazer o dispose e as synk,
+
+1198
+01:07:04.170 --> 01:07:06.150
+Só que tem um outro, porém, também pessoal.
+
+1199
+01:07:06.210 --> 01:07:07.590
+Se a gente voltar lá na se
+
+1200
+01:07:08.650 --> 01:07:11.950
+da mesma forma que tem hard code aqui a connection string.
+
+1201
+01:07:12.510 --> 01:07:14.870
+A gente precisa também substituir esse cara aqui
+
+1202
+01:07:15.690 --> 01:07:18.050
+e a gente vai fazer da mesma forma que a gente fez com
+
+1203
+01:07:20.530 --> 01:07:22.210
+a connection string, vou vir.
+
+1204
+01:07:22.210 --> 01:07:25.390
+Aqui vou pegar a sessão, o valor
+
+1205
+01:07:27.240 --> 01:07:31.040
+e lá no meu api container,
+
+1206
+01:07:31.040 --> 01:07:33.320
+eu tenho esse container o ri que,
+
+1207
+01:07:33.320 --> 01:07:36.720
+basicamente ele é um local host e a porta do meu container.
+
+1208
+01:07:37.650 --> 01:07:38.830
+Então se por exemplo,
+
+1209
+01:07:38.830 --> 01:07:41.110
+eu subir esse container e bater no local host
+
+1210
+01:07:41.640 --> 01:07:45.740
+porta esse path.
+
+1211
+01:07:45.740 --> 01:07:48.140
+Aqui ele vai me retornar sempre esse json aqui
+
+1212
+01:07:53.540 --> 01:07:55.580
+e aí no dispose, também eu quero fazer o dispose.
+
+1213
+01:07:55.580 --> 01:07:59.020
+Então a princípio aqui a gente superou essa segunda
+
+1214
+01:07:59.060 --> 01:08:00.260
+dependência externa.
+
+1215
+01:08:00.260 --> 01:08:04.260
+Aqui A gente locou ela tudo certinho já está funcionando
+
+1216
+01:08:04.830 --> 01:08:09.740
+agora a gente vai para o também.
+
+1217
+01:08:09.800 --> 01:08:13.700
+Eu posso util um contain rodando o time interagir com esse
+
+1218
+01:08:13.700 --> 01:08:18.200
+container posso fazer também por mais que ele seja uma
+
+1219
+01:08:18.200 --> 01:08:19.600
+dependência não gerenciada.
+
+1220
+01:08:21.740 --> 01:08:24.000
+Eu estou coando de fato o hub time q só que aí
+
+1221
+01:08:24.000 --> 01:08:25.080
+eu estou tocando com o docker.
+
+1222
+01:08:25.080 --> 01:08:28.520
+Eu não estou tocando com o teste double com o mo.
+
+1223
+01:08:28.620 --> 01:08:33.040
+De fato no código, eu estou focando o hub time q só que para
+
+1224
+01:08:33.480 --> 01:08:35.560
+a gente conseguir ver todos os cenários pessoal,
+
+1225
+01:08:35.560 --> 01:08:39.440
+a gente vai usar o n substitute para validar e entender como
+
+1226
+01:08:39.440 --> 01:08:42.640
+é que a gente pode utilizar mox dentro de um teste de
+
+1227
+01:08:42.640 --> 01:08:46.650
+integração, vamos entender pessoal como é que a nossa
+
+1228
+01:08:46.650 --> 01:08:48.610
+aplicação está interagindo com esse cara.
+
+1229
+01:08:48.610 --> 01:08:53.550
+Aí então lá no create transaction, no final do meu método,
+
+1230
+01:08:53.690 --> 01:08:55.910
+ele vai fazer um dispa desse evento.
+
+1231
+01:08:55.910 --> 01:08:58.590
+Aqui. Ele tem esse key service,
+
+1232
+01:08:58.690 --> 01:09:02.390
+que é um serviço da minha aplicação no qual ele utiliza o
+
+1233
+01:09:02.580 --> 01:09:06.630
+channel para fazer a publicação.
+
+1234
+01:09:07.250 --> 01:09:08.950
+Então a partir da connection,
+
+1235
+01:09:09.330 --> 01:09:11.390
+ele tem essa connection aqui que ele busca
+
+1236
+01:09:12.170 --> 01:09:14.150
+que ele recebe por parâmetro na verdade
+
+1237
+01:09:14.650 --> 01:09:15.790
+do próprio hub timekill.
+
+1238
+01:09:17.640 --> 01:09:19.710
+Dessa conexão ele vai criar um channel
+
+1239
+01:09:20.350 --> 01:09:22.430
+e depois desse channel ele vai declarar.
+
+1240
+01:09:22.430 --> 01:09:26.430
+Ele vai criar uma fila e vai fazer um basic publish aqui
+
+1241
+01:09:27.480 --> 01:09:30.930
+lembram de que eu comentei para vocês de testar o mais
+
+1242
+01:09:31.450 --> 01:09:33.330
+próximo possível da borda.
+
+1243
+01:09:34.150 --> 01:09:36.690
+Eu poderia mocar esse cara poderia
+
+1244
+01:09:37.680 --> 01:09:39.170
+não tem problema nenhum só que aí
+
+1245
+01:09:42.110 --> 01:09:44.210
+eu não executaria todo esse código aqui
+
+1246
+01:09:45.120 --> 01:09:46.760
+e aí se eventualmente eu tivesse alguma
+
+1247
+01:09:46.760 --> 01:09:48.080
+regressão nesse código.
+
+1248
+01:09:48.080 --> 01:09:50.960
+Aqui eu não pegaria eu, por exemplo,
+
+1249
+01:09:50.990 --> 01:09:54.040
+não consigo vir dentro dessa implementação e mocar alguma
+
+1250
+01:09:54.040 --> 01:09:55.520
+coisa dentro dessa implementação.
+
+1251
+01:09:55.520 --> 01:09:57.920
+Porque aqui a gente já está falando da implementação da
+
+1252
+01:09:57.920 --> 01:10:00.640
+biblioteca do hub tq, então, nesse caso,
+
+1253
+01:10:00.640 --> 01:10:03.080
+aqui o que eu vou mocar eu vou mocar connection
+
+1254
+01:10:03.160 --> 01:10:04.240
+e eu vou mocar o channel.
+
+1255
+01:10:04.940 --> 01:10:08.400
+Aí eu vou criar um substituto lá no meu teste de integração
+
+1256
+01:10:08.720 --> 01:10:12.510
+para conseguir mocar esses caras, aqui primeiro
+
+1257
+01:10:13.250 --> 01:10:16.150
+lembra o que eu comentei aqui como uma boa prática também
+
+1258
+01:10:16.390 --> 01:10:20.670
+para a gente verificar e validar o número
+
+1259
+01:10:21.390 --> 01:10:24.310
+a presença ou ausência de chamadas para essas dependências
+
+1260
+01:10:24.310 --> 01:10:26.270
+que a gente está utilizando o moque.
+
+1261
+01:10:26.770 --> 01:10:31.270
+Então aqui eu vou declarar uma propriedade nova para eu
+
+1262
+01:10:31.270 --> 01:10:33.510
+conseguir utilizar ela lá no meu teste.
+
+1263
+01:10:33.510 --> 01:10:35.390
+Então eu vou colocar aqui i channel
+
+1264
+01:10:37.450 --> 01:10:40.590
+que percebam que ela vem lá do hub mq.
+
+1265
+01:10:40.930 --> 01:10:42.470
+Então aqui vai ser o meu channel
+
+1266
+01:10:42.810 --> 01:10:46.410
+mo e aqui o que eu vou fazer.
+
+1267
+01:10:46.410 --> 01:10:49.890
+Vou falar que esse cara vou chorar um get e um private set,
+
+1268
+01:10:50.130 --> 01:10:52.810
+e eu vou falar que por padrão esse cara vai ser
+
+1269
+01:11:02.220 --> 01:11:05.610
+Instituto for channel,
+
+1270
+01:11:07.740 --> 01:11:10.360
+então eu estou criando aqui um mo para esse cara.
+
+1271
+01:11:10.810 --> 01:11:13.550
+Estou falando que eu vou substituir aquela implementação
+
+1272
+01:11:14.780 --> 01:11:17.320
+dentro do meu configure teste service aqui pessoal.
+
+1273
+01:11:17.320 --> 01:11:18.840
+Depois de eu ter injetado todas
+
+1274
+01:11:18.840 --> 01:11:20.880
+as dependências da minha aplicação, eu vou começar
+
+1275
+01:11:21.720 --> 01:11:23.600
+a construir esse mo que eu vou substituir
+
+1276
+01:11:24.390 --> 01:11:26.000
+lembram que lá na implementação.
+
+1277
+01:11:26.220 --> 01:11:29.590
+Eu tenho tanto uma connection quanto um channel,
+
+1278
+01:11:30.050 --> 01:11:32.990
+então toda vez que eu chamar essa connection a eu não
+
+1279
+01:11:34.450 --> 01:11:37.830
+eu quero que ele me retorne um channel válido aqui
+
+1280
+01:11:38.470 --> 01:11:41.430
+para que eu consiga depois validar que esse channel foi
+
+1281
+01:11:41.430 --> 01:11:42.710
+chamado da forma correta.
+
+1282
+01:11:43.870 --> 01:11:47.010
+Então primeiro eu vou criar uma connection que vai ser a da
+
+1283
+01:11:47.010 --> 01:11:49.690
+mesma forma que eu fiz aqui em cima ele vai ser um mo
+
+1284
+01:11:50.390 --> 01:11:54.410
+só que aqui vai ser de connection est.
+
+1285
+01:11:54.410 --> 01:11:57.250
+Só validando a gente está dentro da biblioteca do hub tq
+
+1286
+01:11:59.110 --> 01:12:01.950
+e toda vez que eu chamar essa connection
+
+1287
+01:12:04.580 --> 01:12:09.340
+create channel i think que é o método
+
+1288
+01:12:09.360 --> 01:12:12.580
+que está sendo chamado lá na nossa implementação.
+
+1289
+01:12:13.050 --> 01:12:17.650
+Cria esse channel eu sempre quero retornar o channel mo,
+
+1290
+01:12:18.750 --> 01:12:21.610
+ou seja, quando ele usar o channel lá na minha implementação
+
+1291
+01:12:21.610 --> 01:12:22.650
+ele vai estar usando o mo.
+
+1292
+01:12:22.990 --> 01:12:26.850
+Ele não vai estar usando esse cara aqui e como a gente viu
+
+1293
+01:12:28.310 --> 01:12:32.410
+lá no q service a connection ele recebe por injeção de
+
+1294
+01:12:32.410 --> 01:12:34.450
+dependência, ou seja,
+
+1295
+01:12:34.570 --> 01:12:36.530
+a gente não está criando manualmente esse serviço.
+
+1296
+01:12:37.810 --> 01:12:41.210
+O próprio motor de injeção de dependência do s.
+
+1297
+01:12:41.210 --> 01:12:44.170
+Net core vai injetar a implementação para a gente desse cara
+
+1298
+01:12:44.170 --> 01:12:47.610
+aqui só que que nem a gente fez antes eu não quero que ele
+
+1299
+01:12:47.870 --> 01:12:50.330
+use a conexão do hub kill.
+
+1300
+01:12:50.630 --> 01:12:53.450
+Eu quero que ele utilize esse mo que eu estou criando aqui
+
+1301
+01:12:53.470 --> 01:12:57.250
+então eu vou vir aqui e vou colocar ad singleton
+
+1302
+01:12:58.520 --> 01:13:00.080
+e eu vou passar a minha connection.
+
+1303
+01:13:02.710 --> 01:13:07.050
+Ou seja, toda vez que a minha aplicação pedir uma
+
+1304
+01:13:07.050 --> 01:13:10.570
+implementação do i connection durante o meu teste,
+
+1305
+01:13:11.030 --> 01:13:13.570
+eu quero retornar essa instância mocada aqui
+
+1306
+01:13:15.100 --> 01:13:18.560
+que ela quando chamar o método create channel i,
+
+1307
+01:13:18.820 --> 01:13:20.560
+ele vai retornar esse channel mo
+
+1308
+01:13:21.400 --> 01:13:22.960
+para ser utilizado na aplicação
+
+1309
+01:13:26.490 --> 01:13:30.470
+perfeito pessoal e aqui pessoal.
+
+1310
+01:13:30.630 --> 01:13:33.510
+Como a gente está usando o mo e não está usando eu não
+
+1311
+01:13:33.510 --> 01:13:36.270
+preciso fazer mais nada eu substituí implementação.
+
+1312
+01:13:36.890 --> 01:13:39.750
+Eu estou expondo essa implementação depois para me validar
+
+1313
+01:13:39.750 --> 01:13:41.590
+no meu teste e basicamente,
+
+1314
+01:13:42.110 --> 01:13:44.630
+tudo isso que eu preciso fazer para substituir essa
+
+1315
+01:13:44.630 --> 01:13:48.190
+implementação do hub tq e sempre lembrando o mais próximo
+
+1316
+01:13:48.190 --> 01:13:49.310
+possível da borda.
+
+1317
+01:13:52.590 --> 01:13:56.930
+Com isso. Então basicamente, a gente superou todos os nossos
+
+1318
+01:13:57.570 --> 01:13:59.730
+casos de uso aqui todas as nossas dependências.
+
+1319
+01:14:01.270 --> 01:14:06.080
+Então essa classe que eu estou utilizando para representar a
+
+1320
+01:14:06.080 --> 01:14:08.840
+minha aplicação em memória ela está pronta.
+
+1321
+01:14:09.810 --> 01:14:12.760
+Mapei. Os containers mapei as dependências figurei.
+
+1322
+01:14:12.960 --> 01:14:15.480
+Tudo certinho substituí as variáveis de ambiente
+
+1323
+01:14:16.360 --> 01:14:18.960
+para utilizar os valores dos meus serviços bocados
+
+1324
+01:14:20.090 --> 01:14:21.800
+ainda não fiz, mas deixei pronto.
+
+1325
+01:14:21.840 --> 01:14:25.240
+O sid do banco de dados e agora a gente vai para a parte
+
+1326
+01:14:25.400 --> 01:14:27.960
+onde a gente vai começar a projetar o nosso teste.
+
+1327
+01:14:29.560 --> 01:14:32.120
+A primeira coisa que a gente precisa fazer aqui pessoal
+
+1328
+01:14:32.640 --> 01:14:37.520
+a gente precisa especificar que a gente vai receber
+
+1329
+01:14:37.660 --> 01:14:41.000
+uma instância desse cara aqui no meu teste de integração.
+
+1330
+01:14:41.840 --> 01:14:45.460
+Então para isso eu consigo utilizar o i class fixture
+
+1331
+01:14:47.080 --> 01:14:48.820
+é do próprio winity que
+
+1332
+01:14:48.820 --> 01:14:50.300
+basicamente eu estou falando para ele.
+
+1333
+01:14:50.800 --> 01:14:54.780
+Sempre me retorne uma instância dessa classe e sempre passe
+
+1334
+01:14:54.800 --> 01:14:58.180
+ela por parâmetro, ou seja,
+
+1335
+01:14:58.540 --> 01:15:01.580
+independente de quantos testes eu tiver independente de
+
+1336
+01:15:01.580 --> 01:15:05.220
+quantos facs eu tiver aqui eu vou ter só uma instância sendo
+
+1337
+01:15:05.220 --> 01:15:07.580
+injetada do factor aqui, ou seja, somente
+
+1338
+01:15:08.510 --> 01:15:10.620
+instância dessa aplicação em memória.
+
+1339
+01:15:11.360 --> 01:15:12.940
+Eu ivo de,
+
+1340
+01:15:16.480 --> 01:15:20.620
+por exemplo, dois a duas instâncias da minha aplicação
+
+1341
+01:15:20.620 --> 01:15:23.380
+rodando em memória por isso que é importante a gente
+
+1342
+01:15:23.390 --> 01:15:24.860
+randomizar as portas
+
+1343
+01:15:25.440 --> 01:15:27.740
+do container do doc docker para a gente.
+
+1344
+01:15:27.740 --> 01:15:30.180
+Não ter esse problema. Caso a gente tenha mais que um teste
+
+1345
+01:15:30.180 --> 01:15:33.620
+de integração durante todo esse teste de integração,
+
+1346
+01:15:33.720 --> 01:15:35.580
+ele sempre vai usar a mesma instância,
+
+1347
+01:15:38.690 --> 01:15:41.550
+beleza agora, eu tenho factor aqui que é uma forma de eu
+
+1348
+01:15:41.550 --> 01:15:44.070
+começar que eu consigo interagir com essa
+
+1349
+01:15:44.070 --> 01:15:45.390
+minha aplicação e memória.
+
+1350
+01:15:46.590 --> 01:15:50.070
+O primeiro passo pessoal como a gente viu aqui é a gente ter
+
+1351
+01:15:50.130 --> 01:15:53.270
+um client para conseguir interagir com essa api.
+
+1352
+01:15:53.930 --> 01:15:56.150
+Lembre que essa api isso aqui é representação
+
+1353
+01:15:57.470 --> 01:15:58.950
+a grosso modo da nossa aplicação,
+
+1354
+01:15:59.570 --> 01:16:02.950
+então eu preciso ter um hp client para conseguir interagir
+
+1355
+01:16:02.950 --> 01:16:04.710
+com essa aplicação lá.
+
+1356
+01:16:04.710 --> 01:16:06.590
+No factor pessoal a gente tem esse método,
+
+1357
+01:16:06.990 --> 01:16:08.390
+create client que,
+
+1358
+01:16:08.390 --> 01:16:12.310
+basicamente ele já vai criar um hp client que vai permitir
+
+1359
+01:16:12.310 --> 01:16:15.670
+que a gente comece a interagir com essa nossa aplicação em
+
+1360
+01:16:15.670 --> 01:16:19.060
+memória, eu vou buildar aqui pessoal.
+
+1361
+01:16:19.240 --> 01:16:21.780
+Eu vou parar o teste por aqui e eu vou mostrar para vocês
+
+1362
+01:16:22.020 --> 01:16:23.580
+como é que ele vai se comportar ali.
+
+1363
+01:16:23.580 --> 01:16:27.270
+No docker, eu vou vir aqui e vou rodar o meu teste.
+
+1364
+01:16:27.450 --> 01:16:29.150
+Vou colocar para rodar
+
+1365
+01:16:30.830 --> 01:16:33.390
+como o meu teste vai iniciar percebam que ele já começou a
+
+1366
+01:16:33.390 --> 01:16:34.430
+criar alguns contêineres.
+
+1367
+01:16:34.430 --> 01:16:38.410
+Aqui ele criou o container do teste container,
+
+1368
+01:16:38.410 --> 01:16:40.210
+que é um container externo que ele usa para
+
+1369
+01:16:40.210 --> 01:16:41.650
+gerenciar outros containers.
+
+1370
+01:16:42.190 --> 01:16:46.010
+Ele criou o container do sql server e ele criou o container
+
+1371
+01:16:46.030 --> 01:16:50.450
+do moco e aí no final, quando o meu teste finalizou aqui,
+
+1372
+01:16:50.450 --> 01:16:53.170
+eu não fiz nada de asser e nem nada perceba que
+
+1373
+01:16:53.170 --> 01:16:54.330
+ele está matando os contêineres.
+
+1374
+01:16:54.510 --> 01:16:57.250
+Ele finalizou. O teste matou os contêineres e agora ele está
+
+1375
+01:16:57.250 --> 01:16:59.410
+esperando para finalizou.
+
+1376
+01:16:59.410 --> 01:17:01.010
+Não tem mais nenhum. Container aqui
+
+1377
+01:17:01.620 --> 01:17:03.570
+deixa eu ver se eu consigo fazer assim pessoal.
+
+1378
+01:17:05.380 --> 01:17:06.230
+Lazy docker,
+
+1379
+01:17:11.830 --> 01:17:13.930
+ele está dando erro porque eu tenho que atualizar o meu,
+
+1380
+01:17:14.030 --> 01:17:16.690
+porque assim ia ficar melhor para me mostrar para vocês,
+
+1381
+01:17:17.310 --> 01:17:19.410
+mas enfim vai ter que ser dessa forma aqui
+
+1382
+01:17:21.270 --> 01:17:23.010
+Então só de fazer isso aqui pessoal.
+
+1383
+01:17:23.010 --> 01:17:24.490
+Basicamente o que eu estou validando
+
+1384
+01:17:24.840 --> 01:17:26.130
+aqui a minha aplicação subiu.
+
+1385
+01:17:26.150 --> 01:17:27.810
+Ela registrou todas as dependências,
+
+1386
+01:17:27.950 --> 01:17:29.610
+ela executou todas as migrations.
+
+1387
+01:17:29.870 --> 01:17:31.850
+Ela executou o cid do banco de dados,
+
+1388
+01:17:32.070 --> 01:17:34.770
+então por mais que essa linha por si só não
+
+1389
+01:17:34.770 --> 01:17:36.090
+signifique muita coisa.
+
+1390
+01:17:36.640 --> 01:17:39.090
+Basicamente, ele já validou tudo isso para a gente,
+
+1391
+01:17:40.090 --> 01:17:42.570
+o cid não fez ainda ele só criou as tabelas
+
+1392
+01:17:43.090 --> 01:17:46.810
+o cid a gente vai fazer agora chamando aquele cara lá que a
+
+1393
+01:17:46.810 --> 01:17:51.210
+gente criou essa classe pesso só lembrando é aquela classe
+
+1394
+01:17:51.210 --> 01:17:52.730
+que a gente vem trabalhando até agora.
+
+1395
+01:17:52.730 --> 01:17:56.450
+Então eu tenho um método ed database a sin que ele vai ler
+
+1396
+01:17:56.490 --> 01:17:57.650
+o arquivo e vai fazer.
+
+1397
+01:17:57.690 --> 01:17:59.730
+O cid vai criar
+
+1398
+01:17:59.730 --> 01:18:04.460
+as informações no banco de dados Beleza.
+
+1399
+01:18:04.460 --> 01:18:07.380
+Então aqui a gente vai começar a construir a requisição que
+
+1400
+01:18:07.380 --> 01:18:09.900
+a gente vai enviar para a nossa api pessoal.
+
+1401
+01:18:11.060 --> 01:18:12.980
+A primeira coisa que a gente precisa saber é
+
+1402
+01:18:13.770 --> 01:18:16.820
+lembram que a gente precisa dar conta e a gente precisa da
+
+1403
+01:18:16.820 --> 01:18:20.140
+categoria para conseguir minimamente enviar uma requisição
+
+1404
+01:18:20.300 --> 01:18:23.380
+para essa api usuário a gente não vai precisar porque
+
+1405
+01:18:23.380 --> 01:18:25.780
+lembram que a gente está fazendo bypass da autenticação.
+
+1406
+01:18:25.780 --> 01:18:29.100
+Então não preciso informar nada de usuário aqui então eu vou
+
+1407
+01:18:29.100 --> 01:18:31.060
+precisar do account id
+
+1408
+01:18:33.640 --> 01:18:35.640
+e eu vou precisar do que id
+
+1409
+01:18:36.980 --> 01:18:41.120
+de onde eu busco essas informações lá do meu arquivo de cid,
+
+1410
+01:18:43.740 --> 01:18:46.160
+então eu vou usar exatamente os mesmos valores que eu estou
+
+1411
+01:18:46.160 --> 01:18:48.200
+fazendo cid, eu vou vir aqui
+
+1412
+01:18:49.490 --> 01:18:50.890
+esse aqui vai ser o meu bank account
+
+1413
+01:18:55.130 --> 01:18:59.720
+que é o account id e a
+
+1414
+01:18:59.720 --> 01:19:01.640
+categoria vai ser esse cara aqui
+
+1415
+01:19:06.930 --> 01:19:07.540
+maravilha.
+
+1416
+01:19:08.630 --> 01:19:12.620
+Agora eu vou criar a requisição que eu vou usar para fazer
+
+1417
+01:19:12.720 --> 01:19:14.220
+que eu vou enviar para essa mi api.
+
+1418
+01:19:14.220 --> 01:19:18.260
+Então vamos colocar aqui our create transaction request
+
+1419
+01:19:19.080 --> 01:19:22.220
+é igual a new create transaction request
+
+1420
+01:19:23.420 --> 01:19:26.140
+e esse arquivo aqui pessoal está vindo da minha aplicação
+
+1421
+01:19:28.860 --> 01:19:30.900
+está vindo lá da minha aplicação é que eu
+
+1422
+01:19:31.140 --> 01:19:32.500
+utilizo para receber s.
+
+1423
+01:19:32.720 --> 01:19:36.100
+Record e create transaction request é o que o meu endpoint
+
+1424
+01:19:36.120 --> 01:19:37.340
+já está esperando aqui.
+
+1425
+01:19:37.460 --> 01:19:39.340
+Não tem problema nenhum fazer dessa forma,
+
+1426
+01:19:40.080 --> 01:19:43.420
+então o que ele pede aqui ele está pedindo um valor que eu
+
+1427
+01:19:43.420 --> 01:19:47.940
+vou colocar de 150 uma descrição que eu vou colocar compras
+
+1428
+01:19:48.210 --> 01:19:52.700
+mês E aqui eu preciso passar, qual que é a categoria,
+
+1429
+01:19:52.700 --> 01:19:57.250
+então eu vou passar esse cara aqui tranquilo.
+
+1430
+01:19:58.020 --> 01:20:02.610
+Agora eu preciso enviar essa transação lá para a minha api.
+
+1431
+01:20:02.610 --> 01:20:05.250
+Então eu vou colocar aqui uma resposta para armazenar a
+
+1432
+01:20:05.250 --> 01:20:08.920
+resposta, então eu vou usar aquele nosso a client e eu vou
+
+1433
+01:20:08.920 --> 01:20:10.680
+dar um post json a sin.
+
+1434
+01:20:11.780 --> 01:20:15.120
+Eu preciso passar aqui qual é a rota e qual é o valor?
+
+1435
+01:20:16.120 --> 01:20:19.000
+A rota vamos só relembrar qual é a rota aqui
+
+1436
+01:20:20.260 --> 01:20:23.080
+é bem accounts barra account id transaction,
+
+1437
+01:20:24.220 --> 01:20:28.720
+só que tem um detalhe aqui na minha aplicação lá no registro
+
+1438
+01:20:28.900 --> 01:20:30.720
+das rotas, eu tenho o prefixo de api,
+
+1439
+01:20:30.780 --> 01:20:34.400
+então eu preciso informar esse prefixo aqui também e além do
+
+1440
+01:20:34.520 --> 01:20:36.480
+prefixo, eu tenho a questão do versionamento que eu também
+
+1441
+01:20:36.480 --> 01:20:40.440
+preciso informar, então vou copiar a rota aqui só que aqui
+
+1442
+01:20:40.730 --> 01:20:43.520
+nesse account id, eu vou usar aquele account id que a gente
+
+1443
+01:20:43.520 --> 01:20:44.800
+definiu e eu vou passar.
+
+1444
+01:20:45.450 --> 01:20:47.920
+Quero fazer um post, então vou passar.
+
+1445
+01:20:48.520 --> 01:20:50.160
+Esse create transaction request a
+
+1446
+01:20:52.470 --> 01:20:55.510
+rota e qual é o objeto que eu quero passar para ele fazer a
+
+1447
+01:20:55.510 --> 01:20:58.180
+criação do objeto.
+
+1448
+01:20:59.240 --> 01:21:03.580
+Então deixa só botar um a aqui com isso aqui pessoal.
+
+1449
+01:21:03.700 --> 01:21:04.500
+Eu já estou
+
+1450
+01:21:04.500 --> 01:21:09.500
+minimamente com
+
+1451
+01:21:09.640 --> 01:21:12.760
+Aqui eu consigo validar minimamente que eu interagir com a
+
+1452
+01:21:12.760 --> 01:21:16.000
+minha aplicação e que ela devolveu uma resposta
+
+1453
+01:21:16.000 --> 01:21:17.080
+que foi bem sucedida.
+
+1454
+01:21:17.300 --> 01:21:18.920
+Então vamos rodar o teste aqui
+
+1455
+01:21:20.220 --> 01:21:22.360
+só botar lado a lado para ele rodar o docker.
+
+1456
+01:21:27.120 --> 01:21:29.780
+Então ele vai começar a subir os está rodando subiu o
+
+1457
+01:21:29.780 --> 01:21:31.500
+container vai subir.
+
+1458
+01:21:31.500 --> 01:21:34.260
+A aplicação vai enviar a requisição e se der tudo certo,
+
+1459
+01:21:35.040 --> 01:21:36.740
+ele deveria ficar verdinho ali
+
+1460
+01:21:47.970 --> 01:21:48.390
+beleza.
+
+1461
+01:21:48.630 --> 01:21:51.910
+Consegui fazer interagir com a minha api e ela me retornou
+
+1462
+01:21:52.410 --> 01:21:53.430
+um estado de sucesso.
+
+1463
+01:21:53.430 --> 01:21:55.630
+Ou seja, me retornou um 201 aqui no caso,
+
+1464
+01:21:57.400 --> 01:21:58.720
+e eu esqueci de comentar pessoal.
+
+1465
+01:21:58.720 --> 01:22:00.320
+Estou usando a biblioteca de
+
+1466
+01:22:00.900 --> 01:22:04.720
+fluent assertions que ele disponibiliza esses métodos para a
+
+1467
+01:22:04.720 --> 01:22:07.720
+gente ser um pouco mais fluente na especificação dos testes,
+
+1468
+01:22:08.140 --> 01:22:10.720
+então ao invés de eu ter escrito aqui acert
+
+1469
+01:22:13.080 --> 01:22:17.000
+true, true, isso aqui
+
+1470
+01:22:17.900 --> 01:22:20.280
+eu fiz daquela outra forma ali, então
+
+1471
+01:22:21.040 --> 01:22:24.240
+essa biblioteca uma vez era grátis, agora não é mais grátis,
+
+1472
+01:22:24.240 --> 01:22:25.840
+então quem for usar
+
+1473
+01:22:26.420 --> 01:22:29.440
+as versões mais novas teria que adquirir a licença.
+
+1474
+01:22:29.580 --> 01:22:30.920
+Mas como eu estou em uma versão antiga.
+
+1475
+01:22:30.920 --> 01:22:34.320
+Não fiz atualização e eu uso só para fins educacionais,
+
+1476
+01:22:34.320 --> 01:22:36.680
+mesmo eu acabo mantendo ela aqui para
+
+1477
+01:22:36.680 --> 01:22:37.800
+ficar um pouco mais fluente.
+
+1478
+01:22:38.080 --> 01:22:39.720
+Essa forma de leitura
+
+1479
+01:22:43.250 --> 01:22:45.090
+e aí pessoal, o que vocês acham desse teste.
+
+1480
+01:22:45.290 --> 01:22:47.130
+Esse teste está bom aqui.
+
+1481
+01:22:47.130 --> 01:22:50.970
+A gente conseguiu testar bastante coisas se eventualmente,
+
+1482
+01:22:50.970 --> 01:22:54.530
+eu abrisse o banco de dados para vocês, vamos até fazer isso
+
+1483
+01:22:55.890 --> 01:22:57.090
+para não ficar muito obscuro.
+
+1484
+01:22:57.090 --> 01:23:00.410
+Aqui vou fazer um deb bug e eu vou parar a minha aplicação.
+
+1485
+01:23:00.500 --> 01:23:03.930
+Nesse ponto, a vamos abrir o deb e vamos ver como está esse
+
+1486
+01:23:03.930 --> 01:23:05.440
+banco porque aqui pode pode ser que
+
+1487
+01:23:06.120 --> 01:23:08.320
+vocês não confiem em mim, vocês não acredita que ele está de
+
+1488
+01:23:08.320 --> 01:23:10.360
+fato, mas vamos ver ele acontecendo aqui
+
+1489
+01:23:14.810 --> 01:23:17.070
+eu estou só em outra tela, configurando pessoal que eu tenho
+
+1490
+01:23:17.520 --> 01:23:20.790
+dados de clientes aqui eu não quero expor nada sensível.
+
+1491
+01:23:25.610 --> 01:23:27.560
+Cadê vamos botar aqui container
+
+1492
+01:23:43.970 --> 01:23:45.360
+vamos pegar aqui no container.
+
+1493
+01:23:45.360 --> 01:23:50.040
+Então aqui pessoal vamos pegar o nosso container sql server.
+
+1494
+01:23:50.060 --> 01:23:54.960
+Ele está rodando na porta se 630 deixa.
+
+1495
+01:23:54.960 --> 01:23:58.560
+Eu editar minha conexão aqui se 630
+
+1496
+01:23:59.890 --> 01:24:01.960
+vamos entrar nesse container e vamos ver,
+
+1497
+01:24:02.080 --> 01:24:03.680
+qual é o s word que ele está usando
+
+1498
+01:24:06.760 --> 01:24:09.900
+vou copiar esse cara aqui vou atualizar lá na minha conexão,
+
+1499
+01:24:23.550 --> 01:24:25.530
+então por que eu só estou configurando aqui pessoal
+
+1500
+01:24:51.990 --> 01:24:53.230
+tentando adicionar ele em um projeto.
+
+1501
+01:24:53.420 --> 01:24:53.710
+Aqui,
+
+1502
+01:25:13.700 --> 01:25:18.450
+estou conseguindo configurar o meu master
+
+1503
+01:25:42.020 --> 01:25:42.760
+Perdeu a
+
+1504
+01:25:48.460 --> 01:25:49.190
+aqui pessoal.
+
+1505
+01:25:50.860 --> 01:25:53.960
+Então aqui eu estou fazendo configure a minha conexão a
+
+1506
+01:25:54.370 --> 01:25:56.520
+deixa eu ver se eu consigo dar zoom aqui beleza,
+
+1507
+01:25:56.740 --> 01:26:00.200
+então perceba que eu te mi conexão eu tenho a ban account.
+
+1508
+01:26:00.260 --> 01:26:04.690
+Lá transaction
+
+1509
+01:26:04.860 --> 01:26:06.130
+deixa eu ver se transaction.
+
+1510
+01:26:07.800 --> 01:26:09.410
+Acho que não é transaction.
+
+1511
+01:26:11.140 --> 01:26:12.930
+Vamos ver como que está o nome da nossa
+
+1512
+01:26:17.650 --> 01:26:18.340
+prosecuting
+
+1513
+01:26:22.890 --> 01:26:23.450
+database
+
+1514
+01:26:28.220 --> 01:26:31.280
+counts transaction configuration
+
+1515
+01:26:35.730 --> 01:26:36.290
+o computador.
+
+1516
+01:26:36.290 --> 01:26:39.050
+Quando compartilha a tela e roda o docker, ele começa
+
+1517
+01:26:40.360 --> 01:26:45.000
+a apanhar um pouco não estou lembrando qual que é
+
+1518
+01:26:45.280 --> 01:26:50.070
+essa transaction só ele está com uma não está indo,
+
+1519
+01:26:51.340 --> 01:26:53.880
+mas esse cara aqui pelo menos a gente consegue validar
+
+1520
+01:26:54.260 --> 01:26:55.560
+depois eu vou pegar direitinho.
+
+1521
+01:26:55.560 --> 01:26:57.360
+O nome da tabela que eu não lembro agora de cabeça,
+
+1522
+01:26:57.360 --> 01:27:02.020
+deixa eu ver se eu consigo listar ela aqui dbo tables
+
+1523
+01:27:04.890 --> 01:27:06.460
+Acho Que está com transaction.
+
+1524
+01:27:10.300 --> 01:27:13.780
+Isso Aqui está lá. A nossa transação pessoal
+
+1525
+01:27:14.610 --> 01:27:17.770
+Deixa Eu botar por um grid aqui
+
+1526
+01:27:19.260 --> 01:27:22.000
+Eu consigo pular isso aqui melhor para a gente ver.
+
+1527
+01:27:22.620 --> 01:27:25.400
+Então está lá a transação que eu criei pelo meu teste de
+
+1528
+01:27:25.520 --> 01:27:28.200
+integração, eu botei o valor de
+
+1529
+01:27:28.200 --> 01:27:31.800
+150, o nome da minha descrição.
+
+1530
+01:27:31.830 --> 01:27:33.280
+Compras mesas. Então, de fato,
+
+1531
+01:27:33.300 --> 01:27:35.520
+ele criou o banco inseriu está tudo certinho
+
+1532
+01:27:35.520 --> 01:27:36.600
+lá dentro do banco de dados.
+
+1533
+01:27:36.980 --> 01:27:40.840
+Então com isso aqui a gente conseguiu validar que de fato a
+
+1534
+01:27:40.840 --> 01:27:43.200
+gente está conseguindo chamar a nossa api.
+
+1535
+01:27:43.980 --> 01:27:46.240
+Ele está recebendo a requisição está processando.
+
+1536
+01:27:46.920 --> 01:27:48.840
+Está inserindo no banco de dados só que tem um,
+
+1537
+01:27:48.840 --> 01:27:51.360
+porém deixa eu só continuar executando aqui para ele
+
+1538
+01:27:51.520 --> 01:27:53.480
+terminar e ma
+
+1539
+01:27:58.810 --> 01:28:01.990
+de e tem um background service que está rodando,
+
+1540
+01:28:03.440 --> 01:28:06.140
+mas no final ele vai funcionar tudo certinho,
+
+1541
+01:28:06.860 --> 01:28:08.100
+qual é o problema a deixa eu ver quem
+
+1542
+01:28:08.280 --> 01:28:09.340
+eu vou chamar para a conversa.
+
+1543
+01:28:09.340 --> 01:28:10.820
+Eu acho que foi o tarcísio que comentou.
+
+1544
+01:28:10.820 --> 01:28:12.900
+Não é tarcísio que você usou já o teste
+
+1545
+01:28:12.900 --> 01:28:15.500
+container na tua percepção.
+
+1546
+01:28:15.660 --> 01:28:18.220
+Esse teste está bom o que tu melhoraria nesse teste, aqui
+
+1547
+01:28:20.010 --> 01:28:21.870
+principalmente na parte de acert
+
+1548
+01:28:27.130 --> 01:28:29.260
+quem quiser, compartilhar também pessoal, fique à vontade.
+
+1549
+01:28:29.880 --> 01:28:31.060
+Eu só chamei o tarcísio porque ele
+
+1550
+01:28:31.640 --> 01:28:34.220
+já tinha pontuado e que conhecia o teste container
+
+1551
+01:28:39.370 --> 01:28:41.230
+Um que eu estou programando aqui carlos
+
+1552
+01:28:43.210 --> 01:28:44.530
+O que tu melhoraria nesse teste.
+
+1553
+01:28:44.530 --> 01:28:46.770
+Aqui basicamente a gente só está validando que a gente teve
+
+1554
+01:28:47.190 --> 01:28:48.530
+uma resposta bem-sucedida.
+
+1555
+01:28:53.100 --> 01:28:55.560
+Tu iria além desse teste, tu pararia por aqui
+
+1556
+01:29:01.420 --> 01:29:03.420
+Pessoalmente, eu geralmente testo também
+
+1557
+01:29:04.020 --> 01:29:05.300
+o que está dentro da resposta
+
+1558
+01:29:05.760 --> 01:29:09.190
+Boa Só o status quo eu acho
+
+1559
+01:29:10.340 --> 01:29:12.430
+não está validando tudo que posso vender.
+
+1560
+01:29:13.310 --> 01:29:15.990
+Está aí Exatamente se por exemplo,
+
+1561
+01:29:16.010 --> 01:29:19.390
+viesse aqui na minha aplicação e retornasse,
+
+1562
+01:29:19.620 --> 01:29:21.150
+não fizesse nada e retornasse.
+
+1563
+01:29:21.150 --> 01:29:25.900
+Um ok poderia testar o estado da entidade
+
+1564
+01:29:26.000 --> 01:29:27.820
+com certeza persistência no banco
+
+1565
+01:29:29.590 --> 01:29:32.020
+antes da alteração não davidson,
+
+1566
+01:29:32.020 --> 01:29:33.500
+porque no meu teste de integração,
+
+1567
+01:29:34.540 --> 01:29:38.060
+a minha principal preocupação é qual é o resultado
+
+1568
+01:29:38.070 --> 01:29:39.140
+final dessa operação.
+
+1569
+01:29:39.170 --> 01:29:42.940
+Aqui é o meu insert no banco de dados e
+
+1570
+01:29:43.460 --> 01:29:45.460
+o envio de uma mensagem para a mensageria,
+
+1571
+01:29:45.460 --> 01:29:47.780
+então são esses dois casos que eu dero testar,
+
+1572
+01:29:49.250 --> 01:29:51.510
+eu não quero testar nenhuma lógica específica.
+
+1573
+01:29:52.430 --> 01:29:53.430
+Esse teste que tu comentou,
+
+1574
+01:29:53.450 --> 01:29:54.990
+eu poderia fazer com teste de unidade.
+
+1575
+01:29:55.850 --> 01:29:59.550
+Aí eu crio uma bank account adiciono a transação e valido o
+
+1576
+01:29:59.550 --> 01:30:02.630
+estado interno dela no teste de unidade que
+
+1577
+01:30:02.810 --> 01:30:03.870
+é muito mais rápido.
+
+1578
+01:30:03.890 --> 01:30:07.210
+Eu fazer isso e aí no teste de integração,
+
+1579
+01:30:07.450 --> 01:30:10.170
+qual que é a minha preocupação é validar que, de fato,
+
+1580
+01:30:10.190 --> 01:30:12.890
+eu tive aquele insert bem-sucedido no banco de dados.
+
+1581
+01:30:13.630 --> 01:30:14.850
+Mas em um primeiro momento,
+
+1582
+01:30:15.890 --> 01:30:18.770
+e se geralmente api não vai falhar, davi
+
+1583
+01:30:19.390 --> 01:30:20.930
+é muito difícil ela falhar
+
+1584
+01:30:20.930 --> 01:30:22.170
+porque ela está rodando em memória.
+
+1585
+01:30:22.170 --> 01:30:26.010
+Ela só vai falhar ou se alguma dependência externa dela
+
+1586
+01:30:26.010 --> 01:30:29.650
+estiver indisponível que a gente já viu formas de mitigar
+
+1587
+01:30:29.890 --> 01:30:32.970
+isso ou se a implementação de fato estiver errada e
+
+1588
+01:30:33.600 --> 01:30:36.810
+não levar o teu teste no estado que ele está esperando
+
+1589
+01:30:38.530 --> 01:30:40.530
+isso é se tu tiver uma api externa.
+
+1590
+01:30:40.530 --> 01:30:42.610
+Por exemplo, se eu não focasse essa api,
+
+1591
+01:30:42.710 --> 01:30:46.130
+ela estivesse fora por algum motivo, o meu teste ia falhar,
+
+1592
+01:30:46.230 --> 01:30:47.690
+mas ia ser um falso positivo.
+
+1593
+01:30:48.330 --> 01:30:51.250
+O meu teste falhou não em detrimento a uma lógica errada,
+
+1594
+01:30:51.270 --> 01:30:54.090
+mas sim a um fator externo que ele não tem controle
+
+1595
+01:30:58.240 --> 01:31:00.140
+então para a gente complementar um pouquinho.
+
+1596
+01:31:00.260 --> 01:31:02.460
+Esse teste pessoal eu posso a partir da response
+
+1597
+01:31:02.470 --> 01:31:04.060
+pegar qual foi o resultado.
+
+1598
+01:31:04.060 --> 01:31:05.940
+Então eu vou botar aqui response e content
+
+1599
+01:31:06.520 --> 01:31:09.820
+é igual response read.
+
+1600
+01:31:12.470 --> 01:31:15.160
+Agora eu não lembro do nome do método,
+
+1601
+01:31:17.890 --> 01:31:19.270
+é content response.
+
+1602
+01:31:20.180 --> 01:31:24.790
+Json as string esse cara e aí eu posso utilizar
+
+1603
+01:31:25.430 --> 01:31:29.110
+a minha própria rate transaction response
+
+1604
+01:31:29.890 --> 01:31:33.150
+que é exatamente o método que o objeto que eu devolvo lá
+
+1605
+01:31:33.150 --> 01:31:34.190
+no final do meu método.
+
+1606
+01:31:36.460 --> 01:31:39.220
+E aí eu consigo fazer mais alguns a acertos aqui se eu qui
+
+1607
+01:31:39.220 --> 01:31:44.020
+então response content id como id auto gerado,
+
+1608
+01:31:44.020 --> 01:31:46.820
+eu não con a valor para ele de antemão,
+
+1609
+01:31:46.960 --> 01:31:49.860
+ele se vai gerar um valor novo, então eu posso colocar aqui
+
+1610
+01:31:50.560 --> 01:31:53.540
+que ele não deveria sh to be nu,
+
+1611
+01:31:53.640 --> 01:31:56.460
+só que eu tenho que fazer aqui um wait,
+
+1612
+01:31:56.460 --> 01:31:57.980
+porque eu estou fazendo uma operação.
+
+1613
+01:32:03.900 --> 01:32:06.120
+Então aqui eu estou garantindo que ele está devolvendo
+
+1614
+01:32:06.140 --> 01:32:08.760
+sempre um id válido que não é um id nulo,
+
+1615
+01:32:09.760 --> 01:32:12.060
+eu posso validar também o valor
+
+1616
+01:32:15.130 --> 01:32:18.210
+qual que é o valor da minha transação R$ 150.
+
+1617
+01:32:18.270 --> 01:32:19.970
+Então eu consigo validar isso também
+
+1618
+01:32:20.910 --> 01:32:23.370
+dentro do meu response content tire também volta,
+
+1619
+01:32:23.570 --> 01:32:26.050
+qual que é o nome da categoria uma informação que eu nem
+
+1620
+01:32:26.050 --> 01:32:28.810
+passei aqui e aí para me validar isso.
+
+1621
+01:32:29.270 --> 01:32:31.490
+Eu posso ir lá no meu cid e descobrir
+
+1622
+01:32:32.050 --> 01:32:36.250
+esse aqui é o nome da minha categoria, então chud b
+
+1623
+01:32:37.350 --> 01:32:42.190
+esse cara aqui E por último, mas não menos importante.
+
+1624
+01:32:42.210 --> 01:32:47.160
+Eu posso testar a
+
+1625
+01:32:47.160 --> 01:32:50.000
+description para ver que se de fato, ele
+
+1626
+01:32:52.740 --> 01:32:54.390
+usou essa categoria correta aqui,
+
+1627
+01:32:57.500 --> 01:32:59.610
+Vamos rodar aqui para ver se está tudo certo,
+
+1628
+01:32:59.950 --> 01:33:02.970
+ele vai falar percebam que ele sempre está indo em um estado
+
+1629
+01:33:02.970 --> 01:33:06.130
+totalmente novo, por isso que a chance de a gente ter falso
+
+1630
+01:33:06.330 --> 01:33:08.930
+positivo aqui pessoal é muito baixa quase zero.
+
+1631
+01:33:09.450 --> 01:33:12.090
+O banco de dados sempre está sendo criado do zero.
+
+1632
+01:33:12.870 --> 01:33:15.450
+As tabelas estão sendo criadas do startup da aplicação.
+
+1633
+01:33:15.530 --> 01:33:18.290
+A gente faz o cid sempre com os mesmos dados,
+
+1634
+01:33:18.630 --> 01:33:20.850
+então a gente tem um ambiente muito previsível.
+
+1635
+01:33:20.880 --> 01:33:24.290
+Aqui é muito difícil ele dar um resultado fora do que a
+
+1636
+01:33:24.290 --> 01:33:25.570
+gente está esperando no nosso teste,
+
+1637
+01:33:25.570 --> 01:33:27.090
+porque a gente tem essa previsibilidade.
+
+1638
+01:33:27.930 --> 01:33:31.050
+A gente consegue levar o estado da nossa aplicação que é o
+
+1639
+01:33:31.050 --> 01:33:35.970
+banco de dados em um cenário no qual ele sempre vai retornar
+
+1640
+01:33:35.970 --> 01:33:38.490
+às mesmas coisas, desde que a gente não claro
+
+1641
+01:33:39.240 --> 01:33:41.250
+modifique a nossa implementação,
+
+1642
+01:33:43.150 --> 01:33:45.250
+Só que aqui pessoal eu consigo ir um pouco mais longe.
+
+1643
+01:33:45.250 --> 01:33:48.850
+Eu não estou para mim a resposta 200 é.
+
+1644
+01:33:49.390 --> 01:33:52.770
+Ela é uma operação resultante.
+
+1645
+01:33:53.190 --> 01:33:55.410
+É um estado resultante da minha operação,
+
+1646
+01:33:56.570 --> 01:33:59.490
+o que ela retornou de informação desse ok também é
+
+1647
+01:33:59.490 --> 01:34:02.770
+importante, mas para mim, eu preciso testar
+
+1648
+01:34:03.430 --> 01:34:05.690
+se de fato o que foi persistido no banco.
+
+1649
+01:34:05.950 --> 01:34:09.730
+É o que eu espero que seja
+
+1650
+01:34:10.230 --> 01:34:11.410
+então para isso pessoal.
+
+1651
+01:34:11.410 --> 01:34:14.210
+Agora a gente vai interagir com o banco de dados a partir do
+
+1652
+01:34:14.210 --> 01:34:18.050
+nosso teste para validar o que foi inserido no banco de
+
+1653
+01:34:18.050 --> 01:34:19.290
+dados está correto.
+
+1654
+01:34:19.910 --> 01:34:23.050
+Então, para isso, eu vou criar aqui um escopo por que eu vou
+
+1655
+01:34:23.050 --> 01:34:26.730
+criar um escopo pessoal, porque aqui eu vou utilizar
+
+1656
+01:34:27.410 --> 01:34:31.250
+o meu db context para buscar os dados e o db context é
+
+1657
+01:34:31.850 --> 01:34:34.130
+registrado como escopo, ou seja,
+
+1658
+01:34:34.130 --> 01:34:37.330
+eu preciso criar um escopo para conseguir
+
+1659
+01:34:37.330 --> 01:34:38.490
+recuperar aquele serviço.
+
+1660
+01:34:39.560 --> 01:34:42.090
+Aqui eu vou utilizar o mesmo factor que a gente vem
+
+1661
+01:34:42.090 --> 01:34:45.370
+utilizando para criar o client,
+
+1662
+01:34:46.010 --> 01:34:48.570
+e como esse cara representa uma instância da
+
+1663
+01:34:48.570 --> 01:34:49.770
+minha aplicação e memória.
+
+1664
+01:34:49.990 --> 01:34:52.370
+Eu tenho acesso a todos os serviços dela.
+
+1665
+01:34:52.870 --> 01:34:57.640
+Ou seja, eu posso vir aqui e criar um desse escopo,
+
+1666
+01:34:57.660 --> 01:34:59.200
+eu consigo buscar o meu context.
+
+1667
+01:34:59.300 --> 01:35:02.000
+Então escopo service provider
+
+1668
+01:35:03.420 --> 01:35:04.720
+é bem parecido pessoal.
+
+1669
+01:35:05.700 --> 01:35:08.200
+Quando a gente tem um background service que precisa
+
+1670
+01:35:08.360 --> 01:35:10.440
+consumir um serviço.
+
+1671
+01:35:10.440 --> 01:35:12.640
+Escopo. Geralmente a gente injeta.
+
+1672
+01:35:12.760 --> 01:35:15.880
+O á service provider cria um escopo e a partir do escopo
+
+1673
+01:35:15.930 --> 01:35:19.640
+busca o serviço, e aqui eu vou pegar um get required service
+
+1674
+01:35:20.060 --> 01:35:23.280
+que aí é finance db context esse cara aqui
+
+1675
+01:35:24.730 --> 01:35:27.070
+Então aqui eu tenho acesso ao meu db context
+
+1676
+01:35:27.750 --> 01:35:30.990
+e aí eu posso simplesmente vir aqui botar aqui var.
+
+1677
+01:35:31.020 --> 01:35:35.190
+Created transaction db igual a context
+
+1678
+01:35:39.780 --> 01:35:40.300
+bank account.
+
+1679
+01:35:40.300 --> 01:35:42.340
+Eu acho que é eu posso usar o sete
+
+1680
+01:35:43.240 --> 01:35:44.980
+vou pegar sete de transaction,
+
+1681
+01:35:44.980 --> 01:35:46.380
+que é minha entidade de domínio.
+
+1682
+01:35:48.260 --> 01:35:50.620
+E aqui eu vou pegar o fir or default.
+
+1683
+01:35:50.660 --> 01:35:55.180
+A synk id lembra que meu response
+
+1684
+01:35:55.220 --> 01:35:58.380
+retornou um id, então eu consigo usar essa propriedade aqui
+
+1685
+01:36:01.470 --> 01:36:05.820
+botar só tr aqui eu quero que ele busque a transação no qual
+
+1686
+01:36:05.860 --> 01:36:09.210
+o id seja igual esse cara aqui await
+
+1687
+01:36:14.300 --> 01:36:15.260
+perfeito pessoal.
+
+1688
+01:36:16.450 --> 01:36:19.020
+Aqui eu estou buscando a transação que está no meu banco de
+
+1689
+01:36:19.020 --> 01:36:21.900
+dados a está persistido no meu banco de dados
+
+1690
+01:36:23.690 --> 01:36:26.370
+e aqui a gente consegue fazer uma série dias.
+
+1691
+01:36:26.370 --> 01:36:28.690
+Certos percebam que aqui eu estou trabalhando com a entidade
+
+1692
+01:36:28.830 --> 01:36:30.930
+de negócio, deixa eu só pegar ela aqui.
+
+1693
+01:36:31.230 --> 01:36:34.170
+Então ela tem uma série de outras propriedades que a gente
+
+1694
+01:36:34.370 --> 01:36:38.690
+pode estar validando só para eu não ficar muito repetitivo,
+
+1695
+01:36:38.690 --> 01:36:41.010
+eu vou só pegar aqui da minha colinha para eu não ficar
+
+1696
+01:36:41.010 --> 01:36:43.530
+digitando todo o código,
+
+1697
+01:36:45.030 --> 01:36:46.170
+só vou substituir aqui
+
+1698
+01:36:51.260 --> 01:36:53.540
+e aí basicamente percebam que aqui eu tenho muito mais
+
+1699
+01:36:53.540 --> 01:36:54.740
+expressividade pessoal.
+
+1700
+01:36:54.740 --> 01:36:57.500
+Eu consigo validar muito mais informações,
+
+1701
+01:36:58.590 --> 01:37:01.580
+deixa eu só colocar isso aqui só para dizer que ele nunca
+
+1702
+01:37:01.580 --> 01:37:06.260
+vai ser nulo aqui Ele parar de apitar ali.
+
+1703
+01:37:06.520 --> 01:37:09.020
+Então a transação não deve ser nula
+
+1704
+01:37:09.540 --> 01:37:12.380
+e aqui eu consigo validar algumas propriedades que pela
+
+1705
+01:37:12.380 --> 01:37:14.380
+resposta pessoal eu não consigo validar.
+
+1706
+01:37:15.120 --> 01:37:18.430
+Por exemplo, Eu consigo validar que, de fato,
+
+1707
+01:37:18.510 --> 01:37:22.470
+o valor é 150 só que além disso, lá no banco de dados,
+
+1708
+01:37:22.970 --> 01:37:26.390
+eu persisto esse valu object e ele salva a currency também.
+
+1709
+01:37:27.050 --> 01:37:28.830
+Ou seja, eu consigo validar que, de fato,
+
+1710
+01:37:29.190 --> 01:37:31.470
+o 150 foi salvo em reais
+
+1711
+01:37:32.390 --> 01:37:34.590
+e aqui pessoal consigo também porque eu tenho
+
+1712
+01:37:35.310 --> 01:37:38.470
+a entidade de negócio eu consigo validar até
+
+1713
+01:37:39.190 --> 01:37:41.350
+a própria conversão, ou seja,
+
+1714
+01:37:41.490 --> 01:37:44.790
+se a partir do momento que o meu dólar vale cinco e eu fiz
+
+1715
+01:37:44.890 --> 01:37:48.190
+uma compra de R$ 150 logo o meu valor
+
+1716
+01:37:55.600 --> 01:37:58.160
+a minha transação pelo fato de eu estar criando uma
+
+1717
+01:37:58.400 --> 01:38:02.880
+transação de despesa tem que ser do tipo expense a conta
+
+1718
+01:38:03.650 --> 01:38:05.560
+dessa transação tem que ser exatamente
+
+1719
+01:38:05.680 --> 01:38:06.720
+a conta que eu mandei aqui.
+
+1720
+01:38:07.420 --> 01:38:10.240
+Da mesma forma a categoria e mais algumas outras validações
+
+1721
+01:38:10.310 --> 01:38:13.320
+aqui percebam que se eu parasse aqui pessoal
+
+1722
+01:38:15.740 --> 01:38:18.240
+de outras coisas que eu não consigo validar que são
+
+1723
+01:38:18.840 --> 01:38:21.480
+o resultado final da minha operação que é a criação da
+
+1724
+01:38:21.640 --> 01:38:25.940
+transação, então quando eu vou a nível de banco de dados,
+
+1725
+01:38:25.960 --> 01:38:28.660
+eu consigo pegar que é o registro que foi inserido.
+
+1726
+01:38:28.920 --> 01:38:30.260
+Eu consigo validar todas
+
+1727
+01:38:30.280 --> 01:38:34.820
+as propriedades daquele registro e aqui pessoal.
+
+1728
+01:38:34.880 --> 01:38:36.860
+Vem outra coisa muito importante também
+
+1729
+01:38:38.490 --> 01:38:41.870
+por que é importante eu ter previsibilidade no meu ambiente.
+
+1730
+01:38:43.850 --> 01:38:46.510
+Se, por exemplo, eu não tivesse mocado aquela a api da
+
+1731
+01:38:46.510 --> 01:38:50.590
+cotação em dólar, vocês concordam comigo que eu nunca ia
+
+1732
+01:38:50.590 --> 01:38:55.230
+conseguir fazer esse aqui, por quê
+
+1733
+01:38:56.870 --> 01:38:58.190
+Toda vez que eu dou um f aqui
+
+1734
+01:38:58.430 --> 01:38:59.710
+percebam que ele fica variando.
+
+1735
+01:38:59.710 --> 01:39:02.190
+Ele vai ficar variando durante o dia esse valor ele vai
+
+1736
+01:39:02.350 --> 01:39:03.950
+variar, ele nunca vai ser estático.
+
+1737
+01:39:04.810 --> 01:39:07.710
+Ou seja, eu não conseguiria validar esse valor aqui se eu
+
+1738
+01:39:07.830 --> 01:39:12.030
+tivesse olhando para uma api que não é previsível que ela
+
+1739
+01:39:12.030 --> 01:39:13.310
+vai ficar mudando toda hora,
+
+1740
+01:39:13.790 --> 01:39:16.550
+além de eu ter o problema de falso positivo, eu não consigo
+
+1741
+01:39:18.870 --> 01:39:22.470
+garantir que aquela informação sempre vai ser única então
+
+1742
+01:39:22.990 --> 01:39:27.110
+o mo nesse caso da minha api me ajuda duas frentes,
+
+1743
+01:39:27.370 --> 01:39:29.550
+previsibilidade e falso positivo,
+
+1744
+01:39:30.870 --> 01:39:33.270
+e com isso eu consigo até validar que, de fato,
+
+1745
+01:39:33.390 --> 01:39:36.550
+o cálculo de conversão está correto se, por exemplo,
+
+1746
+01:39:36.550 --> 01:39:40.150
+eu chamasse aquela a api eu poderia chamar ela pessoal.
+
+1747
+01:39:41.100 --> 01:39:42.350
+Não ia invalidar o meu teste,
+
+1748
+01:39:42.350 --> 01:39:43.910
+só que se ela estivesse fora em algum momento,
+
+1749
+01:39:43.950 --> 01:39:47.560
+o meu teste poderia quebrar e eu não poderia fazer esse a
+
+1750
+01:39:47.560 --> 01:39:49.960
+acerte aqui, porque eu não ia saber o valor da cotação
+
+1751
+01:39:49.960 --> 01:39:52.960
+naquele momento ele ia variar demais e eu não ia conseguir
+
+1752
+01:39:52.960 --> 01:39:56.520
+fazer esse acert aqui pode falar.
+
+1753
+01:39:56.520 --> 01:39:57.520
+Tarcísio
+
+1754
+01:39:58.460 --> 01:40:01.600
+Na verdade, teria como você pode interceptar o valor
+
+1755
+01:40:01.600 --> 01:40:02.920
+respondido pela api e fazer
+
+1756
+01:40:03.440 --> 01:40:04.440
+Pode. Pode também
+
+1757
+01:40:04.440 --> 01:40:04.840
+eu
+
+1758
+01:40:04.840 --> 01:40:07.640
+Falo que hoje mesmo eu escrever um teste de uma
+
+1759
+01:40:07.640 --> 01:40:08.840
+biblioteca de hand tri.
+
+1760
+01:40:09.260 --> 01:40:13.120
+Aí tem o parâmetro dita que é um pouco aleatório
+
+1761
+01:40:13.880 --> 01:40:17.880
+algo de zero e cent do tempo como é que valida.
+
+1762
+01:40:18.120 --> 01:40:19.960
+Isso aí tinha que ficar conferindo que o valor estava
+
+1763
+01:40:20.010 --> 01:40:21.280
+entre o valor esperado,
+
+1764
+01:40:21.780 --> 01:40:25.640
+Sim, sim Ficava aquela janela de valores válido da do
+
+1765
+01:40:25.720 --> 01:40:26.720
+Teste. Sim
+
+1766
+01:40:26.720 --> 01:40:29.520
+é que aí tu tem um escopo limitado de um a dois.
+
+1767
+01:40:29.520 --> 01:40:32.120
+Tu falou de zero a dois, mas
+
+1768
+01:40:32.740 --> 01:40:35.520
+No dither aqui a configuração que a gente usa de zero a
+
+1769
+01:40:35.880 --> 01:40:37.680
+cent vai evitar aquele
+
+1770
+01:40:38.760 --> 01:40:39.760
+Sim. Estampido effecto
+
+1771
+01:40:39.760 --> 01:40:40.060
+
+1772
+01:40:42.170 --> 01:40:43.970
+E tu sabe o mínimo e o máximo.
+
+1773
+01:40:44.150 --> 01:40:47.530
+No caso da cotação do dólar, tu poderia interceptar para ver
+
+1774
+01:40:48.550 --> 01:40:50.950
+qual que foi o valor usado naquele momento do teste.
+
+1775
+01:40:52.270 --> 01:40:55.640
+Isso óbvio fazer o mo é muito melhor, mas
+
+1776
+01:40:57.280 --> 01:40:59.120
+a api do dólar é uma api muito simples.
+
+1777
+01:40:59.120 --> 01:41:01.320
+Às vezes a gente tem uma api muito mais complexa que torna
+
+1778
+01:41:01.320 --> 01:41:04.080
+valores muito mais complicados e às vezes
+
+1779
+01:41:04.680 --> 01:41:06.280
+o mo em si se torna inviável.
+
+1780
+01:41:06.280 --> 01:41:09.920
+De certa forma, a gente tem que colocar alguma coisa no meio
+
+1781
+01:41:10.000 --> 01:41:12.240
+para capturar aquele valor revalidar com o que
+
+1782
+01:41:12.400 --> 01:41:13.480
+realmente foi retornado no ti
+
+1783
+01:41:14.540 --> 01:41:18.480
+É, mas tem casos tarcísio que a gente usou o mo em apis
+
+1784
+01:41:18.490 --> 01:41:21.720
+muito complexos e complicadas justamente pelo fato da
+
+1785
+01:41:21.880 --> 01:41:24.240
+indisponibilidade dela, ou seja,
+
+1786
+01:41:24.420 --> 01:41:26.600
+era um api que era não ela não era confiável.
+
+1787
+01:41:27.240 --> 01:41:29.400
+Teste quebrava em momentos aleatórios do
+
+1788
+01:41:29.400 --> 01:41:30.440
+dia porque api estava fora.
+
+1789
+01:41:30.760 --> 01:41:32.080
+E aí tu vai ver cara tem
+
+1790
+01:41:32.970 --> 01:41:35.200
+20 a 30 arquivos de chamadas de api,
+
+1791
+01:41:35.200 --> 01:41:37.840
+porque o cenário que a gente testa é muito complexo.
+
+1792
+01:41:38.180 --> 01:41:40.840
+Ele fazia de 20 a 30 chamadas para essa api
+
+1793
+01:41:41.510 --> 01:41:43.640
+50 a 100 insert no banco de dados,
+
+1794
+01:41:43.680 --> 01:41:46.440
+e a gente conseguiu validar tudo isso utilizando o moco
+
+1795
+01:41:47.200 --> 01:41:48.280
+e também o banco de dados.
+
+1796
+01:41:48.440 --> 01:41:51.160
+Como eu estou mostrando aqui para vocês deu muito trabalho.
+
+1797
+01:41:51.320 --> 01:41:55.160
+Imagina a gente levantar fazer todo o levantamento do cid
+
+1798
+01:41:55.400 --> 01:41:58.640
+todo, porque a gente precisa de exemplos válidos.
+
+1799
+01:41:58.800 --> 01:42:01.000
+Também a gente não pode simplesmente jogar qualquer valor
+
+1800
+01:42:01.000 --> 01:42:03.880
+naquele json e esperar que funcione a gente precisa de um
+
+1801
+01:42:03.880 --> 01:42:06.920
+exemplo válido entender como é que é o contrato dessa api
+
+1802
+01:42:08.860 --> 01:42:11.280
+Sim, Fala june
+
+1803
+01:42:15.800 --> 01:42:17.240
+está mutado cara, eu não estou
+
+1804
+01:42:17.280 --> 01:42:18.360
+te escutando se estiver falando.
+
+1805
+01:42:19.960 --> 01:42:21.600
+Enquanto tu arruma aí eu vou passar a palavra
+
+1806
+01:42:21.800 --> 01:42:22.840
+para o davi pode falar davi.
+
+1807
+01:42:25.280 --> 01:42:27.040
+Vocês est estão me ouvindo Sim senhora
+
+1808
+01:42:27.900 --> 01:42:29.760
+Opa boa noite Boa noite
+
+1809
+01:42:31.090 --> 01:42:32.890
+Como que vocês fazem por exemplo,
+
+1810
+01:42:33.440 --> 01:42:35.930
+não especificamente nesse cenário, que obviamente é para
+
+1811
+01:42:37.450 --> 01:42:39.090
+o cenário ser um pouquinho mais simples.
+
+1812
+01:42:39.090 --> 01:42:42.050
+Mas por exemplo, quando tem várias chamadas de api,
+
+1813
+01:42:42.110 --> 01:42:46.330
+eu preciso de api b e c e porventura,
+
+1814
+01:42:46.330 --> 01:42:51.210
+eu preciso fazer alguns cenários, alterando falhas.
+
+1815
+01:42:51.810 --> 01:42:55.010
+O primeiro api passa no primeiro cenário.
+
+1816
+01:42:55.390 --> 01:42:57.610
+Aí nós mos no segundo cenário,
+
+1817
+01:42:57.910 --> 01:43:00.810
+as duas últimas falhas sei lá eu faço uma combinação,
+
+1818
+01:43:01.900 --> 01:43:04.730
+retornando o status quo.
+
+1819
+01:43:04.730 --> 01:43:07.690
+Diferente de 200 para ver qual é o comportamento
+
+1820
+01:43:08.230 --> 01:43:11.450
+tem que ser determinado valor no banco ou tem que chamar tem
+
+1821
+01:43:11.450 --> 01:43:12.730
+que mandar esse valor para a fila.
+
+1822
+01:43:12.950 --> 01:43:14.530
+Aí depende também da regra de negócio,
+
+1823
+01:43:14.990 --> 01:43:17.170
+Sim Como vocês
+
+1824
+01:43:18.820 --> 01:43:21.410
+lidam com esse tipo de simulação de erro de
+
+1825
+01:43:21.590 --> 01:43:22.970
+quando tu está focando em uma api.
+
+1826
+01:43:25.080 --> 01:43:27.420
+Se tu quiser testar todos os cenários possíveis,
+
+1827
+01:43:27.440 --> 01:43:29.060
+tu vai ter que ter um teste,
+
+1828
+01:43:29.250 --> 01:43:31.580
+validando todos os cenários possíveis vai ter
+
+1829
+01:43:31.580 --> 01:43:32.660
+um teste para cada cenário.
+
+1830
+01:43:32.840 --> 01:43:34.340
+Ou seja, se tu tem cinco apis,
+
+1831
+01:43:34.880 --> 01:43:37.660
+tu quer ter um cenário no qual a primeira responde com
+
+1832
+01:43:37.660 --> 01:43:40.540
+sucesso a segunda não a terceira não a quarta a sim,
+
+1833
+01:43:40.540 --> 01:43:45.060
+e a quinta assim vai ter que ter um cenário projetando isso
+
+1834
+01:43:45.680 --> 01:43:48.140
+só que eu te pergunto davi faz sentido.
+
+1835
+01:43:48.360 --> 01:43:52.360
+Tu concretizar a tua operação, sendo que uma api na qual
+
+1836
+01:43:52.920 --> 01:43:56.280
+a tua operação depende falhar porque quando o vê tu tem
+
+1837
+01:43:56.820 --> 01:44:00.640
+um processo muito grande no qual pode ser que tu tenha algum
+
+1838
+01:44:00.800 --> 01:44:02.640
+tipo de inconsistência se alguma coisa
+
+1839
+01:44:02.640 --> 01:44:03.720
+falhar no meio do caminho.
+
+1840
+01:44:05.320 --> 01:44:07.620
+Por exemplo, essa que eu estou trabalhando ultimamente
+
+1841
+01:44:09.200 --> 01:44:10.460
+é o olho que eu
+
+1842
+01:44:11.860 --> 01:44:14.380
+e ele pega.
+
+1843
+01:44:14.390 --> 01:44:18.900
+Dados tem um banco de dados que ele pega
+
+1844
+01:44:18.900 --> 01:44:23.100
+informações e ele manda essas transações.
+
+1845
+01:44:23.100 --> 01:44:25.940
+Ele faz um pix e se falhar,
+
+1846
+01:44:25.940 --> 01:44:28.100
+não tem problema ele na próxima rodada.
+
+1847
+01:44:28.100 --> 01:44:31.380
+A gente tenta de novo, então tem um cenário de falha.
+
+1848
+01:44:33.040 --> 01:44:34.980
+Ele manda para uma fila ele loga.
+
+1849
+01:44:35.120 --> 01:44:37.420
+Ele fala algumas coisas lá e
+
+1850
+01:44:38.300 --> 01:44:39.940
+essa api externa em serviço externo,
+
+1851
+01:44:40.520 --> 01:44:42.460
+então porventura nesse caso
+
+1852
+01:44:43.600 --> 01:44:46.060
+é interessante testar a falha.
+
+1853
+01:44:46.720 --> 01:44:50.580
+É claro que depende da regra. O meu cenário é necessário.
+
+1854
+01:44:51.370 --> 01:44:53.660
+Não entendi, por exemplo, se api falhar,
+
+1855
+01:44:54.340 --> 01:44:56.580
+pode ser que tu tenha que produzir uma mensagem para
+
+1856
+01:44:56.580 --> 01:44:58.060
+notificar que teve uma falha
+
+1857
+01:44:59.170 --> 01:45:01.460
+naquela etapa do processo que tu está executando via
+
+1858
+01:45:01.460 --> 01:45:02.540
+um background service.
+
+1859
+01:45:03.020 --> 01:45:06.730
+Isso isso mesmo é nesse caso, e daí, tu poderia
+
+1860
+01:45:07.330 --> 01:45:08.530
+escrever esse cenário.
+
+1861
+01:45:08.670 --> 01:45:11.570
+Tu tem que validar esse cenário e aí no teu caso
+
+1862
+01:45:12.810 --> 01:45:17.210
+tu poderia vir aqui e ao invés de em um cenário
+
+1863
+01:45:17.210 --> 01:45:19.610
+específico, tu poderia aqui tu pode.
+
+1864
+01:45:20.410 --> 01:45:24.430
+Além de retornar ok, tu pode jogar exceção aqui aqui,
+
+1865
+01:45:24.430 --> 01:45:27.430
+tu pode configurar para que ele jogue uma exceção específica
+
+1866
+01:45:28.920 --> 01:45:30.040
+para quando tu estiver em um cenário
+
+1867
+01:45:30.040 --> 01:45:31.240
+específico no qual tu precisa.
+
+1868
+01:45:32.740 --> 01:45:35.320
+Talvez aí tu tenha que trabalhar com arquivos diferentes
+
+1869
+01:45:35.520 --> 01:45:38.360
+para quando tu quer retornar ok para quando tu não quer
+
+1870
+01:45:38.360 --> 01:45:42.000
+retornar aqui, por exemplo, eu até passar.
+
+1871
+01:45:42.540 --> 01:45:45.920
+Eu consigo executar código do at net dentro desse cara.
+
+1872
+01:45:45.920 --> 01:45:48.930
+Aqui ver se tem um exemplo,
+
+1873
+01:45:50.720 --> 01:45:53.660
+porque aí o que tu poderia fazer no teu teste de integração,
+
+1874
+01:45:54.000 --> 01:45:56.940
+tu poderia mandar um query parâmetro que tu usa só para
+
+1875
+01:45:56.940 --> 01:45:59.380
+validar aqui para quando ele deve falhar ou não sabe
+
+1876
+01:46:00.510 --> 01:46:02.660
+deixa eu ver se tem algum exemplo. Porque
+
+1877
+01:46:03.500 --> 01:46:06.420
+A questão é, assim, quando você sobe todo o host,
+
+1878
+01:46:08.900 --> 01:46:11.460
+você tem que subir já com a configuração correta,
+
+1879
+01:46:11.460 --> 01:46:12.300
+porque se você muda a
+
+1880
+01:46:12.300 --> 01:46:13.740
+configuração, você tem que resgatar não
+
+1881
+01:46:14.400 --> 01:46:15.400
+Sim isso aí.
+
+1882
+01:46:15.640 --> 01:46:18.220
+Mas aí tu pode usar a própria requisição para validar isso,
+
+1883
+01:46:18.220 --> 01:46:20.860
+aí tu pode usar script,
+
+1884
+01:46:21.880 --> 01:46:23.980
+então tu pode eventualmente consultar
+
+1885
+01:46:25.760 --> 01:46:28.300
+um carry parâmetro que tu manda só pelo teu teste
+
+1886
+01:46:30.040 --> 01:46:33.070
+sacou interessante e aí tu vai ter lá o teu teste e
+
+1887
+01:46:33.070 --> 01:46:34.190
+tu vai ter um parâmetro.
+
+1888
+01:46:34.500 --> 01:46:35.950
+Deve falhar aí dentro.
+
+1889
+01:46:35.950 --> 01:46:38.150
+Tu pode fazer uma lógica que quando for falha.
+
+1890
+01:46:38.210 --> 01:46:40.790
+Tu joga uma exceção porque tem essa liberdade de
+
+1891
+01:46:40.790 --> 01:46:42.150
+fazer esse tipo de coisa aqui dentro.
+
+1892
+01:46:43.060 --> 01:46:45.520
+Eu nunca precisei fazer especificamente isso.
+
+1893
+01:46:45.820 --> 01:46:46.840
+Mas eu sei que tem como
+
+1894
+01:46:48.770 --> 01:46:53.670
+Porque acho que a questão aí é ter um custo maior de você
+
+1895
+01:46:53.670 --> 01:46:55.190
+re esse ciclo de teste integral, obviamente
+
+1896
+01:46:56.010 --> 01:46:57.870
+Sim o teste de integração.
+
+1897
+01:46:58.230 --> 01:47:00.350
+Conforme tu vai tendo mais dependências,
+
+1898
+01:47:00.470 --> 01:47:03.070
+e tu tem um fluxo de trabalho maior mais e complexo.
+
+1899
+01:47:03.130 --> 01:47:04.130
+Ele fica
+
+1900
+01:47:06.380 --> 01:47:08.440
+Aí deixa eu te fazer mais a última pergunta,
+
+1901
+01:47:11.420 --> 01:47:15.550
+nós usamos esse test container aí chegou o arquiteto falou a
+
+1902
+01:47:15.550 --> 01:47:18.750
+não agora nós vamos usar o aspari test, vocês já usaram
+
+1903
+01:47:20.140 --> 01:47:24.850
+As o quê Testing em invés de você
+
+1904
+01:47:26.290 --> 01:47:27.330
+você sobe o host.
+
+1905
+01:47:27.770 --> 01:47:29.730
+Você aponta o host para o projeto do a que
+
+1906
+01:47:29.730 --> 01:47:30.890
+tem toda a infraestrutura,
+
+1907
+01:47:31.590 --> 01:47:34.790
+Sim esse a
+
+1908
+01:47:35.670 --> 01:47:36.750
+para teste de integração.
+
+1909
+01:47:36.770 --> 01:47:39.730
+Eu nunca utilizei especificamente,
+
+1910
+01:47:39.730 --> 01:47:41.850
+eu nem sabia que dava para utilizar um teste de integração,
+
+1911
+01:47:41.850 --> 01:47:44.770
+vou até dar uma estudada depois como uma alternativa.
+
+1912
+01:47:46.010 --> 01:47:48.110
+Mas esse cara especificamente, eu não usei o que eu uso
+
+1913
+01:47:48.920 --> 01:47:51.990
+quase cent dos projetos acaba sendo o teste container é o
+
+1914
+01:47:51.990 --> 01:47:54.950
+que funciona, mas é bom saber que tem uma outra opção sim,
+
+1915
+01:47:56.160 --> 01:47:58.010
+não sei se alguém já usou aqui pode
+
+1916
+01:48:04.230 --> 01:48:05.180
+manda lá juny.
+
+1917
+01:48:06.450 --> 01:48:07.740
+Não sei que vocês estão me ouvindo. Agora
+
+1918
+01:48:07.910 --> 01:48:09.900
+Agora sim Beleza,
+
+1919
+01:48:10.280 --> 01:48:12.980
+eu queria saber cara ali um pouquinho no teste.
+
+1920
+01:48:13.820 --> 01:48:16.220
+Além desse ponto que o tarcísio comentou
+
+1921
+01:48:17.140 --> 01:48:18.500
+e fazendo uma chamada externa.
+
+1922
+01:48:18.520 --> 01:48:20.940
+Ali, vamos supor que eu tenho uma política de back
+
+1923
+01:48:22.520 --> 01:48:24.320
+e essa api de fora não respondeu
+
+1924
+01:48:25.280 --> 01:48:28.640
+utilizar essa saída de 150, e tem que,
+
+1925
+01:48:28.640 --> 01:48:31.480
+enfim esses valores pré-estabelecidos, como default
+
+1926
+01:48:32.300 --> 01:48:33.320
+ok para o meu teste.
+
+1927
+01:48:33.840 --> 01:48:37.680
+Isso inicialmente não teria nenhum problema porque eu estou
+
+1928
+01:48:37.800 --> 01:48:40.800
+tentando validar as duas pontas
+
+1929
+01:48:43.170 --> 01:48:45.010
+e outro ponto mais de infraestrutura ali
+
+1930
+01:48:45.700 --> 01:48:47.490
+geralmente quando você usa o teste container.
+
+1931
+01:48:47.490 --> 01:48:50.890
+Aí, você trabalha com algum tipo específico de nu no we.
+
+1932
+01:48:51.060 --> 01:48:53.730
+Mesmo ou isso independe de dela
+
+1933
+01:48:54.520 --> 01:48:55.730
+Independe joia.
+
+1934
+01:48:55.820 --> 01:48:58.770
+Desde que tu tenha o docker instalado na máquina do teu
+
+1935
+01:48:58.770 --> 01:49:01.530
+agente de build, tu pode rodar isso onde for sabe,
+
+1936
+01:49:02.250 --> 01:49:03.890
+Entendi não tenho uma in dependência. Mesmo
+
+1937
+01:49:04.610 --> 01:49:07.530
+Isso se tu tiver um agente de windows talvez seja um
+
+1938
+01:49:07.530 --> 01:49:08.570
+pouquinho mais complexo.
+
+1939
+01:49:08.570 --> 01:49:10.570
+Eu não sei se hoje em dia tem do docker para windows,
+
+1940
+01:49:10.730 --> 01:49:13.610
+porque basicamente, eu consigo rodar ele aqui porque por
+
+1941
+01:49:13.730 --> 01:49:16.090
+baixo dos panes, ele roda em cima do wsl.
+
+1942
+01:49:17.070 --> 01:49:18.370
+Tal tem
+
+1943
+01:49:18.670 --> 01:49:19.670
+Docker. É só
+
+1944
+01:49:19.670 --> 01:49:20.330
+linux
+
+1945
+01:49:20.930 --> 01:49:22.130
+Todo windows Ado
+
+1946
+01:49:22.750 --> 01:49:24.050
+Boa e aí,
+
+1947
+01:49:24.050 --> 01:49:26.570
+nesse caso se tiver um servidor windows que roda os agentes
+
+1948
+01:49:26.670 --> 01:49:29.570
+de build pode ser um problema nessa
+
+1949
+01:49:29.570 --> 01:49:31.010
+empresa que a gente estava atuando.
+
+1950
+01:49:31.490 --> 01:49:33.410
+A maior parte dos agentes era de windows
+
+1951
+01:49:33.970 --> 01:49:35.810
+e aí para os projetos novos que a gente
+
+1952
+01:49:35.810 --> 01:49:36.930
+foi incorporando aqui.
+
+1953
+01:49:37.770 --> 01:49:39.930
+O teste container a gente teve que usar agentes
+
+1954
+01:49:39.980 --> 01:49:41.690
+linux que aí tem o docker.
+
+1955
+01:49:41.770 --> 01:49:44.810
+A gente consegue fazer usar o docker sub.
+
+1956
+01:49:44.810 --> 01:49:45.850
+Os containers e tudo mais
+
+1957
+01:49:50.050 --> 01:49:54.880
+respondido juny tranquilo valeu boa fala tarcísio
+
+1958
+01:49:56.180 --> 01:49:57.680
+Um pouco do que foi falado
+
+1959
+01:49:57.690 --> 01:49:59.760
+antes pelo menos no meu trabalho.
+
+1960
+01:49:59.800 --> 01:50:01.920
+A gente tem um requerimento muito importante de que
+
+1961
+01:50:02.500 --> 01:50:04.720
+certos casos a gente tem que testar a falha,
+
+1962
+01:50:04.720 --> 01:50:07.960
+porque a gente espera que fale aquilo ali como a gente.
+
+1963
+01:50:09.140 --> 01:50:10.640
+Por exemplo, a gente trabalha com pdf.
+
+1964
+01:50:11.180 --> 01:50:13.200
+Os negócios mais difíceis de prever é como que um
+
+1965
+01:50:13.200 --> 01:50:14.400
+programa vai gerar um pdf.
+
+1966
+01:50:14.440 --> 01:50:17.570
+A gente tem que fazer pasta que ingerir o que está lá dentro
+
+1967
+01:50:18.290 --> 01:50:19.290
+e existem certos casos.
+
+1968
+01:50:19.290 --> 01:50:21.570
+Por exemplo, post script é uma falha de segurança enorme,
+
+1969
+01:50:21.830 --> 01:50:24.090
+dá suporte PostScript porque
+
+1970
+01:50:25.110 --> 01:50:27.010
+é uma linguagem de programação completa,
+
+1971
+01:50:27.010 --> 01:50:29.930
+então a você teria que prever todos os possíveis ataques que
+
+1972
+01:50:29.930 --> 01:50:32.730
+vão acontecer lá dentro sim,
+
+1973
+01:50:33.360 --> 01:50:36.420
+então a gente tem testes que justamente esse arquivo que tem
+
+1974
+01:50:36.420 --> 01:50:37.500
+por script, vamos testar e
+
+1975
+01:50:37.500 --> 01:50:38.620
+garantir que o sistema está falhando.
+
+1976
+01:50:39.480 --> 01:50:42.910
+Eu não sei se isso já foi comentado, mas é só o ponto de que
+
+1977
+01:50:43.710 --> 01:50:45.710
+pelo menos aqui no meu trabalho.
+
+1978
+01:50:46.290 --> 01:50:48.470
+É muito importante que a gente tenha certeza que
+
+1979
+01:50:48.470 --> 01:50:49.630
+certos casos estão falhando
+
+1980
+01:50:50.750 --> 01:50:51.750
+Sim.
+
+1981
+01:50:52.060 --> 01:50:53.760
+É de contexto para contexto tarcísio.
+
+1982
+01:50:53.760 --> 01:50:55.440
+Nesse caso, a gente está olhando o caminho,
+
+1983
+01:50:57.240 --> 01:50:59.360
+o cenário feliz do caminho mais complexo,
+
+1984
+01:51:00.100 --> 01:51:03.680
+mas pode ser que no teu caso validar um cenário de falha,
+
+1985
+01:51:03.680 --> 01:51:06.360
+talvez seja muito mais importante justamente pelo
+
+1986
+01:51:06.640 --> 01:51:07.800
+critério da falha em si.
+
+1987
+01:51:08.260 --> 01:51:11.720
+Talvez, uma falha gere muito mais prejuízo do que o valor
+
+1988
+01:51:11.720 --> 01:51:12.880
+que uma outra funcionalidade.
+
+1989
+01:51:12.900 --> 01:51:14.240
+Talvez gere então,
+
+1990
+01:51:14.250 --> 01:51:17.320
+nesse caso seria muito interessante muito mais interessante
+
+1991
+01:51:18.640 --> 01:51:21.760
+testar que o sistema não está aceitando uma série daí eu não
+
+1992
+01:51:21.760 --> 01:51:23.320
+sei qual que é o contexto, mas uma série
+
+1993
+01:51:23.320 --> 01:51:24.360
+de parâmetros, ou enfim
+
+1994
+01:51:25.020 --> 01:51:29.400
+Sim toda a saída do programa que eu mantenho
+
+1995
+01:51:30.020 --> 01:51:31.880
+vai para máquinas que trabalham automatizadas.
+
+1996
+01:51:31.880 --> 01:51:34.120
+Então se sair alguma coisa errada também sim,
+
+1997
+01:51:34.140 --> 01:51:35.440
+as máquinas são automatizadas,
+
+1998
+01:51:35.440 --> 01:51:36.760
+elas vão começar a fazer errado,
+
+1999
+01:51:37.700 --> 01:51:40.440
+Então A gente tem vários testes em vários casos,
+
+2000
+01:51:40.440 --> 01:51:43.200
+sim esse caso não pode passar então tanto que o sistema tem
+
+2001
+01:51:44.040 --> 01:51:46.400
+a métrica dele, não é fazer tudo que ele recebe.
+
+2002
+01:51:46.940 --> 01:51:48.200
+É fazer pelo menos
+
+2003
+01:51:48.800 --> 01:51:51.040
+cent do que ele recebe a gente está sempre.
+
+2004
+01:51:51.440 --> 01:51:52.640
+O cliente novo chegou está
+
+2005
+01:51:52.720 --> 01:51:53.920
+mandando arquivo em um formato novo.
+
+2006
+01:51:53.960 --> 01:51:56.880
+A gente não consegue processar beleza,
+
+2007
+01:51:56.880 --> 01:51:59.840
+vamos tentar arrumar o objetivo é ficar acima de cent,
+
+2008
+01:52:00.190 --> 01:52:02.480
+daquilo que o sistema recebe conseguiu processar
+
+2009
+01:52:03.160 --> 01:52:04.580
+por causa dessa questão.
+
+2010
+01:52:06.300 --> 01:52:07.940
+Além dessa questão de segurança do PostScript,
+
+2011
+01:52:08.920 --> 01:52:11.980
+certos componentes que fizeram parte da imagem pode estar
+
+2012
+01:52:11.980 --> 01:52:14.540
+com divertida porque a adobe resolveu fazer daquele jeito
+
+2013
+01:52:15.260 --> 01:52:18.540
+e quando você vai ver já foi impresso 1000 unidades gastou
+
+2014
+01:52:18.540 --> 01:52:22.490
+papel, gastou tinta e aí pegou então
+
+2015
+01:52:23.130 --> 01:52:26.290
+a gente testa não muito mais falha, mas tipo.
+
+2016
+01:52:26.290 --> 01:52:28.370
+Assim todo caso que tem que falhar tem um teste para ele
+
+2017
+01:52:29.140 --> 01:52:32.160
+Sim porque o fato de ele não falhar.
+
+2018
+01:52:32.160 --> 01:52:36.110
+Ele gera prejuízo maravilha
+
+2019
+01:52:38.880 --> 01:52:40.520
+show de bola muito bom, tu tem uns
+
+2020
+01:52:40.760 --> 01:52:42.480
+casos de uso muito interessante. Tarcísio
+
+2021
+01:52:42.980 --> 01:52:45.280
+Eu pego um projeto que ninguém mais quer trabalhar ainda.
+
+2022
+01:52:46.900 --> 01:52:48.960
+Eu acho que esse tipo de projeto é o melhor que tu ganha
+
+2023
+01:52:49.160 --> 01:52:52.510
+bastante ninguém quer fazer e tu cobra o preço que tu quiser
+
+2024
+01:52:53.570 --> 01:52:56.270
+É mais ou menos por aí invertido ta ele
+
+2025
+01:52:56.770 --> 01:53:00.580
+Na teoria é simples não boa, quantas pessoas
+
+2026
+01:53:00.700 --> 01:53:02.900
+Você conhece que abre um pdf pelo código fonte
+
+2027
+01:53:02.900 --> 01:53:04.060
+ao invés de leitoa
+
+2028
+01:53:04.880 --> 01:53:09.580
+Poucas na verdade, eu conheço só uma até agora
+
+2029
+01:53:13.370 --> 01:53:15.030
+Muitos fracos e na tv muito bom
+
+2030
+01:53:16.390 --> 01:53:17.870
+e aí pessoal para a gente finalizar.
+
+2031
+01:53:17.870 --> 01:53:20.830
+Então, o nosso exemplo a gente só precisa agora validar que,
+
+2032
+01:53:20.830 --> 01:53:23.430
+de fato, eu copiei o código aqui do meu exemplo
+
+2033
+01:53:24.010 --> 01:53:26.910
+que a gente pelo menos está interagindo com aquela
+
+2034
+01:53:26.910 --> 01:53:30.110
+abstração, que é utilizada pela nossa aplicação para se
+
+2035
+01:53:30.110 --> 01:53:33.510
+comunicar com o hub kill
+
+2036
+01:53:34.760 --> 01:53:35.860
+no meu caso aqui pessoal,
+
+2037
+01:53:35.860 --> 01:53:38.860
+lembram que eu criei um alerta de orçamento que
+
+2038
+01:53:39.900 --> 01:53:43.780
+caso ele passe de R$ 100 e ele deveria enviar
+
+2039
+01:53:45.080 --> 01:53:48.220
+uma mensagem para o hub timekill nesse caso,
+
+2040
+01:53:48.220 --> 01:53:50.700
+aqui como eu estou fazendo uma transação de R$ 150.
+
+2041
+01:53:50.760 --> 01:53:52.620
+Eu espero que no final
+
+2042
+01:53:54.060 --> 01:53:56.780
+o shannel mark tenha recebido uma chamada
+
+2043
+01:53:57.660 --> 01:54:00.340
+para o método basic publish a sink
+
+2044
+01:54:01.100 --> 01:54:04.660
+e aqui eu estou basicamente ignorando alguns parâmetros que
+
+2045
+01:54:04.660 --> 01:54:08.780
+não são tão relevantes para mim nessa parte do teste,
+
+2046
+01:54:09.320 --> 01:54:12.460
+se a gente olhar essa assinatura do basic publish aqui,
+
+2047
+01:54:12.780 --> 01:54:15.100
+vocês vão perceber que ele tem uma série de propriedades
+
+2048
+01:54:15.880 --> 01:54:18.060
+que propriedades que vão ser enviadas que
+
+2049
+01:54:19.240 --> 01:54:23.700
+estão sendo abstraídas lá dentro do nosso serviço de fila.
+
+2050
+01:54:24.440 --> 01:54:28.180
+Só que para mim tem uma propriedade que é muito interessante
+
+2051
+01:54:28.180 --> 01:54:31.780
+que eu preciso validar que é esse cara aqui que é o nome da
+
+2052
+01:54:31.940 --> 01:54:33.380
+fila, no qual ele está publicando
+
+2053
+01:54:35.770 --> 01:54:36.850
+a minha mensagem deixa eu ir lá.
+
+2054
+01:54:36.850 --> 01:54:37.690
+No kill service
+
+2055
+01:54:42.930 --> 01:54:44.410
+Esse cara deixa eu ver
+
+2056
+01:54:51.550 --> 01:54:54.080
+Aqui então toda vez que eu tiver pessoal
+
+2057
+01:54:54.700 --> 01:54:57.320
+um evento dentro da entidade de domínio
+
+2058
+01:54:57.980 --> 01:55:00.160
+no qual o tipo seja esse cara aqui
+
+2059
+01:55:00.940 --> 01:55:02.640
+budget alert do main vent.
+
+2060
+01:55:03.300 --> 01:55:05.520
+Eu quero que ele publique para essa fila.
+
+2061
+01:55:05.520 --> 01:55:09.000
+Aqui então para mim é importante validar que
+
+2062
+01:55:10.000 --> 01:55:13.120
+está acontecendo uma publicação nessa fila.
+
+2063
+01:55:13.120 --> 01:55:16.880
+Aqui os outros parâmetros aqui não são tão relevantes para
+
+2064
+01:55:16.880 --> 01:55:18.480
+mim, a forma como ele está mandando
+
+2065
+01:55:19.100 --> 01:55:22.000
+os bytes como ele está mandando esses basic properties para
+
+2066
+01:55:22.000 --> 01:55:25.240
+mim não interessa não é tão relevante quanto o
+
+2067
+01:55:25.360 --> 01:55:28.840
+nome da fila.
+
+2068
+01:55:28.840 --> 01:55:32.200
+Aqui bem parecido com a linha que o tarcísio trouxe ali
+
+2069
+01:55:32.860 --> 01:55:35.720
+no caso dele, é importante saber que o sistema não está se
+
+2070
+01:55:35.720 --> 01:55:38.280
+comportando de forma inválida quando ele tem algum tipo de
+
+2071
+01:55:38.280 --> 01:55:41.240
+problema no meu caso aqui eu quero só garantir que
+
+2072
+01:55:41.790 --> 01:55:45.560
+dada essa configuração a que ele vai emitir de fato
+
+2073
+01:55:45.580 --> 01:55:46.760
+uma mensagem para a fila.
+
+2074
+01:55:47.700 --> 01:55:50.040
+Se eu botar rodar o teste aqui e der tudo certo,
+
+2075
+01:55:50.100 --> 01:55:52.800
+ele vai passar da mesma forma como ele estava passando
+
+2076
+01:55:53.480 --> 01:55:54.800
+e com isso aqui pessoal.
+
+2077
+01:55:54.820 --> 01:55:58.600
+Eu consegui validar tudo que eu tinha proposto para validar
+
+2078
+01:55:58.620 --> 01:56:02.720
+no meu teste, qual que é a operação resultante de uma
+
+2079
+01:56:02.880 --> 01:56:06.520
+transação dentro da minha api nesse endpoint, x y z
+
+2080
+01:56:07.060 --> 01:56:10.120
+é que eu crio uma transação no banco de dados e
+
+2081
+01:56:12.080 --> 01:56:16.960
+caso essa transação ultrapasse o meu alerta de orçamento que
+
+2082
+01:56:18.160 --> 01:56:22.120
+seja enviada uma notificação para o hub mq só que no meu
+
+2083
+01:56:22.240 --> 01:56:25.280
+caso como eu estou usando o mo e não o hub mq.
+
+2084
+01:56:25.340 --> 01:56:27.400
+Eu estou validando que de fato, eu tive
+
+2085
+01:56:28.120 --> 01:56:31.240
+pelo menos uma chamada para o método basic publish.
+
+2086
+01:56:31.290 --> 01:56:34.280
+Assim que para essa fila aqui passando essa tela, aqui
+
+2087
+01:56:35.180 --> 01:56:38.040
+se eventualmente, vocês quiserem praticar mais isso
+
+2088
+01:56:39.820 --> 01:56:43.880
+na máquina de vocês, vocês podem eventualmente trocar esse
+
+2089
+01:56:44.060 --> 01:56:47.160
+moq por um container do hub time,
+
+2090
+01:56:47.920 --> 01:56:49.440
+e aí vocês poderiam fazer o seguinte
+
+2091
+01:56:50.470 --> 01:56:51.720
+aqui ao invés de validar.
+
+2092
+01:56:51.720 --> 01:56:54.960
+Dessa forma, vocês poderiam consumir dessa fila criar um
+
+2093
+01:56:54.960 --> 01:56:57.840
+consumidor aqui no teste para depois de
+
+2094
+01:56:58.560 --> 01:57:01.080
+ter já finalizado toda a operação.
+
+2095
+01:57:02.370 --> 01:57:05.690
+Vocês consumir essa informação do hub timekill que aí vocês
+
+2096
+01:57:05.690 --> 01:57:07.850
+estão ultrapassando aquela fronteira que eu comentei.
+
+2097
+01:57:08.090 --> 01:57:09.410
+Vocês estão testando que, de fato,
+
+2098
+01:57:10.010 --> 01:57:13.730
+vocês tiveram até uma conexão e uma interação bem-sucedida
+
+2099
+01:57:13.750 --> 01:57:18.100
+com o hub timekill e aí fecha todas eu não quis trazer
+
+2100
+01:57:18.100 --> 01:57:20.380
+porque senão a gente não ia ver nenhum exemplo de como
+
+2101
+01:57:21.100 --> 01:57:24.100
+utilizar um mo porque não é em todos os casos que a gente
+
+2102
+01:57:24.100 --> 01:57:26.740
+sempre vai utilizar alguma coisa dentro do docker,
+
+2103
+01:57:27.160 --> 01:57:31.180
+tem casos que é muito mais rápido e o ganho que a gente tem.
+
+2104
+01:57:31.890 --> 01:57:34.940
+Não é muito grande quando vai dependendo do caso.
+
+2105
+01:57:35.160 --> 01:57:38.460
+Se a gente optar ou pelo docker ou pelo mo,
+
+2106
+01:57:39.300 --> 01:57:43.180
+pode ser que a diferença não seja tão gritante.
+
+2107
+01:57:43.200 --> 01:57:45.700
+Então é mais simples utilizar o moq.
+
+2108
+01:57:45.700 --> 01:57:49.060
+Nesses casos, aí só que utilizando o docker a gente consegue
+
+2109
+01:57:49.260 --> 01:57:52.300
+testar conexão tudo certinho como se de fato a gente
+
+2110
+01:57:52.300 --> 01:57:56.660
+estivesse interagindo com aquela fila real que
+
+2111
+01:57:57.400 --> 01:58:00.060
+no final do dia a gente está utilizando a gente está
+
+2112
+01:58:00.370 --> 01:58:04.700
+interagindo com o hub real, só que não o hub eventualmente,
+
+2113
+01:58:04.910 --> 01:58:08.660
+produção que aí não faria nem sentido a gente pensar em algo
+
+2114
+01:58:08.670 --> 01:58:12.670
+desse tipo e com isso pessoal.
+
+2115
+01:58:12.670 --> 01:58:15.270
+Basicamente, então a gente finalizou o nosso exemplo.
+
+2116
+01:58:15.270 --> 01:58:18.710
+Aqui então recapitulando a gente mapeou
+
+2117
+01:58:19.370 --> 01:58:21.270
+as nossas dependências categorizou.
+
+2118
+01:58:21.300 --> 01:58:23.630
+Elas entre gerenciadas não gerenciadas,
+
+2119
+01:58:24.350 --> 01:58:27.430
+utilizou o contêiner para as gerenciadas e para
+
+2120
+01:58:27.430 --> 01:58:30.950
+as não gerenciadas, onde a gente pode utilizar e
+
+2121
+01:58:30.970 --> 01:58:32.070
+for fácil e simples de
+
+2122
+01:58:32.070 --> 01:58:33.470
+implementar, também a gente pode utilizar.
+
+2123
+01:58:33.470 --> 01:58:34.470
+Não é problema nenhum.
+
+2124
+01:58:35.150 --> 01:58:38.110
+O problema é, por exemplo, a querer locar o banco de dados
+
+2125
+01:58:38.690 --> 01:58:40.590
+eu vejo isso como um problema.
+
+2126
+01:58:41.000 --> 01:58:43.840
+Sabe. O meu teste de integração começa a perder
+
+2127
+01:58:43.860 --> 01:58:45.000
+um pouco de relevância.
+
+2128
+01:58:45.000 --> 01:58:49.240
+Aqui fica um pouco mais difícil e até porque para mim mocal
+
+2129
+01:58:49.920 --> 01:58:52.640
+toda a implementação que eu estou utilizando do ch framework
+
+2130
+01:58:52.780 --> 01:58:54.680
+que daria muito trabalho.
+
+2131
+01:58:55.100 --> 01:58:58.360
+Eu teria que provavelmente abstrair o meu ente framework
+
+2132
+01:58:58.360 --> 01:59:00.480
+através de um padrão de repositor
+
+2133
+01:59:01.080 --> 01:59:04.360
+para daí conseguir eventualmente substituir as interfaces,
+
+2134
+01:59:05.220 --> 01:59:09.520
+mas mesmo assim pessoal, vocês perceberam que claro a gente
+
+2135
+01:59:09.520 --> 01:59:10.640
+for no passo a passo aqui,
+
+2136
+01:59:10.640 --> 01:59:13.320
+talvez isso seja novidade para muitos de vocês,
+
+2137
+01:59:13.820 --> 01:59:16.240
+mas a partir do momento que eu tenho isso pronto para eu
+
+2138
+01:59:16.240 --> 01:59:18.680
+replicar isso é muito fácil muito simples,
+
+2139
+01:59:18.700 --> 01:59:21.520
+então o custo é grande no início, mas depois
+
+2140
+01:59:23.760 --> 01:59:27.320
+o tempo e o esforço e o investimento que a gente tem em
+
+2141
+01:59:27.320 --> 01:59:29.960
+fazer isso funcionar para outros casos, ele não é tão grande
+
+2142
+01:59:30.680 --> 01:59:31.440
+como no primeiro caso
+
+2143
+01:59:36.530 --> 01:59:41.050
+e aí pessoal deixa eu ser sharp jeito certo
+
+2144
+01:59:43.400 --> 01:59:44.650
+ehub exime
+
+2145
+01:59:50.780 --> 01:59:51.660
+Pode falar, dão
+
+2146
+01:59:55.160 --> 01:59:58.800
+Queria s coisa que você já utilizou esse
+
+2147
+01:59:59.540 --> 02:00:04.080
+web pro edition piter para o bolsa de service ou
+
+2148
+02:00:04.630 --> 02:00:08.080
+jobs que o back funciona do mesmo jeito. Então
+
+2149
+02:00:08.930 --> 02:00:12.280
+Exatamente aí tu só vai ter que ter uma forma de conseguir
+
+2150
+02:00:12.310 --> 02:00:15.560
+validar que o teu background.
+
+2151
+02:00:15.560 --> 02:00:17.400
+Service executou pelo menos uma vez,
+
+2152
+02:00:17.880 --> 02:00:21.760
+e aí o que tu pode fazer se o teu background service faz
+
+2153
+02:00:21.850 --> 02:00:24.800
+algum insertion na base de dados, tu pode no teu teste
+
+2154
+02:00:25.570 --> 02:00:28.520
+criar ali uma rotina bem simples de aguardar
+
+2155
+02:00:29.030 --> 02:00:30.080
+até um certo tempo.
+
+2156
+02:00:30.080 --> 02:00:31.360
+Tan tu não vai aguardar para sempre.
+
+2157
+02:00:31.860 --> 02:00:34.920
+Tu vai aguardar até que ou o evento seja inserido
+
+2158
+02:00:35.060 --> 02:00:36.160
+ou um time out.
+
+2159
+02:00:36.300 --> 02:00:38.720
+Ali, um número de re tentativas ela ultrapassou
+
+2160
+02:00:40.000 --> 02:00:42.040
+a gente faz muito oi,
+
+2161
+02:00:42.650 --> 02:00:45.920
+Legal legal, Vocês lembram do
+
+2162
+02:00:47.190 --> 02:00:48.950
+workflow core que foi exibido para vocês.
+
+2163
+02:00:48.950 --> 02:00:52.190
+Eu acho que na aula de acho que era aula de
+
+2164
+02:00:53.150 --> 02:00:54.520
+programação assíncrona.
+
+2165
+02:00:54.520 --> 02:00:58.480
+Acho que era tem um cenário no qual a gente trabalhou no
+
+2166
+02:00:58.480 --> 02:00:59.840
+cliente que a gente espera.
+
+2167
+02:01:01.650 --> 02:01:03.970
+Esse workflow terminar de executar e aí,
+
+2168
+02:01:04.090 --> 02:01:07.810
+como é que a gente faz isso utilizando o próprio db context
+
+2169
+02:01:07.950 --> 02:01:09.530
+da aplicação ou via sql.
+
+2170
+02:01:09.530 --> 02:01:12.170
+Mesmo anual a gente fica esperando
+
+2171
+02:01:12.970 --> 02:01:14.290
+o status daquele workflow,
+
+2172
+02:01:14.400 --> 02:01:17.370
+finalizar trocar para finalizado ali ou completed
+
+2173
+02:01:18.270 --> 02:01:22.250
+ou até 30 s, então até 30 s.
+
+2174
+02:01:22.290 --> 02:01:24.410
+A execução não terminou, quer dizer que é alguma coisa deu
+
+2175
+02:01:24.810 --> 02:01:26.010
+erro, eu eu vou falhar o meu teste,
+
+2176
+02:01:27.000 --> 02:01:28.260
+mas senão a gente espera ali.
+
+2177
+02:01:28.260 --> 02:01:31.740
+Depois de dois 3 s termino a execução do workflow e aí eu
+
+2178
+02:01:31.740 --> 02:01:34.700
+começo a fazer os acertos porque eu tenho certeza que todas
+
+2179
+02:01:34.720 --> 02:01:36.140
+as etapas desse workflow,
+
+2180
+02:01:36.140 --> 02:01:39.680
+que é um teste assíncrono que ele começa a rodar depois
+
+2181
+02:01:40.710 --> 02:01:44.990
+não necessariamente que a minha requisição finalizou.
+
+2182
+02:01:45.450 --> 02:01:47.790
+Mas ele vai começar a rodar ali em algum instante
+
+2183
+02:01:48.570 --> 02:01:49.630
+que a gente vai esperar.
+
+2184
+02:01:49.830 --> 02:01:52.750
+Esse processo que roda de forma síncrona acabar para depois
+
+2185
+02:01:52.750 --> 02:01:54.150
+começar a fazer os assers,
+
+2186
+02:01:55.010 --> 02:01:57.230
+que foram gerados por esse workflow.
+
+2187
+02:01:57.630 --> 02:02:00.550
+Seja eles chamadas para api publicações para
+
+2188
+02:02:00.790 --> 02:02:02.470
+fila insert no banco.
+
+2189
+02:02:02.870 --> 02:02:05.230
+E aí dá para fazer esse tipo de validação, dá para tu
+
+2190
+02:02:06.320 --> 02:02:08.310
+ficar aguardando o teu teste chegar
+
+2191
+02:02:09.330 --> 02:02:10.790
+no estado que tu precisa que ele
+
+2192
+02:02:10.790 --> 02:02:12.190
+chegue para começar as validações
+
+2193
+02:02:16.020 --> 02:02:19.810
+Legal só para compartilhar aqui a gente utiliza o play
+
+2194
+02:02:19.860 --> 02:02:21.930
+right para esses testes de integração.
+
+2195
+02:02:22.670 --> 02:02:25.530
+Mas dá muito problema da
+
+2196
+02:02:27.110 --> 02:02:31.930
+é porque na verdade, a sendo ele é script na verdade
+
+2197
+02:02:33.530 --> 02:02:34.930
+a forma que a gente utiliza aqui.
+
+2198
+02:02:35.710 --> 02:02:38.690
+Mas o membro do time sugeriu esses dias para a gente,
+
+2199
+02:02:38.690 --> 02:02:42.730
+trocar porque realmente a gente acaba integrando com os
+
+2200
+02:02:42.730 --> 02:02:45.290
+componentes reais outros micro serviços
+
+2201
+02:02:45.810 --> 02:02:46.890
+e aí quebra toda hora.
+
+2202
+02:02:46.890 --> 02:02:48.050
+Então, por exemplo,
+
+2203
+02:02:48.270 --> 02:02:50.450
+semana passada a gente ficou um tempão brigando com
+
+2204
+02:02:50.450 --> 02:02:54.730
+autenticação porque mudaram uma parte da infra e aí não
+
+2205
+02:02:54.730 --> 02:02:57.930
+estava nada funcionando, então poder
+
+2206
+02:02:59.620 --> 02:03:02.930
+configurar a autenticação dessa forma que você mostrou aí
+
+2207
+02:03:03.440 --> 02:03:06.450
+até mesmo, porque a gente tem diferentes roles que cada
+
+2208
+02:03:06.570 --> 02:03:08.610
+usuário pode fazer alguma coisa específica.
+
+2209
+02:03:08.840 --> 02:03:11.130
+Acho que seria muito mais fácil de testar dessa forma,
+
+2210
+02:03:12.030 --> 02:03:13.210
+então é bem interessante,
+
+2211
+02:03:13.240 --> 02:03:15.130
+acho que a gente vai acabar trocando mesmo
+
+2212
+02:03:16.770 --> 02:03:19.070
+Boa abraço, luiz até mais
+
+2213
+02:03:24.230 --> 02:03:24.930
+no meu teste.
+
+2214
+02:03:24.990 --> 02:03:28.930
+Ali ele ficaria muito mais trabalhoso se eu precisasse
+
+2215
+02:03:29.130 --> 02:03:31.490
+eventualmente autenticar porque aí eu teria que fazer login
+
+2216
+02:03:31.570 --> 02:03:33.810
+e teria que pegar o token e botar na requisição
+
+2217
+02:03:34.930 --> 02:03:37.730
+como o intuito do meu teste é testar o fluxo de transação
+
+2218
+02:03:38.720 --> 02:03:41.090
+aqui não é um problema não um bypass na autenticação,
+
+2219
+02:03:42.330 --> 02:03:45.010
+o que eu faria aqui se fosse relevante para mim.
+
+2220
+02:03:45.010 --> 02:03:47.690
+Eu criaria um teste só para autenticação.
+
+2221
+02:03:48.190 --> 02:03:51.570
+Eu faria o cid do usuário no banco de dados criaria ele lá e
+
+2222
+02:03:51.570 --> 02:03:53.290
+depois tentaria fazer autenticação com ele.
+
+2223
+02:03:54.330 --> 02:03:58.530
+Tentaria fazer a etapa de refresh token para obter um token
+
+2224
+02:03:58.730 --> 02:04:01.930
+novo no teu caso talvez seria interessante testar os role
+
+2225
+02:04:02.130 --> 02:04:05.490
+também o meu caso aqui ele só tem autenticação no teu tem
+
+2226
+02:04:05.490 --> 02:04:07.610
+autenticação e autorização é isso
+
+2227
+02:04:07.790 --> 02:04:08.890
+No nosso caso, na verdade,
+
+2228
+02:04:09.450 --> 02:04:11.770
+a autenticação nem acaba sendo importante.
+
+2229
+02:04:11.970 --> 02:04:13.650
+A gente só se preocupa com autorização,
+
+2230
+02:04:13.790 --> 02:04:15.570
+mas a gente perde um tempão,
+
+2231
+02:04:15.760 --> 02:04:19.050
+fazendo autenticação e é um serviço que é outro time que
+
+2232
+02:04:19.050 --> 02:04:20.770
+cuida, então não teria porque a gente
+
+2233
+02:04:21.310 --> 02:04:22.450
+gastar o tempo com isso.
+
+2234
+02:04:23.020 --> 02:04:24.400
+Então é bem interessante.
+
+2235
+02:04:25.700 --> 02:04:28.080
+Parece ser bem flexível e
+
+2236
+02:04:28.890 --> 02:04:32.200
+muito mais consistente do que o método que a gente usa hoje
+
+2237
+02:04:33.790 --> 02:04:34.790
+Aqui dentro. Eu tenho a liberdade
+
+2238
+02:04:34.790 --> 02:04:36.520
+para fazer qualquer coisa que eu queira
+
+2239
+02:04:36.520 --> 02:04:38.800
+fazer com com qualquer dependência da minha aplicação.
+
+2240
+02:04:39.430 --> 02:04:40.810
+Então aqui eu posso fazer
+
+2241
+02:04:41.970 --> 02:04:46.720
+o limite que é a minha criatividade, mesmo só que também
+
+2242
+02:04:47.460 --> 02:04:48.680
+é uma faca de dois gumes.
+
+2243
+02:04:48.680 --> 02:04:50.960
+Eu tenho muita facilidade, mas aqui eu posso mocar qualquer
+
+2244
+02:04:50.960 --> 02:04:53.000
+coisa quando ver, eu estou tocando muita coisa no meu teste
+
+2245
+02:04:53.000 --> 02:04:56.360
+de integração, e ele não está sendo efetivo o suficiente aí.
+
+2246
+02:04:56.360 --> 02:04:59.760
+Eu tenho meio que um teste de unidade revestido de um teste
+
+2247
+02:04:59.760 --> 02:05:03.680
+de integração, ele só tem integração no nome no final, ele
+
+2248
+02:05:04.850 --> 02:05:07.540
+não está testando nada além da unidade, mesmo
+
+2249
+02:05:11.900 --> 02:05:12.860
+mais alguma dúvida pessoal
+
+2250
+02:05:21.070 --> 02:05:22.690
+só para a gente finalizar a aula de hoje.
+
+2251
+02:05:24.070 --> 02:05:26.730
+Eu acho que foi o guilherme que perguntou na aula passada.
+
+2252
+02:05:26.790 --> 02:05:29.370
+Ele teve um caso bem interessante que eu não quis responder
+
+2253
+02:05:29.370 --> 02:05:31.410
+no grupo justamente para a gente tratar aqui na aula.
+
+2254
+02:05:32.860 --> 02:05:36.680
+Só vou comentar por cima pessoal que o caso dele ele estava
+
+2255
+02:05:36.680 --> 02:05:40.000
+consumindo uma api que retornava um json, e aí
+
+2256
+02:05:41.230 --> 02:05:43.680
+ocorreu alguma coisa nessa api, que começou
+
+2257
+02:05:45.000 --> 02:05:48.280
+a alterar o contrato da api, e aí começou a quebrar
+
+2258
+02:05:49.560 --> 02:05:52.560
+a integração aqui, a integração não é o teste é a integração
+
+2259
+02:05:52.570 --> 02:05:56.440
+mesmo do serviço e aí ele pediu qual é a melhor
+
+2260
+02:05:56.550 --> 02:05:57.880
+abordagem nesse cenário.
+
+2261
+02:05:57.940 --> 02:06:01.760
+Se é teste de integração como é que ele valida e tudo mais
+
+2262
+02:06:02.930 --> 02:06:05.680
+nesse tipo de cenário pessoal não tem muito o que a gente
+
+2263
+02:06:05.680 --> 02:06:08.720
+fazer a gente pode eventualmente fazer teste de contrato
+
+2264
+02:06:09.440 --> 02:06:11.720
+para garantir que a gente está aderindo a um contrato
+
+2265
+02:06:11.720 --> 02:06:13.840
+específico no consumo de uma api.
+
+2266
+02:06:15.100 --> 02:06:18.630
+Mas vocês concordam comigo que se eu tenho um serviço
+
+2267
+02:06:18.740 --> 02:06:22.350
+rodando e consome uma api, e essa api muda de contrato.
+
+2268
+02:06:23.300 --> 02:06:26.670
+Não vai dar nem tempo de o teste de integração rodar antes
+
+2269
+02:06:26.670 --> 02:06:29.510
+de a minha aplicação quebrar ou seja,
+
+2270
+02:06:30.430 --> 02:06:33.110
+o correto mesmo aqui pessoal seria essa api,
+
+2271
+02:06:33.290 --> 02:06:38.280
+ela versionar o endpoint se a gente tem uma api que está
+
+2272
+02:06:38.280 --> 02:06:41.520
+sendo exposta de forma pública e a gente altera o contrato.
+
+2273
+02:06:42.440 --> 02:06:44.440
+A gente está quebrando todo o consumo de
+
+2274
+02:06:44.440 --> 02:06:45.560
+todos os consumidores.
+
+2275
+02:06:46.260 --> 02:06:49.800
+Ou seja, eu tinha um enum que tinha três opções e eu excluí
+
+2276
+02:06:49.860 --> 02:06:52.400
+uma das opções ou eu incluí uma opção nova
+
+2277
+02:06:53.050 --> 02:06:56.800
+exclu não é problema, mas adicionar é problema toda vez que
+
+2278
+02:06:57.900 --> 02:07:00.280
+eu retornar esse valor novo no meta um.
+
+2279
+02:07:01.080 --> 02:07:03.280
+O cliente dependendo de como ele está descer
+
+2280
+02:07:03.800 --> 02:07:06.120
+essa informação ele não vai conseguir serializar.
+
+2281
+02:07:06.260 --> 02:07:08.000
+Ele vai começar a quebrar a integração
+
+2282
+02:07:08.880 --> 02:07:10.280
+e o teste de contrato.
+
+2283
+02:07:10.340 --> 02:07:11.720
+Ele não consegue validar isso,
+
+2284
+02:07:11.720 --> 02:07:13.200
+ele vai testar o contrato em si.
+
+2285
+02:07:13.200 --> 02:07:15.720
+Ele não vai testar comunicação com essa api,
+
+2286
+02:07:16.540 --> 02:07:19.960
+então nesse caso não tem muito o que a gente fazer pessoal a
+
+2287
+02:07:19.960 --> 02:07:22.360
+questão aqui que a gente pode fazer é ter monitoramento de
+
+2288
+02:07:22.520 --> 02:07:24.440
+ambiente para ver taxa de falha e tudo mais
+
+2289
+02:07:25.180 --> 02:07:27.800
+só que se a gente está consumindo uma api externa,
+
+2290
+02:07:28.120 --> 02:07:30.800
+e essa api for quebrar o contrato,
+
+2291
+02:07:31.300 --> 02:07:34.480
+ela obrigatoriamente deveria versionar
+
+2292
+02:07:35.830 --> 02:07:39.880
+deveria ter que existir um sla uma concordância porque cara
+
+2293
+02:07:40.680 --> 02:07:43.360
+isso vale até como lição de casa para a gente.
+
+2294
+02:07:43.580 --> 02:07:46.080
+Se a gente está projetando uma api que ela vai ser
+
+2295
+02:07:46.510 --> 02:07:50.120
+consumida, ela vai ser usada por consumidores externos.
+
+2296
+02:07:50.880 --> 02:07:53.720
+A gente não pode em nenhum momento quebrar aquele contrato.
+
+2297
+02:07:55.300 --> 02:07:58.580
+A gente pode eventualmente incluir um campo novo que não vai
+
+2298
+02:07:58.580 --> 02:08:01.700
+quebrar a serialização, mas é sempre bom versionar.
+
+2299
+02:08:02.080 --> 02:08:05.380
+Eu tenho a v um eu eu vou quebrar o contrato faz a v do e
+
+2300
+02:08:05.380 --> 02:08:07.820
+deixa a v um funcionando da forma como está funcionando
+
+2301
+02:08:08.720 --> 02:08:11.500
+aí com o tempo, tu pode adotar uma política de
+
+2302
+02:08:13.300 --> 02:08:16.980
+descontinuar apis versões mais antigas
+
+2303
+02:08:17.360 --> 02:08:18.380
+que aí tu forças.
+
+2304
+02:08:18.400 --> 02:08:21.220
+As pessoas a mudarem para a versão nova, mas
+
+2305
+02:08:22.120 --> 02:08:23.580
+aí é uma mudança deliberada.
+
+2306
+02:08:23.760 --> 02:08:25.340
+Tu não está forçando o cara a mudar,
+
+2307
+02:08:25.340 --> 02:08:26.700
+quebrando o que ele já está usando.
+
+2308
+02:08:27.570 --> 02:08:30.070
+Ele vai ter ali o tempo seis meses,
+
+2309
+02:08:30.090 --> 02:08:34.750
+um ano para ir se adequando à nova versão, e aí fica já como
+
+2310
+02:08:36.010 --> 02:08:39.310
+uma dica aqui também para nós o tarcísio pediu se.
+
+2311
+02:08:39.310 --> 02:08:41.990
+A gente já viu como a stripe faz versionamento de api
+
+2312
+02:08:42.820 --> 02:08:44.510
+não vi, tarcísio
+
+2313
+02:08:45.250 --> 02:08:47.830
+É legal, eles não têm api na url,
+
+2314
+02:08:48.100 --> 02:08:49.430
+não tem a versão nada disso.
+
+2315
+02:08:50.380 --> 02:08:52.670
+Eles fazem o ning da versão
+
+2316
+02:08:52.730 --> 02:08:54.110
+na primeira vez que você usa o api.
+
+2317
+02:08:54.110 --> 02:08:56.590
+Quando você usa aquela api, você usa a cada api para sempre,
+
+2318
+02:08:57.190 --> 02:09:00.230
+a menos que você vá no painel deles e troque cópia,
+
+2319
+02:09:00.310 --> 02:09:01.990
+e qual a versão de ipi que você quer usar?
+
+2320
+02:09:02.410 --> 02:09:05.110
+Então nenhuma atualização deles quebra a tua aplicação.
+
+2321
+02:09:08.250 --> 02:09:09.790
+Quando você vai lá e muda na mão.
+
+2322
+02:09:09.950 --> 02:09:12.030
+Você está ciente que você tem que adaptar
+
+2323
+02:09:12.970 --> 02:09:13.970
+É algo deliberado.
+
+2324
+02:09:14.170 --> 02:09:16.230
+Tu está querendo. Provavelmente,
+
+2325
+02:09:16.350 --> 02:09:18.150
+você se adaptou a tua aplicação para a nova versão,
+
+2326
+02:09:19.130 --> 02:09:21.630
+mas é complicado isso ainda mais quando tu está trabalhando
+
+2327
+02:09:21.630 --> 02:09:25.230
+com times internos dentro da tua própria empresa tem um
+
+2328
+02:09:25.230 --> 02:09:29.710
+micro serviço de um squad x y z que eu utilizo aqui
+
+2329
+02:09:30.750 --> 02:09:33.030
+nada impede que eles mudem o contrato e quebrem a tua
+
+2330
+02:09:33.030 --> 02:09:34.870
+aplicação e não tem o que fazer
+
+2331
+02:09:35.910 --> 02:09:38.430
+Stripe teve que desenvolver um framework próprio para
+
+2332
+02:09:38.430 --> 02:09:40.030
+poder fazer isso funcionar direito com isso
+
+2333
+02:09:41.190 --> 02:09:42.400
+Não é tão simples assim,
+
+2334
+02:09:44.460 --> 02:09:46.520
+mas boa cara não conheci isso aqui muito obrigado por
+
+2335
+02:09:46.720 --> 02:09:49.810
+compartilhar muito interessante,
+
+2336
+02:09:49.810 --> 02:09:51.610
+mesmo vou até dar uma olhada depois melhor
+
+2337
+02:09:52.330 --> 02:09:54.370
+entender muito bom.
+
+2338
+02:09:54.370 --> 02:09:54.690
+Mesmo.
+
+2339
+02:09:59.740 --> 02:10:02.280
+Fechou então pessoal mais alguma dúvida,
+
+2340
+02:10:02.420 --> 02:10:03.840
+senão a gente encerra por hoje.
+
+2341
+02:10:04.180 --> 02:10:08.290
+Aí volta lá na quarta-feira, para falar de performance fazer
+
+2342
+02:10:08.850 --> 02:10:10.410
+o per feeling de aplicações
+
+2343
+02:10:12.550 --> 02:10:15.290
+Uma dúvida Normalmente todo mundo já perguntou antes,
+
+2344
+02:10:15.350 --> 02:10:17.730
+mas esse código que você mostrou hoje vai estar
+
+2345
+02:10:17.730 --> 02:10:18.770
+disponível em algum lugar
+
+2346
+02:10:19.310 --> 02:10:20.310
+Já está disponível.
+
+2347
+02:10:20.910 --> 02:10:23.610
+Vou mandar o link aqui é só baixar e rodar o teste.
+
+2348
+02:10:23.700 --> 02:10:24.770
+Desde que tu tem o docker,
+
+2349
+02:10:24.790 --> 02:10:26.610
+ele já vai funcionar de primeira é aqui.
+
+2350
+02:10:27.330 --> 02:10:30.810
+Módulo deixa eu se esse aqui módulo um
+
+2351
+02:10:31.820 --> 02:10:34.720
+workshop três, e aí é o projeto vertical slide
+
+2352
+02:10:35.800 --> 02:10:38.090
+legal valeu, boa
+
+2353
+02:10:43.820 --> 02:10:44.840
+fechou então pessoal.
+
+2354
+02:10:44.910 --> 02:10:47.840
+Nós vemos novamente na quarta para falar um pouquinho mais
+
+2355
+02:10:47.860 --> 02:10:51.240
+de como perfilar e identificar problemas de performance com
+
+2356
+02:10:51.240 --> 02:10:52.640
+aplicações do net
+
+2357
+02:10:57.380 --> 02:10:59.450
+valeu galera até mais abraço.
+
+2358
+02:10:59.970 --> 02:11:00.530
+Obrigado.
